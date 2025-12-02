@@ -1,16 +1,15 @@
 {% extends "layout.html" %}
 {% set signedIn = 'true' %}
 
-
 {% block pageTitle %}
   DfE scholarship funding is not available
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -19,21 +18,13 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Funding </h1>
 
-      <p>You’ve already been allocated scholarship funding for the Early headship coaching offer (EHCO) with [provider].</p>
-
-      <p>If you need to change something about your registration for the EHCO, email continuing-professional-development@digital.education.gov.uk.</p>
-
-      <h2 class="govuk-heading-m">If you’re taking the EHCO again</h2>
-
-      <p>Continue to register.</p>
-
-      <p class="govuk-body govuk-!-margin-bottom-7">You would need to pay for the EHCO if you were previously funded but you withdrew.</p>
+      {% include '../includes/funding-messages/message3B-ehco-previously-funded.html' %}
 
       {{ govukButton({
         text: "Continue",
-        href: "../choose-provider"
+        href: "/how-pay?referrer=not-funded",
+        classes: "govuk-!-margin-top-2"
       }) }}
-
 
     </div>
   </div>

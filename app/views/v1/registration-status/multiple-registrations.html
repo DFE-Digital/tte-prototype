@@ -10,14 +10,28 @@
   <strong class="govuk-tag govuk-tag--green">
     Passed
   </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You can access your certificate through the <a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications service </a></p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="https://access-your-teaching-qualifications.education.gov.uk/qualifications/start">Access your teaching qualifications</a> to get your certificate.</p>
+{% endset %}
+
+{% set expiredStatusHtml %}
+  {% if data['closedState'] == "Partial" %}
+    <strong class="govuk-tag govuk-tag--grey">
+      Expired
+    </strong>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Your registration has expired but you can register again for future courses when registrations open. </p>
+  {% else %}
+    <strong class="govuk-tag govuk-tag--grey">
+      Expired
+    </strong>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="../course-start">Submit a new registration</a> if you still want to take this course.</p>
+  {% endif %}
 {% endset %}
 
 {% block content %}
   <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
 
   {{ govukInsetText({
-    html: '<a href="https://get-an-identity-prototype.herokuapp.com/account/account-details">Visit your DfE Identity account</a> to check or change your personal details.'
+    html: '<a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.'
   }) }}
 
   <div class="govuk-rows" style="margin-top: 40px"></div>
@@ -25,7 +39,7 @@
   {{ govukSummaryList({
     card: {
       title: {
-        html: 'Executive leadership NPQ
+        html: 'Headship NPQ
         <p class="govuk-!-margin-bottom-0">	LLSE (Leadership Learning Securing Excellence)</p>'
       },
       actions: {
@@ -44,7 +58,7 @@
           text: "Registration submitted"
         },
         value: {
-          html: "16 June 2023"
+          html: "16 August 2024"
         }
       },
       {
@@ -56,7 +70,7 @@
             '<strong class="govuk-tag govuk-tag--yellow">
               Apply with provider
             </strong>
-            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider. </p>'
+            <p class="govuk-!-margin-top-2">You need to apply separately with your training provider.</p>'
         }
       }
     ]
@@ -84,7 +98,7 @@
           text: "Registration submitted"
         },
         value: {
-          html: "11 April 2023"
+          html: "11 July 2024"
         }
       },
       {
@@ -123,7 +137,7 @@
           text: "Registration submitted"
         },
         value: {
-          html: "2 January 2022"
+          html: "2 July 2024"
         }
       },
       {
@@ -134,6 +148,45 @@
           html:
             '<strong class="govuk-tag govuk-tag--red">
               Unsuccessful
+            </strong>'
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading teacher development NPQ
+        <p class="govuk-!-margin-bottom-0">Teacher Development Trust</p>'
+      },
+      actions: {
+        items: [
+          {
+            href: "registration-status--targeted-support",
+            text: "View details",
+            classes: "govuk-!-font-weight-regular"
+          }
+        ]
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "4 March 2024"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--green">
+              Successful
             </strong>'
         }
       }
@@ -189,7 +242,6 @@
 
   {{ govukSummaryList({
     card: {
-      classes: "govuk-!-margin-bottom-0",
       title: {
         html: 'Leading literacy NPQ
         <p class="govuk-!-margin-bottom-0">National Institute of Teaching</p>'
@@ -233,7 +285,91 @@
             '<strong class="govuk-tag govuk-tag--red">
               Not passed
             </strong>
-            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you think this is a mistake or need to appeal this outcome, contact your training provider. </p>'
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your training provider if you need to discuss this outcome.</p>'
+        }
+      }
+    ]
+  }) }}
+
+  <h3 class="govuk-heading-l govuk-!-margin-top-8">Expired registrations</h3>
+
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading behaviour and culture NPQ
+        <p class="govuk-!-margin-bottom-0">National Society for Education</p>'
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "24 July 2022"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: expiredStatusHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading literacy NPQ
+        <p class="govuk-!-margin-bottom-0">Teach First</p>'
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "17 March 2022"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: expiredStatusHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Leading literacy NPQ
+        <p class="govuk-!-margin-bottom-0">LLSE</p>'
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "24 July 2021"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: expiredStatusHtml
         }
       }
     ]

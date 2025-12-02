@@ -28,6 +28,14 @@
   {% endif %}
 {% endset %}
 
+{% set sencoHtml %}
+  {% if data['sencoinrole'] == "Yes" %}
+  {{ data['sencoinrole'] }} – since {{ data['sencostart-month'] | monthName or 'December'}} {{ data['sencostart-year'] or '2023'}}
+    {% else %}
+      {{ data['sencoinrole'] }}
+  {% endif %}
+{% endset %}
+
 {{ govukSummaryList({
   card: {
     classes: "govuk-!-margin-bottom-0",
@@ -35,14 +43,15 @@
       text: "Work details"
     },
     actions: {
+      classes: 'govuk-visually-hidden',
       items: [
         {
-          href: "../registration-status/work-details/where-do-you-work",
+          href: "/registration-status/work-details/where-do-you-work",
           text: "Change work details",
           classes: "govuk-!-font-weight-regular"
         }
       ]
-    } if courseOutcome != "Started"
+    } if data['courseOutcome'] != "Started"
   },
   rows: [
     {
@@ -53,6 +62,14 @@
         html: englandHtml
       }
     },
+    {
+      key: {
+        text: "Referred by return to teaching adviser"
+      },
+      value: {
+        text: data['teachadvisory'] or 'No'
+      }
+    } if data['wheredoyouwork'] == "Yes",
     {
       key: {
         text: "Work setting"
@@ -71,28 +88,20 @@
     },
     {
       key: {
-        text: "Role"
-      },
-      value: {
-        html: roleHtml
-      }
-    },
-    {
-      key: {
-        text: "Employer"
-      },
-      value: {
-        html: employerHtml
-      }
-    },
-    {
-      key: {
         text: "Completed one year of the primary maths Teaching for Mastery programme"
       },
       value: {
         html: mathsHtml
       } 
     } if data['choosenpq'] == "Leading primary mathematics",
+    {
+      key: {
+        text: "Special educational needs co-ordinator (SENCO)"
+      },
+      value: {
+        html: sencoHtml
+      } 
+    } if data['choosenpq'] == "Special educational needs co-ordinator (SENCO)",
     {
       key: {
         text: "Headship NPQ stage"

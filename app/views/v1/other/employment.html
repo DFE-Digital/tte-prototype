@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set signedIn = 'true' %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% block pageTitle %}
@@ -33,27 +34,23 @@
             text: "In a virtual school (local authority run organisations that support the education of children in care)"
           },
           {
-            value: "In a hospital school",
-            text: "In a hospital school"
+            value: "In an independent hospital education organisation",
+            text: "In an independent hospital education organisation"
           },
           {
             value: "In a young offender institution",
             text: "In a young offender institution"
           },
           {
-            value: "As a supply teacher employed by a local authority",
-            text: "As a supply teacher employed by a local authority"
+            value: "As a teacher employed by a local authority to teach in more than one school",
+            text: "As a teacher employed by a local authority to teach in more than one school",
+            hint: {
+              text: "This could be as a supply teacher or peripatetic teacher."
+            }
           },
           {
             value: "As a lead mentor for an accredited initial teacher training (ITT) provider",
             text: "As a lead mentor for an accredited initial teacher training (ITT) provider"
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "Other",
-            text: "Other"
           }
         ]
       }) }}

@@ -24,17 +24,25 @@
 
 {% set courseFundingHtml %}
   {% if data['whichsetting'] == "earlyyears" %}
-    {{ data['paymenteyll'] or "I'm paying" }}
+    <p class="govuk-!-margin-bottom-0">{{ data['paymenteyll'] or "I'm paying" }}.</p>
+    <p>You may want to check the cost of the NPQ course with your provider.</p>
   {% else %}
-    {{ data['payment'] or "I'm paying" }}
+    <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+    <p>You may want to check the cost of the NPQ course with your provider.</p>
   {% endif %}
 {% endset %}
 
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% endset %}
+
 {% block content %}
-  <span class="govuk-caption-m">Submitted	2 January 2022</span>
+  <span class="govuk-caption-m">Submitted	2 July 2024</span>
   <h1 class="govuk-heading-xl">
     Your leading literacy NPQ registration
   </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
 
   {{ govukSummaryList({
     card: {
@@ -87,6 +95,14 @@
               Unsuccessful
             </strong>'
         }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html:
+        }
       }
     ]
   }) }}
@@ -103,7 +119,7 @@
           text: "Scholarship funding"
         },
         value: {
-          html: scholarshipfundingHtml 
+          html: scholarshipfundingHtml
         }
       },
       {
@@ -117,8 +133,32 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/private-school.html' %}
-  
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          classes: "display-none"
+        },
+        value: {
+          html: personaldetailsHTML,
+          classes: "govuk-!-width-full-width"
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/registration-status/work-details/private-school.html' %}<br>
+  <h2 class="govuk-heading-l">We’d like your feedback</h2>
+
+<p class="govuk-body">
+  Tell us about your experience using the registration service by <a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-XFs6Aph9JFAlL3W5RWOR_5URTJBQUEwWDBYWFRGRE5BMk8zUFhGT0tSMy4u&route=shorturl" class="govuk-link">completing a short feedback form</a>.
+</p>
+
   {% include '../includes/registration-status/register-for-another-npq.html' %}
 
   {% include '../includes/prototype-links.html' %}

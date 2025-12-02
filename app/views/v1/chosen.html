@@ -7,20 +7,16 @@
 {% endblock %}
 
 {% block beforeContent %}
-
-{%- if not data['signedIn'] -%}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{%- endif -%}
-
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="where-do-you-work" method="post">
+    <form class="form" action="route-where-do-you-work" method="post">
       {{ govukRadios({
         name: "choosenpqprovider",
         fieldset: {
@@ -41,6 +37,13 @@
           }
         ]
       }) }}
+      <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    If you enter your information incorrectly it may result in you not being offered a funded place on an NPQ course.
+  </strong>
+</div>
 
       {{ govukButton({
         text: "Continue"
