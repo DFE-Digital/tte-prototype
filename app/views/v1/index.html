@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Register for a NPQ prototype
+        Register for a TTE course prototype
       </h1>
 
       {{ govukButton({
@@ -18,26 +18,9 @@
         href: "start-page"
       }) }}
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Skip create DfE Identity account (GAI)
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="https://get-an-identity-prototype.herokuapp.com/auth/finish">Last page of GAI, linking back to NPQ service </a></li>
-            <li><a href="course-start">First page after GAI, if not previously registered </a></li>
-          </ul>
-        </div>
-      </details>
-
       <h2 class="govuk-heading-m">
         Navigate the prototype
       </h2>
-
-      <p>The password for the Get an Identity prototype (i.e. the password you're asked for after
-        clicking "Start now") is: <strong>gai</strong></p>
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">
@@ -69,19 +52,6 @@
         </summary>
         <div class="govuk-details__text">
           <p>Type <strong>‘private’</strong> when asked for the <strong>name of the school</strong>.</p>
-        </div>
-      </details>
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            School or early years in eligibility check 
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>Type '<strong>not-pp50</strong>' when asked for the <strong>name of the school</strong> or the <strong>Ofsted URN</strong>.</p>
-          <p>This will show the funding outcome (not eligible) for a workplace not in the eligibility list. </p>
-          <p>Entering anything else in those questions, shows the outcome for the workplace in the list (normally eligible, but subject to other rules).</p>
         </div>
       </details>
 
