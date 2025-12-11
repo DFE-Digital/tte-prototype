@@ -25,7 +25,7 @@
 
   <!-- Private school -->
     <!-- not funded for any? -->
-  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") %}
+  {% elseif (data.selectedWorkplace["TypeOfEstablishment (name)"] == "Other independent school") %}
     {% include './includes/answers/private-school.html' %}
 
   <!-- Other setting -->

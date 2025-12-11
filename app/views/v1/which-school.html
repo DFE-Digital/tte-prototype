@@ -15,48 +15,180 @@ What is the name of your workplace?
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
 
-    <form method="post" action="funding/funding-eligible">
-      {{ govukInput({
-        label: {
-          text: "What is the name of your workplace?",
-          classes: "govuk-label--l",
-          isPageHeading: true
-        },
-        hint: {
-          text: "Search for your workplace by postcode, unique reference number (URN) or name. If you work for a trust, use the details of one of its schools."
-        },
-        id: "whichschool",
-        name: "whichschool"
-      }) }}
 
-      <div class="govuk-!-margin-top-6">
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </div>
-    </form>
+<script>
+  (function whenReady(fn){
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fn, { once: true });
+    } else {
+      fn();
+    }
+  })(async function initWorkplaceAutocomplete() {
 
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">If you cannot find your workplace</span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body">You could:</p>
+    // ==== CONFIG ============================================================
+    // Change this to the real path where your JSON is served.
+    // It must return an array of objects with { EstablishmentName, URN, Postcode }.
+    const DATA_URL = '/public/images/giasdata20251208.json';
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>use any combination of postcode, workplace name, URN or street name</li>
-          <li>
-            <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">
-              check your workplace details (opens in a new tab)
-            </a> – including spelling
-          </li>
-        </ul>
-      </div>
-    </details>
+    // Optional: the selector for your form to log payload on submit.
+    const FORM_SELECTOR = 'form[action="funding/funding-eligible"]';
 
+    // ==== HELPERS ===========================================================
+    const norm   = s => (s || '').toString().trim().toLowerCase();
+    const normPC = s => norm(s).replace(/\s+/g, ''); // remove spaces for postcode matching
+
+    function formatLabel(item) {
+      const name = item.EstablishmentName || '';
+      const urn  = item.URN || '';
+      const pc   = item.Postcode || '';
+      return `${name} (${pc}) – URN ${urn}`;
+    }
+
+    function setHiddenSelection(itemOrNull) {
+      document.getElementById('workplace').value           = itemOrNull ? itemOrNull.URN : '';
+      document.getElementById('workplacename').value       = itemOrNull ? itemOrNull.EstablishmentName : '';
+      document.getElementById('workplacepostcode').value   = itemOrNull ? itemOrNull.Postcode : '';
+      document.getElementById('selectedWorkplace').value   = itemOrNull ? JSON.stringify(itemOrNull) : '';
+    }
+
+    async function fetchData() {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error(`Failed to load ${DATA_URL}: ${res.status} ${res.statusText}`);
+      const data = await res.json();
+      if (!Array.isArray(data)) throw new Error('Workplaces JSON must be an array');
+      // Minimal validation: only keep items with the 3 required fields
+      return data.filter(i => ('EstablishmentName' in i) && ('URN' in i) && ('Postcode' in i));
+    }
+
+    // ==== BOOT: LOAD DATA ===================================================
+    let items = [];
+    try {
+      items = await fetchData();
+    } catch (err) {
+      console.error(err);
+      const mount = document.getElementById('workplace-autocomplete');
+      if (mount) {
+        mount.insertAdjacentHTML(
+          'beforeend',
+          "<p class='govuk-error-message'>We couldn’t load workplaces. Please try again later.</p>"
+        );
+      }
+      return;
+    }
+
+    // ==== AUTOCOMPLETE SOURCE/CONFIRM ======================================
+    function source(query, populate) {
+      const q = norm(query);
+      const qPC = normPC(query);
+      const filtered = !q ? items : items.filter(x =>
+        norm(x.EstablishmentName).includes(q) ||
+        norm(x.URN).includes(q) ||
+        norm(x.Postcode).includes(q) ||
+        normPC(x.Postcode).includes(qPC) // allow searches without spaces
+      );
+      populate(filtered.map(formatLabel));
+    }
+
+    function lookupByLabel(label) {
+      return items.find(x => formatLabel(x) === label);
+    }
+
+    function onConfirm(label) {
+      const chosen = lookupByLabel(label);
+      setHiddenSelection(chosen || null);
+      console.log('Confirmed selection:', chosen);
+    }
+
+    // ==== INIT ACCESSIBLE AUTOCOMPLETE =====================================
+    if (typeof accessibleAutocomplete !== 'function') {
+      console.error('accessibleAutocomplete is not loaded—check your <script> tag order/paths.');
+      return;
+    }
+
+    accessibleAutocomplete({
+      element: document.getElementById('workplace-autocomplete'),
+      id: 'workplace-autocomplete-input',
+      name: 'workplaceText', // optional text field name
+      source,
+      onConfirm,
+      minLength: 2,
+      autoselect: true,
+      showAllValues: false,
+      placeholder: 'Start typing to search by name, URN or postcode',
+      confirmOnBlur: false
+    });
+
+    // If user clears the input text, clear hidden fields
+    const input = document.getElementById('workplace-autocomplete-input');
+    if (input) {
+      input.addEventListener('input', () => {
+        if (!input.value.trim()) setHiddenSelection(null);
+      });
+    }
+
+    // ==== DIAGNOSTIC: LOG PAYLOAD ON SUBMIT ================================
+    const form = document.querySelector(FORM_SELECTOR);
+    if (form) {
+      form.addEventListener('submit', () => {
+        const payload = {
+          workplace:          document.getElementById('workplace')?.value,
+          workplacename:      document.getElementById('workplacename')?.value,
+          workplacepostcode:  document.getElementById('workplacepostcode')?.value,
+          selectedWorkplace:  document.getElementById('selectedWorkplace')?.value
+        };
+        console.log('Submitting payload:', payload);
+        // Uncomment to halt submit for testing:
+        // event.preventDefault();
+        // alert(JSON.stringify(payload, null, 2));
+      });
+    } else {
+      console.warn(`Form not found for selector: ${FORM_SELECTOR}`);
+    }
+  });
+</script>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="route-funding-outcome">
+          <label for="workplace" class="govuk-label--xl">Select your workplace</label>
+          <p class="govuk-hint govuk-!-margin-top-3 govuk-!-margin-bottom-6">Search for your workplace by postcode, unique reference number (URN) or name. If you work for a trust, use the details of one of its schools.</p>
+          
+          <div id="workplace-autocomplete" class="autocomplete-wrapper"></div>
+
+          <input type="hidden" id="workplace"           name="workplace">
+          <input type="hidden" id="workplacename"       name="workplacename">
+          <input type="hidden" id="workplacepostcode"   name="workplacepostcode">
+          <input type="hidden" id="selectedWorkplace"   name="selectedWorkplace">
+
+          <div class="govuk-!-margin-top-7">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">If you cannot find your workplace</span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You could:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>use any combination of postcode, workplace name, URN or street name</li>
+                <li>
+                  <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">
+                    check your workplace details (opens in a new tab)
+                  </a> – including spelling
+                </li>
+              </ul>
+            </div>
+          </details>
+      </form>
   </div>
 </div>
+
 {% endblock %}

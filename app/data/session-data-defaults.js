@@ -19,7 +19,6 @@ Example usage:
 
 module.exports = {
 
-  // Insert values here
   'dia': 'DfE Identity account',
 
   // v2 For admin console 

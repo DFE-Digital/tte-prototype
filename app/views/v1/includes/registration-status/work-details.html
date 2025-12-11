@@ -40,7 +40,7 @@
     {% include './work-details/other.html' %}
 
   <!-- User works in a private school -->
-  {% elseif (data['whichschool'] == "private") or (data['whichschool'] == "Private") or (data['whichschool'] == "not-pp50") %}
+  {% elseif (data['selectedWorkplace'] == "private") or (data['selectedWorkplace'] == "Private") %}
     {% include './work-details/private-school.html' %}
 
   {% else %}

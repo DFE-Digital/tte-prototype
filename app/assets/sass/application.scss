@@ -66,6 +66,10 @@
   font-size: 1em;
 }
 
+.autocomplete__wrapper * {
+  @include govuk-typography-common();
+}
+
 
 
 
