@@ -294,7 +294,7 @@ module.exports = router => {
       res.redirect(v + 'funding/funding-not-available-setting')
     }
     else {
-      res.redirect(v + '/funding/funding-eligible')
+      res.redirect(v + 'funding/funding-eligible')
     }
   });
 
