@@ -267,14 +267,35 @@ module.exports = router => {
       res.redirect(v + 'funding/funding-not-available-england')
     }
     else if (settingt == 'Early years or childcare, before reception year') {
-      res.redirect('funding/funding-not-available-setting')
+      res.redirect(v + 'funding/funding-not-available-setting')
     } 
     else if (settingt == 'Other') {
-      res.redirect('funding/funding-not-available-setting')
+      res.redirect(v + 'funding/funding-not-available-setting')
     } 
     else {
       res.redirect(v + 'which-school')
     }
   })
+
+// to be able to pinpoint data within selectedWorkplace 
+  router.post(v + 'route-funding-outcome', (req, res) => {
+    const selectedWorkplaceRaw = req.body.selectedWorkplace;
+    let selectedWorkplace = {};
+
+    try {
+      selectedWorkplace = JSON.parse(selectedWorkplaceRaw);
+    } catch (err) {
+      console.error('Invalid JSON in selectedWorkplace:', err);
+    }
+
+    // Store in session for Nunjucks {{ data[...] }}
+    req.session.data.selectedWorkplace = selectedWorkplace;
+     if(selectedWorkplace["TypeOfEstablishment (name)"] == 'Other independent school'){
+      res.redirect(v + 'funding/funding-not-available-setting')
+    }
+    else {
+      res.redirect(v + '/funding/funding-eligible')
+    }
+  });
 
 }
