@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Register for a NPQ prototype
+  Register for a TTE course prototype
 {% endblock %}
 
 {% block content %}
@@ -22,6 +22,28 @@
           href: "v1/index",
           isStartButton: true
         }) }}
+      </div>
+
+<!-- Current version GOV.UK guidance pages -->
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+      <h2 class="govuk-heading-l">GOV.UK guidance pages</h2>
+      <div class="govuk-body">
+        <div id="event-name-hint" class="govuk-hint">Last updated: 9 Jan 2026</div>
+        <div id="event-name-hint" class="govuk-hint">First draft of guidance pages.</div>
+
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "gov-uk-guidance/professional-development",
+          isStartButton: true
+        }) }}
+
+        <p>Pages within the collection:</p>
+        <ol class="govuk-list govuk-list--bullet">
+          <li><a href="gov-uk-guidance/professional-development">Professional development </a></li>
+          <li><a href="gov-uk-guidance/guidance-tte">TTE guidance </a></li>
+          <li><a href="gov-uk-guidance/apply-tte">Apply for TTE </a></li>
+          <li><a href="gov-uk-guidance/reception">Reception course </a></li>
+        </ol>
       </div>
 
 <!-- Admin console prototype -->

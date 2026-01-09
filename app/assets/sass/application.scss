@@ -70,8 +70,17 @@
   @include govuk-typography-common();
 }
 
+.app-mainstream-guide-contents-list {
+    border-bottom: none;
+}
 
+.grey {
+  color: #505a5f;
+}
 
-
+.grey-background {
+  background: #f3f2f1;
+  padding: 20px 20px 1px 20px;
+}
 
 
