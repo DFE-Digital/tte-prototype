@@ -6,11 +6,11 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-margin-top-0">
     {% if data['closedState'] != "Partial" %}
-      <h2 class="govuk-heading-l">Register for another NPQ</h2>
+      <h2 class="govuk-heading-l">Register for another {{ data['tte-programme-name-acronym'] }} course</h2>
       <p>Use this service to submit a new registration. </p>
 
       {{ govukButton({
-        text: "Register for another NPQ",
+        text: "Register for another TTE course",
         href: "../course-start",
         isStartButton: true
       }) }}
@@ -18,7 +18,7 @@
   {% else %}
     <h2 class="govuk-heading-l">Registration has closed temporarily</h2>
     <p><a href="/closed/eoi-senco-interest">Request email updates to tell you when registration opens</a>. This is usually in the summer.</p>
-    <p>When registration opens use this service to register for a NPQ or the early headship coaching offer starting before November 2024. </p>
+    <p>When registration opens use this service to register for a {{ data['tte-programme-name-acronym'] }} course starting before November 2026. </p>
 {% endif %}
   </div>
 </div>  

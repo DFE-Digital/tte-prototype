@@ -202,12 +202,9 @@ module.exports = router => {
     var settingt = req.session.data['whichsetting']
 
     if (locationt == "Yes"){
-      if (settingt == "Early years or childcare") {
+      if (settingt == "Early years or childcare, before reception year") {
         res.redirect(v + 'eyll/nursery-type')
-      } 
-      else if (settingt == "Another setting"){
-        res.redirect(v + 'other/employment')
-      } 
+      }  
       else if (settingt == "Other"){
         res.redirect(v + 'return-to-teaching')
       } 
@@ -227,7 +224,7 @@ module.exports = router => {
     if (nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
       res.redirect(v + 'which-school')
     } else {
-      res.redirect(v + 'eyll/do-you-have-urn')
+      res.redirect(v + 'funding/funding-not-available-setting')
     }
   })
 
@@ -267,7 +264,7 @@ module.exports = router => {
       res.redirect(v + 'funding/funding-not-available-england')
     }
     else if (settingt == 'Early years or childcare, before reception year') {
-      res.redirect(v + 'funding/funding-not-available-setting')
+      res.redirect(v + 'eyll/nursery-type')
     } 
     else if (settingt == 'Other') {
       res.redirect(v + 'funding/funding-not-available-setting')
