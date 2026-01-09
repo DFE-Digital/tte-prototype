@@ -24,6 +24,7 @@ module.exports = {
   'tte-programme-name': 'Teacher Training Entitlement',
   'tte-programme-name-acronym': 'TTE',
   'reception-course-name': 'Early years development',
+  'choosenpq': 'Early years development',
 
   // v2 For admin console 
   // registration 1
