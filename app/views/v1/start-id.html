@@ -1,9 +1,8 @@
 
 {% extends "layout.html" %}
 
-
 {% block pageTitle %}
-  Teacher Training Entitlement courses
+  {{ data['tte-programme-name-with-acronym'] }} courses
 {% endblock %}
 
 {% block content %}
@@ -12,7 +11,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Register for a Teacher Training Entitlement course
+          Register for a {{ data['tte-programme-name-with-acronym'] }} course
         </h1>
         <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
         <p>When registration reopens, use this service to register for an NPQ or the early headship coaching offer starting in autumn 2025. </p>
@@ -36,7 +35,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Register for a Teacher Training Entitlement course
+          Register for a {{ data['tte-programme-name-with-acronym'] }} course
         </h1>
         <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
         <p><a href="closed/eoi-email">Request email updates to tell you when registration reopens</a>. </p>
@@ -58,14 +57,14 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          Register for a Teacher Training Entitlement course
+          Register for a {{ data['tte-programme-name-with-acronym'] }} course
         </h1>
         <p>
           Use this service to:
         </p>
   
         <ul class="govuk-list govuk-list--bullet">
-          <li>register for an NPQ or the early headship coaching offer </li>
+          <li>register for a {{ data['tte-programme-name-acronym'] }} course </li>
           <li>check your registration details, if you already registered </li>
           <li>check your course outcome, if you have completed your course </li>
         </ul>
@@ -98,10 +97,9 @@
           You'll need:
         </p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>to know which <a href="https://educationgovuk-my.sharepoint.com/personal/dominic_collins_education_gov_uk/Documents/We’ve made updates in the sandbox environment to improve how lead providers interact with the service.">NPQ course</a> you want to take and who your provider will be </li>
+          <li>to know which <a href="/gov-uk-guidance/guidance-tte">{{ data['tte-programme-name-acronym'] }} course</a> you want to take and who your provider will be </li>
           <li>the address and postcode of your workplace setting </li>
           <li>a teacher reference number (TRN) – even if you’re not a teacher </li>
-          <li>your provider's Ofsted URN if you work in early years or childcare </li>
           <li>a DfE Identity account (you’ll be prompted to sign in or create one)</li>
         </ul>
 

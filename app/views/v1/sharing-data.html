@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Sharing your NPQ information
+  Sharing your {{ data['tte-programme-name-acronym'] }} information
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,10 +16,10 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Sharing your NPQ information</h1>
-    <p>All the information you enter for your NPQ registration will be shared with external organisations including auditors, evaluators, relevant bodies and training providers – this allows your provider to register you onto their course. </p>
+    <h1 class="govuk-heading-xl">Sharing your {{ data['tte-programme-name-acronym'] }} information</h1>
+    <p>All the information you enter for your {{ data['tte-programme-name-acronym'] }} registration will be shared with external organisations including auditors, evaluators, relevant bodies and training providers – this allows your provider to register you onto their course. </p>
     <p>For more information about who we share your data with read our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers#NPQ">privacy notice</a>. </p>
-    <p>If you do not agree to share your information you will not be able to progress with your NPQ.</p>
+    <p>If you do not agree to share your information you will not be able to progress with your {{ data['tte-programme-name-acronym'] }} course.</p>
     <form class="form" action="check-answers" method="post">
       {{ govukCheckboxes({
         name: "sharedata",

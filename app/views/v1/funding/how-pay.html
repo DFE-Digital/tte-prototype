@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
     <form class="form" action="../sharing-data" method="post">
 
-      {% if data['whichsetting'] == "earlyyears" %}
+      {% if data['whichsetting'] == "Early years or childcare, before reception year" %}
         {{ govukRadios({
           name: "paymenteyll",
           id: "paymenteyll",
@@ -31,7 +31,7 @@
           items: [
             { value: "My workplace is covering the cost", text: "My workplace is covering the cost" },
             { value: "I am paying", text: "I am paying" },
-            { value: "My NPQ is being paid for in another way", text: "My NPQ is being paid for in another way",
+            { value: "My TTE course is being paid for in another way", text: "My TTE course is being paid for in another way",
               hint: { text: "For example, I am sharing the costs with my workplace" } }
           ]
         }) }}
@@ -51,7 +51,7 @@
             { value: "My workplace is covering the cost", text: "My workplace is covering the cost" },
             { value: "My trust is paying", text: "My trust is paying" },
             { value: "I am paying", text: "I am paying" },
-            { value: "My NPQ is being paid for in another way", text: "My NPQ is being paid for in another way",
+            { value: "My TTE course is being paid for in another way", text: "My TTE course is being paid for in another way",
               hint: { text: "For example, I am sharing the costs with my workplace" } }
           ]
         }) }}
