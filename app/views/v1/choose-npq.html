@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Which NPQ do you want to do?
+  Which {{ data['tte-programme-name-acronym'] }} course do you want to do?
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,11 +16,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Choose a course</h1>
+      <h1 class="govuk-heading-xl">You are registering for the {{ data['reception-course-name'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
+      <p>This course is aimed at teachers who have completed their induction and are currently teaching reception age children, or plan to in the future. </p>
+      <p>If you do not want to do this course, <a href="/gov-uk-guidance/professional-development">learn more about the DfE CPD offering</a> to find the right course for you.  </p>
+      
       <form class="form" action="route-choose-npq" method="post">
         
-        {% include './includes/ttes-list.html' %}
-
         {{ govukButton({
           text: "Continue"
         }) }}
