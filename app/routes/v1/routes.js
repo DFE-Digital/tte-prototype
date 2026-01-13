@@ -129,30 +129,12 @@ module.exports = router => {
 
   // Redirect to correct account page if have 0,1 or >1 registrations
 
-  router.get(v + 'registration-account', function (req, res) {
-
-    let numberOfRegistrations = req.session.data.numberOfRegistrations
-  
-    if (numberOfRegistrations === '0') {
-        res.redirect(v + 'registration-status/no-registrations')
-      } else if (numberOfRegistrations === '1') {
-        res.redirect(v + 'registration-status/registration-status')
-      } else {
-        res.redirect(v + 'registration-status/multiple-registrations')
-    }
+  router.get(v + 'registration-account', function (req, res) {  
+    res.redirect(v + 'registration-status/registration-status')
   })
 
   router.get(v + 'registration-status/registration-account', function (req, res) {
-
-    let numberOfRegistrations = req.session.data.numberOfRegistrations
-  
-    if (numberOfRegistrations === '0') {
-        res.redirect(v + 'registration-status/no-registrations')
-      } else if (numberOfRegistrations === '1') {
-        res.redirect(v + 'registration-status/registration-status')
-      } else {
-        res.redirect(v + 'registration-status/multiple-registrations')
-    }
+    res.redirect(v + 'registration-status/registration-status')
   })
 
   // Just submitted - show success message 

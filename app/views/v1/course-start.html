@@ -22,8 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Course start</h1>
-    <p>{{ data['tte-programme-name-acronym'] }} courses start once a year every autumn.</p>
-    <p>Registrations are currently open for courses starting in autumn 2026.</p>
+    <p>Registrations are currently open for courses starting before February 2027.</p>
 
     <form class="form" action="chosen" method="post">
       {{ govukRadios({
@@ -31,7 +30,7 @@
         name: "startdate",
         fieldset: {
           legend: {
-            text: "Do you want to start a course in autumn 2026?",
+            text: "Do you want to start a course before February 2027?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }

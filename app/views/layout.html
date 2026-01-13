@@ -25,17 +25,17 @@
       serviceUrl: serviceURL,
       navigation: [
         {
-          href: 'https://get-an-identity-prototype.herokuapp.com/user-research/npq/account',
+          href: '',
           html: data['dia'],
           active: true if account == 'true'
         },
         {
           href: 'registration-account',
-          text: "TTE account",
+          text: "NCEP account",
           active: true if account == 'true'
         },
         {
-          href: "https://get-an-identity-prototype.herokuapp.com/user-research/npq/sign-out",
+          href: "",
           text: "Sign out"
         }
       ] if signedIn == 'true'
