@@ -24,7 +24,7 @@
 {% endset %}
 
 {% set courseHTML %}
-  {{ data['choosenpq'] or "Early years development" }}
+  {{ data['choosenpq'] or "Teaching in reception" }}
 {% endset %}
 
 {% set providerHTML %}
@@ -50,7 +50,7 @@
 
 
 {% set personaldetailsHTML %}
-  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+  <p><a href="">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
 
 {% set courseFundingHtml %}
@@ -111,7 +111,7 @@
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
   <h1 class="govuk-heading-xl">
-    Your {{ data['choosenpq'] or "Early years development" }} course registration
+    Your {{ data['choosenpq'] or "Teaching in reception" }} course registration
   </h1>
 
   {{ govukSummaryList({
