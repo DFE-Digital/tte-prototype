@@ -20,9 +20,9 @@ Example usage:
 module.exports = {
 
   'dia': 'DfE Identity account',
-  'tte-programme-name-with-acronym': 'National courses for experienced practitioners (NCEP) ',
-  'tte-programme-name': 'National courses for experienced practitioners',
-  'tte-programme-name-acronym': 'NCEP',
+  'tte-programme-name-with-acronym': 'Experienced Teacher Training (ETT) ',
+  'tte-programme-name': 'Experienced Teacher Training',
+  'tte-programme-name-acronym': 'ETT',
   'reception-course-name': 'Teaching in reception',
   'choosenpq': 'Teaching in reception',
 
