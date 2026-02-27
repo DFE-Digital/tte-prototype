@@ -25,6 +25,7 @@ module.exports = {
   'tte-programme-name-acronym': 'ETLT',
   'reception-course-name': 'Teaching in reception',
   'choosette': 'Teaching in reception',
+  'eligibilityoutcome': '',
 
   // v2 For admin console 
   // registration 1
