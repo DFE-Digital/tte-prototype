@@ -7,13 +7,6 @@
   Registration status
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back to your registrations",
-    href: "./multiple-registrations"
-  }) }}
-{% endblock %}
-
 {% set scholarshipfundingHtml %}
   <strong class="govuk-tag govuk-tag--red">
     Not eligible
@@ -23,13 +16,8 @@
 {% endset %}
 
 {% set courseFundingHtml %}
-  {% if data['whichsetting'] == "earlyyears" %}
-    <p class="govuk-!-margin-bottom-0">{{ data['paymenteyll'] or "I'm paying" }}.</p>
-    <p>You may want to check the cost of the NPQ course with your provider.</p>
-  {% else %}
-    <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
-    <p>You may want to check the cost of the NPQ course with your provider.</p>
-  {% endif %}
+  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+  <p>You may want to check the cost of the course with your provider.</p>
 {% endset %}
 
 {% set personaldetailsHTML %}
@@ -37,9 +25,9 @@
 {% endset %}
 
 {% block content %}
-  <span class="govuk-caption-m">Submitted	2 July 2024</span>
+  <span class="govuk-caption-m">Submitted	2 July 2026</span>
   <h1 class="govuk-heading-xl">
-    Your leading literacy NPQ registration
+    Your Teaching in Reception registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -57,15 +45,7 @@
         },
         value: {
           html: 
-            'Leading literacy NPQ'        
-          },
-          actions: {
-            items: [
-              {
-                href: "../change-details",
-                html: 'Change <span class="govuk-visually-hidden"> course</span>'
-              }
-            ]
+            'Teaching in Reception'        
           }
       },
       {
@@ -101,7 +81,7 @@
           text: "Course start"
         },
         value: {
-          html:
+          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       }
     ]
@@ -153,13 +133,6 @@
   }) }}
 
   {% include '../includes/registration-status/work-details/private-school.html' %}<br>
-  <h2 class="govuk-heading-l">We’d like your feedback</h2>
-
-<p class="govuk-body">
-  Tell us about your experience using the registration service by <a href="https://forms.office.com/pages/responsepage.aspx?id=yXfS-grGoU2187O4s0qC-XFs6Aph9JFAlL3W5RWOR_5URTJBQUEwWDBYWFRGRE5BMk8zUFhGT0tSMy4u&route=shorturl" class="govuk-link">completing a short feedback form</a>.
-</p>
-
-  {% include '../includes/registration-status/register-for-another-npq.html' %}
 
   {% include '../includes/prototype-links.html' %}
 

@@ -8,19 +8,19 @@
   Registration status
 {% endblock %}
 
-{% set appealHtml %}
-  <strong class="govuk-tag govuk-tag--red">
-    Not passed
-  </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your provider if you need to discuss this outcome.</p>
-{% endset %}
-
 {% set scholarshipfundingHtml %}
   <strong class="govuk-tag govuk-tag--red">
     Not eligible
   </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you've already been allocated scholarship funding for the Teaching in Reception course with [provider].</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England.</p>
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+{% endset %}
+
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Withdrawn
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you decide to take the course again in the future you will not be eligible for funding.</p>
 {% endset %}
 
 {% set courseFundingHtml %}
@@ -33,7 +33,7 @@
 {% endset %}
 
 {% block content %}
-  <span class="govuk-caption-m">Submitted	17 September 2026</span>
+  <span class="govuk-caption-m">Submitted	10 October 2026</span>
   <h1 class="govuk-heading-xl">
     Your Teaching in Reception registration
   </h1>
@@ -60,7 +60,7 @@
           text: "Provider"
         },
         value: {
-          html: "National Institute of Teaching"
+          html: "Teach First"
         }
       },
       {
@@ -68,18 +68,7 @@
           text: "Provider application"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      },
-      {
-        key: {
-          text: "Course outcome"
-        },
-        value: {
-          html: appealHtml
+          html: providerapplicationHtml
         }
       }
     ]
@@ -130,7 +119,7 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/school-funded.html' %}<br>
+  {% include '../includes/registration-status/work-details/not-eng.html' %}<br>
 
   {% include '../includes/prototype-links.html' %}
 

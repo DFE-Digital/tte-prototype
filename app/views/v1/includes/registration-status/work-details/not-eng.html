@@ -65,7 +65,7 @@
       value: {
         html: mathsHtml
       } 
-    } if data['choosenpq'] == "Leading primary mathematics",
+    } if data['choosette'] == "Leading primary mathematics",
     {
       key: {
         text: "Special educational needs co-ordinator (SENCO)"
@@ -73,7 +73,7 @@
       value: {
         html: sencoHtml
       } 
-    } if data['choosenpq'] == "Special educational needs co-ordinator (SENCO)",
+    } if data['choosette'] == "Special educational needs co-ordinator (SENCO)",
     {
       key: {
         text: "Headship NPQ stage"
@@ -81,7 +81,7 @@
       value: {
         text: data['completednpqh']
       }
-    } if data['choosenpq'] == "Early headship coaching offer",
+    } if data['choosette'] == "Early headship coaching offer",
     {
       key: {
         text: "Headteacher"
@@ -89,7 +89,7 @@
       value: {
         text: data['headteachers']
       }
-    } if data['choosenpq'] == "Early headship coaching offer",
+    } if data['choosette'] == "Early headship coaching offer",
     {
       key: {
         text: "First 5 years of headship"
@@ -97,6 +97,6 @@
       value: {
         text: data['earlyheadship']
       }
-    } if (data['choosenpq'] == "Early headship coaching offer") and (data['headteachers'] != 'No')
+    } if (data['choosette'] == "Early headship coaching offer") and (data['headteachers'] != 'No')
   ]
 }) }}

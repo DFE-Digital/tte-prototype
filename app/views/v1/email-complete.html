@@ -7,10 +7,10 @@
     <br>
 
       <h2 class="govuk-heading-m">
-      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      {% if (data['choosette'] == "Early headship coaching offer") %}
       Your Early headship coaching offer registration and next steps
       {% else %}
-      Your {{ data['choosenpq'] or "Leading literacy" }} NPQ registration and next steps
+      Your {{ data['choosette'] or "Leading literacy" }} NPQ registration and next steps
       {% endif %}
       </h2>
 
@@ -22,10 +22,10 @@
       <p>Dear {{ data['first-name'] or "Mary,"}}</p>
 
       <p>
-      {% if (data['choosenpq'] == "Early headship coaching offer") %}
+      {% if (data['choosette'] == "Early headship coaching offer") %}
       You’ve registered for the Early headship coaching offer with LLSE starting in autumn 2025.
       {% else %}
-      You’ve registered for the {{ data['choosenpq'] or "Leading literacy" }} NPQ.
+      You’ve registered for the {{ data['choosette'] or "Leading literacy" }} NPQ.
       {% endif %}
       </p>
 

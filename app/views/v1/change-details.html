@@ -3,7 +3,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Change your course or provider
+  Change your provider
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,28 +16,43 @@
 {% endblock %}
 
 {% block content %}
-  {% if data['closedState'] != "Partial" %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Change your course or provider</h1>
-        <p>If you have not started your course, you can change your course or provider by submitting a new registration. </p>
-        <p>If you have already started your course, contact your provider to make any changes. </p>
-      </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Change your provider for the Teaching in Reception course</h1>
+      <h3 class="govuk-heading-m">What happens when you change provider?</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You current provider will be notified that you are no longer registered with them and will stop processing your application. You will not be able to start the course with that provider. </li>
+        <li>Your new provider will send you a link to complete their application form and will start suitability checks. </li>
+      </ul>
     </div>
+  </div>
 
-    {{ govukButton({
-      text: "Submit a new registration",
-      href: "course-start"
-      }) 
-    }}
-    {% else %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 class="govuk-heading-xl">Change your course or provider</h1>
-          <p>If you have already started your course, contact your provider to make any changes. </p>
-          <p>If you have not started your course, you can change your course or provider by submitting a new registration. You will need to do this when registrations open. </p>
-        </div>
-      </div>
-  {% endif %}
+  <form class="form" action="route-change-provider?referrer=notsubmitted" method="post">
+      {{ govukRadios({
+        id: "changeprovider",
+        name: "changeprovider",
+        fieldset: {
+          legend: {
+            text: "Do you confirm you have not started the course and want to change provider?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I have not started the course and want to change provider"
+          },
+          {
+            value: "no",
+            text: "No, I don't want to change provider"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
 {% endblock %}
-

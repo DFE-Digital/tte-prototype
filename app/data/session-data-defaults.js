@@ -24,7 +24,7 @@ module.exports = {
   'tte-programme-name': 'Experienced Teachers and Leaders Training',
   'tte-programme-name-acronym': 'ETLT',
   'reception-course-name': 'Teaching in reception',
-  'choosenpq': 'Teaching in reception',
+  'choosette': 'Teaching in reception',
 
   // v2 For admin console 
   // registration 1
