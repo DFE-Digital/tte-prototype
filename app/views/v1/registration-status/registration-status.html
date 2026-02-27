@@ -23,8 +23,16 @@
   <p class="govuk-body">Check the details of your registration and find out more about applying with your provider.</p>
 {% endset %}
 
+{% set changedproviderHTML %}
+  <h3 class="govuk-notification-banner__heading">
+    Registration successfully updated – you have changed your provider
+  </h3>
+  <p class="govuk-body">Your previous provider has been notified that you are no longer registered with them.</p>
+  <p class="govuk-body">Your new provider will be in contact with you soon.</p>
+{% endset %}
+
 {% set courseHTML %}
-  {{ data['choosenpq'] or "Teaching in reception" }}
+  {{ data['choosette'] or "Teaching in reception" }}
 {% endset %}
 
 {% set providerHTML %}
@@ -46,8 +54,6 @@
     <li>decision to complete a {{ data['tte-programme-name-acronym'] }} is supported by your workplace</li>
   </ul>
 {% endset %}
-
-
 
 {% set personaldetailsHTML %}
   <p><a href="">Visit your DfE Identity account</a> to check or change your personal details.</p>
@@ -101,9 +107,16 @@
 {% endset %}
 
 {% block content %}
-  {% if (data['submittedNow'] == "True") %}
+  {% if (data['referrer'] == "Submitted") %}
     {{ govukNotificationBanner({
       html: successHTML,
+      type: 'success'
+    }) }}
+  {% endif %}
+
+  {% if (data['referrer'] == "newprovider") %}
+    {{ govukNotificationBanner({
+      html: changedproviderHTML,
       type: 'success'
     }) }}
   {% endif %}
@@ -111,8 +124,10 @@
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
   <h1 class="govuk-heading-xl">
-    Your {{ data['choosenpq'] or "Teaching in reception" }} course registration
+    Your {{ data['choosette'] or "Teaching in reception" }} course registration
   </h1>
+
+  <p><strong>Application ID</strong>: bbd71aaa-b3d3-47f8-9712-4e3e183252e4</p>
 
   {{ govukSummaryList({
     card: {
@@ -127,7 +142,16 @@
         },
         value: {
           html: courseHTML
-        }
+        },
+        actions: {
+        items: [
+          {
+            href: "../change-details",
+            text: "Change",
+            visuallyHiddenText: "provider"
+          }
+        ]
+      }
       },
       {
         key: {
@@ -147,10 +171,10 @@
       },
       {
         key: {
-
+          text: "Course start"
         },
         value: {
-          html: coursedateHTML
+          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       } 
     ]
@@ -182,27 +206,8 @@
     ]
   }) }}
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          classes: "display-none"
-        },
-        value: {
-          html: personaldetailsHTML,
-          classes: "govuk-!-width-full-width"
-        }
-      }
-    ]
-  }) }}
-
   {% include '../includes/registration-status/work-details.html' %}
 
-  {% include '../includes/registration-status/register-for-another-tte.html' %}
+  {% include '../includes/prototype-links.html' %}
 
 {% endblock %}
