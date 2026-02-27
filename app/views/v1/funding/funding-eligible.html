@@ -20,12 +20,14 @@
       <h1 class="govuk-heading-xl">Funding </h1>
 
       {% include '../includes/funding-messages/message1-funding-eligible.html' %}    
-
-      {{ govukButton({
-        text: "Continue",
-        href: "../sharing-data?referrer=funded",
-        classes: "govuk-!-margin-top-2"
-      }) }}
+      <form class="form" action="../sharing-data" method="post">
+        <input type="hidden" name="eligibilityoutcome" value="funded">
+        
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+      </form>
 
     </div>
   </div>

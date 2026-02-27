@@ -17,13 +17,14 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Funding </h1>
 
-      {% include '../includes/funding-messages/message2-funding-not-available-england.html' %} 
-
-      {{ govukButton({
-        text: "Continue",
-        href: "how-pay?referrer=not-funded",
-        classes: "govuk-!-margin-top-2"
-      }) }}
+      {% include '../includes/funding-messages/message2-funding-not-available-england.html' %}
+      <form class="form" action="how-pay" method="post"> 
+        <input type="hidden" name="eligibilityoutcome" value="notfunded">
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+      </form>
     </div>
   </div>
 {% endblock %}
