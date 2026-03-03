@@ -24,6 +24,12 @@
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
 
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Unsuccessful
+  </strong>
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted	2 July 2026</span>
   <h1 class="govuk-heading-xl">
@@ -70,10 +76,7 @@
           text: "Provider application"
         },
         value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--red">
-              Unsuccessful
-            </strong>'
+          html: providerapplicationHtml
         }
       },
       {
