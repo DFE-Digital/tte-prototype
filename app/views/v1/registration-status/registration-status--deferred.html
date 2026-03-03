@@ -25,8 +25,9 @@
   <strong class="govuk-tag govuk-tag--red">
     Deferred
   </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Date deferred: {{ "today" | govukDate }}</p>
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you wish to restart the course, you must do so within 12 months of deferring. Please contact your provider to do this.</p>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you do not restart the course within 12 months your registration will expire and you will be withdrawn from the course. If you decide to take the course again in the future you will not be eligible for funding.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you do not restart the course within 12 months your registration will expire and you will be withdrawn from the course. If you decide to take the course again in the future you will not be eligible for scholarship funding.</p>
 {% endset %}
 
 {% set personaldetailsHTML %}
@@ -70,6 +71,14 @@
         },
         value: {
           html: providerapplicationHtml
+        }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html: (data['courseStartDate'] or "Before December 2026")
         }
       }
     ]

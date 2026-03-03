@@ -5,123 +5,122 @@
 {% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
-Registration status
+  Registration status
 {% endblock %}
 
 {% set personaldetailsHTML %}
-<p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity
     account</a> to check or change your personal details.</p>
 {% endset %}
 
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Successful
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">When we receive confirmation from your provider that you have completed the course you will be able to download your certificate.</p>
+{% endset %}
+
 {% set fundingHTML %}
-
-<p class="govuk-!-margin-top-2">You are eligible for funding for the Teaching in Reception course, but this does not guarantee a
-  funded place is available. Your provider must confirm you have a scholarship-funded place.<br>
-  <br>
-  Contact Ambition to check that they have a funded place to offer you.
-
-<h2 class="govuk-heading-s">If no funded place is available</h2>
-
-<p class="govuk-!-margin-bottom-0"></p>You can:
-<ul class="govuk-list govuk-list--bullet">
-  <li>register with a different provider</li>
-  <li>consider other payment options, such as self-funding or asking if your workplace or trust can cover the cost</li>
-</ul>
-
+  {% include '../includes/registration-status/funding-message--eligible.html' %}
 {% endset %}
 
 {% block content %}
-<span class="govuk-caption-m">Submitted 11 July 2026</span>
-<h1 class="govuk-heading-xl">
-  Your Teaching in Reception registration
-</h1>
-<p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+  <span class="govuk-caption-m">Submitted 11 July 2026</span>
+  <h1 class="govuk-heading-xl">
+    Your Teaching in Reception registration
+  </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
-{{ govukSummaryList({
-card: {
-title: {
-text: "Course details"
-}
-},
-rows: [
-{
-key: {
-text: "Course"
-},
-value: {
-html:
-'Teaching in Reception' }
-},
-{
-key: {
-text: "Provider"
-},
-value: {
-html:
-'Ambition Institute' },
-actions: {
-items: [
-{
-href: "../change-details",
-html: 'Change <span class="govuk-visually-hidden"> provider</span>'
-}
-]
-}
-},
-{
-key: {
-text: "Provider application"
-},
-value: {
-html:
-'<strong class="govuk-tag govuk-tag--green">
-  Successful
-</strong>'
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+      value: {
+        html:
+          'Teaching in Reception' }
+        },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html:
+            'Ambition Institute' 
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details",
+              html: 'Change <span class="govuk-visually-hidden"> provider</span>'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: providerapplicationHtml
+        }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
+        }
+      } 
+    ]
+  }) }}
 
-}
-}
-]
-}) }}
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: fundingHTML
+        }
+      }
+    ]
+  }) }}
 
-{{ govukSummaryList({
-card: {
-title: {
-text: "Funding details"
-}
-},
-rows: [
-{
-key: {
-text: "Scholarship funding"
-},
-value: {
-html: fundingHTML
-}
-}
-]
-}) }}
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          classes: "display-none"
+        },
+        value: {
+          html: personaldetailsHTML,
+          classes: "govuk-!-width-full-width"
+        }
+      }
+    ]
+  }) }}
 
-{{ govukSummaryList({
-card: {
-title: {
-text: "Personal details"
-}
-},
-rows: [
-{
-key: {
-classes: "display-none"
-},
-value: {
-html: personaldetailsHTML,
-classes: "govuk-!-width-full-width"
-}
-}
-]
-}) }}
+  {% include '../includes/registration-status/work-details/ey-state-nursery.html' %}<br>
 
-{% include '../includes/registration-status/work-details/ey-state-nursery.html' %}<br>
-
-{% include '../includes/prototype-links.html' %}
+  {% include '../includes/prototype-links.html' %}
 
 {% endblock %}
