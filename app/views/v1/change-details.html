@@ -16,13 +16,14 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Change your provider for the Teaching in Reception course</h1>
-      <h3 class="govuk-heading-m">What happens when you change provider?</h3>
+      <h1 class="govuk-heading-xl">Register with a different provider for teaching in reception course</h1>
+      <p>You can only register with a different provider if you haven't started the course yet.</p>
+      <h3 class="govuk-heading-m">What happens when you change provider</h3>
       <ul class="govuk-list govuk-list--bullet">
-        <li>You current provider will be notified that you are no longer registered with them and will stop processing your application. You will not be able to start the course with that provider. </li>
-        <li>Your new provider will send you a link to complete their application form and will start suitability checks. </li>
+        <li>We will notify your current provider that you are no longer registered with them</li>
+        <li>Your new provider will contact you to complete their application form</li>
       </ul>
     </div>
   </div>
@@ -33,7 +34,7 @@
         name: "changeprovider",
         fieldset: {
           legend: {
-            text: "Do you confirm you have not started the course and want to change provider?",
+            text: "Confirm you have not started the course and want to register with a different provider",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
