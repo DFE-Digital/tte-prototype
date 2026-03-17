@@ -1,0 +1,61 @@
+{% extends "layout-email.html" %}
+{% set signedIn = true %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>You’ve registered for Teaching in reception – next steps</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+        <p>Application ID: 000001</p>
+
+        <p>Dear name</p>
+
+        <p>You’ve registered for Teaching in Reception with Ambition starting in autumn 2026.</p>
+
+        <h2>Apply through your provider</h2>
+
+        <p>You still need to apply through Ambition. They’ll contact you by email to outline the next steps, including how to apply.</p>
+
+        <p>After you apply, your course provider will check that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you meet the course’s suitability requirements</li>
+          <li>a funded place is available (if we’ve told you that you’re eligible for funding)</li>
+        </ul>
+        
+        <h2>Course start</h2>
+        
+        <p>You’ve registered for a course which starts in autumn 2026.</p>
+
+        <h2>Check or change your registration</h2>
+        
+        <p><a href="">Sign in</a> to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>update your name, date of birth, email address or phone number</li>
+          <li>change your course or provider</li>
+          <li>check your registration details, including any funding you’re eligible for</li>
+        </ul>
+
+        <h2>We’d like your feedback</h2>
+
+        <p>Tell us about your experience using the registration service by <a href="">completing a short feedback form</a>.</p>
+
+        <h2>Get help</h2>
+
+        <p>Email continuing-professional-development@digital.education.gov.uk</p>
+
+        <p>Regards,</p>
+
+        <p>The Teacher Continuing Professional Development team</p>
+          
+    </div>
+  </div>
+{% endblock %}

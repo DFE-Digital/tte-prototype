@@ -1,0 +1,34 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+  {% set govukRebrand = true %}
+
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+  {% block pageTitle %}
+    GOV.UK
+  {% endblock %}
+
+  {% block header %}
+    {% block subject %} 
+    {% endblock %}
+    <header class="govuk-header" data-module="govuk-header" data-govuk-header-init>
+      <div class="govuk-header__container govuk-width-container">
+      <div class="govuk-header__content header__content-unbranded">
+        <a href="" class="govuk-header__link govuk-header__service-name">
+          GOV.UK
+        </a>
+      </div>
+      </div>
+    </header>
+  {% endblock %}
+
+  {% block footer %}
+  {% endblock %}
+
+  {% block scripts %}
+    {{ super() }}
+    <script src="/node_modules/dfe-frontend/dist/dfefrontend.min.js"></script>
+  {% endblock %}
