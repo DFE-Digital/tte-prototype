@@ -20,9 +20,9 @@ Example usage:
 module.exports = {
 
   'dia': 'DfE Identity account',
-  'tte-programme-name-with-acronym': 'Experienced Teachers and Leaders Training (ETLT) ',
-  'tte-programme-name': 'Experienced Teachers and Leaders Training',
-  'tte-programme-name-acronym': 'ETLT',
+  'tte-programme-name-with-acronym': 'National Professional Development (NPD)',
+  'tte-programme-name': 'National Professional Development',
+  'tte-programme-name-acronym': 'NPD',
   'reception-course-name': 'Teaching in reception',
   'choosette': 'Teaching in reception',
   'eligibilityoutcome': '',
