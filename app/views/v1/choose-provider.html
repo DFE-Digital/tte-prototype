@@ -17,29 +17,24 @@
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="route-choose-provider" method="post">
 
-          {{ govukRadios({
-            name: "provider",
-            id: "provider",
-            fieldset: {
-              legend: {
-                text: "Select your training provider",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--xl"
-              }
-            },
-            items: [
-              { value: "Acorn training", text: "Acorn training" },
-              { value: "Cedar trust", text: "Cedar trust" },
-              { value: "Evergreen learning", text: "Evergreen learning" },
-              { value: "Maple education", text: "Maple education" },
-              { value: "Redwood training", text: "Redwood training" },
-              { value: "Willow network", text: "Willow network" }
-            ]
-          }) }}
-
-        {{ govukWarningText({
-          text: "Before selecting your provider, you must check that they are currently open to accepting NPD applications.​",
-          iconFallbackText: "Warning"
+        {{ govukRadios({
+          name: "provider",
+          id: "provider",
+          fieldset: {
+            legend: {
+              text: "Select your training provider",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            { value: "Acorn training", text: "Acorn training" },
+            { value: "Cedar trust", text: "Cedar trust" },
+            { value: "Evergreen learning", text: "Evergreen learning" },
+            { value: "Maple education", text: "Maple education" },
+            { value: "Redwood training", text: "Redwood training" },
+            { value: "Willow network", text: "Willow network" }
+          ]
         }) }}
 
         {{ govukButton({ text: "Continue" }) }}

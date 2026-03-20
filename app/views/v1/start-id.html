@@ -10,15 +10,12 @@
   {% if data['closedState'] == "Partial" %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-          Register for a {{ data['tte-programme-name-with-acronym'] }} course
-        </h1>
+        <h1 class="govuk-heading-xl">Register for a {{ data['tte-programme-name-with-acronym'] }} course</h1>
         <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
-        <p>When registration reopens, use this service to register for an NPD course starting in autumn 2026. </p>
+        <p>When registration reopens, use this service to register for an NPD course starting in autumn 2026.</p>
         <p><strong><a href="#">Request email updates to tell you when registration opens</a></strong>.</p>
-
         <h3 class="govuk-heading-m">Check your existing registrations</h3>
-        <p>You can still <a href="registration-status/registration-status.html">sign in</a> to check your: </p>
+        <p>You can still <a href="registration-status/registration-status.html">sign in</a> to check your:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>registration details, if you already registered </li>
           <li>course outcome, if you have completed your course </li>
@@ -30,17 +27,12 @@
     {% elseif data['closedState'] == "Full" %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-          Register for a {{ data['tte-programme-name-with-acronym'] }} course
-        </h1>
+        <h1 class="govuk-heading-xl">Register for a {{ data['tte-programme-name-with-acronym'] }} course</h1>
         <h3 class="govuk-heading-m">Registration has closed temporarily</h3>
-        <p><a href="closed/eoi-email">Request email updates to tell you when registration reopens</a>. </p>
-    
-
+        <p><a href="closed/eoi-email">Request email updates to tell you when registration reopens</a>.</p>
         <h3 class="govuk-heading-m">When registration opens</h3>
         <p>Use this service to: </p>
         <ul class="govuk-list govuk-list--bullet">
-        
           <li>register for an NPD course </li>
           <li>check your registration details, if you already registered </li>
           <li>check your course outcome, if you have completed your course </li>
@@ -56,14 +48,12 @@
           <span class="govuk-heading-l">National professional development courses</span>
           Check funding eligibility and register for {{ data['reception-course-name'] }} course
         </h1>
-        <p>
-          Use this service to:
-        </p>
+        <p>Use this service to:</p>
   
         <ul class="govuk-list govuk-list--bullet">
           <li>check eligibility for DfE funding, or tell us how you will self-fund</li>
           <li>register with DfE for this course </li>
-          <li><a href="/v1/registration-status/registration-status--scholarship-only">change your details</a> your details if you are already registered</li>
+          <li><a href="/v1/registration-status/registration-status--scholarship-only">change your details</a> if you are already registered</li>
           <li><a href="/v1/registration-status/registration-status--not-funded-england">get your certificate</a> when you have completed the course</li>
         </ul>
 
@@ -71,7 +61,7 @@
         <p>To register, you first need to choose a training provider. All providers have been selected by the DfE and the course is endorsed by the Education Endowment Foundation.
 
         <h3>1. Choose a training provider</h3>
-        <p>All providers deliver the same course content, however there may be differences in how they choose to deliver the course. You can visit their website to learn more.</p>
+        <p>All providers deliver the same <a href="/gov-uk-guidance/reception">course content</a>, however there may be differences in how they choose to deliver the course. You can visit their website to learn more.</p>
 
         {{ govukWarningText({
           text: "You must register with DfE before you apply with a provider.",
@@ -98,13 +88,10 @@
           <li>contact you to complete the application</li>
           <li>confirm if they have a funded place available</li>
         </ol>
-
-        <p>If your training provider is unable to offer a funded place, you can come back and use this service to <a href="/v1/registration-status/registration-status--scholarship-only">register with a different provider</a></p>
+        <p>If your training provider is unable to offer a funded place, you can come back and use this service to <a href="/v1/registration-status/registration-status--scholarship-only">register with a different provider</a>.</p>
   
         <h2 class="govuk-heading-l">Before you start</h2>
-        <p>
-          You'll need a GOV One Login account (you’ll be prompted to sign in or create one).</li>
-        </p>        
+        <p>You'll need a GOV One Login account (you’ll be prompted to sign in or create one).</li></p>        
         <p>By continuing, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers">privacy notice</a>.</p>
 
         {{ govukButton({
@@ -112,7 +99,6 @@
           href: "one-login",
           isStartButton: true
         }) }}
-
         
       </div>
     </div>

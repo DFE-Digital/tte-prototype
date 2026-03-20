@@ -7,39 +7,25 @@
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">You cannot register yet</h1>
-
     <p>Registrations are currently open for courses starting before December 2026.</p>
-
-</p>
-</ul>
-<section class="govuk-!-margin-top-6">
-  <h2 class="govuk-heading-m">Stay informed</h2>
-  <p class="govuk-body">
-    You can sign up for email updates to:
-  </p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>find out when {{ data['tte-programme-name-acronym'] }} registration opens</li>
-  </ul>
-  <p class="govuk-body"><a href="/v1/eoi-register-later/eoi-success" class="govuk-link">Sign up for updates</a></p>
-
-
-
-</section>
-
-
+    <section class="govuk-!-margin-top-6">
+      <h2 class="govuk-heading-m">Stay informed</h2>
+      <p class="govuk-body">You can sign up for email updates to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>find out when {{ data['tte-programme-name-acronym'] }} registration opens</li>
+      </ul>
+      <p class="govuk-body"><a href="/v1/eoi-register-later/eoi-success" class="govuk-link">Sign up for updates</a></p>
+    </section>
   </div>
 </div>
-
-
-
 {% endblock %}

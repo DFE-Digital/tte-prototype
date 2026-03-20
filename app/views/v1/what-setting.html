@@ -2,14 +2,14 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  What setting do you work in?
+  Tell us where you work
 {% endblock %}
 
 {% block beforeContent %}
-{{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}

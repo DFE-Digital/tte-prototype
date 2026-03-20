@@ -3,15 +3,15 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Do you want to start a course in autumn 2026?
+  Choose your course start date
 {% endblock %}
 
 {% block beforeContent %}
   {%- if not data['signedIn'] -%}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
   {%- endif -%}
 {% endblock %}
 
