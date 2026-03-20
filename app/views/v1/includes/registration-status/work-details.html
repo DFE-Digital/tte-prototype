@@ -3,10 +3,14 @@
   {% if data['wheredoyouwork'] == "No" %}
     {% include './work-details/not-eng.html' %}
 
-  <!-- User works in state-funded setting -->
-  {% elseif data['whichsetting'] == "State-funded nursery, pre-school or school" %}
-    {% include './work-details/school-funded.html' %}
-
-  {% else %}
+  <!-- User works in private or other setting -->
+  {% elseif data['whichsetting'] == "Private nursery, pre-school or school" %}
     {% include './work-details/other.html' %}
+  
+  {% elseif data['whichsetting'] == "Other" %}
+    {% include './work-details/other.html' %}
+
+  <!-- User works in state-funded setting -->
+  {% else %} 
+    {% include './work-details/school-funded.html' %}
   {% endif %}
