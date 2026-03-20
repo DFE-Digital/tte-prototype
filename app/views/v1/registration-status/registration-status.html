@@ -16,13 +16,6 @@
   Registration status
 {% endblock %}
 
-{% set successHTML %}
-  <h3 class="govuk-notification-banner__heading">
-    Registration successfully submitted
-  </h3>
-  <p class="govuk-body">Check the details of your registration and find out more about applying with your provider.</p>
-{% endset %}
-
 {% set changedproviderHTML %}
   <h3 class="govuk-notification-banner__heading">
     Registration successfully updated – you have registered with a new provider
@@ -36,7 +29,7 @@
 {% endset %}
 
 {% set providerHTML %}
-  {{ data['provider'] or "Teacher Development Trust" }}
+  {{ data['provider'] or "Cedar trust" }}
 {% endset %}
 
 {% set providerstatusHTML %}
@@ -53,10 +46,6 @@
     <li>eligibility for scholarship funding</li>
     <li>decision to complete a {{ data['tte-programme-name-acronym'] }} is supported by your workplace</li>
   </ul>
-{% endset %}
-
-{% set personaldetailsHTML %}
-  <p><a href="">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
 
 {% set courseFundingHtml %}
@@ -107,12 +96,6 @@
 {% endset %}
 
 {% block content %}
-  {% if (data['referrer'] == "Submitted") %}
-    {{ govukNotificationBanner({
-      html: successHTML,
-      type: 'success'
-    }) }}
-  {% endif %}
 
   {% if (data['referrer'] == "newprovider") %}
     {{ govukNotificationBanner({
@@ -152,13 +135,13 @@
           html: providerHTML
         },
         actions: {
-        items: [
-          {
-            href: "../change-details",
-            text: "Register with a different provider"
-          }
-        ]
-      }
+          items: [
+            {
+              href: "../change-details",
+              text: "Register with a different provider"
+            }
+          ]
+        }
       },
       {
         key: {
@@ -173,7 +156,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
+          html: (data['startdate'] or "In October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       } 
     ]

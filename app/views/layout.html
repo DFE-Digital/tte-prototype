@@ -5,6 +5,8 @@
   {% set govukRebrand = true %}
 
   {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  {% extends "service-header/layouts/service-header.html" %}
+  {% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
   {% block pageTitle %}
     {{ serviceName }} – GOV.UK
@@ -19,27 +21,28 @@
   {% endset %}
 
   {% block header %}
-    {{ govukHeader({
-      homepageUrl: "/index",
-      serviceName: serviceName,
-      serviceUrl: serviceURL,
-      navigation: [
-        {
-          href: '',
-          html: data['dia'],
-          active: true if account == 'true'
-        },
-        {
-          href: 'registration-account',
-          text: "ETLT account",
-          active: true if account == 'true'
-        },
-        {
-          href: "",
-          text: "Sign out"
+    {% if signedIn == 'true' %}
+      {{ govukOneLoginServiceHeader({
+        signOutLink: "#",
+        oneLoginLink: "#",
+        serviceNavigationParams: { 
+          navigation: [
+          {
+            href: "/v1/start-id", 
+            text: "Register for a NPD course"
+          },
+          {
+            href: "/v1/registration-status/no-registrations", 
+            text: "NPD account"
+          }], 
+          serviceName: serviceName 
         }
-      ] if signedIn == 'true'
-    }) }}
+      }) }}
+    {% else %}
+      {{ govukHeader({
+        homepageUrl: "/v1/start-id"
+      }) }}
+    {% endif %}
 
     <div class="govuk-width-container">
       {{ govukPhaseBanner({
@@ -66,10 +69,6 @@
           {
             href: "/settings",
             text: "Settings"
-          },
-          {
-            href: "/set-user-type?type=employer",
-            text: "Employer referral form"
           }
         ]
       }

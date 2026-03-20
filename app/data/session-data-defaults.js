@@ -19,7 +19,7 @@ Example usage:
 
 module.exports = {
 
-  'dia': 'DfE Identity account',
+  'dia': 'GOV One login account',
   'tte-programme-name-with-acronym': 'National Professional Development (NPD)',
   'tte-programme-name': 'National Professional Development',
   'tte-programme-name-acronym': 'NPD',

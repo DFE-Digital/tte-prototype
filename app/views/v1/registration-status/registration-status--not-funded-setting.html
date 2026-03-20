@@ -25,7 +25,7 @@
 {% endset %}
 
 {% set providerapplicationHtml %}
-  <strong class="govuk-tag govuk-tag--green">
+  <strong class="govuk-tag govuk-tag--red">
     Unsuccessful
   </strong>
 {% endset %}
@@ -60,7 +60,7 @@
         },
         value: {
           html: 
-            'Teach First'
+            'Cedar trust'
         },
         actions: {
           items: [
@@ -84,7 +84,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
+          html: (data['startdate'] or "In October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       }
     ]
@@ -116,26 +116,7 @@
     ]
   }) }}
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          classes: "display-none"
-        },
-        value: {
-          html: personaldetailsHTML,
-          classes: "govuk-!-width-full-width"
-        }
-      }
-    ]
-  }) }}
-
-  {% include '../includes/registration-status/work-details/private-school.html' %}<br>
+  {% include '../includes/registration-status/work-details/other.html' %}<br>
 
   {% include '../includes/prototype-links.html' %}
 

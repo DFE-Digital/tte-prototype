@@ -52,7 +52,7 @@
         },
         value: {
           html:
-            'Ambition Institute' 
+            'Maple education' 
         },
         actions: {
           items: [
@@ -76,7 +76,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['courseStartDate'] or "Before December 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
+          html: (data['startdate'] or "In October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       } 
     ]
@@ -100,26 +100,7 @@
     ]
   }) }}
 
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          classes: "display-none"
-        },
-        value: {
-          html: personaldetailsHTML,
-          classes: "govuk-!-width-full-width"
-        }
-      }
-    ]
-  }) }}
-
-  {% include '../includes/registration-status/work-details/ey-state-nursery.html' %}<br>
+  {% include '../includes/registration-status/work-details/school-funded.html' %}<br>
 
   {% include '../includes/prototype-links.html' %}
 

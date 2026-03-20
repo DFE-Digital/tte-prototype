@@ -6,13 +6,6 @@
   You've signed up for email updates
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -20,11 +13,8 @@
         titleText: "You've signed up for email updates"
       }) }}
 
-      <p>We'll send updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> when registration opens for courses starting after February 2027. </p>
-      {% if data['numberOfRegistrations'] != "0" %} 
+      <p>We'll send updates to <strong>{{ data['email'] or 'example@email.com' }}</strong> when registration opens for courses starting after December 2026. </p>
 
-        <p><a href="/v1/registration-status/registration-status">Review your existing registrations</a>.</p>
-      {% endif %}
     </div>
   </div>
 {% endblock %}
