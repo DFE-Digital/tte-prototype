@@ -80,10 +80,10 @@ module.exports = router => {
   router.post(v + 'chosen', function(req, res){
     var startdatet = req.session.data['startdate']
 
-    if (startdatet == 'no') {
+    if (startdatet == 'I want to start later') {
       res.redirect(v + 'apply-later')
     } else {
-      res.redirect(v + 'choose-tte')
+      res.redirect(v + 'choose-provider')
     }
   })
 
@@ -97,32 +97,18 @@ module.exports = router => {
     }
   })
 
-  // Does the user work in a state or private childcare setting?
-  router.post(v + 'eyll/nursery-type', function (req, res){
-    var nurserysettingt = req.session.data['nurserysetting']
-
-    if (nurserysettingt == 'Pre-school class or nursery that’s part of a school (maintained or independent)' || nurserysettingt == 'Local authority-maintained nursery') {
-      res.redirect(v + 'which-school')
-    } else {
-      res.redirect(v + 'funding/funding-not-available-setting')
-    }
-  })
-
   router.post(v + 'route-which-school', function (req, res){
     var locationt = req.session.data['wheredoyouwork']
     var settingt = req.session.data['whichsetting']
     if(locationt == 'No'){
       res.redirect(v + 'funding/funding-not-available-england')
     }
-    else if (settingt == 'Early years or childcare, before reception year') {
-      res.redirect(v + 'eyll/nursery-type')
-    } 
-    else if (settingt == 'Other') {
-      res.redirect(v + 'funding/funding-not-available-setting')
+    else if (settingt == 'State-funded nursery, pre-school or school') {
+      res.redirect(v + 'which-school')
     } 
     else {
-      res.redirect(v + 'which-school')
-    }
+      res.redirect(v + 'funding/funding-not-available-setting')
+    } 
   })
 
 // to be able to pinpoint data within selectedWorkplace 

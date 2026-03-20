@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-{% set signedIn = true %}
+{% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Select your provider
+  Select your training provider
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,30 +22,23 @@
             id: "provider",
             fieldset: {
               legend: {
-                text: "Select your provider",
+                text: "Select your training provider",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--xl"
               }
             },
             items: [
-              { value: "Ambition Institute", text: "Ambition Institute" },
-              { value: "Best Practice Network", text: "Best Practice Network" },
-              { value: "National Society for Education", text: "National Society for Education" },
-              { value: "LLSE", text: "LLSE" },
-              { value: "National Institute of Teaching", text: "National Institute of Teaching" },
-              { value: "Teacher Development Trust", text: "Teacher Development Trust" },
-              { value: "Teach First", text: "Teach First" },
-              { value: "University College London (UCL) Institute of Education", text: "University College London (UCL) Institute of Education" },
-              { divider: "or" },
-              {
-                value: "I have not chosen a provider yet",
-                text: "I have not chosen a provider yet"
-              }
+              { value: "Acorn training", text: "Acorn training" },
+              { value: "Cedar trust", text: "Cedar trust" },
+              { value: "Evergreen learning", text: "Evergreen learning" },
+              { value: "Maple education", text: "Maple education" },
+              { value: "Redwood training", text: "Redwood training" },
+              { value: "Willow network", text: "Willow network" }
             ]
           }) }}
 
         {{ govukWarningText({
-          text: "Before selecting your provider, you must check that they are currently open to accepting ETLT applications.​",
+          text: "Before selecting your provider, you must check that they are currently open to accepting NPD applications.​",
           iconFallbackText: "Warning"
         }) }}
 

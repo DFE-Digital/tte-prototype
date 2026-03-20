@@ -14,7 +14,7 @@
               Course start 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ "Before Feb 2027" if data['startdate'] == "yes" }}
+              {{ data['startdate'] or "In October 2026" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="course-start">
@@ -28,7 +28,7 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosette'] or "Early years development" }}
+              {{ data['choosette'] or "Teaching in reception" }}
             </dd>
           </div>
 
@@ -37,7 +37,7 @@
               Provider
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['provider'] or "Ambition Institute" }}
+              {{ data['provider'] or "Cedar trust" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-provider">
@@ -51,7 +51,7 @@
               Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['wheredoyouwork'] }}
+              {{ data['wheredoyouwork'] or "Yes" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
@@ -65,7 +65,7 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "A school" }}
+              {{ data['whichsetting'] or "State-funded nursery, pre-school or school" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -74,22 +74,19 @@
             </dd>
           </div>
 
-          {% if data['wheredoyouwork'] == "Yes" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Workplace
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }} 
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="which-school">
-                  Change<span class="govuk-visually-hidden"> workplace</span>
-                </a>
-              </dd>
-            </div>
-            {% else %}
-          {% endif %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Workplace
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="which-school">
+                Change<span class="govuk-visually-hidden"> workplace</span>
+              </a>
+            </dd>
+          </div>
 
         </dl>
 

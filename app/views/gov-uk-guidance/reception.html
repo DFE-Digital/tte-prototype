@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Teaching in reception course
+  Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
 {% endblock %}
 
 {% set serviceName %}
@@ -14,89 +14,61 @@
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
-        Teaching in reception course 
+        Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
       </h1>
 
-      <p class="govuk-body-l">A course to help teachers learn about key areas of child development and how to put this knowledge into teaching practice to support good early education outcomes.</p>
+      <p class="govuk-body-l">Using the latest early years evidence, this course will help experienced teachers deepen their understanding of the key areas of child development. It will provide practical skills to help benchmark and enhance early education outcomes.</p>
 
-      <h2 class="govuk-heading-l govuk-!-padding-top-8" id="who">Who this course is for</h2>
+      <p class="govuk-body-l">On successful completion of the course, you with be awarded a DfE accredited {{ data['tte-programme-name-acronym'] }} certificate.</p>
+
+      <h2 class="govuk-heading-l" id="who">Who this course is for</h2>
 
       <p>This course is for:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>teachers who currently or plan to work with reception age children </li>
-        <li>teachers who have already completed their induction </li>
+        <li>teachers who have completed their induction. Please note: there is no upper limit on years of experience</li>
+        <li>teachers who work with reception age children or are changing to a reception teaching role </li>
       </ul>
 
-      <h2 class="govuk-heading-l" id="overview">Overview</h2>
+      <h2 class="govuk-heading-l" id="overview">Course overview</h2>
 
-      <p>This two-term course will help you to:</p>
+      <p>You'll learn how high-quality early education can have a positive imapct on outcomes through:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>develop your understanding of high-quality teaching practices specifically relevant to the reception year</li>
-        <li>understand strategies and approaches to support good development in key areas to enable children to achieve good outcomes </li>
+        <li>strategies for effective teaching</li>
+        <li>mastery of important foundational concepts</li>
+        <li>appropriate curriculum and assessment design</li>
+        <li>positive transitions for children moving in and out of reception year</li>
+      </ul>
+
+      <p>During your course, you will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>follow an evidence-based curriculum, drawing on effective pedagogy, recent research and international best practice to give you the knowledge and skills to improve in your current role or take the next step in your career</li>
+        <li>take part in a mixture of live training and self-directed study</li>
+        <li>{{ data['tte-programme-name-acronym'] }} courses are developed in collaboration with the sector, informed by the best available research and evidence endorsed by the Education Endowment Foundation.</li>
       </ul>
 
       <p>This course will:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>take 2 terms to complete </li>
-        <li>involve up to 1 hour of study each week </li>
-        <li>be a mix of self-study and live training </li>
-        <li>start Autumn 2026</li>
+        <li>take approximately 2 school terms to complete (minimum 20 hours) </li>
+        <li>be a mix of self-study and live online training </li>
+        <li>start in October 2026 or January and February 2027, depending on the training provider</li>
       </ul>
 
-      <h2 class="govuk-heading-l" id="funding">Funding</h2>
+      <h2 class="govuk-heading-l" id="funding">Funding eligibility</h2>
       <p><a href="">Funding</a> to cover the course fees is available for most teachers and leaders in state funded settings in England.</p>
       
       <h2 class="govuk-heading-l" id="eligibility">Eligibility</h2>
-      <p>To apply for this course you should be teaching, or planning to teach, reception age children. </p>
+      <p>Funded places are available for most state-funded settings.</p>
+
+      <p>Examples of places that are not eligible for funding include hospital schools, Ministry of Defence (MoD) schools and schools outside of England.</p>
+
+      <p>If you are self-funding, you still need to register with the DfE.</p>
+
+      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
       
-      <h2 class="govuk-heading-l" id="content">Course content</h2>
-
-      <h3 class="govuk-heading-m">High-quality teaching and classroom practice</h3>
-      <p>You'll learn how high-quality early education can have a positive impact on outcomes through:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>strategies for effective teaching </li>
-        <li>enabling mastery of important foundational concepts</li>
-        <li>appropriate curriculum and formative assessment design</li>
-        <li>supporting positive transitions into and out of reception year </li>
-      </ul>
-
-      <h3 class="govuk-heading-m">Supporting good development</h3>
-      <p>You'll learn how to understand and support differences in child development in key areas to support access to learning, including through: </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>awareness of differences in development including SEND and disadvantage</li>
-        <li>enabling good communication and language </li>
-        <li>supporting physical development</li>
-        <li>encouraging personal, social and emotional, development </li>
-        <li>working with parents to support development goals</li>
-      </ul>
-
-      <h2 class="govuk-heading-l" id="structure">Course structure</h2>
-      <p>The course includes 9 topics, outlined in the <a href="">course framework</a>. Providers use this framework to design their course.</p>
-      <p>The course includes:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>independent study </li>
-        <li>group coaching </li>
-        <li>virtual sessions with other participants </li>
-      </ul>
-      <p>You’ll need to spend up to 1 hour a week working on this ETLT course.</p>
-      <p>If you can, you should do this during work hours in career development time.</p>
-
-      <h2 class="govuk-heading-l" id="providers">Providers</h2>
-      <p>You can train for this ETLT course with one of the following providers:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://www.ambition.org.uk/">Ambition Institute</a></li>
-        <li><a href="https://www.cefel.org.uk/npq/">National Society for Education</a></li>
-        <li><a href="https://www.educationdevelopmenttrust.com/npqs">Education Development Trust</a></li>
-        <li><a href="https://www.llse.org.uk/npq/npqs-for-you">LLSE</a></li>
-        <li><a href="https://niot.org.uk/">National Institute of Teaching</a></li>
-        <li><a href="http://www.teachfirst.org.uk/npqs">Teach First</a></li>
-        <li><a href="https://www.ucl.ac.uk/ioe/departments-and-centres/centres/ucl-centre-educational-leadership/national-professional-qualification-programmes">University College London (UCL) Institute of Education</a></li>
-      </ul>
-      <p>They work with delivery partners, such as teaching school hubs, to provide training.</p>
-
-      <h2 class="govuk-heading-l" id="apply">Apply</h2>
-      <p><a href="/gov-uk-guidance/apply-tte">Find out how to apply for a ETLTs course</a>.</p>
-
+      {{ govukButton({
+          text: "Continue to register",
+          href: "/v1/start-id"
+      }) }}
     </div>
   </div>
 

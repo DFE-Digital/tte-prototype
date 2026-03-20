@@ -28,36 +28,21 @@
     {% if data['wheredoyouwork'] == "No" %}
       {% include './includes/answers/not-eng.html' %}
 
-    <!-- EY -->
-      <!-- not funded for any -->
-    {% elseif (data['whichsetting'] == "Early years or childcare, before reception year") %}
-      {% include './includes/answers/ey.html' %}
-
-    <!-- Private school -->
-      <!-- not funded for any? -->
-    {% elseif (data.selectedWorkplace["TypeOfEstablishment (name)"] == "Other independent school") %}
-      {% include './includes/answers/private-school.html' %}
-
-    <!-- Other setting -->
-      {% elseif data['whichsetting'] == "Other" %}
+    <!-- Private or Other -->
+    {% elseif (data['whichsetting'] == "Other") %}
       {% include './includes/answers/other.html' %}
 
-    <!-- Funded schools -->
+    {% elseif (data['whichsetting'] == "Private nursery, pre-school or school") %}
+      {% include './includes/answers/other.html' %}
+
+    <!-- Private or Other -->
     {% else %}
       {% include './includes/answers/school-funded.html' %}
     {% endif %}
-
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        If you enter your information incorrectly it may result in you not being offered a funded place on a {{ data['tte-programme-name-acronym'] }} course.
-      </strong>
-    </div>
   
     {{ govukButton({
       text: "Submit",
-      href: "submit"
+      href: "confirmation"
     }) }}
   {% endif %}
 

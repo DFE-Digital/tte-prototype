@@ -14,7 +14,7 @@
               Course start 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ "Before Feb 2027" if data['startdate'] == "yes" }}
+              {{ data['startdate'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="course-start">
@@ -28,7 +28,7 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosette']}}
+              {{ data['choosette'] }}
             </dd>
           </div>
 
@@ -37,7 +37,7 @@
               Provider
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['provider']}}
+              {{ data['provider'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-provider">

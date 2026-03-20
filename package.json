@@ -6,6 +6,7 @@
   },
   "name": "govuk-prototype-kit",
   "dependencies": {
+    "@govuk-one-login/service-header": "^5.0.0",
     "@govuk-prototype-kit/common-templates": "^2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.4",
     "@govuk-prototype-kit/task-list": "2.0.0",

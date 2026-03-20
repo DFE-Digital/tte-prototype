@@ -87,4 +87,20 @@
   padding: 20px 20px 1px 20px;
 }
 
+.govuk-service-navigation__container {
+  margin-bottom: 15px;
+}
+
+.govuk-service-navigation__wrapper {
+  flex-basis: 50%;
+}
+
+.govuk-service-navigation__item {
+  margin-left: auto;
+}
+
+.govuk-service-navigation__item:last-child {
+  margin-left: 0;
+}
+
 

@@ -62,7 +62,7 @@
           text: "Provider"
         },
         value: {
-          html: "Teach First"
+          html: "Willow network"
         }
       },
       {
@@ -78,7 +78,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['courseStartDate'] or "Before December 2026")
+          html: (data['startdate'] or "In October 2026")
         }
       }
     ]
@@ -105,25 +105,6 @@
         },
         value: {
           html: courseFundingHtml
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
-        text: "Personal details"
-      }
-    },
-    rows: [
-      {
-        key: {
-          classes: "display-none"
-        },
-        value: {
-          html: personaldetailsHTML,
-          classes: "govuk-!-width-full-width"
         }
       }
     ]
