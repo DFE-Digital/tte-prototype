@@ -7,7 +7,7 @@
 {% endset %}
 
 {% set employerHtml%}
-  {{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }}
+  {{ data['workplacename'] or 'West Hampstead Primary School'}}, {{ data['workplacepostcode'] or 'NW6 1QL'}} – {{ data['workplace'] or '100009'}}
 {% endset %}
 
 {{ govukSummaryList({

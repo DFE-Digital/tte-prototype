@@ -2,7 +2,6 @@
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
 {% set signedIn = 'true' %}
-{% set courseOutcome = "Started" %}
 
 {% block pageTitle %}
   Registration status
@@ -17,21 +16,18 @@
   <p>You may want to check the cost of the course with your provider.</p>
 {% endset %}
 
-{% set providerapplicationHtml %}
-  <strong class="govuk-tag govuk-tag--red">
-    Deferred
-  </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Date deferred: 3 November 2026</p>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you wish to restart the course, you must do so within 12 months of deferring. Please contact your provider to do this.</p>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you do not restart the course within 12 months your registration will expire and you will be withdrawn from the course. If you decide to take the course again in the future you will not be eligible for scholarship funding.</p>
-{% endset %}
-
 {% set personaldetailsHTML %}
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
 
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Unsuccessful
+  </strong>
+{% endset %}
+
 {% block content %}
-  <span class="govuk-caption-m">Submitted	10 October 2026</span>
+  <span class="govuk-caption-m">Submitted	2 July 2026</span>
   <h1 class="govuk-heading-xl">
     Your Teaching in Reception registration
   </h1>
@@ -50,15 +46,25 @@
           text: "Course"
         },
         value: {
-          html: "Teaching in Reception"
-        }
+          html: 
+            'Teaching in Reception'        
+          }
       },
       {
         key: {
           text: "Provider"
         },
         value: {
-          html: "Willow network"
+          html: 
+            'Cedar trust'
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details",
+              html: 'Register with a different provider'
+            }
+          ]
         }
       },
       {
@@ -74,7 +80,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['startdate'] or "October 2026")
+          html: (data['startdate'] or "October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
         }
       }
     ]
