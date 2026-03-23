@@ -98,7 +98,7 @@ module.exports = router => {
       res.redirect(v + 'registration-status/registration-status--withdrawn')
     }
     else if(referrer == 'certificate'){
-      res.redirect(v + 'registration-status/registration-status--not-funded-england')
+      res.redirect(v + 'registration-status/registration-status--passed')
     }
     else {
       res.redirect(v + 'course-start')
