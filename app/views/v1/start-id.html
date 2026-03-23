@@ -53,8 +53,9 @@
         <ul class="govuk-list govuk-list--bullet">
           <li>check eligibility for DfE funding, or tell us how you will self-fund</li>
           <li>register with DfE for this course </li>
-          <li><a href="/v1/registration-status/registration-status--scholarship-only">change your details</a> if you are already registered</li>
-          <li><a href="/v1/registration-status/registration-status--not-funded-england">get your certificate</a> when you have completed the course</li>
+          <li><a href="one-login?referrer=change-provider">change your provider</a> if you are already registered</li>
+          <li><a href="one-login?referrer=deferred">view the status of your registration</a></li>
+          <li><a href="one-login?referrer=certificate">get your certificate</a> when you have completed the course</li>
         </ul>
 
         <h2 class="govuk-heading-l">How to register</h2>
@@ -88,7 +89,7 @@
           <li>contact you to complete the application</li>
           <li>confirm if they have a funded place available</li>
         </ol>
-        <p>If your training provider is unable to offer a funded place, you can come back and use this service to <a href="/v1/registration-status/registration-status--scholarship-only">register with a different provider</a>.</p>
+        <p>If your training provider is unable to offer a funded place, you can come back and use this service to <a href="one-login?referrer=change-provider">register with a different provider</a>.</p>
   
         <h2 class="govuk-heading-l">Before you start</h2>
         <p>You'll need a GOV One Login account (you’ll be prompted to sign in or create one).</li></p>        
@@ -96,9 +97,27 @@
 
         {{ govukButton({
           text: "Start now",
-          href: "one-login",
+          href: "one-login?referrer=register",
           isStartButton: true
         }) }}
+
+        <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+          <summary class="govuk-details__summary govuk-!-margin-top-8">
+            <span class="govuk-details__summary-text">
+              Log back in journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+              <li><a href="one-login?referrer=change-provider">Change provider </a></li>
+              <li><a href="one-login?referrer=successful">Successful application</a></li>
+              <li><a href="one-login?referrer=unsuccessful">Unsuccessful application</a></li>
+              <li><a href="one-login?referrer=deferred">Deferred </a></li>
+              <li><a href="one-login?referrer=withdrawn">Withdrawn</a></li>
+              <li><a href="one-login?referrer=certificate">Certificate </a></li>
+            </ul>
+          </div>
+        </details>
         
       </div>
     </div>

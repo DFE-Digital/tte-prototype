@@ -74,6 +74,39 @@ module.exports = router => {
   })
 
 // ------------
+// Log back in journeys 
+// ------------
+
+  // after on login page 
+
+  router.get(v + 'logged-in', (req, res) => {
+    var referrer = req.session.data['referrer']
+
+    if(referrer == 'change-provider'){
+      res.redirect(v + 'registration-status/registration-status--scholarship-only')
+    }
+    else if(referrer == 'successful'){
+      res.redirect(v + 'registration-status/registration-status--scholarship-only')
+    }
+    else if(referrer == 'unsuccessful'){
+      res.redirect(v + 'registration-status/registration-status--unsuccessful')
+    }
+    else if(referrer == 'deferred'){
+      res.redirect(v + 'registration-status/registration-status--deferred')
+    }
+    else if(referrer == 'withdrawn'){
+      res.redirect(v + 'registration-status/registration-status--withdrawn')
+    }
+    else if(referrer == 'certificate'){
+      res.redirect(v + 'registration-status/registration-status--not-funded-england')
+    }
+    else {
+      res.redirect(v + 'course-start')
+    }
+  })
+
+
+// ------------
 // Registration flow  
 // ------------
   
