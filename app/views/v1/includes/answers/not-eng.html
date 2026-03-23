@@ -14,7 +14,7 @@
               Course start 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['startdate'] }}
+              {{ data['startdate'] or "October 2026" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="course-start">
@@ -28,7 +28,7 @@
               Course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['choosette'] }}
+              {{ data['choosette'] or "Teaching in reception" }}
             </dd>
           </div>
 
@@ -37,7 +37,7 @@
               Provider
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['provider'] }}
+              {{ data['provider'] or "Cedar trust" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-provider">
@@ -51,7 +51,7 @@
               Workplace in England 
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['wheredoyouwork'] }}
+              {{ data['wheredoyouwork'] or "No" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="where-do-you-work">
@@ -65,7 +65,7 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting']}}
+              {{ data['whichsetting'] or "State-funded nursery, pre-school or school" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -80,7 +80,7 @@
               Course funding
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['payment']}}
+              {{ data['payment'] or "My workplace is covering the cost" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="funding/how-pay">
