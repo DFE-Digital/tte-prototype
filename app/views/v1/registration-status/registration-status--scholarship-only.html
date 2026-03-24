@@ -24,6 +24,11 @@
   {% include '../includes/registration-status/funding-message--eligible.html' %}
 {% endset %}
 
+{% set startdateHtml %}
+  {{ data['startdate'] or "October 2026" }}
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted 11 July 2026</span>
   <h1 class="govuk-heading-xl">
@@ -76,7 +81,7 @@
           text: "Course start"
         },
         value: {
-          html: (data['startdate'] or "October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.'
+          html: startdateHtml
         }
       } 
     ]
