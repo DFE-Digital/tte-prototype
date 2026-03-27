@@ -1,0 +1,239 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Compare providers for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
+{% endblock %}
+
+{% set serviceName %}
+{% endset %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl" style="padding-top: 1px">
+        Compare how training providers deliver the {{ data['reception-course-name'] }} course
+      </h1>
+
+      <p>All providers use the same <a href="">content framework</a> but may design and deliver the course in different ways.</p>
+      <p>Use the table to compare providers.</p>
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Provider"
+          },
+          {
+            text: "Start date",
+            format: "Text"
+          },
+          {
+            text: "Number of live sessions",
+            format: "Text"
+          },
+          {
+            text: "Optional in-person sessions",
+            format: "Text"
+          },
+          {
+            text: "Delivery methods used",
+            format: "Text"
+          },
+          {
+            text: "Fixed or flexible study hours",
+            format: "Text"
+          },
+          {
+            text: "Complete course by date",
+            format: "Text"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: '<a href="">Acorn training</a>'
+            },
+            {
+              text: "1 Oct 2026",
+              format: "text"
+            },
+            {
+              text: "6x 1-hour sessions",
+              format: "text"
+            },
+            {
+              text: "Yes, location TBC",
+              format: "text"
+            },
+            {
+              text: "30% live sessions, 40% self-study, 30% webinars",
+              format: "text"
+            },
+            {
+              text: "Totally flexible",
+              format: "text"
+            },
+            {
+              text: "26 March 2027",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Cedar trust</a>'
+            },
+            {
+              text: "TBC, in October",
+              format: "text"
+            },
+            {
+              text: "3x 1-hour sessions",
+              format: "text"
+            },
+            {
+              text: "No",
+              format: "text"
+            },
+            {
+              text: "15% live sessions, 85% self-study",
+              format: "text"
+            },
+            {
+              text: "At least 1 hour per week, maximum 20 weeks",
+              format: "text"
+            },
+            {
+              text: "19 March 2027",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Evergreen learning</a>'
+            },
+            {
+              text: "18 Oct 2026",
+              format: "text"
+            },
+            {
+              text: "1x 4-hour session",
+              format: "text"
+            },
+            {
+              text: "Yes, in London",
+              format: "text"
+            },
+            {
+              text: "20% live sessions, 50% self-study, 30% webinars",
+              format: "text"
+            },
+            {
+              text: "Totally flexible, but must complete within 20 weeks",
+              format: "text"
+            },
+            {
+              text: "26 March 2027",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Maple education</a>'
+            },
+            {
+              text: "11 January 2027",
+              format: "text"
+            },
+            {
+              text: "4x 1-hour sessions",
+              format: "text"
+            },
+            {
+              text: "Yes, London, Birmingham, Manchester.",
+              format: "text"
+            },
+            {
+              text: "20% live sessions, 30% self-study, 50% webinars",
+              format: "text"
+            },
+            {
+              text: "At least 1 hour per week, maximum 25 weeks",
+              format: "text"
+            },
+            {
+              text: "18 June 2027",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Redwood training</a>'
+            },
+            {
+              text: "30 Oct 2026",
+              format: "text"
+            },
+            {
+              text: "3x 2-hour sessions",
+              format: "text"
+            },
+            {
+              text: "No",
+              format: "text"
+            },
+            {
+              text: "30% live sessions, 50% self-study, 20% webinars",
+              format: "text"
+            },
+            {
+              text: "Totally flexible, but must complete within 12 weeks",
+              format: "text"
+            },
+            {
+              text: "20 April 2027",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Willow network</a>'
+            },
+            {
+              text: "2 Oct 2026",
+              format: "text"
+            },
+            {
+              text: "4x 2-hour sessions",
+              format: "text"
+            },
+            {
+              text: "No",
+              format: "text"
+            },
+            {
+              text: "40% live sessions, 40% self-study, 20% webinars",
+              format: "text"
+            },
+            {
+              text: "At least 1 hour per week. Maximum 20 weeks",
+              format: "text"
+            },
+            {
+              text: "26 March 2027",
+              format: "text"
+            }
+          ]
+        ]
+      }) }}
+
+      <p>When you have chosen your provider you should continue to register. </p>      
+      {{ govukButton({
+          text: "Continue to register",
+          href: "/v1/start-id"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
