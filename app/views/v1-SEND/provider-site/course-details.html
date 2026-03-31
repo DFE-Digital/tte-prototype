@@ -1,0 +1,56 @@
+
+{% extends "layout-provider.html" %}
+
+{% block pageTitle %}
+  Cedar trust - Register for a {{ data['tte-programme-name-with-acronym'] }} course
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row provider">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">{{ data['send-course-name'] }} National professional development (NPD) course</h1>
+
+        <h2 class="govuk-heading-l">Course overview</h2>
+        <p class="govuk-body">XXX</p>
+        
+        <div class="provider-highlights">
+          <div class="provider-highlight">
+            <img src="/public/images/time.png" alt="participant">
+            <p class="govuk-body">20 hours of content</p>
+          </div>
+          <div class="provider-highlight">
+            <img src="/public/images/live-training.png" alt="Person presenting training on a computer.">
+            <p class="govuk-body">4 hours of live training</p>
+          </div>
+          <div class="provider-highlight">
+            <img src="/public/images/in-person.png" alt="participant">
+            <p class="govuk-body">Optional in-person sessions across the country</p>
+          </div>
+          <div class="provider-highlight">
+            <img src="/public/images/flexible.png" alt="participant">
+            <p class="govuk-body">Totally flexible study hours</p>
+          </div>
+        </div>
+
+        <h2 class="govuk-heading-l">Why train with Cedar trust?</h2>
+        <p class="govuk-body">cc</p>
+
+        <div class="provider-quote">
+          <p class="govuk-body">""amazing quote""</p>
+          <p class="govuk-body-s">Peter Lonsdale</p>
+        </div>
+
+        <h2 class="govuk-heading-l">How to register</h2>
+        <p class="govuk-body">First, you will need to register with DfE. We will then contact you. </p>        
+
+        {{ govukButton({
+          text: "Register now",
+          href: "../start-id?referrer=cedar-trust",
+          isStartButton: true
+        }) }}
+        
+      </div>
+    </div>
+    
+{% endblock %}

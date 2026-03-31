@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Choose your course start date
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Choose your course start date</h1>
+    <p>Registrations are currently open for courses starting in October 2026.</p>
+
+    <form class="form" action="provider-traffic" method="post">
+      {{ govukRadios({
+        id: "startdate",
+        name: "startdate",
+        fieldset: {
+          legend: {
+            text: "When do you want to start the course?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "October 2026",
+            text: "October 2026",
+            hint: {
+              text: "You can also select this option if you've already started"
+            }
+          },
+          {
+            value: "January to March 2027",
+            text: "January to March 2027"
+          },
+          {
+            value: "I want to start later",
+            text: "I want to start later"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Change your provider
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Register with a different provider for teaching in reception course</h1>
+      <p>You can only register with a different provider if you haven't started the course yet.</p>
+      <h3 class="govuk-heading-m">What happens when you change provider</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>We will notify your current provider that you are no longer registered with them</li>
+        <li>Your new provider will contact you to complete their application form</li>
+      </ul>
+    </div>
+  </div>
+
+  <form class="form" action="route-change-provider?referrer=notsubmitted" method="post">
+      {{ govukRadios({
+        id: "changeprovider",
+        name: "changeprovider",
+        fieldset: {
+          legend: {
+            text: "Confirm you have not started the course and want to register with a different provider",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I have not started the course and want to change provider"
+          },
+          {
+            value: "no",
+            text: "No, I don't want to change provider"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  DfE scholarship funding is not available
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Funding eligibility result</h1>
+
+      {% include '../includes/funding-messages/message4-funding-not-available-setting.html' %}
+
+      <form class="form" action="how-pay" method="post">
+        <input type="hidden" name="eligibilityoutcome" value="notfunded">
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

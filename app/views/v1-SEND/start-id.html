@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register for a {{ data['tte-programme-name-with-acronym'] }} course
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-heading-l">National professional development (NPD) courses</span>
+          Check funding eligibility and register for a course
+        </h1>
+        <p>Use this service to:</p>
+  
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check eligibility for DfE funding, or tell us how you will self-fund</li>
+          <li>register with DfE for a NPD course </li>
+          <li><a href="one-login?referrer=deferred">log in</a> to see the status of your registration</li>
+          <li><a href="one-login?referrer=change-provider">change your training provider</a> if you are already registered</li>
+          <li><a href="one-login?referrer=certificate">get your certificate</a> when you have completed the course</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">How to register</h2>
+
+        <h3>1. Choose a course</h3>
+        <p>You can register for: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="../gov-uk-guidance/SEND-teachers.html">{{ data['send-course-name'] }}</a></li>
+          <li><a href="../gov-uk-guidance/SEND-leaders.html">{{ data['send-leader-course-name'] }}</a></li>
+          <li><a href="../gov-uk-guidance/reception.html">{{ data['reception-course-name'] }}</a></li>
+        </ul>
+
+        <h3>2. Choose a training provider</h3>
+        <p>All providers have been selected by the DfE. All providers deliver the same <a href="/gov-uk-guidance/reception">course content</a>, however there may be differences in how they choose to deliver the course. You can visit their website to learn more.</p>
+        <!-- <p>Use our <a href="../gov-uk-guidance/providers.html">provider comparison table</a> or visit their website to learn more.</p> -->
+
+        {{ govukWarningText({
+          text: "You must register with DfE before you apply with a provider.",
+          iconFallbackText: "Warning"
+        }) }}
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="">Acorn training</a></li>
+          <li><a href="">Cedar trust</a></li>
+          <li><a href="">Evergreen learning</a></li>
+          <li><a href="">Maple education</a></li>
+          <li><a href="">Redwood training</a></li>
+          <li><a href="">Willow network</a></li>
+        </ul>
+
+        <h3>3. Register with DfE</h3>
+        <p>When you register with the DfE, we will:</p>
+        <ol class="govuk-list govuk-list--number">
+          <li>check and confirm your eligibility for funding</li>
+          <li>notify your chosen training provider </li>
+        </ol>
+        <p>Your provider will:</p>
+        <ol class="govuk-list govuk-list govuk-list--number">
+          <li>contact you to complete the application</li>
+          <li>confirm if they have a funded place available</li>
+        </ol>
+        <p>If your training provider is unable to offer a funded place, you can come back and use this service to <a href="one-login?referrer=change-provider">register with a different provider</a>.</p>
+  
+        <h2 class="govuk-heading-l">Before you start</h2>
+        <p>You'll need a GOV One Login account (you’ll be prompted to sign in or create one).</li></p>        
+        <p>By continuing, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers">privacy notice</a>.</p>
+
+        {{ govukButton({
+          text: "Start now",
+          href: "one-login",
+          isStartButton: true
+        }) }}
+
+        <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+          <summary class="govuk-details__summary govuk-!-margin-top-8">
+            <span class="govuk-details__summary-text">
+              Log back in journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+              <li><a href="one-login?referrer=change-provider">Change provider </a></li>
+              <li><a href="one-login?referrer=successful">Successful application</a></li>
+              <li><a href="one-login?referrer=unsuccessful">Unsuccessful application</a></li>
+              <li><a href="one-login?referrer=deferred">Deferred </a></li>
+              <li><a href="one-login?referrer=withdrawn">Withdrawn</a></li>
+              <li><a href="one-login?referrer=certificate">Certificate </a></li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    </div>
+    
+{% endblock %}

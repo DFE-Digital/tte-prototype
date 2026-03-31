@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Your NPD registrations</h1>
+
+  <div class="govuk-rows" style="margin-top: 40px"></div>
+
+  <h3 class="govuk-heading-l govuk-!-margin-top-8">Expired registrations</h3>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        html: 'Teaching in reception
+        <p class="govuk-!-margin-bottom-0">Redwood training</p>'
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Registration submitted"
+        },
+        value: {
+          html: "24 July 2026"
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html:
+            '<strong class="govuk-tag govuk-tag--grey">
+              Expired
+            </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="../course-start">Submit a new registration</a> if you still want to take this course.</p>'
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}
