@@ -45,7 +45,8 @@
 .provider .govuk-link, 
 .provider .app-task-list__task-name > a,
 .provider .govuk-label,
-.provider .govuk-input {  
+.provider .govuk-input,
+.provider .govuk-tag {  
   font-family: "Noto Serif", serif !important;
 }
 
@@ -78,4 +79,9 @@
 
 .provider-highlight img {
   width: 100%;
+}
+
+.govuk-tag .govuk-tag--purple {
+  color: #3f0c5a;
+  background-color: #e4cdf0;
 }
