@@ -9,23 +9,25 @@
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Welcome back {{ data['applicant1--name'] }}</h1>
+        <h1 class="govuk-heading-xl">Welcome {{ data['applicant1--name'] }}</h1>
+
+        <h2 class="govuk-heading-m">You are applying for the {{ data['choosette'] }} {{ data['tte-programme-name-with-acronym'] }} course </h2>
 
         <p class="govuk-body">We have received your registration from DfE. </p>
         <p class="govuk-body">You need to complete the following sections and submit your application in order for us to proceed with evaluating your application.</p>
         
         {{ govukTaskList({
-          idPrefix: "company-details",
+          idPrefix: "application-task-list",
           items: [
             {
               title: {
                 text: "Course"
               },
-              href: "#",
+              href: "course",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -33,11 +35,11 @@
               title: {
                 text: "Personal details"
               },
-              href: "#",
+              href: "personal-details",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -45,11 +47,11 @@
               title: {
                 text: "Experience"
               },
-              href: "#",
+              href: "experience",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -57,11 +59,11 @@
               title: {
                 text: "Commitment"
               },
-              href: "#",
+              href: "commitment",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -69,11 +71,11 @@
               title: {
                 text: "Sponsor"
               },
-              href: "#",
+              href: "sponsor",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -81,11 +83,11 @@
               title: {
                 text: "Paying for the course"
               },
-              href: "#",
+              href: "paying-for-the-course",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             },
@@ -93,11 +95,11 @@
               title: {
                 text: "Terms"
               },
-              href: "#",
+              href: "terms",
               status: {
                 tag: {
                   text: "Incomplete",
-                  classes: "govuk-tag--blue"
+                  classes: "govuk-tag--purple"
                 }
               }
             }

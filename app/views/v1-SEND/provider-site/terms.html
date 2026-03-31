@@ -1,0 +1,23 @@
+
+{% extends "layout-provider.html" %}
+
+{% block pageTitle %}
+  Cedar trust - Log in or create your account 
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row provider">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Terms</h1>
+
+        {{ govukButton({
+          text: "Log in",
+          href: "summary-page",
+          isStartButton: true
+        }) }}
+        
+      </div>
+    </div>
+    
+{% endblock %}
