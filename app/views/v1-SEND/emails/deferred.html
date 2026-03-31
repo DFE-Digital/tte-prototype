@@ -1,0 +1,34 @@
+{% extends "layout-email.html" %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>Notification of deferral - Teaching in reception NPD</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+        <p>Application ID: 000001</p>
+
+        <p>Dear name</p>
+
+        <p><strong>Teaching in reception NPD training course deferred.</strong></p>
+
+        <p>[provider_name] has told us that you are deferring your training course.</p>
+        
+        <p>Date of deferral: 10 November 2026</p>
+
+        <p>You have up to 12 months to restart the course. When you are ready to restart, you need to contact your training provider. Your funding is still valid if you restart within the 12 months. </p>
+
+        <p>Regards,</p>
+
+        <p>The Teacher Continuing Professional Development team</p>
+          
+    </div>
+  </div>
+{% endblock %}

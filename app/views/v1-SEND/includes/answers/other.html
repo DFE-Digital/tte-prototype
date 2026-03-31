@@ -1,0 +1,93 @@
+{% block page %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers and submit </h1>
+
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course start 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['startdate'] or "October 2026" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="course-start">
+                Change<span class="govuk-visually-hidden"> course start date</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['choosette'] or "Teaching in reception"}}
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['provider'] or "Cedar trust" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="choose-provider">
+                Change<span class="govuk-visually-hidden"> provider</span>
+              </a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Workplace in England
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['wheredoyouwork'] or "Yes" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="where-do-you-work">
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Work setting
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['whichsetting'] or "Other" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-setting">
+                Change<span class="govuk-visually-hidden"> work setting</span>
+              </a>
+            </dd>
+          </div>
+
+          <!-- not funded for any -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course funding
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['payment'] or "My workplace is covering the cost" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="funding/how-pay">
+                Change<span class="govuk-visually-hidden"> course funding</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+      </form>
+    </div>
+  </div>
+{% endblock %}

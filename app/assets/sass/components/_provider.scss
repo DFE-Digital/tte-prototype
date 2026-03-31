@@ -1,0 +1,81 @@
+
+
+.provider-header .rebranded-one-login-header,
+.provider-header .rebranded-one-login-header__link:not(:focus) {
+  background: #7b16b3 !important;
+}
+
+.provider-header .govuk-header__logotype {
+  display: none;
+}
+
+.provider-footer {
+  border-top: 10px solid #7b16b3;
+  font-family: "Noto Serif", serif !important;
+}
+
+.provider body,
+.provider .govuk-body,
+.provider .govuk-body-s,
+.provider .govuk-heading-xl,
+.provider .govuk-grid-column-two-thirds .govuk-heading-l,
+.provider .govuk-heading-m,
+.provider .govuk-heading-s,
+.provider .govuk-warning-text {
+  font-family: "Noto Serif", serif !important;
+  color: #484b4b !important;
+}
+
+.provider .govuk-button {
+  background-color: #7b16b3;
+  font-family: "Noto Serif", serif !important;
+  border-radius: 10px;
+}
+
+.provider .govuk-button--secondary {
+  background-color: #debcef;
+}
+
+.provider-header .rebranded-one-login-header__link:link, 
+.provider-header .rebranded-one-login-header__link:visited, 
+.provider-header .rebranded-one-login-header__nav__link:link, 
+.provider-header .rebranded-one-login-header__nav__link:visited,
+.provider-footer .govuk-footer__link,
+.provider a, 
+.provider .govuk-link, 
+.provider .app-task-list__task-name > a,
+.provider .govuk-label,
+.provider .govuk-input {  
+  font-family: "Noto Serif", serif !important;
+}
+
+.provider .govuk-label {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+// components 
+.provider-quote {
+  background-color: #e4cdf0;
+  padding: 20px 20px 5px 20px;
+  border-radius: 20px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.provider-highlight {
+  width: 18%;
+  display: inline-block;
+}
+
+.provider-highlight img {
+  width: 100%;
+}

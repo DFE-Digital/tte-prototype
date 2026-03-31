@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity
+    account</a> to check or change your personal details.</p>
+{% endset %}
+
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Successful
+  </strong>
+{% endset %}
+
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Completed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="/public/images/NPD-certificate.pdf">Download your certificate</a></p>
+{% endset %}
+
+{% set fundingHTML %}
+  {% include '../includes/registration-status/funding-message--eligible.html' %}
+{% endset %}
+
+{% block content %}
+  <span class="govuk-caption-m">Submitted 11 July 2026</span>
+  <h1 class="govuk-heading-xl">
+    Your Teaching in Reception registration
+  </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+      value: {
+        html:
+          'Teaching in Reception' }
+        },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html:
+            'Cedar trust' 
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: providerapplicationHtml
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html: passedHtml
+        }
+      } 
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: fundingHTML
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/registration-status/work-details/school-funded.html' %}<br>
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

@@ -8,6 +8,8 @@
 @import "components/panel";
 @import "components/button";
 @import "components/utilities";
+@import "components/provider";
+@import "components/strat-des";
 
 // MoJ styles
 @import "node_modules/@ministryofjustice/frontend/moj/all";
@@ -17,8 +19,6 @@
 
 //auto complete
 @import "accessible-autocomplete/dist/accessible-autocomplete.min.css";
-
-@import "components/strat-des";
 
 .govuk-header__link .govuk-header__logotype{
   height: 30px;

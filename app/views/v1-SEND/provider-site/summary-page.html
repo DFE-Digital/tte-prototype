@@ -1,0 +1,110 @@
+
+{% extends "layout-provider.html" %}
+
+{% block pageTitle %}
+  Cedar trust - Your account 
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row provider">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Welcome back {{ data['applicant1--name'] }}</h1>
+
+        <p class="govuk-body">We have received your registration from DfE. </p>
+        <p class="govuk-body">You need to complete the following sections and submit your application in order for us to proceed with evaluating your application.</p>
+        
+        {{ govukTaskList({
+          idPrefix: "company-details",
+          items: [
+            {
+              title: {
+                text: "Course"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Personal details"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Experience"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Commitment"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Sponsor"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Paying for the course"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            },
+            {
+              title: {
+                text: "Terms"
+              },
+              href: "#",
+              status: {
+                tag: {
+                  text: "Incomplete",
+                  classes: "govuk-tag--blue"
+                }
+              }
+            }
+          ]
+        }) }}
+        
+      </div>
+    </div>
+    
+{% endblock %}

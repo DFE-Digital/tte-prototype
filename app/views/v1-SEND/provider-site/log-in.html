@@ -1,0 +1,46 @@
+
+{% extends "layout-provider.html" %}
+
+{% block pageTitle %}
+  Cedar trust - Log in or create your account 
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row provider">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Log in or create your account</h1>
+
+        <p class="govuk-body">Create or log in to your account to continue your application with us. </p>
+        
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "applicant1--email",
+          name: "applicant1--email",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          value: data[ 'applicant1--email']
+        }) }}
+
+        {{ govukPasswordInput({
+          label: {
+            text: "Password"
+          },
+          id: "provider-password-input",
+          name: "provider-password"
+        }) }}
+
+        {{ govukButton({
+          text: "Log in",
+          href: "summary-page",
+          isStartButton: true
+        }) }}
+        
+      </div>
+    </div>
+    
+{% endblock %}

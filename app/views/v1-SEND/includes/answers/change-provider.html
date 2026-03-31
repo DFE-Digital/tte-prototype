@@ -1,0 +1,33 @@
+
+
+
+{% block page %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answer and submit</h1>
+
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+
+           <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['provider'] or 'Cedar trust' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="new-provider">
+                Change<span class="govuk-visually-hidden"> provider</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

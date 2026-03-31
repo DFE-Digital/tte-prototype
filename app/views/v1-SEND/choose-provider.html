@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Select your training provider
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-choose-provider" method="post">
+
+        {{ govukRadios({
+          name: "provider",
+          id: "provider",
+          fieldset: {
+            legend: {
+              text: "Select your training provider",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            { value: "Acorn training", text: "Acorn training" },
+            { value: "Cedar trust", 
+              text: "Cedar trust", 
+              checked: true if (data['provider'] == "Cedar trust")
+            },
+            { value: "Evergreen learning", text: "Evergreen learning" },
+            { value: "Maple education", text: "Maple education" },
+            { value: "Redwood training", text: "Redwood training" },
+            { value: "Willow network", text: "Willow network" },
+            {
+              divider: "or"
+            },
+            { value: "No preference", text: "I have no preference",
+              hint: {
+                text: "If you select this option we will assign you a provider"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: "Continue" }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

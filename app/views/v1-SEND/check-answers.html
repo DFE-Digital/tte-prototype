@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Check your answers and submit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  {% if (data['referrer'] == "newprovider") %}
+    {% include './includes/answers/change-provider.html' %}
+  
+    {{ govukButton({
+      text: "Submit change",
+      href: "submit"
+    }) }}
+
+  {% else %}
+    <!-- NOT England -->
+    <!-- not funded for any -->
+    {% if data['wheredoyouwork'] == "No" %}
+      {% include './includes/answers/not-eng.html' %}
+
+    <!-- Private or Other -->
+    {% elseif (data['whichsetting'] == "Other") %}
+      {% include './includes/answers/other.html' %}
+
+    {% elseif (data['whichsetting'] == "Private nursery, pre-school or school") %}
+      {% include './includes/answers/other.html' %}
+
+    <!-- Private or Other -->
+    {% else %}
+      {% include './includes/answers/school-funded.html' %}
+    {% endif %}
+  
+    {{ govukButton({
+      text: "Submit",
+      href: "confirmation"
+    }) }}
+  {% endif %}
+
+{% endblock %}

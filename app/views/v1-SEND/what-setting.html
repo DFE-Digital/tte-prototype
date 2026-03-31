@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Tell us where you work
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-which-school" method="post">
+        {{ govukRadios({
+          name: "whichsetting",
+          id: "whichsetting",
+          fieldset: {
+            legend: {
+              text: "Tell us where you work",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Make sure the information you provide is correct, as your provider will check your details. <br>Register using your current workplace details, even if they will change soon.",
+            classes: "govuk-!-margin-bottom-6"
+          },
+          items: [
+            {
+              value: "State-funded nursery, pre-school or school",
+              html: "<strong>State-funded nursery, pre-school, school or academy trust</strong>"
+            },
+            {
+              value: "Private nursery, pre-school or school",
+              html: "<strong>Private nursery, pre-school or school</strong>"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Other",
+              html: "<strong>Other</strong>"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
