@@ -30,6 +30,12 @@ module.exports = router => {
     res.redirect(v + 'start-id')
   })
 
+  router.get(v + 'registration-status/start-page', (req, res) => {
+    const data = req.session.data
+    data.closedState = ''
+    res.redirect(v + 'start-id')
+  })
+
   // Closed state - Header link 
   router.get(v + 'header-link', function (req, res) {
 
@@ -70,6 +76,27 @@ module.exports = router => {
       const data = req.session.data
       data.referrer = 'Submitted'
       res.redirect(v + 'registration-status/registration-status')
+    }
+  })
+
+  // header links 
+  router.get(v + 'route-account', function(req, res){
+    var referrer = req.session.data['referrer']
+
+    if (referrer == 'Submitted') {
+      res.redirect(v + 'registration-status/registration-status')
+    } else {
+      res.redirect(v + 'registration-status/no-registrations')
+    }
+  })
+
+  router.get(v + 'registration-status/route-account', function(req, res){
+    var referrer = req.session.data['referrer']
+
+    if (referrer == 'Submitted') {
+      res.redirect(v + 'registration-status/registration-status')
+    } else {
+      res.redirect(v + 'registration-status/no-registrations')
     }
   })
 

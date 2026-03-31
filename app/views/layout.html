@@ -28,11 +28,11 @@
         serviceNavigationParams: { 
           navigation: [
           {
-            href: "/v1/start-id", 
+            href: "start-page", 
             text: "Register for a NPD course"
           },
           {
-            href: "/v1/registration-status/no-registrations", 
+            href: "route-account", 
             text: "NPD account"
           }], 
           serviceName: serviceName 
@@ -40,7 +40,7 @@
       }) }}
     {% else %}
       {{ govukHeader({
-        homepageUrl: "/v1/start-id"
+        homepageUrl: "start-page"
       }) }}
     {% endif %}
 
