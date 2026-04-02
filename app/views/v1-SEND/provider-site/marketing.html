@@ -1,0 +1,57 @@
+
+{% extends "layout-fake-site.html" %}
+
+{% block headIcons %}
+  <link rel="icon" sizes="48x48" href="/public/images/favicon-generic.ico" type="image/x-icon">
+{% endblock %}
+
+{% block pageTitle %}
+  Welcome to the Education Information Hub
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Welcome to the Education Information Hub</h1>
+        <p>This website provides information about educational topics. The purpose of this website is to share details related to various aspects of education. Users may read the information as needed. The content on this website is general in nature and may be updated at unspecified intervals.</p>
+
+        <h2 class="govuk-heading-l">Our Services</h2>
+        <p class="govuk-body">We offer a range of educational services. These services include:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>resource provision </li>
+          <li>information distribution</li>
+          <li>support materials</li>
+          <li>general guidance</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">Contact</h2>
+        <p class="govuk-body">For further information, you may contact us. We will review enquiries and reply when appropriate.</p>
+        <p><strong>Email</strong> info@educationhub.example</p>
+        <p><strong>Phone</strong> 0000 000 000</p>
+      </div>
+
+      <!-- provider marketing-->
+      <div class="govuk-grid-column-one-third provider ">
+        <p class="marketing-text govuk-!-text-align-centre"><hint>ADVERTISEMENT</hint></p>
+        <a class="marketing-box-link" href="course-details">
+          <div class="marketing-box">
+            <h3 class="govuk-heading-m">Cedar trust</h3>
+            <h2 class="govuk-heading-xl govuk-!-text-align-centre">Learn evidence‑based SEND and inclusion teaching strategies</h2>
+            <div class="flex">
+              <div class="dfe-logo">
+                <p class="govuk-body-s">Accredited NPD provider </p>
+                <img src="/public/images/department-for-education_stacked_white.png" alt="department for education logo">
+              </div>
+              <div class="button">
+                {{ govukButton({
+                  text: "Apply today",
+                  isStartButton: true
+                }) }}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+{% endblock %}
