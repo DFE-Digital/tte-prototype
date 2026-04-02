@@ -1,4 +1,16 @@
+// fake site for marketing 
+.fake-site-header .rebranded-one-login-header,
+.fake-site-header .rebranded-one-login-header__link:not(:focus) {
+  background: #8c5806 !important;
+}
 
+.fake-site-footer {
+  border-top: 10px solid #8c5806;
+  font-family: "Noto Serif", serif !important;
+}
+
+
+// provider site 
 
 .provider-header .rebranded-one-login-header,
 .provider-header .rebranded-one-login-header__link:not(:focus) {
@@ -21,7 +33,8 @@
 .provider .govuk-grid-column-two-thirds .govuk-heading-l,
 .provider .govuk-heading-m,
 .provider .govuk-heading-s,
-.provider .govuk-warning-text {
+.provider .govuk-warning-text,
+.provider .govuk-list {
   font-family: "Noto Serif", serif !important;
   color: #484b4b !important;
 }
@@ -30,6 +43,7 @@
   background-color: #7b16b3;
   font-family: "Noto Serif", serif !important;
   border-radius: 10px;
+  box-shadow: 0 4px 0 #bababa;
 }
 
 .provider .govuk-button--secondary {
@@ -72,16 +86,91 @@
   margin-bottom: 20px;
 }
 
+.provider-highlights {
+  display: flex;
+  background-color: #e4cdf0;
+  margin-bottom: 40px;
+}
+
 .provider-highlight {
-  width: 18%;
-  display: inline-block;
+  margin: 10px;
 }
 
 .provider-highlight img {
   width: 100%;
 }
 
+.provider-highlight p {
+  text-align: center;
+}
+
 .govuk-tag .govuk-tag--purple {
   color: #3f0c5a;
   background-color: #e4cdf0;
 }
+
+.provider hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 15%;               
+  background-color:#7b16b3;
+  height: 5px;
+  text-align: left;
+  margin: 40px 0 30px 0;
+}
+
+.marketing-box {
+  background-color: #7b16b3;
+  padding: 20px;
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.marketing-box-link:hover,
+.marketing-box-link {
+  color: white;
+  text-decoration: none;
+}
+
+.marketing-box .govuk-body-s,
+.marketing-box .govuk-heading-xl,
+.marketing-box .govuk-heading-m {
+  font-family: "Noto Serif", serif !important;
+  color: white !important;
+}
+
+.marketing-box .govuk-button {
+  background-color: #ffffff;
+  font-family: "Noto Serif", serif !important;
+  border-radius: 10px;
+  box-shadow: 0 4px 0 #e4cdf0;
+  color: #7b16b3;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.marketing-text {
+  color: grey;
+  font-size: small;
+}
+
+.marketing-box .flex {
+  display: flex;
+}
+.marketing-box .dfe-logo {
+  width: 38%;
+  margin-right: 2%;
+}
+.marketing-box .button {
+  width: 60%;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-end; 
+}
+.marketing-box .dfe-logo img {
+  width: 80%;
+  height: fit-content;
+}
+
