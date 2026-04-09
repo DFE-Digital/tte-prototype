@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Supporting SEND and inclusion - Experienced Teachers and Leaders Training (ETLT)
+  {{ data['send-course-name'] }} - {{ data['tte-programme-name-with-acronym'] }}
 {% endblock %}
 
 {% set serviceName %}
@@ -14,13 +14,13 @@
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
-        Supporting SEND and inclusion 
+        {{ data['send-course-name'] }}
       </h1>
       <h1 class="govuk-heading-l" style="padding-top: 1px">
-        Experienced Teachers and Leaders Training (ETLT) 
+        {{ data['tte-programme-name-with-acronym'] }} course
       </h1>
 
-      <p class="govuk-body-l">A course to help teachers learn about effective pedagogy and practice relating to inclusive teaching and learning environments and strategies and approaches to support learners with special educational needs and disabilities (SEND).</p>
+      <p class="govuk-body-l">A course to help experienced teachers deepen their understanding of effective practice related to inclusive learning. Using the latest research and enhanced strategies to support learners with special educational needs and disabilities (SEND) relevant to the current classroom.</p>
       <hr>
       <h2 class="govuk-heading-l govuk-!-padding-top-8" id="who">Who this course is for</h2>
 
@@ -31,24 +31,27 @@
 
       <h2 class="govuk-heading-l" id="overview">Overview</h2>
 
-      <p>This course is from the <a href="/gov-uk-guidance/guidance-tte">Experienced Teachers and Leaders Training (ETLT)</a> suite of courses.</p>
+      <p>This course is from the <a href="/gov-uk-guidance/guidance-tte">{{ data['tte-programme-name-with-acronym'] }}</a> suite of courses.</p>
 
-      <p>This two-term course will help you to:</p>
+      <p>This course will help you to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>develop your understanding of high-quality teaching practices and inclusive approaches to supporting learning</li>
         <li>understand strategies and approaches to support learning outcomes for children and young people who may have SEND </li>
       </ul>
 
+      <h3 class="govuk-heading-m">How the course will be delivered</h3>
       <p>This course will:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>take 2 terms to complete </li>
-        <li>involve up to 1 hour of study each week </li>
-        <li>be a mix of self-study and live training </li>
-        <li>start Autumn 2027</li>
+        <li>take approximately 2 school terms to complete (minimum 20 hours)</li>
+        <li>be a mix of self-study and live online training  </li>
+        <li>start in October 2027 or early 2028 (January or February), depending on the training provider</li>
       </ul>
 
-      <h2 class="govuk-heading-l" id="funding">Funding</h2>
-      <p><a href="">Funding</a> to cover the course fees is available for most teachers and school leaders in state funded settings in England.</p>
+      <h2 class="govuk-heading-l" id="funding">Funding eligibility</h2>
+      <p>Funded places are available for most state-funded settings, including academy trusts.</p>
+      <p>Examples of places that are not eligible for funding include private schools and schools outside of England.</p>
+      <p>If you are self-funding, you still need to register with the DfE.</p>
+      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
       
       <h2 class="govuk-heading-l" id="content">Course content</h2>
 
@@ -78,30 +81,22 @@
 
       <h2 class="govuk-heading-l" id="structure">Course structure</h2>
       <p>The course includes 9 topics, outlined in the <a href="">course framework</a>. Providers use this framework to design their course.</p>
-      <p>The course includes:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>independent study </li>
-        <li>group coaching </li>
-        <li>virtual sessions with other participants </li>
-      </ul>
-      <p>You’ll need to spend up to 1 hour a week working on this ETLT course.</p>
       <p>If you can, you should do this during work hours in career development time.</p>
 
       <h2 class="govuk-heading-l" id="providers">Providers</h2>
-      <p>You can train for this ETLT course with one of the following providers:</p>
+      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="https://www.ambition.org.uk/">Ambition Institute</a></li>
-        <li><a href="https://www.cefel.org.uk/npq/">National Society for Education</a></li>
-        <li><a href="https://www.educationdevelopmenttrust.com/npqs">Education Development Trust</a></li>
-        <li><a href="https://www.llse.org.uk/npq/npqs-for-you">LLSE</a></li>
-        <li><a href="https://niot.org.uk/">National Institute of Teaching</a></li>
-        <li><a href="http://www.teachfirst.org.uk/npqs">Teach First</a></li>
-        <li><a href="https://www.ucl.ac.uk/ioe/departments-and-centres/centres/ucl-centre-educational-leadership/national-professional-qualification-programmes">University College London (UCL) Institute of Education</a></li>
+        <li><a href="">Acorn training</a></li>
+        <li><a href="../v1-SEND/provider-site/course-details">Cedar trust</a></li>
+        <li><a href="">Evergreen learning</a></li>
+        <li><a href="">Maple education</a></li>
+        <li><a href="">Redwood training</a></li>
+        <li><a href="">Willow network</a></li>
       </ul>
-      <p>They work with delivery partners, such as teaching school hubs, to provide training.</p>
+      <p>Use our <a href="../gov-uk-guidance/providers.html">provider comparison table</a> or visit their website to learn more.</p>
 
       <h2 class="govuk-heading-l" id="apply">Apply</h2>
-      <p><a href="/gov-uk-guidance/apply-tte">Find out how to apply for a ETLT course</a>.</p>
+      <p><a href="/v1-SEND/start-id">Check funding eligibility and register</a>.</p>
 
     </div>
   </div>

@@ -2,7 +2,7 @@
 {% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Do you work in England?
+  Do you work in an overseas British services' school, for example a Ministry of Defence School?
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,13 +15,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="route-wherework" method="post">
+      <form class="form" action="route-overseas" method="post">
         {{ govukRadios({
-          id: "wheredoyouwork",
-          name: "wheredoyouwork",
+          id: "overseasschool",
+          name: "overseasschool",
           fieldset: {
             legend: {
-              text: "Do you work in England?",
+              text: "Do you work in an overseas British services' school, for example a Ministry of Defence School?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }

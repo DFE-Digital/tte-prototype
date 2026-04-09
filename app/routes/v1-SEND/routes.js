@@ -155,7 +155,25 @@ module.exports = router => {
     }
   })
 
+  router.post(v + 'route-wherework', function(req, res){
+    var wheredoyouwork = req.session.data['wheredoyouwork']
 
+    if (wheredoyouwork == 'No') {
+      res.redirect(v + 'overseas')
+    } else {
+      res.redirect(v + 'what-setting')
+    }
+  })
+
+  router.post(v + 'route-overseas', function(req, res){
+    var overseasschool = req.session.data['overseasschool']
+
+    if (overseasschool == 'Yes') {
+      res.redirect(v + 'which-school')
+    } else {
+      res.redirect(v + 'what-setting')
+    }
+  })
 
   router.post(v + 'route-choose-provider', function(req, res){
     var chooseprovider = req.session.data['provider']
@@ -175,6 +193,32 @@ module.exports = router => {
     }
     else if (settingt == 'State-funded nursery, pre-school or school') {
       res.redirect(v + 'which-school')
+    } 
+    else if (settingt == 'Post-16 education') {
+      res.redirect(v + 'what-fe')
+    } 
+    else {
+      res.redirect(v + 'funding/funding-not-available-setting')
+    } 
+  })
+
+  router.post(v + 'route-which-fe', function (req, res){
+    var locationt = req.session.data['wheredoyouwork']
+    var fe = req.session.data['whatfe']
+    if(locationt == 'No'){
+      res.redirect(v + 'funding/funding-not-available-england')
+    }
+    else if (fe == 'Sixth form college') {
+      res.redirect(v + 'which-school')
+    } 
+    else if (fe == 'General further education college') {
+      res.redirect(v + 'which-school')
+    } 
+    else if (fe == 'Specialist designated college') {
+      res.redirect(v + 'which-fe')
+    }
+    else if (fe == 'Independent learning provider') {
+      res.redirect(v + 'which-fe')
     } 
     else {
       res.redirect(v + 'funding/funding-not-available-setting')

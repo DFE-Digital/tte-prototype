@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Experienced Teachers and Leaders Training (ETLT) course
+  {{ data['tte-programme-name-with-acronym'] }} training courses
 {% endblock %}
 
 {% set serviceName %}
@@ -14,15 +14,14 @@
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
-        Experienced Teachers and Leaders Training (ETLT) courses
+        {{ data['tte-programme-name-with-acronym'] }} training courses
       </h1>
 
-      <p class="govuk-body-l">Professional development courses for teachers and leaders to develop skills, progress careers and improve school outcomes.</p>
+      <p class="govuk-body-l">Short courses for experienced teachers and educational leaders to deepen knowledge and advance skills. Based on the latest education research  for today's classroom, the courses aim to deliver better pupil and school outcomes.</p>
 
       <hr>
       <p class="govuk-body-s">From: <strong>Department for Education</strong></br>
-      Published 10 January 2026</br>
-      Last updated 22 January 2026</p>
+      Published 3 July 2026</p>
 
       <div class="grey-background govuk-!-margin-bottom-6">
         <p><strong>Applies to England</strong></p>
@@ -36,57 +35,53 @@
           <ol class="app-contents-list__list">
             <li aria-current="true" class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed">
               <a href="#courses">
-                ETLT courses
+                What is an NPD course
               </a>
             </li>
             <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#providers">
-                ETLT providers
+              <a href="#choose">
+                Choose an NPD course
               </a>
             </li>
             <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
-              <a href="#structure">
-                Course structure
+              <a href="#length">
+                How long is an NPD course 
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#delivery">
+                How is the course delivered
               </a>
             </li>
             <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
               <a href="#funding">
-                Funding
+                Am I eligible for a free place on an NPD course 
               </a>
             </li>
           </ol>
         </nav>
       </aside>
 
-      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="courses">ETLT courses</h2>
-      <p><a href="SEND-leaders">Leading SEND and inclusion (leaders)</a> -  learn about effective leadership and practice relating to  inclusive school and college environments and supporting learners with SEND in your setting</p>
-      <p><a href="SEND-teachers">Supporting SEND and inclusion (teachers)</a> - earn about effective pedagogy and practice relating to  inclusive teaching and learning environments and supporting learners with SEND</p>
-      <p><a href="reception">Teaching in reception course</a> - learn about key areas of child development and how to apply this to teaching / classroom practice for reception year</p>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="courses">What is an NPD course </h2>
+      <p>National Professional Development courses are a Department for Education (DfE) initiative to provide the best evidence-based learning for experienced teachers and education leaders.</p>
+      <p>On successful completion of an NPD course, you will receive a certificate from DfE.</p>
+      
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="choose">Choose an NPD course </h2>     
+      <p><a href="SEND-leaders">SEND and inclusion for educational leaders</a></p>
+      <p><a href="SEND-teachers">SEND and inclusion for teachers</a></p>
+      <p><a href="reception">Teaching in reception course</a></p>
 
-      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="providers">ETLT providers</h2>
-      <p>Providers are: </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>chosen by the Department for Education (DfE) in a fair and open procurement process</li>
-        <li>subject to quality assurance through Ofsted inspection</li>
-      </ul>
-      <p>The individual ETLT course pages list the providers for each course.</p>
-      <p>All ETLT courses are underpinned by a framework that sets out what you should know and know how to do after completing an ETLT course.</p>
-      <p>ETLT training providers use these frameworks to design their courses.</p>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="length">How long is an NPD course</h2>
+      <p>Length of an NPD course will vary depending on the course you choose, and how your training provider delivers it.</p>
+      <p>Courses are a minimum of 14 hours and a maximum of 20 hours. It takes around two to three school terms to complete a course based on around one hour of learning a week.</p>
+      <p>You should check the individual course page for more details.</p>
 
-      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="structure">Course structure</h2>
-      <p>Courses last around 2-3 terms. The course structure, curriculum and method of delivery may vary between different providers.
-
-      <p>During your course, you will:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>follow an evidence-based curriculum, drawing on effective pedagogy, recent research and international best practice to give you the knowledge and skills to improve in your current role or take the next step in your career</li>
-        <li>take part in a mixture of live training and self-directed study</li>
-        <li>ETLT courses are developed in collaboration with the sector, informed by the best available research and evidence endorsed by the Education Endowment Foundation.</li>
-      </ul>
-
-      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="funding">Funding</h2>
-      <p><a href="">Funding</a> to cover the ETLT course fees is available for teachers and school leaders in many state-funded settings in England, subject to eligibility criteria.</p>
-      <p>Eligibility for funding does not guarantee a place on a funded ETLT course.</p>
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="delivery">How the course is delivered</h2>
+      <p>The course is delivered by DfE approved training providers only. It is taught using a mix of online learning, live sesssions (minimum 4 hours), and self-study. </p>
+      
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="funding">Am I eligible for a free place on an NPD course</h2>
+      <p>Funding is available for most state-funded education settings in England, including Academies. You can also self-fund, and this can be discussed with the training provider.</p>
+      <p>More information about eligibility for a free place can be found on the individual course pages.</p>
 
     </div>
   </div>

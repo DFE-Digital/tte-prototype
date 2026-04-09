@@ -22,8 +22,9 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Choose your course start date</h1>
-    <p>Registrations are currently open for courses starting in October 2026.</p>
+    <p>Registrations are currently open for courses starting in October 2027.</p>
 
+{% if (data['choosette'] == "Teaching in reception") %}
     <form class="form" action="provider-traffic" method="post">
       {{ govukRadios({
         id: "startdate",
@@ -58,6 +59,41 @@
         text: "Continue"
       }) }}
     </form>
+  {% else %}
+        <form class="form" action="provider-traffic" method="post">
+      {{ govukRadios({
+        id: "startdate",
+        name: "startdate",
+        fieldset: {
+          legend: {
+            text: "When do you want to start the course?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "October 2027",
+            text: "October 2027",
+            hint: {
+              text: "You can also select this option if you've already started"
+            }
+          },
+          {
+            value: "January to March 2028",
+            text: "January to March 2028"
+          },
+          {
+            value: "I want to start later",
+            text: "I want to start later"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+  {% endif %}
 
   </div>
 </div>

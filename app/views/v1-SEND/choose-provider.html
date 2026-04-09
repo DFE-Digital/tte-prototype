@@ -28,19 +28,45 @@
             }
           },
           items: [
-            { value: "Acorn training", text: "Acorn training" },
-            { value: "Cedar trust", 
-              text: "Cedar trust", 
+            { 
+              value: "Acorn training", 
+              html: "<strong>Acorn training</strong>" 
+            },
+            { 
+              value: "Cedar trust", 
+              html: "<strong>Cedar trust</strong>", 
               checked: true if (data['provider'] == "Cedar trust")
             },
-            { value: "Evergreen learning", text: "Evergreen learning" },
-            { value: "Maple education", text: "Maple education" },
-            { value: "Redwood training", text: "Redwood training" },
-            { value: "Willow network", text: "Willow network" },
+            { 
+              value: "Evergreen learning", 
+              html: "<strong>Evergreen learning</strong>" 
+            },
+            { 
+              value: "Maple education", 
+              text: "Maple education",
+              disabled: 'true', 
+              hint: {
+                text: "This provider is not delivering the course start date you've selected – please go back if you wish to train with this provider."
+              }
+            },
+            { 
+              value: "Redwood training", 
+              html: "<strong>Redwood training</strong>" 
+            },
+            { 
+              value: "Willow network", 
+              text: "Willow network", 
+              disabled: 'true', 
+              hint: {
+                text: "This provider is not delivering the course start date you've selected – please go back if you wish to train with this provider."
+              }
+            },
             {
               divider: "or"
             },
-            { value: "No preference – we have auto-assigned you to Cedar trust", text: "I have no preference",
+            { 
+              value: "No preference – we have auto-assigned you to Cedar trust", 
+              html: "<strong>I have no preference</strong>",
               hint: {
                 text: "If you select this option we will assign you a provider"
               }
