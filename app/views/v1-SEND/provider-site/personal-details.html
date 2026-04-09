@@ -4,19 +4,138 @@
 {% set loggedIn = 'true' %}
 
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Personal details 
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
+{% endblock %}
 
+{% set specialrequirementsHtml %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {{ govukInput({
+    id: "specialrequirementstext",
+    name: "specialrequirementstext"
+  }) }}
+{% endset %}
+
+{% block content %}
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Persoanl details</h1>
+        {% include '../includes/provider-site/course.html' %}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Personal details</h1>
+
+        {{ govukInsetText({
+          text: "Some answers have been populated from your DfE registration and cannot be edited."
+        }) }}
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-name">
+              Your name
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-name" name="applicantname" type="text" aria-describedby="applicant-name-hint" disabled="true" value="{{ data[ 'applicant1--name'] }}">
+          
+        </div>
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-email">
+              Email address
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-email" name="applicantemail" type="text" aria-describedby="applicant-email-hint" disabled="true" value="{{ data[ 'applicant1--email'] }}">
+        </div>
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-dob">
+              Date of birth 
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-dob" name="applicantdob" type="text" aria-describedby="applicant-dob-hint" disabled="true" value="{{ data[ 'applicant1--dob'] }}">
+        </div>
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-trn">
+              Teacher Reference Number (TRN)
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-trn" name="applicanttrn" type="text" aria-describedby="applicant-trn-hint" disabled="true" value="{{ data[ 'applicant1--trn'] }}">
+        </div>
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-setting">
+              Setting
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-setting" name="applicantsetting" type="text" aria-describedby="applicant-setting-hint" disabled="true" value="{{ data[ 'whichsetting'] }}">
+        </div>
+
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-establishment">
+              Establishment name
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-establishment" name="applicantestablishment" type="text" aria-describedby="applicant-establishment-hint" disabled="true" value="{{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }}">
+        </div>
+
+        {{ govukRadios({
+          name: "qtsstatus",
+          fieldset: {
+            legend: {
+              text: "Do you have Qualified Teacher Status (QTS)?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          name: "specialrequirements",
+          fieldset: {
+            legend: {
+              text: "Do you have any special requirements?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: specialrequirementsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>

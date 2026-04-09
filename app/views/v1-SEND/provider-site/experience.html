@@ -4,19 +4,95 @@
 {% set loggedIn = 'true' %}
 
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Experience  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Your experience</h1>
+        {% include '../includes/provider-site/course.html' %}
+        
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your experience</h1>
+
+        {{ govukInput({
+          label: {
+            text: "What is your role?",
+            classes: "govuk-label--m"
+          },
+          id: "applicantrole",
+          name: "applicantrole"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "How many years have you been in this role?",
+            classes: "govuk-label--m"
+          },
+          id: "applicantyears",
+          name: "applicantyears"
+        }) }}
+
+        {{ govukTextarea({
+          name: "applicantresponsibilities",
+          id: "applicantresponsibilities",
+          label: {
+            text: "A description of your responsibilities",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+        {{ govukTextarea({
+          name: "applicantreadiness",
+          id: "applicantreadiness",
+          label: {
+            text: "Describe how your expertise demonstrates your readiness for this course",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+        {{ govukRadios({
+          name: "practicelearning",
+          fieldset: {
+            legend: {
+              text: "Will your role allow you to practice the learning?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukTextarea({
+          name: "whycourse",
+          id: "whycourse",
+          label: {
+            text: "Why do want to complete this course? ",
+            classes: "govuk-label--m"
+          }
+        }) }}
+
+
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>

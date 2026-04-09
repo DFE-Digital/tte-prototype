@@ -60,12 +60,17 @@
 .provider .app-task-list__task-name > a,
 .provider .govuk-label,
 .provider .govuk-input,
-.provider .govuk-tag {  
+.provider .govuk-tag,
+.provider-hint-small,
+.provider .govuk-fieldset__legend--m,
+.provider.govuk-back-link,
+.provider .govuk-inset-text {  
   font-family: "Noto Serif", serif !important;
 }
 
 .provider .govuk-label {
   font-weight: 600;
+  margin-bottom: 5px;
 }
 
 @font-face {
@@ -174,3 +179,23 @@
   height: fit-content;
 }
 
+.provider-hint-small {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.disabled-field {
+  margin-bottom: 30px;
+}
+
+.disabled-field .govuk-input {
+  background-color: #e9e8e8;
+  color: #000;
+  border-color: #8d8d8d;
+}
+
+.application-summary {
+  background-color: #e4cdf0;
+  padding: 30px;
+  margin-bottom: 40px;
+}

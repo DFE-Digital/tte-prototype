@@ -208,14 +208,14 @@ module.exports = router => {
     if(locationt == 'No'){
       res.redirect(v + 'funding/funding-not-available-england')
     }
-    else if (fe == 'Sixth form college') {
+    else if (fe == 'School or academy') {
       res.redirect(v + 'which-school')
     } 
-    else if (fe == 'General further education college') {
+    else if (fe == 'College') {
       res.redirect(v + 'which-school')
     } 
-    else if (fe == 'Specialist designated college') {
-      res.redirect(v + 'which-fe')
+    else if (fe == 'Special post 16 institution') {
+      res.redirect(v + 'which-school')
     }
     else if (fe == 'Independent learning provider') {
       res.redirect(v + 'which-fe')

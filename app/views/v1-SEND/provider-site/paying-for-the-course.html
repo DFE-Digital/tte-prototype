@@ -4,19 +4,45 @@
 {% set loggedIn = 'true' %}
 
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Paying for the course
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Paying for your course</h1>       
+        {% include '../includes/provider-site/course.html' %}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Paying for your course</h1>       
+
+        {{ govukInsetText({
+          text: "Some answers have been populated from your DfE registration and cannot be edited."
+        }) }}
+        
+        <div class="disabled-field">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="applicant-funding">
+              DfE funding for the course
+            </label>
+          </h2>
+          <input class="govuk-input" id="applicant-funding" name="applicantfunding" type="text" aria-describedby="applicant-funding-hint" disabled="true" value="Eligible">
+        </div>
+
+        <p class="govuk-body">
+          As you are eligible for DfE funding, you will not need to pay for the course.
+        </p>
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>
