@@ -8,6 +8,20 @@
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['choosette'] or "Teaching in reception" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="choose-course">
+                Change<span class="govuk-visually-hidden"> course</span>
+              </a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Course start 
             </dt>
             <dd class="govuk-summary-list__value">
@@ -17,15 +31,6 @@
               <a class="govuk-link" href="course-start">
                 Change<span class="govuk-visually-hidden"> course start date</span>
               </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Course
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['choosette'] or "Teaching in reception"}}
             </dd>
           </div>
 

@@ -15,9 +15,9 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="provider-site/log-in.html"post">
+      <form class="form" action="provider-site/log-in.html" method="get">
         <h1 class="govuk-heading-l">We are sending you to your provider's application form</h1>
-        <p>This is a unique link to you and allows us to sync up the data you have already submitted with DfE to your provider, so that you don't need to enter it again.</p>
+        <p>This will take you to {{ data['provider'] or "Cedar trust" }}'s website to log in or create an account. When you get to your application form it will already contain the information you shared with DfE.</p>
 
         {{ govukButton({
           text: "Continue"

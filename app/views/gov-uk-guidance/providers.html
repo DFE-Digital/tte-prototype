@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Compare providers for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
+  Compare providers for {{ data['send-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
 {% endblock %}
 
 {% set serviceName %}
@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
-        Compare how training providers deliver the {{ data['reception-course-name'] }} course
+        Compare how training providers deliver the {{ data['send-course-name'] }} course
       </h1>
 
       <p>All providers use the same <a href="">content framework</a> but may design and deliver the course in different ways.</p>
@@ -26,7 +26,7 @@
             text: "Provider"
           },
           {
-            text: "Start date",
+            text: "Next start date",
             format: "Text"
           },
           {
@@ -56,7 +56,7 @@
               html: '<a href="">Acorn training</a>'
             },
             {
-              text: "1 Oct 2026",
+              text: "1 Oct 2027",
               format: "text"
             },
             {
@@ -64,7 +64,7 @@
               format: "text"
             },
             {
-              text: "Yes, location TBC",
+              text: "Yes, – location TBC",
               format: "text"
             },
             {
@@ -76,16 +76,16 @@
               format: "text"
             },
             {
-              text: "26 March 2027",
+              text: "26 Mar 2028",
               format: "text"
             }
           ],
           [
             {
-              html: '<a href="">Cedar trust</a>'
+              html: '<a href="../v1-SEND/provider-site/course-details">Cedar trust</a>'
             },
             {
-              text: "TBC, in October",
+              text: "TBC, in Oct 2027",
               format: "text"
             },
             {
@@ -105,7 +105,7 @@
               format: "text"
             },
             {
-              text: "19 March 2027",
+              text: "TBC, in Mar 2028",
               format: "text"
             }
           ],
@@ -114,7 +114,7 @@
               html: '<a href="">Evergreen learning</a>'
             },
             {
-              text: "18 Oct 2026",
+              text: "18 Oct 2027",
               format: "text"
             },
             {
@@ -122,7 +122,7 @@
               format: "text"
             },
             {
-              text: "Yes, in London",
+              text: "Yes – London",
               format: "text"
             },
             {
@@ -134,7 +134,7 @@
               format: "text"
             },
             {
-              text: "26 March 2027",
+              text: "26 Mar 2028",
               format: "text"
             }
           ],
@@ -143,7 +143,7 @@
               html: '<a href="">Maple education</a>'
             },
             {
-              text: "11 January 2027",
+              text: "11 Jan 2028",
               format: "text"
             },
             {
@@ -151,7 +151,7 @@
               format: "text"
             },
             {
-              text: "Yes, London, Birmingham, Manchester.",
+              text: "Yes – London, Birmingham, Manchester.",
               format: "text"
             },
             {
@@ -163,7 +163,7 @@
               format: "text"
             },
             {
-              text: "18 June 2027",
+              text: "18 Jun 2028",
               format: "text"
             }
           ],
@@ -172,7 +172,7 @@
               html: '<a href="">Redwood training</a>'
             },
             {
-              text: "30 Oct 2026",
+              text: "30 Oct 2027",
               format: "text"
             },
             {
@@ -192,7 +192,7 @@
               format: "text"
             },
             {
-              text: "20 April 2027",
+              text: "20 Apr 2028",
               format: "text"
             }
           ],
@@ -201,7 +201,7 @@
               html: '<a href="">Willow network</a>'
             },
             {
-              text: "2 Oct 2026",
+              text: "2 Jan 2028",
               format: "text"
             },
             {
@@ -221,7 +221,7 @@
               format: "text"
             },
             {
-              text: "26 March 2027",
+              text: "26 Jun 2028",
               format: "text"
             }
           ]
@@ -229,9 +229,10 @@
       }) }}
 
       <p>When you have chosen your provider you should continue to register. </p>      
+      
       {{ govukButton({
-          text: "Continue to register",
-          href: "/v1/start-id"
+        text: "Continue to register",
+        href: "/v1-SEND/start-id"
       }) }}
     </div>
   </div>

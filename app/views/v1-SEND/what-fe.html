@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Which further education establishment do you work in?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-which-fe" method="post">
+        {{ govukRadios({
+          name: "whatfe",
+          id: "whatfe",
+          fieldset: {
+            legend: {
+              text: "Which post-16 establishment do you work in?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "Sixth form college",
+              html: "<strong>Sixth form college</strong>"
+            },
+            {
+              value: "General further education college",
+              html: "<strong>General further education college</strong>"
+            },
+            {
+              value: "Specialist designated college",
+              html: "<strong>Specialist designated college</strong>"
+            },
+            {
+              value: "Independent learning provider",
+              html: "<strong>Independent learning provider</strong>"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Other",
+              html: "<strong>Other</strong>"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
