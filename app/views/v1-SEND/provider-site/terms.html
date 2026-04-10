@@ -3,20 +3,78 @@
 
 {% set loggedIn = 'true' %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Terms
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Terms</h1>
+        {% include '../includes/provider-site/course.html' %}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Terms and conditions</h1>
+        <p class="govuk-body">Please read our <a href="">privacy notice</a> and confirm the following:</p>
+
+        {{ govukCheckboxes({
+          name: "privacy",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "I have read and understood Cedar trust's privacy notice"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "sharewithdfe",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "I agree to share my information with DfE, auditors, evaluators and other third parties"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "terms",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "I confirm the information I have provided in this application is accurate"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "marketing",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "I wish to receive information from Cedar trust about other training opportunities (optional)"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>

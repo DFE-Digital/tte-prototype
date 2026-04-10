@@ -33,6 +33,8 @@ module.exports = {
   // registration 1
   'applicant1--name': 'Jorge Hund',
   'applicant1--email': 'jorge@example.com',
+  'applicant1--dob': '12 5 1970',
+  'applicant1--trn': '9283812',
   'applicant1--referred': 'No',
   'applicant1--employment-type': 'Supply teacher',
   'applicant1--employer': 'York council',

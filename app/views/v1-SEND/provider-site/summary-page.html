@@ -4,7 +4,7 @@
 {% set loggedIn = 'true' %}
 
 {% block pageTitle %}
-  Cedar trust - Your account 
+  Cedar trust - Your NPD application
 {% endblock %}
 
 {% block content %}
@@ -16,23 +16,10 @@
         <h2 class="govuk-heading-m">You are applying for the {{ data['choosette'] }} {{ data['tte-programme-name-with-acronym'] }} course </h2>
 
         <p class="govuk-body">We have received your registration from DfE. </p>
-        <p class="govuk-body">You need to complete the following sections and submit your application in order for us to proceed with evaluating your application.</p>
         
         {{ govukTaskList({
           idPrefix: "application-task-list",
           items: [
-            {
-              title: {
-                text: "Course"
-              },
-              href: "course",
-              status: {
-                tag: {
-                  text: "Incomplete",
-                  classes: "govuk-tag--purple"
-                }
-              }
-            },
             {
               title: {
                 text: "Personal details"
@@ -106,6 +93,14 @@
               }
             }
           ]
+        }) }}
+
+        <p class="govuk-body">Complete the sections above to submit your application. We will then begin evaluating your application.</p>
+
+        {{ govukButton({
+          text: "Submit application",
+          classes: "govuk-button--secondary",
+          disabled: "true"
         }) }}
         
       </div>

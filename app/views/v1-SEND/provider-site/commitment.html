@@ -4,20 +4,52 @@
 {% set loggedIn = true %}
 
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Commitment
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Your commitment</h1>
+        {% include '../includes/provider-site/course.html' %}
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Your commitment</h1>
         
+        {{ govukCheckboxes({
+          name: "commitment",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I understand the commitment required to successfully complete the course"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "schoolagreement",
+          fieldset: {
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes, I have gained agreement from my workplace to register for this course"
+            }
+          ]
+        }) }}
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>

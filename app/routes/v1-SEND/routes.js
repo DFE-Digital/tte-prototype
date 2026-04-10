@@ -191,11 +191,14 @@ module.exports = router => {
     if(locationt == 'No'){
       res.redirect(v + 'funding/funding-not-available-england')
     }
-    else if (settingt == 'State-funded nursery, pre-school or school') {
+    else if (settingt == 'State-funded setting') {
       res.redirect(v + 'which-school')
     } 
-    else if (settingt == 'Post-16 education') {
-      res.redirect(v + 'what-fe')
+    else if (settingt == 'Independent learning provider') {
+      res.redirect(v + 'which-fe')
+    }
+    else if (settingt == 'Special post 16 institution') {
+      res.redirect(v + 'which-fe')
     } 
     else {
       res.redirect(v + 'funding/funding-not-available-setting')
@@ -208,14 +211,14 @@ module.exports = router => {
     if(locationt == 'No'){
       res.redirect(v + 'funding/funding-not-available-england')
     }
-    else if (fe == 'Sixth form college') {
+    else if (fe == 'School or academy') {
       res.redirect(v + 'which-school')
     } 
-    else if (fe == 'General further education college') {
+    else if (fe == 'College') {
       res.redirect(v + 'which-school')
     } 
-    else if (fe == 'Specialist designated college') {
-      res.redirect(v + 'which-fe')
+    else if (fe == 'Special post 16 institution') {
+      res.redirect(v + 'which-school')
     }
     else if (fe == 'Independent learning provider') {
       res.redirect(v + 'which-fe')

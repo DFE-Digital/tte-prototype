@@ -70,7 +70,7 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "State-funded nursery, pre-school or school" }}
+              {{ data['whichsetting'] or "State-funded setting" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -79,19 +79,35 @@
             </dd>
           </div>
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Workplace
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }} 
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="which-school">
-                Change<span class="govuk-visually-hidden"> workplace</span>
-              </a>
-            </dd>
-          </div>
+          {% if data['whichsetting'] == "Independent learning provider" or data['whichsetting'] == "Special post 16 institution" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Workplace
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['fename'] }} 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="which-fe">
+                  Change<span class="govuk-visually-hidden"> workplace</span>
+                </a>
+              </dd>
+            </div>
+          {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Workplace
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['workplacename'] }}, {{ data['workplacepostcode'] }} – {{ data['workplace'] }} 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="which-school">
+                  Change<span class="govuk-visually-hidden"> workplace</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
         </dl>
 

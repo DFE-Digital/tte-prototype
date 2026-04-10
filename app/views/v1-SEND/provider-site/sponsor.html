@@ -3,21 +3,59 @@
 
 {% set loggedIn = 'true' %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to application summary",
+    href: "summary-page",
+    classes: "provider"
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
-  Cedar trust - Log in or create your account 
+  Cedar trust - Your NPD application – Sponsor
 {% endblock %}
 
 {% block content %}
 
     <div class="govuk-grid-row provider">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Sponsor</h1>
+        {% include '../includes/provider-site/course.html' %}
 
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Sponsor</h1>
+
+        {{ govukInput({
+          label: {
+            text: "What is your sponsors name?",
+            classes: "govuk-label--m"
+          },
+          id: "sponsorname",
+          name: "sponsorname"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "What is their email address?",
+            classes: "govuk-label--m"
+          },
+          id: "sponsoremail",
+          name: "sponsoremail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false
+        }) }}
+        
+        {{ govukInput({
+          label: {
+            text: "What is their role?",
+            classes: "govuk-label--m"
+          },
+          id: "sponsorrole",
+          name: "sponsorrole"
+        }) }}
 
         {{ govukButton({
-          text: "Log in",
-          href: "summary-page",
-          isStartButton: true
+          text: "Save and continue",
+          href: "summary-page"
         }) }}
         
       </div>

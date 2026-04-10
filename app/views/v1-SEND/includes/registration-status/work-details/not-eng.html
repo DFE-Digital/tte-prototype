@@ -3,7 +3,15 @@
 {% endset %}
 
 {% set workSettingHtml %}
-  {{ data['whichsetting'] or 'Private nursery, pre-school or school' }}
+  {{ data['whichsetting'] or 'Privately run setting' }}
+{% endset %}
+
+{% set serviceschoolHtml %}
+  {{ data['overseasschool'] or 'No' }}
+{% endset %}
+
+{% set employerHtml%}
+  {{ data['workplacename'] or 'Dubai British School'}} – {{ data['workplace'] or '130892'}}
 {% endset %}
 
 {{ govukSummaryList({
@@ -24,11 +32,27 @@
     },
     {
       key: {
+        text: "British service school"
+      },
+      value: {
+        html: serviceschoolHtml
+      }
+    },
+    {
+      key: {
         text: "Work setting"
       },
       value: {
         html: workSettingHtml
       } 
-    }
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        html: employerHtml
+      }
+    } if (data['overseasschool'] == "Yes")
   ]
 }) }}

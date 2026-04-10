@@ -56,15 +56,19 @@
 {% set scholarshipFundingHTML %}
   <!-- Not in England -->
   {% if data['wheredoyouwork'] == "No" %}
-    <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England. </p>
-    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+    {% if data['overseasschool'] == "Yes" %}
+      {% include '../includes/registration-status/funding-message--eligible.html' %}
+    {% else %}
+      <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England. </p>
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+    {% endif %}
   <!-- Works in England -->
   {% else %}
       <!-- --------------------------------
           School or equivalent
       ----------------------------------- -->
-      {% if ((data['whichsetting'] == "A school or 16-19 educational setting")) %}
+      {% if ((data['whichsetting'] == "State-funded setting")) %}
           <!-- Private school -->
           {% if (data.selectedWorkplace["TypeOfEstablishment (name)"] == "Other independent school") %}
             <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
@@ -73,6 +77,13 @@
           {% else %}
             {% include '../includes/registration-status/funding-message--eligible.html' %}
           {% endif %}
+      <!-- -----------------------
+        Private
+      -------------------------- -->
+      {% elseif data['whichsetting'] == "Privately run setting" %}
+        <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p> 
       <!-- -----------------------
         Other
       -------------------------- -->
