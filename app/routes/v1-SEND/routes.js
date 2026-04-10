@@ -191,11 +191,14 @@ module.exports = router => {
     if(locationt == 'No'){
       res.redirect(v + 'funding/funding-not-available-england')
     }
-    else if (settingt == 'State-funded nursery, pre-school or school') {
+    else if (settingt == 'State-funded setting') {
       res.redirect(v + 'which-school')
     } 
-    else if (settingt == 'Post-16 education') {
-      res.redirect(v + 'what-fe')
+    else if (settingt == 'Independent learning provider') {
+      res.redirect(v + 'which-fe')
+    }
+    else if (settingt == 'Special post 16 institution') {
+      res.redirect(v + 'which-fe')
     } 
     else {
       res.redirect(v + 'funding/funding-not-available-setting')

@@ -67,10 +67,24 @@
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              British service school
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['overseasschool'] or "No" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-setting">
+                Change<span class="govuk-visually-hidden"> British service school</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "State-funded nursery, pre-school or school" }}
+              {{ data['whichsetting'] or "State-funded setting" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="what-setting">
@@ -79,20 +93,38 @@
             </dd>
           </div>
 
-          <!-- not funded for any -->
-          <div class="govuk-summary-list__row">
+          {% if data['overseasschool'] == "Yes" %}
+            <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Course funding
+              Workplace
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['payment'] or "My workplace is covering the cost" }}
+              {{ data['workplacename'] }} – {{ data['workplace'] }} 
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="funding/how-pay">
-                Change<span class="govuk-visually-hidden"> course funding</span>
+              <a class="govuk-link" href="which-school">
+                Change<span class="govuk-visually-hidden"> workplace</span>
               </a>
             </dd>
           </div>
+          {% endif %}
+
+          {% if data['overseasschool'] == "No" %}
+            <!-- not funded for any -->
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course funding
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['payment'] or "My workplace is covering the cost" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="funding/how-pay">
+                  Change<span class="govuk-visually-hidden"> course funding</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
         </dl>
 

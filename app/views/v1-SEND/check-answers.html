@@ -32,10 +32,9 @@
     {% elseif (data['whichsetting'] == "Other") %}
       {% include './includes/answers/other.html' %}
 
-    {% elseif (data['whichsetting'] == "Private nursery, pre-school or school") %}
+    {% elseif (data['whichsetting'] == "Privately run setting") %}
       {% include './includes/answers/other.html' %}
 
-    <!-- Private or Other -->
     {% else %}
       {% include './includes/answers/school-funded.html' %}
     {% endif %}
