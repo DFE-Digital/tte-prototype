@@ -6,5 +6,6 @@
 - Use Copilot to convert the csv to a JSON file, using the prompt 'Can you convert this csv to a json file, ensuring data for each field has double quotes around it'
 - Download the JSON file and place in the same folder as the csv
 - Name them both 'giasdataYYYYMMDD'
+- Delete old files
 - Edit the 'which-school.html' file to look at the new JSON file
 - Test it's working
