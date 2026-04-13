@@ -3,8 +3,8 @@
 - Select 'Establishment fields' and download
 - In prototype go to app > assets > data > and place new csv here
 - Open file and remove all rows with 'EstablishmentStatus (name)' as 'Closed'
-- Use Copilot to convert the csv to a JSON file, using the prompt 
-Convert the provided CSV file into a JSON file with all values in double quotes.
+- Use Copilot to convert the csv to a JSON file, using the prompt: 
+_Convert the provided CSV file into a JSON file with all values in double quotes.
 Use latin1 encoding to avoid Unicode errors.
 Output JSON as an array of objects.
 Then remove all of the following fields from the JSON (ignore missing fields):
@@ -41,7 +41,7 @@ PreviousLA (name), PreviousEstablishmentNumber, Country (name), UPRN,
 SiteName, QABName (code), QABName (name), EstablishmentAccredited (code),
 EstablishmentAccredited (name), QABReport, CHNumber, MSOA (code),
 LSOA (code), FSM, AccreditationExpiryDate
-After removing all listed fields, save the final output as a compact JSON file and report its file size.
+After removing all listed fields, save the final output as a compact JSON file and report its file size._
 - Download the JSON file and place in the same folder as the csv
 - Name them both 'giasdataYYYYMMDD'
 - Delete old files
