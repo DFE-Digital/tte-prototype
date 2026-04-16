@@ -1,0 +1,142 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Compare providers for the {{ data['tte-programme-name-with-acronym'] }} course
+{% endblock %}
+
+{% set serviceName %}
+{% endset %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl" style="padding-top: 1px">
+        Compare how training providers deliver the course
+      </h1>
+
+      <p>All providers use the same <a href="">content framework</a> but may design and deliver the course in different ways.</p>
+      <p>Use the table to compare providers.</p>
+      {{ govukTable({
+        firstCellIsHeader: true,
+        head: [
+          {
+            text: "Provider"
+          },
+          {
+            text: "Next course start date",
+            format: "Text"
+          },
+          {
+            text: "Description",
+            format: "Text"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: '<a href="">Acorn training</a>'
+            },
+            {
+              text: "1 Oct 2027",
+              format: "text"
+            },
+            {
+              text: "This course examines SEND and inclusion through the lens of emotionally responsive practice. Delivered in small cohorts, it focuses on relationships, behaviour as communication, and inclusive environments that support regulation and belonging. The ethos recognises the emotional demands of inclusive teaching and supports staff to develop compassionate, effective approaches. Suitable for experienced teachers working in complex or high‑need settings.",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Cedar trust</a>'
+            },
+            {
+              text: "TBC, in Oct 2027",
+              format: "text"
+            },
+            {
+              text: "Aimed at experienced teachers with leadership responsibilities or ambitions, this course focuses on SEND through a systems and improvement lens. Participants explore effective use of data, statutory requirements, and sustainable approaches to inclusion across a school. Training is structured and collaborative, supporting teachers to develop practical action plans aligned to their context. Ideal for those influencing practice beyond their own classroom.",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Evergreen learning</a>'
+            },
+            {
+              text: "18 Oct 2027",
+              format: "text"
+            },
+            {
+              text: "A research-informed SEND and inclusion course for experienced teachers who want to refine rather than rethink their practice. This course focuses on developing inclusive classroom cultures through reflection, professional dialogue, and evidence-based strategies. Participants engage with current research on neurodiversity and inclusive pedagogy while trialling and evaluating approaches in their own classrooms. Ideal for teachers who value depth, professional autonomy, and sustainable improvement.",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Maple education</a>'
+            },
+            {
+              text: "Feb 2028",
+              format: "text"
+            },
+            {
+              text: "Designed for experienced teachers who want clear, effective strategies that work in real classrooms. This course is delivered through interactive workshops focused on adaptive teaching, behaviour support, and reasonable adjustments. Training is pragmatic and fast-paced, with a strong emphasis on realistic implementation. Participants leave with tools, templates, and strategies they can use immediately.",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Redwood training</a>'
+            },
+            {
+              text: "30 Oct 2027",
+              format: "text"
+            },
+            {
+              text: "This course supports teachers to move beyond deficit models of SEND towards genuinely inclusive, neurodiversity‑affirming practice. Drawing on pupil voice, lived experience, and current thinking, it challenges assumptions and encourages deeper understanding of identity and difference. Delivered through a flexible blend of live and self‑directed learning, it is well suited to reflective practitioners ready to rethink inclusion at a conceptual level.",
+              format: "text"
+            }
+          ],
+          [
+            {
+              html: '<a href="">Willow network</a>'
+            },
+            {
+              text: "Jan 2028",
+              format: "text"
+            },
+            {
+              text: "A fully blended SEND and inclusion course designed for experienced teachers seeking flexibility without compromising depth. Learning is delivered through high‑quality online modules, videos, and discussion spaces, allowing participants to engage at their own pace. The course has a strong focus on adaptive teaching, assistive technology, and universal design for learning. Ideal for self‑directed professionals balancing training with busy schedules.",
+              format: "text"
+            }
+          ]
+        ]
+      }) }}
+
+      <p>When you have chosen your provider you should continue to register. </p>      
+      
+      {{ govukButton({
+        text: "Continue to register",
+        href: "/v1-SEND/start-id"
+      }) }}
+    </div>
+  </div>
+
+  <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+    <summary class="govuk-details__summary govuk-!-margin-top-8">
+      <span class="govuk-details__summary-text">
+        For prototype reference
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+        <li><a href="providers.html">Provider table </a></li>
+      </ul>
+    </div>
+  </details>
+
+
+{% endblock %}

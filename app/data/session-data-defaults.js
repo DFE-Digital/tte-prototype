@@ -26,7 +26,7 @@ module.exports = {
   'reception-course-name': 'Teaching in reception',
   'send-course-name': 'SEND and inclusion for teachers',
   'send-leader-course-name': 'SEND and inclusion for leaders',
-  'choosette': 'Teaching in reception',
+  'choosette': '',
   'eligibilityoutcome': '',
 
   // v2 For admin console 

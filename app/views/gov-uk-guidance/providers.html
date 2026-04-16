@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Compare providers for {{ data['send-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
+  Compare providers for the {{ data['tte-programme-name-with-acronym'] }} course
 {% endblock %}
 
 {% set serviceName %}
@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
-        Compare how training providers deliver the {{ data['send-course-name'] }} course
+        Compare how training providers deliver the course
       </h1>
 
       <p>All providers use the same <a href="">content framework</a> but may design and deliver the course in different ways.</p>
@@ -64,7 +64,7 @@
               format: "text"
             },
             {
-              text: "Yes, – location TBC",
+              text: "Yes – location TBC",
               format: "text"
             },
             {
@@ -82,7 +82,7 @@
           ],
           [
             {
-              html: '<a href="../v1-SEND/provider-site/course-details">Cedar trust</a>'
+              html: '<a href="">Cedar trust</a>'
             },
             {
               text: "TBC, in Oct 2027",
@@ -234,6 +234,19 @@
         text: "Continue to register",
         href: "/v1-SEND/start-id"
       }) }}
+
+      <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+        <summary class="govuk-details__summary govuk-!-margin-top-8">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+            <li><a href="providers-blurbs.html">Provider blurbs </a></li>
+          </ul>
+        </div>
+      </details>
     </div>
   </div>
 
