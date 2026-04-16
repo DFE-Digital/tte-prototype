@@ -108,6 +108,7 @@ module.exports = router => {
 
   router.get(v + 'logged-in', (req, res) => {
     var referrer = req.session.data['referrer']
+    var choosette = req.session.data['choosette']
 
     if(referrer == 'change-provider'){
       res.redirect(v + 'registration-status/registration-status--scholarship-only')
@@ -127,8 +128,11 @@ module.exports = router => {
     else if(referrer == 'certificate'){
       res.redirect(v + 'registration-status/registration-status--passed')
     }
-    else {
+    else if(choosette == ''){
       res.redirect(v + 'choose-course')
+    }
+    else {
+      res.redirect(v + 'confirm-course')
     }
   })
 
@@ -136,20 +140,40 @@ module.exports = router => {
 // ------------
 // Registration flow  
 // ------------
-  
-  // Pre-select provider if come from provider site 
-  router.get(v + 'provider-traffic', (req, res) => {
-    var referrer = req.session.data['referrer']
+
+  // Pre-select provider + course if come from provider site 
+  router.get(v + 'cedar-teacher', (req, res) => {
+    const data = req.session.data
+    data.provider = 'Cedar trust'
+    data.choosette = 'SEND and inclusion for teachers'
+    res.redirect(v + 'start-id')
+  })
+
+  router.get(v + 'cedar-leader', (req, res) => {
+    const data = req.session.data
+    data.provider = 'Cedar trust'
+    data.choosette = 'SEND and inclusion for leaders'
+    res.redirect(v + 'start-id')
+  })
+
+  router.get(v + 'send-leader', (req, res) => {
+    const data = req.session.data
+    data.choosette = 'SEND and inclusion for leaders'
+    res.redirect(v + 'start-id')
+  })
+
+  router.get(v + 'send-teacher', (req, res) => {
+    const data = req.session.data
+    data.choosette = 'SEND and inclusion for teachers'
+    res.redirect(v + 'start-id')
+  })
+
+  router.get(v + 'route-start-date', (req, res) => {
     var startdatet = req.session.data['startdate']
 
     if (startdatet == 'I want to start later') {
       res.redirect(v + 'apply-later')
     } 
-    else if(referrer == 'cedar-trust'){
-      const data = req.session.data
-      data.provider = 'Cedar trust'
-      res.redirect(v + 'choose-provider')
-    }
     else {
       res.redirect(v + 'choose-provider')
     }
