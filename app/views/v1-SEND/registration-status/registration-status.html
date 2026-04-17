@@ -32,6 +32,11 @@
   {{ data['provider'] or "Cedar trust" }}
 {% endset %}
 
+{% set providerbackupHTML %}
+  {{ data['providerbackup'] or "Acorn training" }}
+  <p class="govuk-hint govuk-!-margin-top-2">As you are eligible for funding, if your preferred provider does not offer you a funded place we will automatically reassign you to this provider.</p>
+{% endset %}
+
 {% set providerstatusHTML %}
   <strong class="govuk-tag govuk-tag--yellow">
     Apply with provider

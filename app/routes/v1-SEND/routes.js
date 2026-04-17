@@ -199,16 +199,6 @@ module.exports = router => {
     }
   })
 
-  router.post(v + 'route-choose-provider', function(req, res){
-    var chooseprovider = req.session.data['provider']
-
-    if (chooseprovider == 'I have not chosen a provider yet') {
-      res.redirect(v + 'choose-a-provider')
-    } else {
-      res.redirect(v + 'where-do-you-work')
-    }
-  })
-
   router.post(v + 'route-which-school', function (req, res){
     var locationt = req.session.data['wheredoyouwork']
     var settingt = req.session.data['whichsetting']
