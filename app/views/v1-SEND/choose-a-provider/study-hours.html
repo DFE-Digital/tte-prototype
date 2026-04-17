@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Find a provider – Study hours
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Find a provider</h1>
+
+    <form class="form" action="results" method="post">
+      {{ govukRadios({
+        id: "chooseproviderhours",
+        name: "chooseproviderhours",
+        fieldset: {
+          legend: {
+            text: "How would you like the study hours to be set up?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Fixed",
+            text: "Fixed",
+            hint: {
+              text: "There will be minimum number of hours to complete per week and a maximum amount of weeks to complete the course in."
+            }
+          },
+          {
+            value: "Flexible",
+            text: "Flexible",
+            hint: {
+              text: "There will be no minimum hours to complete per week but there may still be a maximum amount of weeks to complete the course in."
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

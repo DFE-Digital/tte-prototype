@@ -1,0 +1,514 @@
+{% extends "layout.html" %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Your results
+{% endblock %}
+
+{% block content %} 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Your results</h1>
+
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['chooseproviderstartdate'] or "October 2027" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="course-start">
+                Change<span class="govuk-visually-hidden"> start date</span>
+              </a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Optional in-person sessions
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['chooseproviderinperson'] or "No" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="in-person">
+                Change<span class="govuk-visually-hidden"> in-person sessions</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Study hours
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['chooseproviderhours'] or "Fixed" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="study-hours">
+                Change<span class="govuk-visually-hidden"> study hours</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+      </form>
+
+      {% if (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed") %}
+        <h3 class="govuk-!-padding-top-4">1 result</h3>
+
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Cedar trust"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "TBC, in Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "No"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "At least 1 hour per week, maximum 20 weeks"
+              }
+            }
+          ]
+        }) }}
+
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed") %}
+        <h3 class="govuk-!-padding-top-4">0 results</h3>
+
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible") %}
+        <h3 class="govuk-!-padding-top-4">2 results</h3>
+
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Acorn training"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "1 Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes, location TBC"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "Totally flexible"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Evergreen learning"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "18 Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes – London"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "Totally flexible, but must complete within 20 weeks"
+              }
+            }
+          ]
+        }) }}
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible") %}
+        <h3 class="govuk-!-padding-top-4">3 results</h3>
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Acorn training"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "1 Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes, location TBC"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "Totally flexible"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Evergreen learning"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "18 Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes – London"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "Totally flexible, but must complete within 20 weeks"
+              }
+            }
+          ]
+        }) }}
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Redwood training"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "30 Oct 2027"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "No"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "Totally flexible, but must complete within 12 week"
+              }
+            }
+          ]
+        }) }}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible") %}
+        <h3 class="govuk-!-padding-top-4">1 result</h3>
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Maple education"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "11 Jan 2028"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes – London, Birmingham, Manchester."
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "At least 1 hour per week, maximum 25 weeks"
+              }
+            }
+          ]
+        }) }}
+
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed") %}
+        <h3 class="govuk-!-padding-top-4">2 results</h3>  
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Maple education"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "11 Jan 2028"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes – London, Birmingham, Manchester."
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "At least 1 hour per week, maximum 25 weeks"
+              }
+            }
+          ]
+        }) }}
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Willow network"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "2 Jan 2028"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "No"
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "At least 1 hour per week, maximum 20 weeks"
+              }
+            }
+          ]
+        }) }}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible") %}
+        <h3 class="govuk-!-padding-top-4">0 results</h3>
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed") %}
+        <h3 class="govuk-!-padding-top-4">1 result</h3>  
+        {{ govukSummaryList({
+          card: {
+            title: {
+              text: "Maple education"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Provider website"
+                }
+              ]
+            }
+          },
+          rows: [
+            {
+              key: {
+                text: "Next start date"
+              },
+              value: {
+                html: "11 Jan 2028"
+              }
+            },
+            {
+              key: {
+                text: "Optional in-person sessions"
+              },
+              value: {
+                html: "Yes – London, Birmingham, Manchester."
+              }
+            },
+            {
+              key: {
+                text: "Study hours"
+              },
+              value: {
+                html: "At least 1 hour per week, maximum 25 weeks"
+              }
+            }
+          ]
+        }) }}
+      {% endif %}
+
+      <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+        <summary class="govuk-details__summary govuk-!-margin-top-8">
+          <span class="govuk-details__summary-text">
+            For prototype reference
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+            <li><a href="../../gov-uk-guidance/providers">Comparison table </a></li>
+            <li><a href="../../gov-uk-guidance/providers-blurbs">Provider blurbs </a></li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+{% endblock %}
