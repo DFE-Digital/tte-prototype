@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Your results</h1>
+      <h1 class="govuk-heading-xl">Find a provider – your results</h1>
 
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
@@ -46,7 +46,7 @@
               Study hours
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['chooseproviderhours'] or "Fixed" }}
+              {{ data['chooseproviderhours'] or "Fixed hours" }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="study-hours">
@@ -59,7 +59,7 @@
 
       </form>
 
-      {% if (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed") %}
+      {% if (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed hours") %}
         <h3 class="govuk-!-padding-top-4">1 result</h3>
 
         {{ govukSummaryList({
@@ -104,10 +104,10 @@
           ]
         }) }}
 
-      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed") %}
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed hours") %}
         <h3 class="govuk-!-padding-top-4">0 results</h3>
 
-      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible") %}
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible hours") %}
         <h3 class="govuk-!-padding-top-4">2 results</h3>
 
         {{ govukSummaryList({
@@ -193,7 +193,7 @@
             }
           ]
         }) }}
-      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible") %}
+      {% elseif (data['chooseproviderstartdate'] == "October 2027") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible hours") %}
         <h3 class="govuk-!-padding-top-4">3 results</h3>
         {{ govukSummaryList({
           card: {
@@ -319,7 +319,7 @@
             }
           ]
         }) }}
-      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible") %}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Flexible hours") %}
         <h3 class="govuk-!-padding-top-4">1 result</h3>
         {{ govukSummaryList({
           card: {
@@ -363,7 +363,7 @@
           ]
         }) }}
 
-      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed") %}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "No") and (data['chooseproviderhours'] == "Fixed hours") %}
         <h3 class="govuk-!-padding-top-4">2 results</h3>  
         {{ govukSummaryList({
           card: {
@@ -447,9 +447,9 @@
             }
           ]
         }) }}
-      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible") %}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Flexible hours") %}
         <h3 class="govuk-!-padding-top-4">0 results</h3>
-      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed") %}
+      {% elseif (data['chooseproviderstartdate'] == "January to March 2028") and (data['chooseproviderinperson'] == "Yes") and (data['chooseproviderhours'] == "Fixed hours") %}
         <h3 class="govuk-!-padding-top-4">1 result</h3>  
         {{ govukSummaryList({
           card: {
@@ -493,6 +493,13 @@
           ]
         }) }}
       {% endif %}
+
+      <p>When you have chosen your provider you should continue to register. </p>      
+      
+      {{ govukButton({
+        text: "Continue to register",
+        href: "/v1-SEND/start-id"
+      }) }}
 
       <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
         <summary class="govuk-details__summary govuk-!-margin-top-8">

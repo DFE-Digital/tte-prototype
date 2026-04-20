@@ -179,6 +179,28 @@ module.exports = router => {
     }
   })
 
+  router.get(v + 'route-provider', (req, res) => {
+    var provider = req.session.data['provider']
+
+    if (provider == 'No preference – we have auto-assigned you to Cedar trust') {
+      res.redirect(v + 'where-do-you-work')
+    } 
+    else {
+      res.redirect(v + 'second-provider')
+    }
+  })
+
+  router.get(v + 'route-second-provider', (req, res) => {
+    var secondprovider = req.session.data['secondprovider']
+
+    if (secondprovider == 'Yes') {
+      res.redirect(v + 'choose-backup-provider')
+    } 
+    else {
+      res.redirect(v + 'where-do-you-work')
+    }
+  })
+
   router.post(v + 'route-wherework', function(req, res){
     var wheredoyouwork = req.session.data['wheredoyouwork']
 
