@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Would you like to choose a second provider?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-second-provider" method="post">
+        {{ govukRadios({
+          id: "secondprovider",
+          name: "secondprovider",
+          hint: {
+            html: "<p>If your preferred provider does not have any funded places available, we will automatically contact your second provider to continue your application. </p>
+            <p>Please note: Once you have submitted your registration with DfE, and before the course start date, you can also change your provider by going into your account and selecting 'Register with a different provider'.</p>"
+          },
+          fieldset: {
+            legend: {
+              text: "Would you like to choose a second provider?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes, I would like to select a second provider"
+            },
+            {
+              value: "No",
+              text: "No, I would like to continue with my preferred provider only"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
