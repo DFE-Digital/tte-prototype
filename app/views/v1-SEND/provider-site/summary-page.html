@@ -13,7 +13,7 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Welcome {{ data['applicant1--name'] }}</h1>
 
-        <h2 class="govuk-heading-m">You are applying for the {{ data['choosette'] }} {{ data['tte-programme-name-with-acronym'] }} course </h2>
+        <h2 class="govuk-heading-m">You are applying for the {{ data['choosette'] }} {% if data['choosette'] == "SEND and inclusion for leaders" %}National Professional Qualification (NPQ) advanced {% else %}{{ data['tte-programme-name-with-acronym'] }}{% endif %} course </h2>
 
         <p class="govuk-body">We have received your registration from DfE. </p>
         

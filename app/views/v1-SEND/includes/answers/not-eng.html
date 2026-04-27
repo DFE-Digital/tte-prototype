@@ -132,7 +132,11 @@
                 Course funding
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['payment'] or "My workplace is covering the cost" }}
+                {% if (data['choosette'] == "SEND and inclusion for leaders") and (data['payment'] == "My NPD course is being paid for in another way") %}
+                  <p class="govuk-!-margin-bottom-0">My NPQ advanced course is being paid for in another way</p>
+                {% else %}
+                  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="funding/how-pay">
