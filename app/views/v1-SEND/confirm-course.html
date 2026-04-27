@@ -16,7 +16,11 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">You are registering for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
+      {% if data['choosette'] == "SEND and inclusion for leaders" %}
+        <h1 class="govuk-heading-xl">You are registering for the {{ data['choosette'] }} NPQ advanced course</h1>
+      {% else %}
+        <h1 class="govuk-heading-xl">You are registering for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
+      {% endif %}
       <p>If this is not the course you want to register for, <a href="choose-course">change your course</a>.</p>
       <form class="form" action="course-start" method="post">
 
