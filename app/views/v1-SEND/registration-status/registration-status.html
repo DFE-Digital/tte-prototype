@@ -54,11 +54,7 @@
 {% endset %}
 
 {% set courseFundingHtml %}
-  {% if (data['choosette'] == "SEND and inclusion for leaders") and (data['payment'] == "My NPD course is being paid for in another way") %}
-    <p class="govuk-!-margin-bottom-0">My NPQ advanced course is being paid for in another way</p>
-  {% else %}
-    <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
-  {% endif %}
+  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
   <p>You may want to check the cost of the course with your provider.</p>
 {% endset %}
 
