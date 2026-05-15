@@ -4,13 +4,6 @@
   Your email alert has been set up
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% set panelHTML %}
   <p><span class="govuk-colour-white">We'll send email updates to <strong>{{ data['eoi-email'] or 'example@email.com' }}</strong> about registration opening.</p>
 {% endset %}
