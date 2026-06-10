@@ -1,0 +1,200 @@
+{% extends "layout.html" %} {% set signedIn = 'false' %} {% block pageTitle %}
+Simpligy guidance {% endblock %} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Professional development for teachers and leaders
+      </h1>
+
+      <p class="govuk-body">
+        DfE have a wider offering of CPD. Here you will find what is on offer
+        within the golden thread (evidence-based training) for all levels of
+        experience post initial training.
+      </p>
+
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="#"
+            >National Professional Development (NPD)</a
+          >
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Specialist NPQs</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Leadership NPQs</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">NPQ advanced</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">National Professional Development (NPD)</h2>
+      <p class="govuk-body">
+        These courses are for experienced teachers who want to add depth to
+        their knowledge in a specific subject area. They take less time than an
+        NPQ (ETC)
+      </p>
+
+      <div class="dfe-grid-container">
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Teaching in reception NPD</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+        <br />
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >SEND and inclusion for teachers NPD</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Specialist National Professional Qualifications (NPQ)
+      </h2>
+      <p class="govuk-body">
+        Specialist NPQs can help you develop your classroom teaching or
+        specialism.
+      </p>
+
+      <div class="dfe-grid-container">
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Early years leadership NPQ
+              </a>
+            </h3>
+            <p class="govuk-body">Aimed at all phases</p>
+            <p class="govuk-body">6 months</p>
+            <p class="govuk-body">Certificate of completion</p>
+            <p class="govuk-body">In-person sessions optional</p>
+            <p class="govuk-body">Around 15 hours</p>
+          </div>
+        </div>
+        <br />
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Leading teaching NPQ</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+        <br />
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Leading behaviour and culture NPQ</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+        <br />
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >SENCO NPQ</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">
+        Leadership National Professional Qualifications (NPQ)
+      </h2>
+      <p class="govuk-body">
+        Leadership NPQs can help you develop your leadership skills or progress
+        to a leadership role.
+      </p>
+
+      <div class="dfe-grid-container">
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Senior Leadership NPQ
+              </a>
+            </h3>
+            <p class="govuk-body">Aimed at all phases</p>
+            <p class="govuk-body">6 months</p>
+            <p class="govuk-body">Certificate of completion</p>
+            <p class="govuk-body">In-person sessions optional</p>
+            <p class="govuk-body">Around 15 hours</p>
+          </div>
+        </div>
+        <br />
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >Headship NPQ</a
+              >
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">NPQ Advanced</h2>
+      <p class="govuk-body">Courses for experienced leaders</p>
+
+      <div class="dfe-grid-container">
+        <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+              <a
+                href="#"
+                class="govuk-link govuk-link--no-visited-state dfe-card-link--header"
+                >SEND and inclusion for leaders NPQ advanced
+              </a>
+            </h3>
+            <p class="govuk-body">Aimed at all phases</p>
+            <p class="govuk-body">6 months</p>
+            <p class="govuk-body">Certificate of completion</p>
+            <p class="govuk-body">In-person sessions optional</p>
+            <p class="govuk-body">Around 15 hours</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

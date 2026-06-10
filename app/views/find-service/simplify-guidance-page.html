@@ -1,0 +1,100 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
+{% endblock %}
+
+{% set serviceName %}
+{% endset %}
+
+{% block content %}
+<div class="govuk-width-container">
+ <main class="govuk-main-wrapper">
+ <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl" style="padding-top: 1px">
+        Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
+      </h1>
+
+      <p class="govuk-body-l">Using the latest early years evidence, this course will help experienced teachers deepen their understanding of the key areas of child development.</p>
+
+      <p class="govuk-body-l">NPD courses are informed by the best available research and evidence and endorsed by the Education Endowment Foundation.</p>
+
+      <p class="govuk-body-l">On successful completion of the course, you with be awarded a DfE accredited {{ data['tte-programme-name-acronym'] }} certificate.</p>
+
+      <h2 class="govuk-heading-l" id="who">Who this course is for</h2>
+
+      <p>This course is for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>teachers who have completed their induction. Please note: there is no upper limit on years of experience</li>
+        <li>teachers who work with reception age children or are changing to a reception teaching role </li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="overview">Course overview</h2>
+
+      <p>You'll learn how high-quality early education can have a positive impact on outcomes through:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>strategies for effective teaching</li>
+        <li>mastery of important foundational concepts</li>
+        <li>appropriate curriculum and assessment design</li>
+        <li>positive transitions for children moving in and out of reception year</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Supporting good development</h3>
+
+      <p>You'll learn how to understand and support differences in child development in key areas to support access to learning, including through:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>awareness of differences in development including SEND and disadvantage</li>
+        <li>enabling good communication and language</li>
+        <li>supporting physical development</li>
+        <li>encouraging personal, social and emotional, development</li>
+        <li>working with parents to suppor development goals</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">How the course will be delivered</h3>
+
+      <p>This course will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take approximately 2 school terms to complete (minimum 20 hours) </li>
+        <li>be a mix of self-study and live online training </li>
+        <li>start in October 2026 or early 2027 (January or February), depending on the training provider</li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="eligibility">Funding eligibility</h2>
+      <p>Funded places are available for most state-funded settings, including academy trusts.</p>
+
+      <p>Examples of places that are not eligible for funding include hospital schools, Ministry of Defence (MoD) schools and schools outside of England.</p>
+
+      <p>If you are self-funding, you still need to register with the DfE.</p>
+
+      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
+      
+      {{ govukButton({
+          text: "Continue to register",
+          href: "/v1/start-id"
+      }) }}
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m" style="padding-top: 10%;">Related courses</h2>
+        <div class="dfe-grid-container">
+      <div class="dfe-card">
+          <div class="dfe-card-container">
+            <h3 class="govuk-heading-m">
+                <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">SEND and inclusion for teachers NPD</a>
+            </h3>
+            <p>A short description for the card.</p>
+          </div>
+      </div>
+  </div>
+      </div>
+
+    </div>
+  </div>
+  </main>
+</div>
+
+   
+{% endblock %}
