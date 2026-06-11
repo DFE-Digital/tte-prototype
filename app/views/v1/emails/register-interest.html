@@ -1,0 +1,32 @@
+{% extends "layout-email.html" %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>Register interest in Excellence in reception teaching </p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+        <p>Subject: Register now - Excellence in reception teaching </p>
+
+        <p>Dear [name]</p>
+
+        <p><strong> Registration open for excellence in reception teaching course</strong></p>
+
+        <p>You can now register for the January 2027 course.</p>
+
+        <p>Go to [service start page link]</p>
+
+        <p>You can unsubscribe from this service at any time using the following link: [unsubscribe link] </p>
+
+        <p>Regards, </p>
+        <p>The Teacher Continuing Development team</p>
+</div>
+  </div>
+{% endblock %}

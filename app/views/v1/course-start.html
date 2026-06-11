@@ -22,7 +22,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Choose your course start date</h1>
-    <p>Registrations are currently open for courses starting in October 2026.</p>
+    <p>Registration for this course will open at different times throughout the year.</p>
 
     <form class="form" action="chosen" method="post">
       {{ govukRadios({
@@ -38,18 +38,11 @@
         items: [
           {
             value: "October 2026",
-            text: "October 2026",
-            hint: {
-              text: "You can also select this option if you've already started"
-            }
+            text: "October 2026"
           },
           {
-            value: "January to March 2027",
-            text: "January to March 2027"
-          },
-          {
-            value: "I want to start later",
-            text: "I want to start later"
+            value: "I want to start at a later date",
+            text: "I want to start at a later date"
           }
         ]
       }) }}
