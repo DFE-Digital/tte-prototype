@@ -6,7 +6,7 @@ block content %}
  <main class="govuk-main-wrapper">
  <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+    <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl" style="padding-top: 1px">
         Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
       </h1>
@@ -68,22 +68,35 @@ block content %}
           text: "Continue to register",
           href: "/v1/start-id"
       }) }}
-      </div>
+    </div>
 
-      <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m" style="padding-top: 10%;">Related courses</h2>
-        <div class="dfe-grid-container">
-      <div class="dfe-card">
-          <div class="dfe-card-container">
-            <h3 class="govuk-heading-m">
-                <a href="#" class="govuk-link govuk-link--no-visited-state dfe-card-link--header">SEND and inclusion for teachers NPD</a>
-            </h3>
-            <p>A short description for the card.</p>
-          </div>
-      </div>
-  </div>
-      </div>
 
+  <div class="govuk-grid-column-one-third">
+
+
+      <aside class="govuk-prototype-kit-common-templates-related-items govuk-!-margin-top-2" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related courses
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li class="govuk-!-margin-top-5"><strong>National Professional Development (NPD) </strong></li>
+            <li>
+              <a href="simplify-guidance-page-send.html">
+                SEND and inclusion for teachers NPD
+              </a>
+            </li>
+    
+            <li class="govuk-!-margin-top-5"><strong>National Professional Qualifications (NPQs)</strong></li>
+            <li>
+              <a href="#">
+                Leading behaviour and culture NPQ
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
     </div>
   </div>
   </main>
