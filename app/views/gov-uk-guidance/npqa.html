@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %} {% set signedIn = 'false' %} {% block pageTitle %}
+National Professional Qualification Advanced (NPQA) {% endblock %} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
+        {{ data['National Professional Qualification Advanced (NPQA)'] }}
+      </h1>
+      <h1 class="govuk-heading-l" style="padding-top: 1px">
+        National Professional Qualification Advanced (NPQA)
+      </h1>
+
+      <p class="govuk-body-l">Training courses for experienced education leaders looking to enhance their professional skills and leadership effectiveness.</p>
+      <hr>
+      <h3 class="govuk-heading-l govuk-!-padding-top-8" id="who">About </h3>
+
+      <p class="govuk-body"These courses are ideal for headteachers, deputy heads, further education principals and senior leadership team members. They aim to help leaders increase their impact within their setting and across the wider education sector.  </p>
+      <p class="govuk-body">NPQAs take around six months to complete and are grounded in evidence-based practice.  </p>
+      <p class="govuk-body">You do not need to have taken an NPQ to complete an NPQA. </p>
+
+      <h3 class="govuk-heading-l govuk-!-padding-top-8" id="who">Course features  </h3>
+      <ul class="govuk-list govuk-list--bullet">
+  <li>duration: approximately 6 months, allowing for focused and manageable professional development</li>
+  <li>evidence-based content: informed by the latest research in education, leadership, and organisational improvement </li>
+  <li>flexible learning: blended learning includes online sessions, optional in-person sessions, and self-study</li>
+</ul>
+
+<h3 class="govuk-heading-l govuk-!-padding-top-8" id="who">Choose an NPQA</h3>
+<a class="govuk-link" href="/find-service/simplify-guidance-page-leaders">Special educational needs and disabilities (SEND) and inclusion for leaders </a>
+
+<h3 class="govuk-heading-l govuk-!-padding-top-8" id="who">Looking for SEND training for teachers in your setting?</h3>
+<p class="govuk-body">You may also be interested in <a class="govuk-link" href="/find-service/simplify-guidance-page-send">Special educational needs and disabilities (SEND) national professional development course for experienced teachers</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
