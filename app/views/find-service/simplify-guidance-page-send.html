@@ -1,0 +1,137 @@
+{% extends "layout.html" %} {% set signedIn = 'false' %} {% block pageTitle %}
+Simplify guidance {% endblock %} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
+<div class="govuk-width-container">
+ <main class="govuk-main-wrapper">
+ <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
+        {{ data['send-course-name'] }}
+      </h1>
+      <h1 class="govuk-heading-l" style="padding-top: 1px">
+        {{ data['tte-programme-name-with-acronym'] }} course
+      </h1>
+
+      <p class="govuk-body-l">A course to help experienced teachers deepen their understanding of effective practice related to inclusive learning. Using the latest research and enhanced strategies to support learners with special educational needs and disabilities (SEND) relevant to the current classroom.</p>
+      <hr>
+      <h2 class="govuk-heading-l govuk-!-padding-top-8" id="who">Who this course is for</h2>
+
+      <p>This course is for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>teachers who want to improve their knowledge and skills in supporting and meeting needs in their setting </li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="overview">Overview</h2>
+
+      <p>This course is from the <a href="/gov-uk-guidance/guidance-tte">{{ data['tte-programme-name-with-acronym'] }}</a> suite of courses.</p>
+
+      <p>This course will help you to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>develop your understanding of high-quality teaching practices and inclusive approaches to supporting learning</li>
+        <li>understand strategies and approaches to support learning outcomes for children and young people who may have SEND </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">How the course will be delivered</h3>
+      <p>This course will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>take approximately 2 school terms to complete (minimum 20 hours)</li>
+        <li>be a mix of self-study and live online training  </li>
+        <li>start in October 2027 or early 2028 (January or February), depending on the training provider</li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="funding">Funding eligibility</h2>
+      <p>Funded places are available for most state-funded settings, including academy trusts.</p>
+      <p>Examples of places that are not eligible for funding include private schools and schools outside of England.</p>
+      <p>If you are self-funding, you still need to register with the DfE.</p>
+      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
+      
+      <h2 class="govuk-heading-l" id="content">Course content</h2>
+
+      <h3 class="govuk-heading-m">Inclusive practice</h3>
+      <p>You'll learn how high-quality education can have a positive impact on outcomes through:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>understanding how a culture of inclusion and belonging enables good outcomes </li>
+        <li>strengthened awareness of high-quality effective teaching</li>
+        <li>inclusive routines and environments</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Understanding and supporting children and young people with SEND</h3>
+      <p>You'll learn how to understand and support differences in learning, including through: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>identifying needs and barriers to learning</li>
+        <li>understanding differences in learning </li>
+        <li>working with parents and families </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Additional support </h3>
+      <p>You'll learn how to utilise different approaches to supporting learning barriers, including through: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>effective targeted interventions</li>
+        <li>working with teaching assistants and support staff</li>
+        <li>enabling positive transitions for pupils and learners </li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="structure">Course structure</h2>
+      <p>The course includes 9 topics, outlined in the <a href="">course framework</a>. Providers use this framework to design their course.</p>
+      <p>If you can, you should do this during work hours in career development time.</p>
+
+      <h2 class="govuk-heading-l" id="providers">Providers</h2>
+      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="">Acorn training</a></li>
+        <li><a href="../v1-SEND/provider-site/course-details-teachers">Cedar trust</a></li>
+        <li><a href="">Evergreen learning</a></li>
+        <li><a href="">Maple education</a></li>
+        <li><a href="">Redwood training</a></li>
+        <li><a href="">Willow network</a></li>
+      </ul>
+      <p>To help you find a provider that suits your needs:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="../v1-SEND/send-teacher-table">use our provider comparison table</a></li>
+        <li><a href="../v1-SEND/send-teacher-blurb">read a short description</a></li>
+        <li><a href="../v1-SEND/send-teacher-quiz">answer a few questions</a></li>
+        <li>Or, visit their websites</li>
+      </ul>
+
+      <h2 class="govuk-heading-l" id="apply">Apply</h2>
+      <p><a href="../v1-SEND/send-teacher">Check funding eligibility and register</a>.</p>
+
+    </div>
+
+
+  <div class="govuk-grid-column-one-third">
+
+
+      <aside class="govuk-prototype-kit-common-templates-related-items govuk-!-margin-top-2" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related courses
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li class="govuk-!-margin-top-5"><strong>National Professional Development (NPD) </strong></li>
+            <li>
+              <a href="simplify-guidance-page.html">
+                Excellence in reception teaching - NPD
+              </a>
+              </a>
+            </li>
+    
+            <li class="govuk-!-margin-top-5"><strong>National Professional Qualifications (NPQs)</strong></li>
+            <li>
+              <a href="#">
+                Leading behaviour and culture NPQ
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    </div>
+  </div>
+  </main>
+</div>
+
+   
+{% endblock %}
