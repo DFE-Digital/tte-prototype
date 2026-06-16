@@ -1,14 +1,7 @@
-
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  Register for {{ data['reception-course-name'] }} {{ data['tte-programme-name-with-acronym'] }} course
-{% endblock %}
-
-{% set serviceName %}
-{% endset %}
-
-{% block content %}
+{% extends "layout.html" %} {% set signedIn = 'false' %} {% block pageTitle %}
+Simplify guidance {% endblock %} {% block beforeContent %} {{ govukBackLink({
+text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
+block content %}
 <div class="govuk-width-container">
  <main class="govuk-main-wrapper">
  <div class="govuk-grid-row">
