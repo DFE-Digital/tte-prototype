@@ -14,9 +14,10 @@
         <form action="" accept-charset="UTF-8" method="get">
             <div style="display: flex; margin-left: -14px">
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
-                  <option value="funded">Paid</option>
-                  <option value="funded">Unpaid</option></select>
+                <label for="funding-eligiblity-status-code-field" class="govuk-label govuk-label--s">Payment status</label><select id="funding-eligiblity-status-code-field" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="funded">open</option>
+                  <option value="funded">payable</option>
+                  <option value="funded">paid</option></select>
                 </optgroup>
               </div>
               <div class="govuk-form-group govuk-grid-column-two-thirds">
@@ -76,7 +77,7 @@
             </div>
             <div style="display: flex; margin-left: -14px">
               <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Provider</label>
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s ">Provider</label>
                 <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
                   <option value="All">All</option>
                   <option value="Ambition Institute">Ambition Institute</option>
@@ -106,18 +107,18 @@
 
 
                   <div class="govuk-form-group govuk-grid-column-two-thirds">
-                <label for="referral-field" class="govuk-label govuk-label--s">Output statement</label>
+                <label for="referral-field" class="govuk-label govuk-label--s">Payment run</label>
                 <select id="referral-field" class="govuk-select" name="Referral"><option value=""></option>
                   <option value="All">All</option>
-                  <option value="2021">Yes</option>
-                  <option value="2022">No</option>
+                  <option value="2021">yes</option>
+                  <option value="2022">no</option>
                 </select>
               </div>
 
             </div>
           
 
-          <a href="/admin-v3/finance-ambition.html" class="govuk-button search-box__button" data-module="govuk-button">
+          <a href="/admin-v1/finance-ambition.html" class="govuk-button search-box__button" data-module="govuk-button">
             Search
           </a>
         </form>
@@ -130,8 +131,8 @@
             <th scope="col" class="govuk-table__header">Provider</th>
             <th scope="col" class="govuk-table__header">Cohort</th>
             <th scope="col" class="govuk-table__header">Statement date</th>
-            <th scope="col" class="govuk-table__header">Status</th>
-            <th scope="col" class="govuk-table__header">Output statement</th>
+            <th scope="col" class="govuk-table__header">Payment status</th>
+            <th scope="col" class="govuk-table__header">Payment run</th>
             <th scope="col" class="govuk-table__header">Actions</th>
 
 
@@ -146,7 +147,7 @@
             <td class="govuk-table__cell">January 2025</td>
             <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Paid</strong></td>
             <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
-            <td class="govuk-table__cell"><a href="/admin-v3/finance-statement">View </a></td>
+            <td class="govuk-table__cell"><a href="/admin-v1/finance-statement">View </a></td>
 
 
           </tr>
@@ -154,9 +155,9 @@
             <td class="govuk-table__cell">Ambition Institute</td>
             <td class="govuk-table__cell">2023 to 2024</td>
             <td class="govuk-table__cell">January 2025</td>
-            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Payable</strong></td>
             <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
-            <td class="govuk-table__cell"><a href="/admin-v3/finance-statement-unpaid">View </a></td>
+            <td class="govuk-table__cell"><a href="/admin-v1/finance-statement-unpaid">View </a></td>
 
 
 
@@ -165,7 +166,7 @@
             <td class="govuk-table__cell">National Institute of Teaching </td>
             <td class="govuk-table__cell">2023 to 2024</td>
             <td class="govuk-table__cell">January 2025</td>
-            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Payable</strong></td>
             <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
             <td class="govuk-table__cell"><a href="">View </a></td>
 
@@ -186,7 +187,7 @@
             <td class="govuk-table__cell">Ambition Institute</td>
             <td class="govuk-table__cell">2023 to 2024</td>
             <td class="govuk-table__cell">January 2025</td>
-            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Unpaid</strong></td>
+            <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--red">Payable</strong></td>
             <td class="govuk-table__cell">   <strong class="govuk-tag govuk-tag--green">Yes</strong></td>
             <td class="govuk-table__cell"><a href="">View </a></td>
 
