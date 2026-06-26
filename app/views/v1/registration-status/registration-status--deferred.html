@@ -26,6 +26,10 @@
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If you do not restart the course within 12 months your registration will expire and you will be withdrawn from the course. After you have been withdrawn, you can register again but you will not be eligible for further funding.</p>
 {% endset %}
 
+{% set courseHTML %}
+  {{ data['choosette'] or data['reception-course-name'] }} 
+{% endset %}
+
 {% set personaldetailsHTML %}
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
@@ -33,7 +37,7 @@
 {% block content %}
   <span class="govuk-caption-m">Submitted	10 October 2026</span>
   <h1 class="govuk-heading-xl">
-    Your Teaching in Reception registration
+    Your {{ data['reception-course-name-lower'] }} course registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -50,7 +54,7 @@
           text: "Course"
         },
         value: {
-          html: "Teaching in Reception"
+          html: courseHTML
         }
       },
       {

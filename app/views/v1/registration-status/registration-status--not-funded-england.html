@@ -28,6 +28,10 @@
   <p>You may want to check the cost of the course with your provider.</p>
 {% endset %}
 
+{% set courseHTML %}
+  {{ data['choosette'] or data['reception-course-name'] }} 
+{% endset %}
+
 {% set personaldetailsHTML %}
   <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
 {% endset %}
@@ -35,7 +39,7 @@
 {% block content %}
   <span class="govuk-caption-m">Submitted	10 October 2026</span>
   <h1 class="govuk-heading-xl">
-    Your Teaching in Reception registration
+    Your {{ data['reception-course-name-lower'] }} course registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -52,7 +56,7 @@
           text: "Course"
         },
         value: {
-          html: "Teaching in Reception"
+          html: courseHTML
         }
       },
       {

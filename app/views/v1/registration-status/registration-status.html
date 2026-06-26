@@ -25,7 +25,7 @@
 {% endset %}
 
 {% set courseHTML %}
-  {{ data['choosette'] or "Teaching in reception" }}
+  {{ data['choosette'] or data['reception-course-name'] }} 
 {% endset %}
 
 {% set providerHTML %}
@@ -103,7 +103,7 @@
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
   <h1 class="govuk-heading-xl">
-    Your {{ data['choosette'] or "Teaching in reception" }} course registration
+    Your {{ data['reception-course-name-lower'] }} course registration
   </h1>
 
   <p><strong>Application ID</strong>: bbd71aaa-b3d3-47f8-9712-4e3e183252e4</p>

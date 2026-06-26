@@ -140,7 +140,7 @@ module.exports = router => {
   router.post(v + 'chosen', function(req, res){
     var startdatet = req.session.data['startdate']
 
-    if (startdatet == 'I want to start later') {
+    if (startdatet == 'I want to start at a later date') {
       res.redirect(v + 'apply-later')
     } else {
       res.redirect(v + 'choose-provider')

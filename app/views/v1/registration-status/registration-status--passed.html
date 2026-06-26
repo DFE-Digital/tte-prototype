@@ -19,6 +19,10 @@
   </strong>
 {% endset %}
 
+{% set courseHTML %}
+  {{ data['choosette'] or data['reception-course-name'] }} 
+{% endset %}
+
 {% set passedHtml %}
   <strong class="govuk-tag govuk-tag--green">
     Completed
@@ -33,7 +37,7 @@
 {% block content %}
   <span class="govuk-caption-m">Submitted 11 July 2026</span>
   <h1 class="govuk-heading-xl">
-    Your Teaching in Reception registration
+    Your {{ data['reception-course-name-lower'] }} course registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -50,7 +54,7 @@
         },
       value: {
         html:
-          'Teaching in Reception' }
+          courseHTML }
         },
       {
         key: {
