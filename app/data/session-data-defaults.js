@@ -23,10 +23,11 @@ module.exports = {
   'tte-programme-name-with-acronym': 'National Professional Development (NPD)',
   'tte-programme-name': 'National Professional Development',
   'tte-programme-name-acronym': 'NPD',
-  'reception-course-name': 'Teaching in reception',
+  'reception-course-name': 'Excellence in reception teaching',
+  'reception-course-name-lower': 'excellence in reception teaching',
   'send-course-name': 'SEND and inclusion for teachers',
   'send-leader-course-name': 'SEND and inclusion for leaders',
-  'choosette': '',
+  'choosette': 'Excellence in reception teaching',
   'eligibilityoutcome': '',
 
   // v2 For admin console 
