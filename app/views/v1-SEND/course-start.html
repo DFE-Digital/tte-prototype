@@ -24,7 +24,7 @@
     <h1 class="govuk-heading-xl">Choose your course start date</h1>
     <p>Registrations are currently open for courses starting in October 2027.</p>
 
-{% if (data['choosette'] == "Teaching in reception") %}
+{% if (data['choosette'] == "Excellence in reception teaching") %}
     <form class="form" action="route-start-date" method="post">
       {{ govukRadios({
         id: "startdate",

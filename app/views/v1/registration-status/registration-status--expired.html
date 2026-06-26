@@ -6,6 +6,11 @@
   Registration status
 {% endblock %}
 
+{% set courseHTML %}
+  {{ data['reception-course-name'] }}
+  <p class="govuk-!-margin-bottom-0">Redwood training</p>
+{% endset %}
+
 {% block content %}
   <h1 class="govuk-heading-xl">Your NPD registrations</h1>
 
@@ -16,8 +21,7 @@
   {{ govukSummaryList({
     card: {
       title: {
-        html: 'Teaching in reception
-        <p class="govuk-!-margin-bottom-0">Redwood training</p>'
+        html: courseHTML
       }
     },
     rows: [

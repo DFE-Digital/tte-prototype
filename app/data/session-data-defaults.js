@@ -27,7 +27,7 @@ module.exports = {
   'reception-course-name-lower': 'excellence in reception teaching',
   'send-course-name': 'SEND and inclusion for teachers',
   'send-leader-course-name': 'SEND and inclusion for leaders',
-  'choosette': 'Excellence in reception teaching',
+  'choosette': '',
   'eligibilityoutcome': '',
 
   // v2 For admin console 
