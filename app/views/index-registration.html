@@ -18,12 +18,70 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Registration flow prototypes</h1>
 
+      <h2 class="govuk-heading-l">SEND + Reception service</h2>
+      <p>This round will take on parts of the previous round that tested well and puts in the correct SEND eligibility rules.</p>
+      <p>This also puts the eligibility check before One Login, to align with NPQ research findings.</p>
+      <div class="govuk-body">
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "v3/index",
+          isStartButton: true
+        }) }}
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Design board
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="">View<span class="govuk-visually-hidden"> design board</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                UR playback
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Research not started.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <!-- <a class="govuk-link" href="">View<span class="govuk-visually-hidden"> playback</span></a> -->
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+
       <h2 class="govuk-heading-l">SEND full application journey</h2>
       <p>In this round we tested out various ways to improve the registration journey. This included: auto-select course or provider based on journey, choose a second provider, no preference for provider, magic link to provider after submitting registration, autofilling data in provider form where they have already given it to DfE.</p>
       <div class="govuk-body">
         {{ govukButton({
           text: "Start prototype journey",
-          href: "v1-SEND/index",
+          href: "v2/index",
           isStartButton: true
         }) }}
       </div>

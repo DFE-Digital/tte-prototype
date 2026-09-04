@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Change your provider
+{% endblock %}
+
+{% block beforeContent %}
+  {%- if not data['signedIn'] -%}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {%- endif -%}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Register with a different provider for SEND and inclusion for leaders course</h1>
+      {% if data['referrer'] == "pending" %}
+        <p>You can only register with a different provider if you haven't started the course yet.</p>
+      {% endif %}
+      {% if data['referrer'] == "pending" or data['referrer'] == "rejected" %}
+        <h3 class="govuk-heading-m">What happens when you change provider</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>We will notify your current provider that you are no longer registered with them</li>
+          <li>Your new provider will contact you to complete their application form</li>
+        </ul>
+      {% endif %}
+      {% if data['referrer'] == "accepted" %}
+        <p>You already have a place on the course with a training provider. You can change provider before the course starts but you will no longer have a guaranteed place on the course. </p>
+        <h2 class="govuk-heading-m">To change training provider, you need to:</h2>
+        <ol class="govuk-list govuk-list--number">
+          <li>email our support team <a href="">continuing-professional-development@digital.education.gov.uk</a></li>
+          <li>request they change the status of your application so that you can register with a different provider</li>
+          <li>they will email you to confirm when this is complete</li>
+          <li>come back to this service and you will be able to 'register with a different provider'</li>
+        </ol>
+      {% endif %}
+    </div>
+  </div>
+
+  <form class="form" action="route-change-provider?referrer=notsubmitted" method="post">
+    {% if data['referrer'] == "pending" %}
+      {{ govukRadios({
+        id: "changeprovider",
+        name: "changeprovider",
+        fieldset: {
+          legend: {
+            text: "Confirm you have not started the course and want to register with a different provider",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I have not started the course and want to change provider"
+          },
+          {
+            value: "no",
+            text: "No, I don't want to change provider"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    {% elseif data['referrer'] == "rejected" %}
+      {{ govukRadios({
+        id: "changeprovider",
+        name: "changeprovider",
+        fieldset: {
+          legend: {
+            text: "Confirm you want to register with a different provider",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, I want to change provider"
+          },
+          {
+            value: "no",
+            text: "No, I don't want to change provider"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    {% else %}
+    {% endif %}
+  </form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+
+  <!-- User not working in England -->
+  {% if data['wheredoyouwork'] == "No" %}
+    {% include './work-details/not-eng.html' %}
+
+  <!-- User works in private or other setting -->
+  {% elseif data['whichsetting'] == "Privately run setting" %}
+    {% include './work-details/other.html' %}
+  
+  {% elseif data['whichsetting'] == "Other" %}
+    {% include './work-details/other.html' %}
+
+  <!-- User works in state-funded setting -->
+  {% else %} 
+    {% include './work-details/school-funded.html' %}
+  {% endif %}

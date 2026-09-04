@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Select your workplace
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="funding/funding-eligible">
+
+          {{ govukInput({
+            label: {
+              text: "Select your workplace",
+              classes: "govuk-label--xl",
+              isPageHeading: true
+            },
+            hint: {
+              text: "Search for your workplace by postcode, unique reference number (URN) or name."
+            },
+            id: "fename",
+            name: "fename"
+          }) }}
+
+          <div class="govuk-!-margin-top-7">
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </div>
+
+      </form>
+  </div>
+</div>
+
+{% endblock %}

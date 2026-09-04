@@ -9,11 +9,7 @@
   {% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
   {% block pageTitle %}
-    {% if data['choosette'] == "SEND and inclusion for leaders" %}
-      National Professional Qualifications (NPQ) advanced courses – GOV.UK
-    {% else %}
-      National Professional Development (NPD) courses – GOV.UK
-    {% endif %}
+    {{ data['tte-combined-name'] }}
   {% endblock %}
 
   {% set serviceURL %}
@@ -25,19 +21,15 @@
   {% endset %}
 
   {% set serviceName %}
-    {% if data['choosette'] == "SEND and inclusion for leaders" %}
-      National Professional Qualifications (NPQ) advanced courses
-    {% else %}
-      National Professional Development (NPD) courses
-    {% endif %}
+    {{ data['tte-combined-name'] }}
   {% endset%}
 
   {% set registerlinkhtml %}
-    Register for a {% if data['choosette'] == "SEND and inclusion for leaders" %}NPQ advanced {% else %}{{ data['tte-programme-name-acronym'] }} {% endif %} course
+    Register for a course
   {% endset %}
 
   {% set accountlinkhtml %}
-    {% if data['choosette'] == "SEND and inclusion for leaders" %}NPQ advanced account {% else %}{{ data['tte-programme-name-acronym'] }} account {% endif %}
+    Account
   {% endset %}
 
   {% block header %}

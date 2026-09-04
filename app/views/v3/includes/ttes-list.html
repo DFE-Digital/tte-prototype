@@ -1,0 +1,20 @@
+{{ govukRadios({
+  name: "choosette",
+  items: [
+    {
+      value: "Excellence in reception teaching",
+      text: "Excellence in reception teaching",
+      checked: true if (data['choosette'] == "Excellence in reception teaching")
+    },
+    {
+      value: "SEND and inclusion for leaders",
+      text: "SEND and inclusion for leaders",
+      checked: true if (data['choosette'] == "SEND and inclusion for leaders")
+    },
+    {
+      value: "SEND and inclusion for teachers",
+      text: "SEND and inclusion for teachers",
+      checked: true if (data['choosette'] == "SEND and inclusion for teachers")
+    }
+  ]
+}) }}

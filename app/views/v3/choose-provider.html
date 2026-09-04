@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Select your training provider
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="where-do-you-work" method="post">
+
+        {{ govukRadios({
+          name: "provider",
+          id: "provider",
+          fieldset: {
+            legend: {
+              text: "Select your training provider",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            { 
+              value: "Acorn training", 
+              html: "<strong>Acorn training</strong>" 
+            },
+            { 
+              value: "Cedar trust", 
+              html: "<strong>Cedar trust</strong>", 
+              checked: true if (data['provider'] == "Cedar trust")
+            },
+            { 
+              value: "Evergreen learning", 
+              html: "<strong>Evergreen learning</strong>" 
+            },
+            { 
+              value: "Maple education", 
+              text: "Maple education",
+              disabled: 'true', 
+              hint: {
+                text: "This provider is not delivering the course start date you've selected – please go back if you wish to train with this provider."
+              }
+            },
+            { 
+              value: "Redwood training", 
+              html: "<strong>Redwood training</strong>" 
+            },
+            { 
+              value: "Willow network", 
+              text: "Willow network", 
+              disabled: 'true', 
+              hint: {
+                text: "This provider is not delivering the course start date you've selected – please go back if you wish to train with this provider."
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: "Continue" }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
