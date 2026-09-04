@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Find a provider – Optional in-person sessions
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Find a provider</h1>
+
+    <form class="form" action="study-hours" method="post">
+      {{ govukRadios({
+        id: "chooseproviderinperson",
+        name: "chooseproviderinperson",
+        fieldset: {
+          legend: {
+            text: "Do you want the provider to offer optional in-person sessions?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

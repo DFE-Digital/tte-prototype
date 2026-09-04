@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Select a NPD course
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Select a course</h1>
+      
+      <form class="form" action="course-start" method="post">
+        {% include './includes/ttes-list.html' %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        
+      </form>
+      
+    </div>
+    
+  </div>
+{% endblock %}

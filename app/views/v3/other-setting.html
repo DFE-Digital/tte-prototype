@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  How are you employed?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-other-setting" method="post">
+        {{ govukRadios({
+          name: "othersetting",
+          id: "othersetting",
+          fieldset: {
+            legend: {
+              text: "How are you employed?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "In an independent hospital education organisation",
+              html: "In an independent hospital education organisation"
+            },
+            {
+              value: "As a teacher employed by a local authority to teach in more than one school",
+              html: "As a teacher employed by a local authority to teach in more than one school"
+            },
+            {
+              value: "In a virtual school (local authority run organisations that support the education of children in care)",
+              html: "In a virtual school (local authority run organisations that support the education of children in care)"
+            },
+            {
+              value: "In a young offender institution",
+              html: "In a young offender institution"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

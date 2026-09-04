@@ -1,0 +1,196 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration flow prototypes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Registration flow prototypes</h1>
+
+      <h2 class="govuk-heading-l">SEND + Reception service</h2>
+      <p>This round will take on parts of the previous round that tested well and puts in the correct SEND eligibility rules.</p>
+      <p>This also puts the eligibility check before One Login, to align with NPQ research findings.</p>
+      <div class="govuk-body">
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "v3/index",
+          isStartButton: true
+        }) }}
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Design board
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="">View<span class="govuk-visually-hidden"> design board</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                UR playback
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Research not started.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <!-- <a class="govuk-link" href="">View<span class="govuk-visually-hidden"> playback</span></a> -->
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                X
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+
+      <h2 class="govuk-heading-l">SEND full application journey</h2>
+      <p>In this round we tested out various ways to improve the registration journey. This included: auto-select course or provider based on journey, choose a second provider, no preference for provider, magic link to provider after submitting registration, autofilling data in provider form where they have already given it to DfE.</p>
+      <div class="govuk-body">
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "v2/index",
+          isStartButton: true
+        }) }}
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Design board
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Shows the journey from provider marketing, through DfE registration and provider application form. 
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://lucid.app/lucidspark/4c0ea0ec-11ad-4071-8d0f-d7c66feebde4/edit?view_items=_CKJj_1kQciU&page=0_0&invitationId=inv_c9cbe88d-be9e-41c5-9dac-75ac694e74d5">View<span class="govuk-visually-hidden"> design board</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                UR playback
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Playback was delivered in May 2026. Playback deck has links to dicsussion guide and notetaking board.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://educationgovuk.sharepoint.com.mcas.ms/:p:/r/sites/TeacherServices/_layouts/15/Doc.aspx?sourcedoc=%7BFEA28831-619D-4BF1-B388-C39791D1DE6A%7D&file=SEND%20and%20Inclusion%20TTE%20Alpha%20R1%20findings%20-%20TTE%20Digital.pptx&action=edit&mobileredirect=true">View<span class="govuk-visually-hidden"> playback</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                This research round is complete. Some things that were tested have been discounted as they didn't test well, others are still being explored.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+      <h2 class="govuk-heading-l">Reception registration service</h2>
+      <p>In this round we tested the full reception registration journey, including guidance pages.</p>
+      <div class="govuk-body">
+
+        {{ govukButton({
+          text: "Start prototype journey",
+          href: "v1/index",
+          isStartButton: true
+        }) }}
+
+        <ol class="govuk-list govuk-list--bullet">
+          <li><a href="v1/closed/eoi-email">Register interest form </a></li>
+        </ol>
+      </div>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--green">Complete</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Design board
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Shows the full registration journey that went live.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://lucid.app/lucidspark/4c0ea0ec-11ad-4071-8d0f-d7c66feebde4/edit?view_items=i_~a8pScm4X8&page=0_0&invitationId=inv_c9cbe88d-be9e-41c5-9dac-75ac694e74d5">View<span class="govuk-visually-hidden"> design board</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                UR playback
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Playback was delivered in February 2026. Playback deck has links to dicsussion guide and notetaking board.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://educationgovuk.sharepoint.com.mcas.ms/:p:/r/sites/TeacherServices/_layouts/15/Doc.aspx?sourcedoc=%7B0A4C7D53-BBEF-4081-946E-BC4BA5DFC0E0%7D&file=TTE%20Reception%20course%20-Usability%20testing%20-Jan.%20Feb%2026.pptx&action=edit&mobileredirect=true">View<span class="govuk-visually-hidden"> playback</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                The reception registration service and guidance pages went live in June 2026. The guidance pages that went live differed from the version that was tested and is shown here.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+  </div>
+{% endblock %}

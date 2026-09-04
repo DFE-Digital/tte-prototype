@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Find a provider – Choose your course start date
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Find a provider</h1>
+
+    <form class="form" action="in-person" method="post">
+      {{ govukRadios({
+        id: "chooseproviderstartdate",
+        name: "chooseproviderstartdate",
+        fieldset: {
+          legend: {
+            text: "When do you want to start the course?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "October 2027",
+            text: "October 2027"
+          },
+          {
+            value: "January to March 2028",
+            text: "January to March 2028"
+          },
+          {
+            value: "I want to start later",
+            text: "I want to start later"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
