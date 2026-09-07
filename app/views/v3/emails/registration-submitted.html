@@ -1,0 +1,42 @@
+{% extends "layout-email.html" %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>You've registered for {{ data['choosette'] or "SEND and inclusion for teachers" }} {{ data['tte-programme-name-acronym'] }} – next steps</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+        <p>Application ID: 000001</p>
+
+        <p>Dear name</p>
+
+        <p>We have received your registration and have checked your eligibility for funding.</p>
+
+        <h2>Training course details </h2>
+        <ul class="govuk-list">
+          <li><strong>Course name:</strong> {{ data['choosette'] or "SEND and inclusion for teachers" }} {{ data['tte-programme-name-acronym'] }} </li>
+          <li><strong>Training provider:</strong> {{ data['provider'] or "Cedar trust" }}</li>
+          <li><strong>Course start date:</strong> {{ data['startdate'] or "October 2027" }}</li>
+          <li><strong>Funding eligibility:</strong> Eligible</li>
+        </ul>
+
+        <h2>What happens next</h2>
+        <p>Your details have been passed on to your training provider.</p>
+        <p><strong>You now need to complete the provider application using this <a href="../linking-to-provider.html">unique link</a></strong>.</p>
+        <p>Your place on the course will not be confirmed until your provider application is submitted. You do not need to do this straight away but places are limited, so we recommend you complete it as soon as it possible.</p>
+
+        <h2>Get help</h2>
+        <p>Email continuing-professional-development@digital.education.gov.uk</p>
+        <p>Regards,</p>
+        <p>The Teacher Continuing Professional Development team</p>
+          
+    </div>
+  </div>
+{% endblock %}

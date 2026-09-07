@@ -2,7 +2,14 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Register for a TTE course prototype
+  Reception course registration prototype
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -10,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Register for a TTE course prototype
+        Reception course registration prototype
       </h1>
 
       {{ govukButton({

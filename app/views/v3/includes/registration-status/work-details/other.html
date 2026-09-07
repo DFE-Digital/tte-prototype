@@ -1,0 +1,34 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'Yes' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'Other' }}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    classes: "govuk-!-margin-bottom-0",
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    }
+  ]
+}) }}

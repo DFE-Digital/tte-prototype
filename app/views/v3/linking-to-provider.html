@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Sending you to your provider
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="provider-site/log-in.html" method="get">
+        <h1 class="govuk-heading-l">We are sending you to your provider's application form</h1>
+        <p>This will take you to {{ data['provider'] or "Cedar trust" }}'s website to log in or create an account. When you get to your application form it will already contain the information you shared with DfE.</p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

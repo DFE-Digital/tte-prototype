@@ -11,66 +11,30 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">TTE courses prototype</h1>
 
-      <h2 class="govuk-heading-l">SEND registration service</h2>
-<!-- Current version SEND Registration service -->
+      <h2 class="govuk-heading-l">Registration service</h2>
+<!-- Leads to page listing different versions and what has changed -->
       <div class="govuk-body">
-        <div id="event-name-hint" class="govuk-hint">Last updated: 30 Mar 2026</div>
-        <div id="event-name-hint" class="govuk-hint">Creation of SEND registration flow.</div>
-
         {{ govukButton({
-          text: "Start prototype journey",
-          href: "v1-SEND/index",
+          text: "View prototype versions",
+          href: "index-registration",
           isStartButton: true
         }) }}
       </div>
 
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Reception registration service</h2>
-<!-- Current version reception Registration service -->
+      <h2 class="govuk-heading-l">Guidance and find service</h2>
+<!-- Leads to page listing different versions and what has changed -->
       <div class="govuk-body">
-        <div id="event-name-hint" class="govuk-hint">Last updated: 20 Mar 2026</div>
-        <div id="event-name-hint" class="govuk-hint">Updated all content.</div>
-
         {{ govukButton({
-          text: "Start prototype journey",
-          href: "v1/index",
+          text: "View prototype versions",
+          href: "index-guidance",
           isStartButton: true
         }) }}
-
-        <ol class="govuk-list govuk-list--bullet">
-          <li><a href="v1/closed/eoi-email">Register interest form </a></li>
-        </ol>
-      </div>
-
-<!-- Current version GOV.UK guidance pages -->
-      <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">GOV.UK guidance pages</h2>
-      <div class="govuk-body">
-        <div id="event-name-hint" class="govuk-hint">Last updated: 20 Mar 2026</div>
-        <div id="event-name-hint" class="govuk-hint">Guidance pages updated for Reception</div>
-
-        {{ govukButton({
-          text: "Start prototype journey",
-          href: "gov-uk-guidance/professional-development",
-          isStartButton: true
-        }) }}
-
-        <p>Pages within the collection:</p>
-        <ol class="govuk-list govuk-list--bullet">
-          <li><a href="gov-uk-guidance/professional-development">Professional development </a></li>
-          <li><a href="gov-uk-guidance/guidance-tte">TTE guidance </a></li>
-          <li><a href="gov-uk-guidance/SEND-leaders">Leading SEND and inclusion (leaders) course </a></li>
-          <li><a href="gov-uk-guidance/SEND-teachers">Supporting SEND and inclusion (teachers) course </a></li>
-          <li><a href="gov-uk-guidance/reception">Excellence in reception teaching course </a></li>
-          <li><a href="gov-uk-guidance/providers.html">Compare providers using table</a></li>
-          <li><a href="gov-uk-guidance/providers-blurbs.html">Compare providers using blurbs</a></li>
-          <li><a href="v1-SEND/choose-a-provider/course-start">Compare providers using short form</a></li>
-        </ol>
       </div>
 
 <!-- Admin console prototype -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">TTE admin</h2>
+      <h2 class="govuk-heading-l">Admin tool</h2>
       <p>Prototype for the TTE admin console, used by DfE staff.</p>
 
       <h2 class="govuk-hint">Last updated: 2 Dec 2025 </h2>
@@ -85,8 +49,6 @@
 
       </div>
 
-
-
 <!-- Strategic design prototype -->
       <hr style="margin-top: 40px; margin-bottom: 40px">
       <h2 class="govuk-heading-l">Concept testing </h2>
@@ -98,7 +60,7 @@
 
         {{ govukButton({
           text: "Start prototype journey",
-          href: "/strat-des/strat-des-TTE/index",
+          href: "/concept-testing/strat-des-TTE/index",
           isStartButton: true
         }) }}
       </div>
@@ -111,35 +73,11 @@
 
         {{ govukButton({
           text: "Start prototype journey",
-          href: "/strat-des/strat-des-NPQ/index",
+          href: "/concept-testing/strat-des-NPQ/index",
           isStartButton: true
         }) }}
       </div>
-    
-
-    <!--Find service and simple guidance prototypes-->
-
-    <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Find service concept testing </h2>
-
-        {{ govukButton({
-          text: "Start find a service prototype journey",
-          href: "/find-service/joint-start-page.html",
-          isStartButton: true
-        }) }}
-
-          <p>Simplified guidance pages:</p>
-        <ol class="govuk-list govuk-list--bullet">
-          <li><a href="find-service/simplify-guidance-coursetype.html">Prototype list 1 - Sorted via course type </a></li>
-         <!-- <li><a href="find-service/simplify-guidance-longlist.html">Prototype list 2 - Not sorted</a></li>-->
-         <!-- <li><a href="find-service/simplify-guidance.html">Simplified Guidance - Sorted via teachers or leaders </a></li>-->
-          <li><a href="find-service/simplify-guidance-page.html">Example result page - Reception</a></li>
-          <li><a href="find-service/simplify-guidance-page-send.html">Example result page - SEND for teachers</a></li>
-          <li><a href="find-service/simplify-guidance-page-leaders.html">Example result page - SEND for leaders</a></li>
-        </ol>
-
-        </div>
-      
+              </div>
 
     <div class="govuk-grid-column-one-third">
 
@@ -151,7 +89,17 @@
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
               <a href="https://github.com/DFE-Digital/tte-prototype">
-                Prototype Git repository
+                Prototype Github repository
+              </a>
+            </li>
+            <li>
+              <a href="https://lucid.app/lucidspark/7c219d17-4add-4ca3-b4d6-79d49cbf4117/edit?view_items=yCM.1cPVNVUn&page=0_0&invitationId=inv_0433c510-dce2-4186-a683-f6256af4aba0">
+                Service map lucid board
+                </a>
+            </li>
+            <li>
+              <a href="https://lucid.app/lucidspark/479c8136-758b-4614-a628-cff460dfcf2f/edit?view_items=ZXyhTSjfoeWD&page=0_0&invitationId=inv_19181b07-f73e-4fe6-81f4-4b7f629ef496">
+                User journey with needs, pain points, changes made
               </a>
             </li>
             <li class="govuk-!-margin-top-5"><strong>Reception course</strong></li>
@@ -160,11 +108,7 @@
                 Digital registration user flow on a lucid board 
               </a>
             </li>
-            <li>
-              <a href="https://lucid.app/lucidspark/7c219d17-4add-4ca3-b4d6-79d49cbf4117/edit?view_items=yCM.1cPVNVUn&page=0_0&invitationId=inv_0433c510-dce2-4186-a683-f6256af4aba0">
-                Service map lucid board
-                </a>
-            </li>
+            
             <li class="govuk-!-margin-top-5"><strong>SEND courses</strong></li>
             <li>
               <a href="https://lucid.app/lucidspark/7c219d17-4add-4ca3-b4d6-79d49cbf4117/edit?view_items=4sL6hOywb6DN&page=0_0&invitationId=inv_0433c510-dce2-4186-a683-f6256af4aba0">

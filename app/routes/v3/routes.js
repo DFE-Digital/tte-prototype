@@ -1,7 +1,7 @@
 const _ = require('lodash')
 
 // version
-var v = '/v1-SEND/'
+var v = '/v3/'
 
 module.exports = router => {
 
@@ -215,28 +215,6 @@ module.exports = router => {
     }
   })
 
-  router.get(v + 'route-provider', (req, res) => {
-    var provider = req.session.data['provider']
-
-    if (provider == 'No preference – we have auto-assigned you to Cedar trust') {
-      res.redirect(v + 'where-do-you-work')
-    } 
-    else {
-      res.redirect(v + 'second-provider')
-    }
-  })
-
-  router.get(v + 'route-second-provider', (req, res) => {
-    var secondprovider = req.session.data['secondprovider']
-
-    if (secondprovider == 'Yes') {
-      res.redirect(v + 'choose-backup-provider')
-    } 
-    else {
-      res.redirect(v + 'where-do-you-work')
-    }
-  })
-
   router.post(v + 'route-wherework', function(req, res){
     var wheredoyouwork = req.session.data['wheredoyouwork']
 
@@ -269,36 +247,51 @@ module.exports = router => {
     else if (settingt == 'Independent learning provider') {
       res.redirect(v + 'which-fe')
     }
-    else if (settingt == 'Special post 16 institution') {
-      res.redirect(v + 'which-fe')
+    else if (settingt == 'Other') {
+      res.redirect(v + 'rtta')
     } 
     else {
       res.redirect(v + 'funding/funding-not-available-setting')
     } 
   })
 
-  router.post(v + 'route-which-fe', function (req, res){
-    var locationt = req.session.data['wheredoyouwork']
-    var fe = req.session.data['whatfe']
-    if(locationt == 'No'){
-      res.redirect(v + 'funding/funding-not-available-england')
+  router.post(v + 'route-rtta', function(req, res){
+    var rtta = req.session.data['rtta']
+
+    if (rtta == 'Yes') {
+      res.redirect(v + 'funding/funding-eligible')
+    } else {
+      res.redirect(v + 'other-setting')
     }
-    else if (fe == 'School or academy') {
-      res.redirect(v + 'which-school')
+  })
+
+  router.post(v + 'route-other-setting', function(req, res){
+    var othersetting = req.session.data['othersetting']
+
+    if (othersetting == 'As a teacher employed by a local authority to teach in more than one school') {
+      res.redirect(v + 'what-role')
     } 
-    else if (fe == 'College') {
-      res.redirect(v + 'which-school')
-    } 
-    else if (fe == 'Special post 16 institution') {
-      res.redirect(v + 'which-school')
-    }
-    else if (fe == 'Independent learning provider') {
-      res.redirect(v + 'which-fe')
+    else if (othersetting == 'In a virtual school (local authority run organisations that support the education of children in care)') {
+      res.redirect(v + 'what-role')
     } 
     else {
-      res.redirect(v + 'funding/funding-not-available-setting')
-    } 
+      res.redirect(v + 'employer')
+    }
   })
+
+  router.post(v + 'route-other-funding-outcome', function(req, res){
+    var othersetting = req.session.data['othersetting']
+
+    if (othersetting == 'As a teacher employed by a local authority to teach in more than one school') {
+      res.redirect(v + 'funding/funding-eligible')
+    } 
+    else if (othersetting == 'In a virtual school (local authority run organisations that support the education of children in care)') {
+      res.redirect(v + 'funding/funding-eligible')
+    } 
+    else {
+      res.redirect(v + 'funding/funding-inreview')
+    }
+  })  
 
 // to be able to pinpoint data within selectedWorkplace 
   router.post(v + 'route-funding-outcome', (req, res) => {

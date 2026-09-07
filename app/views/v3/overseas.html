@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Do you work in an overseas British services' school, for example a Ministry of Defence School?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-overseas" method="post">
+        {{ govukRadios({
+          id: "overseasschool",
+          name: "overseasschool",
+          fieldset: {
+            legend: {
+              text: "Do you work in an overseas British services' school, for example a Ministry of Defence School?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+
+{% block beforeContent %}
+  {% if (data['numberOfRegistrations'] == "3") %}
+    {{ govukBackLink({
+      text: "Back to your registrations",
+      href: "./multiple-registrations"
+    }) }}
+  {% endif %}
+{% endblock %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% set changedproviderHTML %}
+  <h3 class="govuk-notification-banner__heading">
+    Registration successfully updated – you have registered with a new provider
+  </h3>
+  <p class="govuk-body">Your previous provider has been notified that you are no longer registered with them.</p>
+  <p class="govuk-body">Your new provider will be in contact with you soon.</p>
+{% endset %}
+
+{% set courseHTML %}
+  {{ data['choosette'] or "Excellence in reception teaching" }}
+{% endset %}
+
+{% set providerHTML %}
+  {{ data['provider'] or "Cedar trust" }}
+{% endset %}
+
+{% set providerbackupHTML %}
+  {{ data['providerbackup'] or "Acorn training" }}
+  <p class="govuk-hint govuk-!-margin-top-2">As you are eligible for funding, if your preferred provider does not offer you a funded place we will automatically reassign you to this provider.</p>
+{% endset %}
+
+{% set providerstatusHTML %}
+  <strong class="govuk-tag govuk-tag--yellow">
+    Apply with provider
+  </strong>
+  <p class="govuk-!-margin-top-2">You need to apply separately with your training provider.</p>
+
+  <p class="govuk-!-margin-top-4">During the application process your provider will check your:</p>
+  <ul class="govuk-!-margin-bottom-2">
+    <li>identity</li>
+    <li>place of work</li>
+    <li>suitability for the {% if data['choosette'] == "SEND and inclusion for leaders" %}NPQ advanced {% else %}{{ data['tte-programme-name-acronym'] }} {% endif %}course you've chosen</li>
+    <li>eligibility for scholarship funding</li>
+    <li>decision to complete a {% if data['choosette'] == "SEND and inclusion for leaders" %}NPQ advanced {% else %}{{ data['tte-programme-name-acronym'] }} {% endif %}is supported by your workplace</li>
+  </ul>
+{% endset %}
+
+{% set courseFundingHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+  <p>You may want to check the cost of the course with your provider.</p>
+{% endset %}
+
+{% set scholarshipFundingHTML %}
+  <!-- Not in England -->
+  {% if data['wheredoyouwork'] == "No" %}
+    {% if data['overseasschool'] == "Yes" %}
+      {% include '../includes/registration-status/funding-message--eligible.html' %}
+    {% else %}
+      <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England. </p>
+      <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+    {% endif %}
+  <!-- Works in England -->
+  {% else %}
+      <!-- --------------------------------
+          School or equivalent
+      ----------------------------------- -->
+      {% if ((data['whichsetting'] == "State-funded setting")) %}
+          <!-- Private school -->
+          {% if (data.selectedWorkplace["TypeOfEstablishment (name)"] == "Other independent school") %}
+            <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+            <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+          {% else %}
+            {% include '../includes/registration-status/funding-message--eligible.html' %}
+          {% endif %}
+      <!-- -----------------------
+        Private
+      -------------------------- -->
+      {% elseif data['whichsetting'] == "Privately run setting" %}
+        <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p> 
+      <!-- -----------------------
+        Other
+      -------------------------- -->
+      {% elseif data['whichsetting'] == "Other" %}
+        <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+      <!-- -----------------------
+        Early years or childcare
+      -------------------------- -->
+      {% else %}
+        {% if ((data['nurserysetting'] == "Private nursery") or (data['nurserysetting'] == "As a childminder") or (data['nurserysetting'] == "Another early years setting")) %}
+        <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
+        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+         {% else %}
+            {% include '../includes/registration-status/funding-message--eligible.html' %}
+          {% endif %}
+      {% endif %}
+    {% endif %}
+{% endset %}
+
+{% set linkhtml %}
+  <p class="govuk-notification-banner__heading">
+    To complete the application process you need to
+    <a class="govuk-notification-banner__link" href="../linking-to-provider">complete your providers application form</a>.
+  </p>
+{% endset %}
+
+{% block content %}
+
+  {% if (data['referrer'] == "newprovider") %}
+    {{ govukNotificationBanner({
+      html: changedproviderHTML,
+      type: 'success'
+    }) }}
+  
+    {% else %}
+    {{ govukNotificationBanner({
+      html: linkhtml
+    }) }}
+  {% endif %}
+
+  
+
+  <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
+
+  <h1 class="govuk-heading-xl">
+    Your {{ data['choosette'] or "Excellence in reception teaching" }} course registration
+  </h1>
+
+  <p><strong>Application ID</strong>: bbd71aaa-b3d3-47f8-9712-4e3e183252e4</p>
+
+
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+        value: {
+          html: courseHTML
+        }
+      },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: providerHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details?referrer=pending",
+              text: "Register with a different provider"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Second provider"
+        },
+        value: {
+          html: providerbackupHTML
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: providerstatusHTML
+        },
+        actions: {
+          items: [
+            {
+              href: "../linking-to-provider",
+              text: "Provider application form"
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html: (data['startdate'] or "October 2026") ~ '<br><br>If your provider does not confirm you’ve started the course by Spring 2028, your registration will expire. You can register again for a future start date.'
+        }
+      } 
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: scholarshipFundingHTML
+        }
+      },
+      {
+        key: {
+          text: "Course funding"
+        },
+        value: {
+          html: courseFundingHtml
+        }
+      } if (data['eligibilityoutcome'] == "notfunded")
+    ]
+  }) }}
+
+  {% include '../includes/registration-status/work-details.html' %}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

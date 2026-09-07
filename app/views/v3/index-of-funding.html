@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Funding outcome messages 
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Funding outcome messages </h1>
+      <p>This page show all variations of the funding outcome messages that can be shown in the service. </p>
+      
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Message 1 – Eligible for scholarship funding</h2>
+      <p><a href="./funding/funding-eligible">View funding message 1</a></li></p>
+      <div class="govuk-inset-text govuk-!-margin-left-6">
+        {% include './includes/funding-messages/message1-funding-eligible.html' %}
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Message 2 – Not eligible, as not in England</h2>
+      <p><a href="./funding/funding-not-available-england">View funding message 2</a></li></p>
+      <div class="govuk-inset-text govuk-!-margin-left-6">
+        {% include './includes/funding-messages/message2-funding-not-available-england.html' %} 
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Message 3 – Not eligible, as previously funded</h2>
+      <p><a href="./funding/already-funded">View funding message 3</a></li></p>
+      <div class="govuk-inset-text govuk-!-margin-left-6">
+        {% include './includes/funding-messages/message3-previously-funded.html' %}
+      </div>     
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-8">Message 4 – Not eligible, as not funded setting</h2>
+      <p><a href="./funding/funding-not-available-setting">View funding message 4</a></li></p>
+      <div class="govuk-inset-text govuk-!-margin-left-6">
+        {% include './includes/funding-messages/message4-funding-not-available-setting.html' %}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

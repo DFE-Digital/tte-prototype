@@ -1,0 +1,45 @@
+{% extends "layout-email.html" %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>Registration status updated for SEND and inclusion for teachers – next steps</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+        <p>Application ID: 000001</p>
+
+        <p>Dear name</p>
+
+        <p>You registered for SEND and inclusion for teachers with Cedar trust starting in autumn 2027.</p>
+
+        <h2>Change to your registration </h2>
+
+        <p>Your provider has notified us that they were not able to offer you a place on the course. This could be because you were not suitable for the course or they did not have a funded place available. </p>
+        
+        <h2>Your options</h2>
+        
+        <p>If your provider did not have a funded place available and you would still like to continue your application, you can: </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="">register with a different provider</a></li>
+          <li>talk to your provider about changing to a later course start date</li>
+        </ul>
+
+        <h2>Get help</h2>
+
+        <p>Email continuing-professional-development@digital.education.gov.uk</p>
+
+        <p>Regards,</p>
+
+        <p>The Teacher Continuing Professional Development team</p>
+          
+    </div>
+  </div>
+{% endblock %}

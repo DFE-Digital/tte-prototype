@@ -1,0 +1,58 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'No' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'Privately run setting' }}
+{% endset %}
+
+{% set serviceschoolHtml %}
+  {{ data['overseasschool'] or 'No' }}
+{% endset %}
+
+{% set employerHtml%}
+  {{ data['workplacename'] or 'Dubai British School'}} – {{ data['workplace'] or '130892'}}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    classes: "govuk-!-margin-bottom-0",
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "British service school"
+      },
+      value: {
+        html: serviceschoolHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        html: employerHtml
+      }
+    } if (data['overseasschool'] == "Yes")
+  ]
+}) }}

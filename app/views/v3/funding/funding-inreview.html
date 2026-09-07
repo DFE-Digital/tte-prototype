@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  We need to review your registration to see if you are eligible for funding
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Funding eligibility result</h1>
+
+      {% include '../includes/funding-messages/message5-funding-inreview.html' %}    
+      <form class="form" action="../sharing-data" method="post">
+        <input type="hidden" name="eligibilityoutcome" value="inreview">
+        
+        {{ govukButton({
+          text: "Continue",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

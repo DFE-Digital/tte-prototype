@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Tell us where you work
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="route-which-school" method="post">
+        {{ govukRadios({
+          name: "whichsetting",
+          id: "whichsetting",
+          fieldset: {
+            legend: {
+              text: "Tell us where you work",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            html: "Make sure the information you provide is correct, as your provider will check your details. <br>Register using your current workplace details, even if they will change soon.",
+            classes: "govuk-!-margin-bottom-6"
+          },
+          items: [
+            {
+              value: "State-funded setting",
+              html: "<strong>State-funded setting</strong>",
+              hint: {
+                text: "For example, a nursery, pre-school, school, academy trust, sixth form or college"
+              }
+            },
+            {
+              value: "Privately run setting",
+              html: "<strong>Privately run setting</strong>",
+              hint: {
+                text: "For example, a nursery, pre-school, school, sixth form or higher education institution"
+              }
+            },
+            {
+              value: "Independent learning provider",
+              html: "<strong>Independent learning provider</strong>"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "Other",
+              html: "<strong>Other</strong>",
+              hint: {
+                html: "<p>For example you:</p>
+                <ul>
+                  <li>were referred by the Return to Teaching Advisory (RTTA) service</li>
+                  <li>work for the local authority (for staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles)</li>
+                  <li>work in a independent hospital education organisation</li>
+                  <li>work in a young offender institution</li>
+                  <li>are self-employed</li>
+                  <li>are an agency supply teacher</li>
+                  <li>are not working in an educational setting</li>
+                </ul>"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

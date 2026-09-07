@@ -1,0 +1,58 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'Yes' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'State-funded setting' }}
+{% endset %}
+
+{% set employerHtml%}
+  {{ data['workplacename'] or 'West Hampstead Primary School'}}, {{ data['workplacepostcode'] or 'NW6 1QL'}} – {{ data['workplace'] or '100009'}}
+{% endset %}
+
+{% set feemployerHtml%}
+  {{ data['fename'] }}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    classes: "govuk-!-margin-bottom-0",
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        html: employerHtml
+      }
+    } if data['whichsetting'] == "State-funded setting",
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        html: feemployerHtml
+      }
+    } if data['whichsetting'] == "Independent learning provider" or data['whichsetting'] == "Special post 16 institution"
+  ]
+}) }}

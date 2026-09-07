@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Did a Return To Teaching Adviser (RTTA) refer you to this registration service? 
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Did a Return To Teaching Adviser (RTTA) refer you to this registration service?</h1>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">What is a return to teaching adviser?</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">The RTTA is a DfE service that provides you with an adviser who will give you one-to-one support to?</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>find and apply for teaching vacancies</li>
+            <li>access courses to enhance your subject knowledge or teaching practice</li>
+          </ul>
+        </div>
+      </details>
+
+      <form class="form" action="route-rtta" method="post">
+
+        {{ govukRadios({
+          name: "rtta",
+          id: "rtta",
+          items: [
+            { 
+              value: "Yes", 
+              html: "Yes" 
+            },
+            { 
+              value: "No", 
+              html: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: "Continue" }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
