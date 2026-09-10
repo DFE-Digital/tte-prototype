@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Registration flow prototypes
+  TTE prototype - Guidance + registration flow versions
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,15 +16,16 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Registration flow prototypes</h1>
+      <h1 class="govuk-heading-xl">Guidance + registration flow prototypes</h1>
 
-      <h2 class="govuk-heading-l">SEND + Reception service</h2>
+      <p class="govuk-hint govuk-!-margin-bottom-0">Round 4</p>
+      <h2 class="govuk-heading-l govuk-!-padding-top-0">Pre-login eligibility check prototype</h2>
       <p>This round will take on parts of the previous round that tested well and puts in the correct SEND eligibility rules.</p>
       <p>This also puts the eligibility check before One Login, to align with NPQ research findings.</p>
       <div class="govuk-body">
         {{ govukButton({
           text: "Start prototype journey",
-          href: "v3/index",
+          href: "v4/index",
           isStartButton: true
         }) }}
       </div>
@@ -75,15 +76,91 @@
       </div>
 
       <hr style="margin-top: 40px; margin-bottom: 40px">
+      <p class="govuk-hint govuk-!-margin-bottom-0">Round 3</p>
+      <h2 class="govuk-heading-l govuk-!-padding-top-0">'Find a course' concept testing </h2>
+      <p>For this research round we tested 2 main concepts for how we could help users find the most suitable course for them:</p>
+      <ol class="govuk-list govuk-list--bullet">
+        <li><a href="v3/joint-start-page.html">A short quiz to find relevant courses, which leads to filterable search results</a></li>
+        <li><a href="/v3/simplify-guidance-coursetype">Listing all courses, split by course type</a></li>
+      </ol>
 
-      <h2 class="govuk-heading-l">SEND full application journey</h2>
-      <p>In this round we tested out various ways to improve the registration journey. This included: auto-select course or provider based on journey, choose a second provider, no preference for provider, magic link to provider after submitting registration, autofilling data in provider form where they have already given it to DfE.</p>
-      <div class="govuk-body">
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <strong class="govuk-tag govuk-tag--yellow">In progress</strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Design board
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Showing the ideas we had and rough designs for what went into the prototype.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://lucid.app/lucidspark/53764b90-0ee5-42b2-9130-d6e4a31ee726/edit?view_items=J2~URfvDmXx0&page=0_0">View<span class="govuk-visually-hidden"> design board</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                UR playback
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Playback was delivered in July 2026. Playback deck has links to dicsussion guide and notetaking board.
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://educationgovuk.sharepoint.com.mcas.ms/:p:/r/sites/TeacherServices/_layouts/15/Doc.aspx?sourcedoc=%7B5370ECAD-5014-4181-820A-39406E0C6C57%7D&file=TTE%20SEND%20and%20Inclusion%C2%A0courses%20-%20R2%20findings%20-%20TTE%20Digital.pptx&action=edit&mobileredirect=true">View<span class="govuk-visually-hidden"> playback</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Notes
+              </dt>
+              <dd class="govuk-summary-list__value">
+                xx
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <hr style="margin-top: 40px; margin-bottom: 40px">
+
+      <p class="govuk-hint govuk-!-margin-bottom-0">Round 2</p>
+      <h2 class="govuk-heading-l govuk-!-padding-top-0">SEND concepts of what to change</h2>
+      <p>In this round we tested out various ways to improve the journey:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Helping users select their provider - a short quiz, a table of key facts and a table of short blurbs about each provider</li>
+        <li>Auto-selecting course or provider based on journey</li>
+        <li>Choose a second provider or state no preference for provider, to help with getting a funded place</li> 
+        <li>Providing a magic link to the provider application form after submitting registration</li>
+        <li>Autofilling data in the provider application form for questions DfE has already asked the user</li>
+      </ul>
+
+      <div class="govuk-body govuk-!-padding-top-4 govuk-!-margin-bottom-0">
         {{ govukButton({
           text: "Start prototype journey",
           href: "v2/index",
           isStartButton: true
         }) }}
+      </div>
+
+      <div class="govuk-body">
+        <p>Guidance pages within the prototype:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="v2/gov-uk-guidance/professional-development-v2">Professional development </a></li>
+          <li><a href="v2/gov-uk-guidance/guidance-tte">TTE guidance </a></li>
+          <li><a href="v2/gov-uk-guidance/SEND-leaders">Leading SEND and inclusion (leaders) course </a></li>
+          <li><a href="v2/gov-uk-guidance/SEND-teachers">Supporting SEND and inclusion (teachers) course </a></li>
+          <li><a href="v2/gov-uk-guidance/providers.html">Compare providers using table</a></li>
+          <li><a href="v2/gov-uk-guidance/providers-blurbs.html">Compare providers using blurbs</a></li>
+          <li><a href="v2/choose-a-provider/course-start">Compare providers using short form</a></li>
+        </ul>
       </div>
 
       <div class="govuk-summary-card">
@@ -102,7 +179,7 @@
                 Design board
               </dt>
               <dd class="govuk-summary-list__value">
-                Shows the journey from provider marketing, through DfE registration and provider application form. 
+                Shows the journey from provider marketing, GOV.UK guidance, through DfE registration and provider application form. 
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://lucid.app/lucidspark/4c0ea0ec-11ad-4071-8d0f-d7c66feebde4/edit?view_items=_CKJj_1kQciU&page=0_0&invitationId=inv_c9cbe88d-be9e-41c5-9dac-75ac694e74d5">View<span class="govuk-visually-hidden"> design board</span></a>
@@ -132,8 +209,10 @@
       </div>
 
       <hr style="margin-top: 40px; margin-bottom: 40px">
-      <h2 class="govuk-heading-l">Reception registration service</h2>
+      <p class="govuk-hint govuk-!-margin-bottom-0">Round 1</p>
+      <h2 class="govuk-heading-l govuk-!-padding-top-0">Reception registration service</h2>
       <p>In this round we tested the full reception registration journey, including guidance pages.</p>
+      <p>This took NPQ as a starting point and simplified due to less complex eligibility criteria. We tested a change provider feature and other ways the service varies from NPQ.</p>
       <div class="govuk-body">
 
         {{ govukButton({
@@ -142,9 +221,13 @@
           isStartButton: true
         }) }}
 
-        <ol class="govuk-list govuk-list--bullet">
+        <p>Guidance pages within the prototype:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="v1/gov-uk-guidance/professional-development">Professional development </a></li>
+          <li><a href="v1/gov-uk-guidance/guidance-tte">TTE guidance </a></li>
+          <li><a href="v1/gov-uk-guidance/reception">Excellence in reception teaching course </a></li>
           <li><a href="v1/closed/eoi-email">Register interest form </a></li>
-        </ol>
+        </ul>
       </div>
 
       <div class="govuk-summary-card">
@@ -178,6 +261,16 @@
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://educationgovuk.sharepoint.com.mcas.ms/:p:/r/sites/TeacherServices/_layouts/15/Doc.aspx?sourcedoc=%7B0A4C7D53-BBEF-4081-946E-BC4BA5DFC0E0%7D&file=TTE%20Reception%20course%20-Usability%20testing%20-Jan.%20Feb%2026.pptx&action=edit&mobileredirect=true">View<span class="govuk-visually-hidden"> playback</span></a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Related design history posts
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p><a class="govuk-link" href="https://teacher-cpd.design-history.education.gov.uk/npd-courses/copying-npq/">Using NPQ as a start point</a></p>
+                <p><a class="govuk-link" href="https://teacher-cpd.design-history.education.gov.uk/npd-courses/how-we-talk-about-funded-places/">Funded place language</a></p>
+                <p><a class="govuk-link" href="https://teacher-cpd.design-history.education.gov.uk/npd-courses/change-provider-process/">Change provider feature</a></p>
               </dd>
             </div>
             <div class="govuk-summary-list__row">

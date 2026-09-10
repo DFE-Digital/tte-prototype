@@ -162,16 +162,16 @@ module.exports = router => {
     res.redirect(v + 'start-id')
   })
 
-  router.get(v + 'send-leader-table', (req, res) => {
+   router.get(v + 'send-leader-table', (req, res) => {
     const data = req.session.data
     data.choosette = 'SEND and inclusion for leaders'
-    res.redirect('../gov-uk-guidance/providers')
+    res.redirect(v + 'gov-uk-guidance/providers')
   })
 
   router.get(v + 'send-leader-blurb', (req, res) => {
     const data = req.session.data
     data.choosette = 'SEND and inclusion for leaders'
-    res.redirect('../gov-uk-guidance/providers-blurbs')
+    res.redirect(v + 'gov-uk-guidance/providers-blurbs')
   })
 
   router.get(v + 'send-leader-quiz', (req, res) => {
@@ -189,15 +189,15 @@ module.exports = router => {
     router.get(v + 'send-teacher-table', (req, res) => {
     const data = req.session.data
     data.choosette = 'SEND and inclusion for teachers'
-    res.redirect('../gov-uk-guidance/providers')
+    res.redirect(v + 'gov-uk-guidance/providers')
   })
 
   router.get(v + 'send-teacher-blurb', (req, res) => {
     const data = req.session.data
     data.choosette = 'SEND and inclusion for teachers'
-    res.redirect('../gov-uk-guidance/providers-blurbs')
+    res.redirect(v + 'gov-uk-guidance/providers-blurbs')
   })
-
+  
   router.get(v + 'send-teacher-quiz', (req, res) => {
     const data = req.session.data
     data.choosette = 'SEND and inclusion for teachers'

@@ -1,11 +1,17 @@
-{% extends "layout.html" %} {% set signedIn = 'false' %} {% block pageTitle %}
-Prototype list{% endblock %} {% block beforeContent %} {{ govukBackLink({
-text: "Back", href: "javascript:window.history.back()" }) }} {% endblock %} {%
-block content %}
-<div class="govuk-width-container">
- <main class="govuk-main-wrapper">
- <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ data['send-course-name'] }} - {{ data['tte-programme-name-with-acronym'] }}
+{% endblock %}
+
+{% set serviceName %}
+{% endset %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
         {{ data['send-course-name'] }}
@@ -81,7 +87,7 @@ block content %}
       <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="">Acorn training</a></li>
-        <li><a href="../v2/provider-site/course-details-teachers">Cedar trust</a></li>
+        <li><a href="../provider-site/course-details-teachers">Cedar trust</a></li>
         <li><a href="">Evergreen learning</a></li>
         <li><a href="">Maple education</a></li>
         <li><a href="">Redwood training</a></li>
@@ -89,49 +95,16 @@ block content %}
       </ul>
       <p>To help you find a provider that suits your needs:</h3>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="../v2/send-teacher-table">use our provider comparison table</a></li>
-        <li><a href="../v2/send-teacher-blurb">read a short description</a></li>
-        <li><a href="../v2/send-teacher-quiz">answer a few questions</a></li>
+        <li><a href="../send-teacher-table">use our provider comparison table</a></li>
+        <li><a href="../send-teacher-blurb">read a short description</a></li>
+        <li><a href="../send-teacher-quiz">answer a few questions</a></li>
         <li>Or, visit their websites</li>
       </ul>
 
       <h2 class="govuk-heading-l" id="apply">Apply</h2>
-      <p><a href="../v2/send-teacher">Check funding eligibility and register</a>.</p>
+      <p><a href="../send-teacher">Check funding eligibility and register</a>.</p>
 
-    </div>
-
-
-  <div class="govuk-grid-column-one-third">
-
-
-      <aside class="govuk-prototype-kit-common-templates-related-items govuk-!-margin-top-3" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related courses
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li class="govuk-!-margin-top-5"><strong>National Professional Development (NPD) </strong></li>
-            <li>
-              <a href="simplify-guidance-page.html">
-                Excellence in reception teaching - NPD
-              </a>
-              </a>
-            </li>
-    
-            <li class="govuk-!-margin-top-5"><strong>National Professional Qualifications (NPQs)</strong></li>
-            <li>
-              <a href="#">
-                Leading behaviour and culture NPQ
-                </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
     </div>
   </div>
-  </main>
-</div>
 
-   
 {% endblock %}
