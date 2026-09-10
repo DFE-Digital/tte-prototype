@@ -1,0 +1,89 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ data['tte-programme-name-with-acronym'] }} training courses
+{% endblock %}
+
+{% set serviceName %}
+{% endset %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+      <h1 class="govuk-heading-xl" style="padding-top: 1px">
+        {{ data['tte-programme-name-with-acronym'] }} training courses
+      </h1>
+
+      <p class="govuk-body-l">Short courses for experienced teachers and educational leaders to deepen knowledge and advance skills. Based on the latest education research  for today's classroom, the courses aim to deliver better pupil and school outcomes.</p>
+
+      <hr>
+      <p class="govuk-body-s">From: <strong>Department for Education</strong></br>
+      Published 3 July 2026</p>
+
+      <div class="grey-background govuk-!-margin-bottom-6">
+        <p><strong>Applies to England</strong></p>
+      </div>
+        
+      <aside class="app-mainstream-guide-contents-list" role="complementary">
+        <nav class="app-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="app-contents-list__title">
+            Contents
+          </h2>
+          <ol class="app-contents-list__list">
+            <li aria-current="true" class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed">
+              <a href="#courses">
+                What is an NPD course
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#choose">
+                Choose an NPD course
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#length">
+                How long is an NPD course 
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#delivery">
+                How is the course delivered
+              </a>
+            </li>
+            <li class="govuk-!-margin-bottom-0 app-contents-list__list-item app-contents-list__list-item--dashed app-contents-list__list-item--active">
+              <a href="#funding">
+                Am I eligible for a free place on an NPD course 
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="courses">What is an NPD course </h2>
+      <p>National Professional Development courses are a Department for Education (DfE) initiative to provide the best evidence-based learning for experienced teachers and education leaders.</p>
+      <p>On successful completion of an NPD course, you will receive a certificate from DfE.</p>
+      
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="choose">Choose an NPD course </h2>     
+      <p><a href="simplify-guidance-page-leaders">SEND and inclusion for educational leaders</a></p>
+      <p><a href="simplify-guidance-page-send">SEND and inclusion for teachers</a></p>
+      <p><a href="simplify-guidance-page">Excellence in reception teaching course</a></p>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="length">How long is an NPD course</h2>
+      <p>Length of an NPD course will vary depending on the course you choose, and how your training provider delivers it.</p>
+      <p>Courses are a minimum of 14 hours and a maximum of 20 hours. It takes around two to three school terms to complete a course based on around one hour of learning a week.</p>
+      <p>You should check the individual course page for more details.</p>
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="delivery">How the course is delivered</h2>
+      <p>The course is delivered by DfE approved training providers only. It is taught using a mix of online learning, live sesssions (minimum 4 hours), and self-study. </p>
+      
+      <h2 class="govuk-heading-m govuk-!-padding-top-6" id="funding">Am I eligible for a free place on an NPD course</h2>
+      <p>Funding is available for most state-funded education settings in England, including Academies. You can also self-fund, and this can be discussed with the training provider.</p>
+      <p>More information about eligibility for a free place can be found on the individual course pages.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
