@@ -1,0 +1,102 @@
+{% extends "layout-govuk.html" %} 
+
+{% block pageTitle %}
+  Find training for experienced teachers and education leaders
+{% endblock %} 
+
+{% block beforeContent %}
+  <div class="govuk-width-container max-960 ">
+    {{ govukBreadcrumbs({
+      classes: "max-960",
+      items: [
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Home</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Education, training and skills</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teaching and leadership</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teacher training and professional development</p>',
+          href: "#"
+        }
+      ]
+    }) }}
+  </div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container max-960">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Find training for experienced teachers and education leaders </h1>
+      <p class="govuk-body">Find Department for Education (DfE) funded training to develop your teaching practice and professional knowledge. </p>
+      <p class="govuk-body>">This service is for experienced teachers and education leaders who:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          have completed their induction
+        </li>
+        <li>
+         work in any stage of education, from early years to further education
+        </li>
+        <li>
+          work in England
+        </li>
+      </ul>
+
+      <p class="govuk-body>">This service shows training courses that are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          designed by DfE and evidence-based
+        </li>
+        <li>
+         independently verified by the Education Endowment Foundation (EEF)
+        </li>
+        <li>
+          medium to long-term commitment (minimum 15 hours)
+        </li>
+        <li>
+          led by a training facilitator (online, in-person, or both) 
+        </li>
+      </ul>
+
+      <p class="govuk-body>">The service includes the following: </p>
+      <ul class="govuk-list">
+        <li>
+           <a class="govuk-link" href="">National Professional Development (NPD) courses </a>
+        </li>
+        <li>
+           <a class="govuk-link" href="">National Professional Qualifications (NPQs)</a>
+        </li>
+        <li>
+         <a class="govuk-link" href="">National Professional Qualification Advanced (NPQA)</a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">National Professional Development (NPD) </h2>
+      <p class="govuk-body">These short courses are for experienced teachers who want to add depth to their knowledge in a specific subject area. They run for around 6 months and are online with optional in-person sessions. Completion is based on attendance. </p>
+      
+      <h2 class="govuk-heading-m">Specialist National Professional Qualifications (NPQ)</h2>
+      <p class="govuk-body">Specialist NPQs can help you develop your classroom teaching or specialism. They run for around 12 months and are a mix of online and in-person sessions. There is an assessment at the end of the course, after passing you will be awarded with the qualification.</p>
+       
+      <h2 class="govuk-heading-m">Leadership NPQs</h2>
+      <p class="govuk-body">Leadership NPQs can help you develop your leadership skills or progress to a leadership role. They run for around 18 months and are a mix of online and in-person sessions. There is an assessment at the end of the course, after passing you will be awarded with the qualification. </p>
+
+      <h2 class="govuk-heading-m">NPQ Advanced</h2>
+      <p class="govuk-body">Courses for experienced leaders. These are aimed at people who have previously completed an NPQ. They run for around 9 months and are online with optional in-person sessions. Completion is based on attendance. </p>
+
+      {{ govukButton({
+        text: "Find courses now",
+        href: "list-of-courses",
+        isStartButton: true
+      }) }}
+
+    </div>
+  </div>
+  {% endblock %}
+</div>

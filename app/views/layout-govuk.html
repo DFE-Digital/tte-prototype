@@ -1,0 +1,55 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+  {% set govukRebrand = true %}
+
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  {% extends "service-header/layouts/service-header.html" %}
+
+  {% set serviceName %}
+    {{ data['tte-combined-name'] }}
+  {% endset%}
+
+  {% block header %}
+      {{ govukHeader({
+        homepageUrl: "start-page",
+        containerClasses: "max-960 center-div"
+      }) }}
+
+    <div class="govuk-width-container max-960">
+      {{ govukPhaseBanner({
+        tag: {
+          text: "Prototype"
+        },
+        html: 'This is a prototype of a new service – <a href=https://forms.office.com/e/hPvnPscP6R>give feedback or report a problem</a>'
+      }) }}
+    </div>
+  {% endblock %}
+  
+  {% block footer %}
+    {{ govukFooter({
+      containerClasses: "max-960 center-div",
+      meta: {
+        items: [
+          {
+            href: "/",
+            text: "Prototype contents"
+          },
+          {
+            href: "/manage-prototype",
+            text: "Manage your prototype"
+          },
+          {
+            href: "/manage-prototype/clear-data",
+            text: "Clear data"
+          },
+          {
+            href: "/settings",
+            text: "Settings"
+          }
+        ]
+      }
+    }) }}
+    {{ data | log }}
+  {% endblock %}

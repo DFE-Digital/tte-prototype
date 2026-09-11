@@ -1,4 +1,11 @@
 {% block content %}
+  <div class="govuk-!-margin-bottom-6">
+    {{ govukTag({
+      text: "Not eligible",
+      classes: "govuk-tag--red"
+    }) }}
+  </div>
+
   <p>You’ve already been allocated scholarship funding for the {{ data['choosette'] }} course with [provider].</p>
   <p>If you need to change something about your course or provider, email continuing-professional-development@digital.education.gov.uk.</p>
   <h2 class="govuk-heading-m">If you’re taking the course again</h2>

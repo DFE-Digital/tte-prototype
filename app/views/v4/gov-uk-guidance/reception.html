@@ -1,0 +1,188 @@
+{% extends "layout-govuk.html" %}
+
+{% block pageTitle %}
+  Excellence in reception teaching NPD - Find training for experienced teachers and education leaders
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-width-container max-960 ">
+    {{ govukBreadcrumbs({
+      classes: "max-960",
+      items: [
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Home</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Education, training and skills</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teaching and leadership</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teacher training and professional development</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Find training</p>',
+          href: "find-professional-development"
+        }
+      ]
+    }) }}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container max-960">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
+            {{ data['reception-course-name'] }} 
+          </h1>
+          <h1 class="govuk-heading-l" style="padding-top: 1px">
+            {{ data['tte-programme-name-with-acronym'] }} course 
+          </h1>  
+          <p class="govuk-body-l">Guidance on the national professional development (NPD) course and how to register to check if you are eligible for funding.</p>
+
+          <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+            <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+              <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+                Contents
+              </h2>
+              <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                  <a href="#who">
+                    Who this course is for
+                  </a>
+                </li>
+                <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  About the course
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#content">
+                    What you will learn
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#providers">
+                    Providers
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#structure">
+                    How the course is delivered
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#funding">
+                    Funding
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </aside>
+
+          <p class="govuk-!-padding-top-8">Using the latest early years evidence, relevant to the modern classroom, Excellence in reception teaching is a national professional development (NPD) course to help experienced teachers develop their practice and deepen their understanding of the key areas of child development.</p>
+          <p>NPD  courses are informed by the best available research and endorsed by the <a href="">Education Endowment Foundation</a>.</p>
+          <p>On successful completion of the course, participants will be awarded a Department for Education (DfE) accredited NPD certificate.</p>
+
+          <h2 class="govuk-heading-m" id="who">Who this course is for</h2>
+          <p>This course is suitable for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>teachers who have completed their induction</li>
+            <li>experienced reception teachers </li>
+            <li>teachers moving into a reception role</li>
+          </ul>
+          <p>This course is not designed for teaching assistants.</p>
+
+          <h2 class="govuk-heading-m" id="overview">About the course</h2>
+          <p>In the <a href="">Every child achieving and thriving</a> white paper, we committed to new training courses for teachers. NPD courses are designed for teachers who have completed their induction but may not be at a leadership level yet.</p>
+          <p>In the <a href="">Giving every child the best start in life</a> strategy, we committed to developing a new training course for reception class teachers.</p>
+          <p>Reception teachers play a vital role in shaping children’s early educational journeys. This course aims to develop their practice by building the knowledge, skills and professional behaviours required to provide the highest-quality reception year for all children.</p>
+          <p>This course will help teachers deliver high-quality reception teaching by providing the knowledge, tools and confidence to apply new learning approaches. </p>
+
+          <h2 class="govuk-heading-m" id="content">What you will learn</h2>
+          <p>You will learn practical strategies to improve children’s outcomes, including how to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>expertly apply evidence-based approaches in the classroom</li>
+            <li>establish effective communication and language skills to support children’s learning</li>
+            <li>build expertise in identifying and adapting to barriers to learning, including special educational needs and disabilities (SEND)</li>
+            <li>improve physical activity to help develop children’s well-being and motor-skills</li>
+            <li>plan an appropriate curriculum and assessments</li>
+            <li>support smooth transitions for children into and out of reception</li>
+          </ul>
+          <p>You can read the full <a href="">content framework</a>. Providers use this framework to design their course.</p>
+
+          <h2 class="govuk-heading-m" id="providers">Providers</h2>
+          <p>You can choose from one of the following DfE-approved providers:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="">Acorn training</a></li>
+            <li><a href="">Cedar trust</a></li>
+            <li><a href="">Evergreen learning</a></li>
+            <li><a href="">Maple education</a></li>
+            <li><a href="">Redwood training</a></li>
+            <li><a href="">Willow network</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m" id="structure">How the course is delivered</h2>
+          <p>The course is designed to fit around your teaching commitments.</p>
+          <p>It will:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>take around 2 school terms to complete  </li>
+            <li>combine online learning and self-study (minimum 20 hours) </li>
+            <li>include at least 4 hours of live online training</li>
+          </ul>
+          <p>Your chosen training provider can give you full delivery details.</p>
+
+          <h2 class="govuk-heading-m" id="eligibility">Funding</h2>
+          <p>Funded places are available for participants working in most state-funded settings, including academies.</p>
+          <p>Examples of settings where funding is not available include:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>schools outside England </li>
+            <li>independent schools</li>
+          </ul>
+          <p>If you are not eligible for funding, you can self-fund. You still need to register with the DfE.</p>
+          <p>When you register with the DfE, we will tell you if you are eligible for funding.</p>
+          
+          {{ govukButton({
+              text: "Check funding eligibility and register",
+              href: "../start-id",
+              isStartButton: true
+          }) }}
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <aside class="govuk-prototype-kit-common-templates-related-items govuk-!-margin-top-2" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Related courses
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list govuk-!-font-size-16">
+                <li>
+                  <a href="simplify-guidance-page-send.html">
+                    SEND and inclusion for teachers NPD
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Leading behaviour and culture NPQ</a>
+                </li>
+                <li>
+                  <a href="#">Leading primary mathematics NPQA</a>
+                </li>
+                <li>
+                  <a href="#">Leading teaching NPQ</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </div> 
+    </div>
+  </main>
+</div>
+
+{% endblock %}

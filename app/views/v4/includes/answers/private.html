@@ -107,6 +107,18 @@
             </dd>
           </div>
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding eligibility outcome
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ govukTag({
+                text: "Not eligible",
+                classes: "govuk-tag--red"
+              }) }}
+            </dd>
+          </div>
+
         </dl>
       </form>
     </div>
