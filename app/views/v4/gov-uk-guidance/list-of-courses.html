@@ -46,136 +46,170 @@
     <div class="govuk-grid-column-one-third">
       <div class="">
         <div class="">
-          <div class="">
+          <div class="filter-page">
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  <a href="" class="govuk-link--no-visited-state govuk-link--no-underline">Education phase</a>
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                      Early years
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                      All-through (primary and secondary)
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                      Further education
-                    </label>
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                  Education phase
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-early-years" type="checkbox" value="early-years" data-filter-group="phase">
+                      <label class="govuk-label govuk-checkboxes__label" for="phase-early-years">
+                        Early years
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-all-through" type="checkbox" value="all-through" data-filter-group="phase">
+                      <label class="govuk-label govuk-checkboxes__label" for="phase-all-through">
+                        All-through (primary and secondary)
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-further-education" type="checkbox" value="further-education" data-filter-group="phase">
+                      <label class="govuk-label govuk-checkboxes__label" for="phase-further-education">
+                        Further education
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </fieldset>
+              </details>
             </div>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  <a href="" class="govuk-link--no-visited-state govuk-link--no-underline">Topic</a>
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                      Special educational needs and disabilities (SEND)
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                      Maths
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                      Literacy
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                      Behaviour and culture 
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                      Teacher development
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                      Leadership
-                    </label>
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                  Topic
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-send" type="checkbox" value="send" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-send">
+                        Special educational needs and disabilities (SEND)
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-maths" type="checkbox" value="maths" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-maths">
+                        Maths
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-literacy" type="checkbox" value="literacy" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-literacy">
+                        Literacy
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-behaviour" type="checkbox" value="behaviour" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-behaviour">
+                        Behaviour and culture 
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-teacher-development" type="checkbox" value="teacher-development" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-teacher-development">
+                        Teacher development
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-leadership" type="checkbox" value="leadership" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-leadership">
+                        Leadership
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-teaching" type="checkbox" value="teaching" data-filter-group="topic">
+                      <label class="govuk-label govuk-checkboxes__label" for="topic-teaching">
+                        Teaching
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </fieldset>
+              </details>
             </div>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  <a href="" class="govuk-link--no-visited-state govuk-link--no-underline">Duration</a>
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                      6 months
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                      12 months
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                      18 months
-                    </label>
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                  Duration
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="duration-6" type="checkbox" value="6" data-filter-group="duration">
+                      <label class="govuk-label govuk-checkboxes__label" for="duration-6">
+                        6 months
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="duration-9" type="checkbox" value="9" data-filter-group="duration">
+                      <label class="govuk-label govuk-checkboxes__label" for="duration-9">
+                        9 months
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="duration-12" type="checkbox" value="12" data-filter-group="duration">
+                      <label class="govuk-label govuk-checkboxes__label" for="duration-12">
+                        12 months
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="duration-18" type="checkbox" value="18" data-filter-group="duration">
+                      <label class="govuk-label govuk-checkboxes__label" for="duration-18">
+                        18 months
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </fieldset>
+              </details>
             </div>
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                  <a href="" class="govuk-link--no-visited-state govuk-link--no-underline">Course type</a>
-                </legend>
-                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                      NPQ
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                      NPD
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" >
-                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                      NPQA
-                    </label>
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                  Course type
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="type-npq" type="checkbox" value="npq" data-filter-group="type">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-npq">
+                        NPQ
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="type-npd" type="checkbox" value="npd" data-filter-group="type">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-npd">
+                        NPD
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="type-npqa" type="checkbox" value="npqa" data-filter-group="type">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-npqa">
+                        NPQA
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="type-other" type="checkbox" value="other" data-filter-group="type">
+                      <label class="govuk-label govuk-checkboxes__label" for="type-other">
+                        Other
+                      </label>
+                    </div>
                   </div>
                 </div>
-              </fieldset>
+              </details>
             </div>
           </div>
         </div>
@@ -183,67 +217,584 @@
     </div>
 
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body-s">14 of 14 showing</p>
-      <div class="facet-tags"> <div class="facet-tags__group"> <div class="facet-tags__wrapper"> <span class="facet-tags__preposition">Of Type</span> <span class="facet-tag"> <span class="facet-tag__text">SEND</span> <button type="button" class="facet-tag__remove" aria-label="Remove filter Annual safety report" data-module="remove-filter-link" data-facet="report_type" data-value="annual-safety-report" data-name="">✕</button> </span> </div> </div> </div>
+      <p class="govuk-body-s" id="result-count">14 of 14 showing</p>
+      <div id="active-filters" class="facet-tags" hidden></div>
       <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teaching NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Lead the teaching and learning of a subject, year group or phase.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading behaviour and culture NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Promote a culture of good behaviour and high expectations.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Special educational needs co-ordinator's (SENCO) NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Perform a SENCO role effectively and set the strategic direction of special educational needs policy in an educational setting.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 103 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Senior leadership NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Develop leadership expertise to improve outcomes for teachers and pupils.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Executive leadership NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Develop the expertise to run large educational organisations and lead change and improvement.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 94 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Headship NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Become an expert school leader and outstanding headteacher.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Early years leadership NPQ</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Manage your staff and organisation to provide high-quality early years education and care.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 84 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Early headship coaching offer</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">If you’re in your first 5 years of headship, you may also be eligible for the early headship coaching offer. This offer provides unassessed structured support, coaching and networking opportunities.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; Runs alongside or after Headship NPQ </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-leaders">{{ data['send-leader-course-name'] }} NPQA</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>  
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-teachers">{{ data['send-course-name'] }} NPD</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="reception">Excellence in reception teaching NPD</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">To help experienced reception reachers deepen their understanding of the key areas of child development. </p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading primary mathematics NPQA</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Use mastery approaches to lead maths teaching in your school.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading literacy NPQA</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Promote literacy across a whole educational setting, year group, key stage or phase.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
-      <hr>
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teacher development NPQA</a></strong></h3>
-      <p class="govuk-!-margin-bottom-2">Help teachers in your setting develop their skills.</p>
-      <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+
+      <div id="course-results">
+        <div class="course-card"
+            data-topic="teaching"
+            data-duration="12"
+            data-type="npq"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teaching NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Lead the teaching and learning of a subject, year group or phase.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="behaviour"
+            data-duration="12"
+            data-type="npq"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading behaviour and culture NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Promote a culture of good behaviour and high expectations.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+        
+        <div class="course-card"
+            data-topic="send"
+            data-duration="18"
+            data-type="npq"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Special educational needs co-ordinator's (SENCO) NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Perform a SENCO role effectively and set the strategic direction of special educational needs policy in an educational setting.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 103 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+        
+        <div class="course-card"
+            data-topic="leadership"
+            data-duration="18"
+            data-type="npq"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Senior leadership NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Develop leadership expertise to improve outcomes for teachers and pupils.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="leadership"
+            data-duration="18"
+            data-type="npq"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Executive leadership NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Develop the expertise to run large educational organisations and lead change and improvement.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 94 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="leadership"
+            data-duration="18"
+            data-type="npq"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Headship NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Become an expert school leader and outstanding headteacher.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="leadership"
+            data-duration="18"
+            data-type="npq"
+            data-phase="early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Early years leadership NPQ</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Manage your staff and organisation to provide high-quality early years education and care.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 84 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="leadership"
+            data-duration="12"
+            data-type="other"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Early headship coaching offer</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">If you’re in your first 5 years of headship, you may also be eligible for the early headship coaching offer. This offer provides unassessed structured support, coaching and networking opportunities.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; Runs alongside or after Headship NPQ </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="send"
+            data-duration="9"
+            data-type="npqa"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-leaders">{{ data['send-leader-course-name'] }} NPQA</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>  
+          <hr>
+        </div>
+        
+        <div class="course-card"
+            data-topic="send"
+            data-duration="6"
+            data-type="npd"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-teachers">{{ data['send-course-name'] }} NPD</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="teaching"
+            data-duration="6"
+            data-type="npd"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="reception">Excellence in reception teaching NPD</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">To help experienced reception reachers deepen their understanding of the key areas of child development. </p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="maths"
+            data-duration="9"
+            data-type="npqa"
+            data-phase="all-through">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading primary mathematics NPQA</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Use mastery approaches to lead maths teaching in your school.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="literacy"
+            data-duration="9"
+            data-type="npqa"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading literacy NPQA</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Promote literacy across a whole educational setting, year group, key stage or phase.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+          <hr>
+        </div>
+
+        <div class="course-card"
+            data-topic="teacher-development"
+            data-duration="9"
+            data-type="npqa"
+            data-phase="all-through,further-education,early-years">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teacher development NPQA</a></strong></h3>
+          <p class="govuk-!-margin-bottom-2">Help teachers in your setting develop their skills.</p>
+          <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
+          <hr>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var checkboxes = Array.from(
+    document.querySelectorAll(".filter-checkbox")
+  );
+
+  var courses = Array.from(
+    document.querySelectorAll(".course-card")
+  );
+
+  var resultCount = document.getElementById("result-count");
+  var activeFilters = document.getElementById("active-filters");
+  var totalCourses = courses.length;
+
+  /*
+   * Convert a comma-separated course data attribute
+   * into an array.
+   *
+   * For example:
+   * "early-years,all-through"
+   *
+   * becomes:
+   * ["early-years", "all-through"]
+   */
+  function getCourseValues(course, attributeName) {
+    var value =
+      course.getAttribute("data-" + attributeName) || "";
+
+    return value
+      .toLowerCase()
+      .split(",")
+      .map(function (item) {
+        return item.trim();
+      })
+      .filter(function (item) {
+        return item !== "";
+      });
+  }
+
+  /*
+   * Get all selected values for one filter group.
+   */
+  function getSelectedValues(groupName) {
+    return checkboxes
+      .filter(function (checkbox) {
+        return (
+          checkbox.checked &&
+          checkbox.getAttribute("data-filter-group") ===
+            groupName
+        );
+      })
+      .map(function (checkbox) {
+        return checkbox.value.toLowerCase().trim();
+      });
+  }
+
+  /*
+   * A course matches a filter group when nothing has
+   * been selected in that group, or when at least one
+   * selected value appears in the course values.
+   *
+   * This gives OR behaviour within a group.
+   */
+  function matchesFilterGroup(
+    courseValues,
+    selectedValues
+  ) {
+    if (selectedValues.length === 0) {
+      return true;
+    }
+
+    return selectedValues.some(function (
+      selectedValue
+    ) {
+      return courseValues.includes(selectedValue);
+    });
+  }
+
+  /*
+   * Get the visible text from a checkbox label.
+   */
+  function getCheckboxLabel(checkbox) {
+    var label = document.querySelector(
+      'label[for="' + checkbox.id + '"]'
+    );
+
+    if (label) {
+      return label.textContent.trim();
+    }
+
+    return checkbox.value;
+  }
+
+  /*
+   * Convert the filter group values into the capitalised
+   * labels shown in the active-filter banner.
+   */
+  function getGroupLabel(groupName) {
+    var groupLabels = {
+      phase: "Education phase",
+      topic: "Topic",
+      duration: "Duration",
+      type: "Course type"
+    };
+
+    return groupLabels[groupName] || groupName;
+  }
+
+  /*
+   * Remove the current content of the active-filter
+   * banner before rebuilding it.
+   */
+  function clearActiveFilters() {
+    if (!activeFilters) {
+      return;
+    }
+
+    while (activeFilters.firstChild) {
+      activeFilters.removeChild(
+        activeFilters.firstChild
+      );
+    }
+  }
+
+  /*
+   * Create an "or" separator between filters in the
+   * same group.
+   */
+  function createOrSeparator() {
+    var separator = document.createElement("span");
+
+    separator.className =
+      "active-filter-separator";
+
+    separator.textContent = "or";
+
+    separator.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    return separator;
+  }
+
+  /*
+   * Create one removable active-filter button.
+   *
+   * The cross is placed before the filter text to match
+   * the layout shown in the example.
+   */
+  function createFilterTag(checkbox) {
+    var labelText = getCheckboxLabel(checkbox);
+
+    var tag = document.createElement("span");
+    tag.className = "active-filter-tag";
+
+    var removeButton =
+      document.createElement("button");
+
+    removeButton.type = "button";
+    removeButton.className =
+      "active-filter-remove";
+
+    removeButton.setAttribute(
+      "aria-label",
+      "Remove filter " + labelText
+    );
+
+    var removeIcon =
+      document.createElement("span");
+
+    removeIcon.textContent = "\u00D7";
+    removeIcon.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    var tagText =
+      document.createElement("span");
+
+    tagText.className = "facet-tag__text";
+    tagText.textContent = labelText;
+
+    removeButton.appendChild(removeIcon);
+    removeButton.appendChild(tagText);
+
+    removeButton.addEventListener(
+      "click",
+      function () {
+        checkbox.checked = false;
+
+        filterCourses();
+
+        checkbox.focus();
+      }
+    );
+
+    tag.appendChild(removeButton);
+
+    return tag;
+  }
+
+  /*
+   * Build the active-filter banner.
+   *
+   * Each filter group appears as a separate row.
+   *
+   * For example:
+   *
+   * Education phase [x Early years]
+   *
+   * Topic [x SEND] or [x Leadership]
+   */
+  function updateActiveFilters() {
+    if (!activeFilters) {
+      return;
+    }
+
+    clearActiveFilters();
+
+    var checkedCheckboxes =
+      checkboxes.filter(function (checkbox) {
+        return checkbox.checked;
+      });
+
+    if (checkedCheckboxes.length === 0) {
+      activeFilters.hidden = true;
+      return;
+    }
+
+    activeFilters.hidden = false;
+
+    /*
+     * This order controls the order of the rows in the
+     * active-filter banner.
+     */
+    var filterGroupOrder = [
+      "phase",
+      "topic",
+      "duration",
+      "type"
+    ];
+
+    filterGroupOrder.forEach(function (
+      groupName
+    ) {
+      var groupCheckboxes =
+        checkedCheckboxes.filter(function (
+          checkbox
+        ) {
+          return (
+            checkbox.getAttribute(
+              "data-filter-group"
+            ) === groupName
+          );
+        });
+
+      if (groupCheckboxes.length === 0) {
+        return;
+      }
+
+      var group =
+        document.createElement("div");
+
+      group.className = "facet-tags__group";
+
+      var wrapper =
+        document.createElement("div");
+
+      wrapper.className =
+        "facet-tags__wrapper";
+
+      var groupLabel =
+        document.createElement("span");
+
+      groupLabel.className =
+        "facet-tags__preposition";
+
+      /*
+       * Produces correctly capitalised labels:
+       *
+       * Education phase
+       * Topic
+       * Duration
+       * Course type
+       */
+      groupLabel.textContent =
+        getGroupLabel(groupName);
+
+      wrapper.appendChild(groupLabel);
+
+      groupCheckboxes.forEach(function (
+        checkbox,
+        index
+      ) {
+        /*
+         * Add "or" before every filter except
+         * the first filter in the row.
+         */
+        if (index > 0) {
+          wrapper.appendChild(
+            createOrSeparator()
+          );
+        }
+
+        wrapper.appendChild(
+          createFilterTag(checkbox)
+        );
+      });
+
+      group.appendChild(wrapper);
+
+      activeFilters.appendChild(group);
+    });
+  }
+
+  /*
+   * Filter the course cards and update the result count.
+   */
+  function filterCourses() {
+    var selectedTopics =
+      getSelectedValues("topic");
+
+    var selectedPhases =
+      getSelectedValues("phase");
+
+    var selectedDurations =
+      getSelectedValues("duration");
+
+    var selectedTypes =
+      getSelectedValues("type");
+
+    var visibleCount = 0;
+
+    courses.forEach(function (course) {
+      var courseTopics =
+        getCourseValues(course, "topic");
+
+      var coursePhases =
+        getCourseValues(course, "phase");
+
+      var courseDurations =
+        getCourseValues(course, "duration");
+
+      var courseTypes =
+        getCourseValues(course, "type");
+
+      var matchesTopic =
+        matchesFilterGroup(
+          courseTopics,
+          selectedTopics
+        );
+
+      var matchesPhase =
+        matchesFilterGroup(
+          coursePhases,
+          selectedPhases
+        );
+
+      var matchesDuration =
+        matchesFilterGroup(
+          courseDurations,
+          selectedDurations
+        );
+
+      var matchesType =
+        matchesFilterGroup(
+          courseTypes,
+          selectedTypes
+        );
+
+      /*
+       * Use AND behaviour between filter groups:
+       *
+       * Topic AND phase AND duration AND type.
+       */
+      var shouldShow =
+        matchesTopic &&
+        matchesPhase &&
+        matchesDuration &&
+        matchesType;
+
+      course.hidden = !shouldShow;
+
+      if (shouldShow) {
+        visibleCount += 1;
+      }
+    });
+
+    if (resultCount) {
+      resultCount.textContent =
+        visibleCount +
+        " of " +
+        totalCourses +
+        " showing";
+    }
+
+    updateActiveFilters();
+  }
+
+  /*
+   * Update the results whenever a sidebar checkbox
+   * changes.
+   */
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener(
+      "change",
+      filterCourses
+    );
+  });
+
+  /*
+   * Set the correct initial count and hide the empty
+   * active-filter banner.
+   */
+  filterCourses();
+});
+</script>
 {% endblock %}

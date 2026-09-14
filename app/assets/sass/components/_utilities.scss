@@ -55,3 +55,75 @@ code {
 .center-div {
   margin: 0 auto;
 }
+
+// filters 
+  /*
+   * Each selected filter group is displayed as one row.
+   */
+  .facet-tags__group {
+    padding: 10px 8px;
+  }
+
+  /*
+   * Give the first active-filter row a grey background.
+   */
+  .facet-tags__group:first-child {
+    background-color: #f3f2f1;
+  }
+
+  .facet-tags__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /*
+   * Filter group name, for example "Education phase".
+   */
+  .facet-tags__preposition {
+    font-weight: 700;
+    margin-right: 2px;
+    text-transform: none !important;
+    display: inline-block !important;
+  }
+
+  /*
+   * Individual removable filter.
+   */
+  .facet-tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #505a5f;
+    border-radius: 4px;
+    background-color: #ffffff;
+  }
+
+  .active-filter-tag {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  .active-filter-remove {
+    display: inline-block;
+    white-space: nowrap;
+
+    padding: 8px 10px;
+    border: 1px solid #505a5f;
+    border-radius: 4px;
+    background: #fff;
+
+    cursor: pointer;
+  }
+
+  .active-filter-separator {
+    margin: 0 8px;
+  }
+
+  .filter-page .govuk-details__summary-text {
+   text-decoration: none; 
+  }
+
+  .filter-page .govuk-details__text {
+    border-left: none;
+  }
