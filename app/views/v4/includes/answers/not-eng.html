@@ -50,22 +50,6 @@
               </a>
             </dd>
           </div>
-
-          {% if data['secondprovider'] == "Yes" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Second provider
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['providerbackup'] or "Acorn training" }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="choose-backup-provider">
-                  Change<span class="govuk-visually-hidden"> provider</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -89,27 +73,11 @@
               {{ data['overseasschool'] or "No" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="what-setting">
+              <a class="govuk-link" href="overseas">
                 Change<span class="govuk-visually-hidden"> British service school</span>
               </a>
             </dd>
           </div>
-
-          {% if data['overseasschool'] == "No" %}
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Work setting
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "State-funded setting" }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="what-setting">
-                Change<span class="govuk-visually-hidden"> work setting</span>
-              </a>
-            </dd>
-          </div>
-          {% endif %}
 
           {% if data['overseasschool'] == "Yes" %}
             <div class="govuk-summary-list__row">
@@ -123,6 +91,17 @@
               <a class="govuk-link" href="which-school">
                 Change<span class="govuk-visually-hidden"> workplace</span>
               </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding eligibility outcome
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ govukTag({
+                text: "Eligible",
+                classes: "govuk-tag--green"
+              }) }}
             </dd>
           </div>
           {% endif %}
@@ -140,6 +119,18 @@
                 <a class="govuk-link" href="funding/how-pay">
                   Change<span class="govuk-visually-hidden"> course funding</span>
                 </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Funding eligibility outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Not eligible",
+                  classes: "govuk-tag--red"
+                }) }}
               </dd>
             </div>
           {% endif %}

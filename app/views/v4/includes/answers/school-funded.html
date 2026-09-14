@@ -50,22 +50,6 @@
               </a>
             </dd>
           </div>
-
-          {% if data['secondprovider'] == "Yes" %}
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Second provider
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['providerbackup'] or "Acorn training" }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="choose-backup-provider">
-                  Change<span class="govuk-visually-hidden"> provider</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
           
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -95,7 +79,7 @@
             </dd>
           </div>
 
-          {% if data['whichsetting'] == "Independent learning provider" or data['whichsetting'] == "Special post 16 institution" %}
+          {% if data['whichsetting'] == "Independent learning provider" %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Workplace
@@ -125,6 +109,17 @@
             </div>
           {% endif %}
 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding eligibility outcome
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ govukTag({
+                text: "Eligible",
+                classes: "govuk-tag--green"
+              }) }}
+            </dd>
+          </div>
         </dl>
 
       </form>

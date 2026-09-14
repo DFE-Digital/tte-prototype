@@ -231,7 +231,7 @@ module.exports = router => {
     if (overseasschool == 'Yes') {
       res.redirect(v + 'which-school')
     } else {
-      res.redirect(v + 'what-setting')
+      res.redirect(v + 'funding/funding-not-available-england')
     }
   })
 
@@ -259,7 +259,7 @@ module.exports = router => {
     var rtta = req.session.data['rtta']
 
     if (rtta == 'Yes') {
-      res.redirect(v + 'funding/funding-eligible')
+      res.redirect(v + 'funding/funding-inreview')
     } else {
       res.redirect(v + 'other-setting')
     }
@@ -283,9 +283,6 @@ module.exports = router => {
     var othersetting = req.session.data['othersetting']
 
     if (othersetting == 'As a teacher employed by a local authority to teach in more than one school') {
-      res.redirect(v + 'funding/funding-eligible')
-    } 
-    else if (othersetting == 'In a virtual school (local authority run organisations that support the education of children in care)') {
       res.redirect(v + 'funding/funding-eligible')
     } 
     else {

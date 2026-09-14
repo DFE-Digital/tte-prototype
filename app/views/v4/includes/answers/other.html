@@ -70,7 +70,7 @@
               {{ data['whichsetting'] or "Other" }} – {{ data['othersetting'] or "Other" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="what-setting">
+              <a class="govuk-link" href="other-setting">
                 Change<span class="govuk-visually-hidden"> work setting</span>
               </a>
             </dd>
@@ -106,6 +106,31 @@
             </dd>
           </div>
 
+          {% if data['othersetting'] == "As a teacher employed by a local authority to teach in more than one school" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Funding eligibility outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Eligible",
+                  classes: "govuk-tag--green"
+                }) }}
+              </dd>
+            </div>
+            {% else %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Funding eligibility outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "In review",
+                  classes: "govuk-tag--yellow"
+                }) }}
+              </dd>
+            </div>
+          {% endif %}
         </dl>
       </form>
     </div>

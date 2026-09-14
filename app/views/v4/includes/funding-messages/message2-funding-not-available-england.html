@@ -1,4 +1,11 @@
 {% block content %}
+  <div class="govuk-!-margin-bottom-6">
+    {{ govukTag({
+      text: "Not eligible",
+      classes: "govuk-tag--red"
+    }) }}
+  </div>
+
   <p>You’re not eligible for scholarship funding for {{ data['choosette']}} course as you do not work in England.</p>
   <p class="govuk-body">This means that you would need to pay for the {{ data['choosette']}} course another way. For example, you could pay for the course fees yourself or ask your workplace or trust to:</p>
   <ul class="govuk-list govuk-list--bullet">

@@ -1,0 +1,78 @@
+// tags on filter govuk page
+.facet-tags__group:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+.facet-tags__group {
+  padding: 5px;
+}
+
+.facet-tags__wrapper {
+  vertical-align: middle;
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.facet-tags__wrapper:first-of-type .facet-tags__preposition:first-of-type {
+  font-weight: bold;
+}
+
+.facet-tags__preposition {
+  display: table-cell;
+  padding: 0 5px 0 2px;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
+
+.govuk-frontend-supported .facet-tag {
+  padding: .5em .5em .5em 1.5em;
+}
+.facet-tag {
+  display: table-cell;
+  position: relative;
+  padding: .3125em;
+  border: 1px solid #484949;
+  border-radius: .3125em;
+  background-color: #f3f3f3;
+}
+
+.govuk-frontend-supported .facet-tag__text {
+    margin-left: .3125em;
+}
+.facet-tag__text {
+    display: inline-block;
+    margin-left: 0;
+    pointer-events: none;
+    position: relative;
+    z-index: 1;
+}
+
+.govuk-frontend-supported .facet-tag__remove {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+.facet-tag__remove {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+.facet-tag__remove {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    border-radius: .3125em;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    font-family: "GDS Transport", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
