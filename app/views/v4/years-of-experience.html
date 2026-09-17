@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
-{% set signedIn = 'false' %}
+{% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  What organisation are you employed by?
+  Year of experience
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,18 +15,20 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="route-other-funding-outcome" method="post">
+      <form class="form" action="sharing-data" method="post">
         {{ govukInput({
             label: {
-              text: "What organisation are you employed by?",
+              text: "How many years have you been working in the education profession?",
               classes: "govuk-label--xl",
               isPageHeading: true
             },
             hint: {
-              text: "For example, 'Essex County Council', or 'I'm self employed'"
+              text: "Include your Newly Qualified Teacher (NQT) or Early Career Teacher (ECT) years, if applicable. If you have taken a career break, please exclude this."
             },
-            id: "employer",
-            name: "employer"
+            id: "yearsexperience",
+            name: "yearsexperience",
+            inputmode: "numeric",
+            spellcheck: false
           }) }}
 
         {{ govukButton({

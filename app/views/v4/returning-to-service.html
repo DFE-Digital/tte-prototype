@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Returning to registration service
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You are being returned to the Register for {{ data['tte-programme-name-acronym'] }} course service</h1>
+      <form class="form" action="data-stored" method="post">
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        
+      </form>
+      
+    </div>
+    
+  </div>
+{% endblock %}

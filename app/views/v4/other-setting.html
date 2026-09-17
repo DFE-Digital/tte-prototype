@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
   How are you employed?
@@ -15,7 +15,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="route-other-setting" method="post">
+      <form class="form" action="employer" method="post">
         {{ govukRadios({
           name: "othersetting",
           id: "othersetting",

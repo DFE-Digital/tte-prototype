@@ -22,7 +22,6 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">Choose your course start date</h1>
-    <p>Registrations are currently open for courses starting in October 2027.</p>
 
 {% if (data['choosette'] == "Excellence in reception teaching") %}
     <form class="form" action="route-start-date" method="post">
@@ -39,7 +38,10 @@
         items: [
           {
             value: "October 2026",
-            text: "October 2026"
+            text: "October 2026",
+            hint: {
+              text: "Please be aware that places are now limited."
+            }
           },
           {
             value: "January 2027",
@@ -57,7 +59,8 @@
       }) }}
     </form>
   {% else %}
-        <form class="form" action="route-start-date" method="post">
+        
+    <form class="form" action="route-start-date" method="post">
       {{ govukRadios({
         id: "startdate",
         name: "startdate",

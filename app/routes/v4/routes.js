@@ -106,7 +106,7 @@ module.exports = router => {
 
   // after on login page 
 
-  router.get(v + 'logged-in', (req, res) => {
+  router.get(v + 'route-returning-to-service', (req, res) => {
     var referrer = req.session.data['referrer']
     var choosette = req.session.data['choosette']
 
@@ -128,7 +128,19 @@ module.exports = router => {
     else if(referrer == 'certificate'){
       res.redirect(v + 'registration-status/registration-status--passed')
     }
-    else if(choosette == ''){
+    else {
+      res.redirect(v + 'returning-to-service')
+    }
+  })
+
+  // ------------
+  // From start page
+  // ------------
+
+  router.get(v + 'route-course', (req, res) => {
+    var choosette = req.session.data['choosette']
+
+    if(choosette == ''){
       res.redirect(v + 'choose-course')
     }
     else {
@@ -215,6 +227,16 @@ module.exports = router => {
     }
   })
 
+  router.post(v + 'route-where-do-you-work', function(req, res){
+    var selffund = req.session.data['selffund']
+
+    if (selffund == 'self-fund') {
+      res.redirect(v + 'check-answers')
+    } else {
+      res.redirect(v + 'where-do-you-work')
+    }
+  })
+
   router.post(v + 'route-wherework', function(req, res){
     var wheredoyouwork = req.session.data['wheredoyouwork']
 
@@ -262,20 +284,6 @@ module.exports = router => {
       res.redirect(v + 'funding/funding-inreview')
     } else {
       res.redirect(v + 'other-setting')
-    }
-  })
-
-  router.post(v + 'route-other-setting', function(req, res){
-    var othersetting = req.session.data['othersetting']
-
-    if (othersetting == 'As a teacher employed by a local authority to teach in more than one school') {
-      res.redirect(v + 'what-role')
-    } 
-    else if (othersetting == 'In a virtual school (local authority run organisations that support the education of children in care)') {
-      res.redirect(v + 'what-role')
-    } 
-    else {
-      res.redirect(v + 'employer')
     }
   })
 

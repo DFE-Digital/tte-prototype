@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
   DfE scholarship funding is not available
@@ -18,7 +18,7 @@
       <h1 class="govuk-heading-xl">Funding eligibility result</h1>
 
       {% include '../includes/funding-messages/message2-funding-not-available-england.html' %}
-      <form class="form" action="how-pay" method="post"> 
+      <form class="form" action="../check-answers" method="post"> 
         <input type="hidden" name="eligibilityoutcome" value="notfunded">
         {{ govukButton({
           text: "Continue",
