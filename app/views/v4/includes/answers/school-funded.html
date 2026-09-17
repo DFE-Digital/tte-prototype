@@ -5,8 +5,6 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers and submit</h1>
-
       <form class='form' action="" method="post">
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -19,34 +17,6 @@
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="choose-course">
                 Change<span class="govuk-visually-hidden"> course</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Course start 
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['startdate'] or "October 2026" }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="course-start">
-                Change<span class="govuk-visually-hidden"> course start date</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Provider
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['provider'] or "Cedar trust" }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="choose-provider">
-                Change<span class="govuk-visually-hidden"> provider</span>
               </a>
             </dd>
           </div>
@@ -120,6 +90,64 @@
               }) }}
             </dd>
           </div>
+
+          {% if (data['referrer'] == "reg") %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course start 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['startdate'] or "October 2027" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="course-start">
+                  Change<span class="govuk-visually-hidden"> course start date</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Provider
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['provider'] or "Cedar trust" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="choose-provider">
+                  Change<span class="govuk-visually-hidden"> provider</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['whatrole'] or "Maths lead" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="what-role">
+                  Change<span class="govuk-visually-hidden"> role</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Years of experience
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['yearsexperience'] or "2" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="years-of-experience">
+                  Change<span class="govuk-visually-hidden"> years of experience</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
         </dl>
 
       </form>

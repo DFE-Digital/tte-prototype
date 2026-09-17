@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% set signedIn = 'false' %}
 
 {% block pageTitle %}
-  Select a NPD course
+  Assumptions we've made for funding eligibility
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,10 +15,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Select a course</h1>
-      
-      <form class="form" action="route-where-do-you-work" method="post">
-        {% include './includes/ttes-list.html' %}
+      <h1 class="govuk-heading-xl">Assumptions we've made for funding eligibility</h1>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You have not previously received funding for your chosen course </li>
+        <li>You have not already started the course</li>
+        <li>You want to start the course before XX </li>
+      </ul>
+      <form class="form" action="route-course" method="post">
 
         {{ govukButton({
           text: "Continue"

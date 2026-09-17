@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
   Select a course
@@ -22,7 +22,7 @@
         <h1 class="govuk-heading-xl">You are registering for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
       {% endif %}
       <p>If this is not the course you want to register for, <a href="choose-course">change your course</a>.</p>
-      <form class="form" action="course-start" method="post">
+      <form class="form" action="where-do-you-work" method="post">
 
         {{ govukButton({
           text: "Continue"

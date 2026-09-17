@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set signedIn = 'true' %}
+{% set signedIn = 'false' %}
 
 {% block pageTitle %}
   We need to review your registration to see if you are eligible for funding
@@ -20,7 +20,7 @@
       <h1 class="govuk-heading-xl">Funding eligibility result</h1>
 
       {% include '../includes/funding-messages/message5-funding-inreview.html' %}    
-      <form class="form" action="../sharing-data" method="post">
+      <form class="form" action="../check-answers" method="post">
         <input type="hidden" name="eligibilityoutcome" value="inreview">
         
         {{ govukButton({

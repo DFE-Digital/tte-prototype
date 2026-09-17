@@ -1,9 +1,8 @@
 {% extends "layout.html" %}
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-{% set signedIn = 'false' %}
+{% set signedIn = 'true' %}
 
 {% block pageTitle %}
-  Select a NPD course
+  Not in prototype
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,18 +15,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Select a course</h1>
-      
-      <form class="form" action="route-where-do-you-work" method="post">
-        {% include './includes/ttes-list.html' %}
-
+      <h1 class="govuk-heading-xl">This part of the journey is not in the prototype.</h1>  
+      <form class="form" action="index" method="post">
         {{ govukButton({
-          text: "Continue"
+          text: "Back to start"
         }) }}
-        
       </form>
-      
     </div>
-    
   </div>
 {% endblock %}
