@@ -108,7 +108,6 @@ module.exports = router => {
 
   router.get(v + 'route-returning-to-service', (req, res) => {
     var referrer = req.session.data['referrer']
-    var choosette = req.session.data['choosette']
 
     if(referrer == 'change-provider'){
       res.redirect(v + 'registration-status/registration-status--scholarship-only')
@@ -129,7 +128,7 @@ module.exports = router => {
       res.redirect(v + 'registration-status/registration-status--passed')
     }
     else {
-      res.redirect(v + 'returning-to-service')
+      res.redirect(v + 'data-stored')
     }
   })
 
