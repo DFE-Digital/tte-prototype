@@ -64,9 +64,15 @@
                       </label>
                     </div>
                     <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-all-through" type="checkbox" value="all-through" data-filter-group="phase">
-                      <label class="govuk-label govuk-checkboxes__label" for="phase-all-through">
-                        All-through (primary and secondary)
+                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-primary" type="checkbox" value="primary" data-filter-group="phase">
+                      <label class="govuk-label govuk-checkboxes__label" for="phase-primary">
+                        Primary
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input filter-checkbox" id="phase-secondary" type="checkbox" value="secondary" data-filter-group="phase">
+                      <label class="govuk-label govuk-checkboxes__label" for="phase-secondary">
+                        Secondary
                       </label>
                     </div>
                     <div class="govuk-checkboxes__item">
@@ -123,12 +129,6 @@
                       <input class="govuk-checkboxes__input filter-checkbox" id="topic-leadership" type="checkbox" value="leadership" data-filter-group="topic">
                       <label class="govuk-label govuk-checkboxes__label" for="topic-leadership">
                         Leadership
-                      </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input filter-checkbox" id="topic-teaching" type="checkbox" value="teaching" data-filter-group="topic">
-                      <label class="govuk-label govuk-checkboxes__label" for="topic-teaching">
-                        Teaching
                       </label>
                     </div>
                   </div>
@@ -223,10 +223,10 @@
 
       <div id="course-results">
         <div class="course-card"
-            data-topic="teaching"
+            data-topic="leadership"
             data-duration="12"
             data-type="npq"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teaching NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Lead the teaching and learning of a subject, year group or phase.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -237,7 +237,7 @@
             data-topic="behaviour"
             data-duration="12"
             data-type="npq"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading behaviour and culture NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Promote a culture of good behaviour and high expectations.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; 58 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -248,7 +248,7 @@
             data-topic="send"
             data-duration="18"
             data-type="npq"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Special educational needs co-ordinator's (SENCO) NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Perform a SENCO role effectively and set the strategic direction of special educational needs policy in an educational setting.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 103 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -259,7 +259,7 @@
             data-topic="leadership"
             data-duration="18"
             data-type="npq"
-            data-phase="all-through">
+            data-phase="primary,secondary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Senior leadership NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Develop leadership expertise to improve outcomes for teachers and pupils.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -270,7 +270,7 @@
             data-topic="leadership"
             data-duration="18"
             data-type="npq"
-            data-phase="all-through">
+            data-phase="primary,secondary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Executive leadership NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Develop the expertise to run large educational organisations and lead change and improvement.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 94 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -281,7 +281,7 @@
             data-topic="leadership"
             data-duration="18"
             data-type="npq"
-            data-phase="all-through">
+            data-phase="primary,secondary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Headship NPQ</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Become an expert school leader and outstanding headteacher.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">18 months &nbsp;&nbsp;&nbsp; 86 hours &nbsp;&nbsp;&nbsp; Mandatory in-person sessions </p>
@@ -303,7 +303,7 @@
             data-topic="leadership"
             data-duration="12"
             data-type="other"
-            data-phase="all-through">
+            data-phase="primary,secondary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Early headship coaching offer</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">If you’re in your first 5 years of headship, you may also be eligible for the early headship coaching offer. This offer provides unassessed structured support, coaching and networking opportunities.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">12 months &nbsp;&nbsp;&nbsp; Runs alongside or after Headship NPQ </p>
@@ -314,7 +314,7 @@
             data-topic="send"
             data-duration="9"
             data-type="npqa"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-leaders">{{ data['send-leader-course-name'] }} NPQA</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>  
@@ -325,7 +325,7 @@
             data-topic="send"
             data-duration="6"
             data-type="npd"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="SEND-teachers">{{ data['send-course-name'] }} NPD</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Develop your inclusive teaching practices and gain actionable skills to ensure the best learning outcomes for all pupils.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
@@ -336,7 +336,7 @@
             data-topic="teaching"
             data-duration="6"
             data-type="npd"
-            data-phase="all-through">
+            data-phase="primary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="reception">Excellence in reception teaching NPD</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">To help experienced reception reachers deepen their understanding of the key areas of child development. </p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">6 months &nbsp;&nbsp;&nbsp; Min 20 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
@@ -347,7 +347,7 @@
             data-topic="maths"
             data-duration="9"
             data-type="npqa"
-            data-phase="all-through">
+            data-phase="primary">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading primary mathematics NPQA</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Use mastery approaches to lead maths teaching in your school.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
@@ -358,7 +358,7 @@
             data-topic="literacy"
             data-duration="9"
             data-type="npqa"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading literacy NPQA</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Promote literacy across a whole educational setting, year group, key stage or phase.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
@@ -369,7 +369,7 @@
             data-topic="teacher-development"
             data-duration="9"
             data-type="npqa"
-            data-phase="all-through,further-education,early-years">
+            data-phase="primary,secondary,further-education,early-years">
           <h3 class="govuk-heading-s govuk-!-margin-bottom-2"><strong><a href="">Leading teacher development NPQA</a></strong></h3>
           <p class="govuk-!-margin-bottom-2">Help teachers in your setting develop their skills.</p>
           <p class="govuk-body-s grey govuk-!-margin-top-2">9 months &nbsp;&nbsp;&nbsp; Min 30 hours &nbsp;&nbsp;&nbsp; Optional in-person sessions </p>
@@ -398,10 +398,10 @@ document.addEventListener("DOMContentLoaded", function () {
    * into an array.
    *
    * For example:
-   * "early-years,all-through"
+   * "early-years,primary,secondary"
    *
    * becomes:
-   * ["early-years", "all-through"]
+   * ["early-years", "primary"]
    */
   function getCourseValues(course, attributeName) {
     var value =
