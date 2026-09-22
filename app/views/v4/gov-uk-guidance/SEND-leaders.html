@@ -1,7 +1,7 @@
 {% extends "layout-govuk.html" %}
 
 {% block pageTitle %}
-  SEND and inclusion for leaders - Find training for experienced teachers and education leaders
+  {{ data['send-leader-course-name'] }} NPQA - Find training for experienced teachers and education leaders
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
         },
         {
           html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Find training</p>',
-          href: "find-professional-development"
+          href: "list-of-courses"
         }
       ]
     }) }}
@@ -41,7 +41,7 @@
       <div class="govuk-grid-column-two-thirds">
        <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
-        SEND and inclusion for leaders 
+        {{ data['send-leader-course-name'] }}
       </h1>
       <h1 class="govuk-heading-l" style="padding-top: 1px">
         National professional qualification advanced (NPQA) course 
@@ -168,7 +168,7 @@
       
       {{ govukButton({
           text: "Check funding eligibility and register",
-          href: "../start-id",
+          href: "../send-leader",
           isStartButton: true
         }) }}
     </div>
@@ -184,13 +184,13 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a href="find-professional-development.html">
+              <a href="list-of-courses.html">
                 Find training for experienced teachers and education leaders 
               </a>
             </li>
             <li>
               <a href="SEND-teachers.html">
-                SEND and inclusion for teachers NPD
+                {{ data['send-course-name'] }} NPD
               </a>
             </li>
             <li>

@@ -26,8 +26,8 @@ module.exports = {
   'tte-programme-name-acronym': 'NPD',
   'reception-course-name': 'Excellence in reception teaching',
   'reception-course-name-lower': 'excellence in reception teaching',
-  'send-course-name': 'SEND and inclusion for teachers',
-  'send-leader-course-name': 'SEND and inclusion for leaders',
+  'send-course-name': 'Embedding inclusive practice',
+  'send-leader-course-name': 'Embedding inclusive practice for leaders',
   'choosette': '',
   'eligibilityoutcome': '',
 

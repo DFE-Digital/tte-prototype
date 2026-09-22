@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
+        <h1>Register for the {{ data['choosette'] }} NPQ advanced course</h1>
+      {% else %}
+        <h1>Register for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
+      {% endif %}
+
+      <p>You have completed the eligibility check and are now ready to register. </p>
+      
+      <p>You must complete the registration before starting an application with a provider. </p>
+
+      {{ govukWarningText({
+        text: "Please note: if you leave this page and come back later, you will need to complete the eligibility check again",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <h2>How to register</h2>
+      <p>After you have signed in, you'll be asked to: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>select your start date and provider </li>
+        <li>submit your registration </li>
+      </ul>
+      <p>Your provider will then contact you to complete your application. </p>
+
+      <h2>How to sign in </h2>
+      <p>To sign in, you'll need a <strong>GOV.UK One Login</strong> account. You'll be asked to create one if you don't already have one. </p>
+      <p>GOV.UK One Login is a secure way to access some government services. In the future, you’ll be able to access all services on GOV.UK.</p>
+      <p>You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an email address - we recommend you use <strong>your personal email</strong> so that you don’t lose access to your account  </li>
+        <li>your Teacher Record Number (TRN). If you do not have a TRN we’ll give you one after you’ve registered. If you’ve lost your TRN use the <a href="">find a lost TRN service</a></li>
+      </ul>
+
+      <p>To verify your identity through GOV.UK One Login, most people will need: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a passport or driving licence </li>
+        <li>a mobile phone to receive a verification code </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Continue to register",
+        href: "one-login/one-login-start",
+        isStartButton: true
+      }) }}
+
+            
+      </div>
+    </div>
+
+{% endblock %}

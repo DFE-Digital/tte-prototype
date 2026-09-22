@@ -152,67 +152,17 @@ module.exports = router => {
 // Registration flow  
 // ------------
 
-  // Pre-select provider + course if come from provider site 
-  router.get(v + 'cedar-teacher', (req, res) => {
-    const data = req.session.data
-    data.provider = 'Cedar trust'
-    data.choosette = 'SEND and inclusion for teachers'
-    res.redirect(v + 'start-id')
-  })
-
-  router.get(v + 'cedar-leader', (req, res) => {
-    const data = req.session.data
-    data.provider = 'Cedar trust'
-    data.choosette = 'SEND and inclusion for leaders'
-    res.redirect(v + 'start-id')
-  })
-
+  // Pre-select course if come from course page 
   router.get(v + 'send-leader', (req, res) => {
     const data = req.session.data
-    data.choosette = 'SEND and inclusion for leaders'
+    data.choosette = 'Embedding inclusive practice for leaders'
     res.redirect(v + 'start-id')
-  })
-
-  router.get(v + 'send-leader-table', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for leaders'
-    res.redirect(v + 'gov-uk-guidance/providers')
-  })
-
-  router.get(v + 'send-leader-blurb', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for leaders'
-    res.redirect(v + 'gov-uk-guidance/providers-blurbs')
-  })
-
-  router.get(v + 'send-leader-quiz', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for leaders'
-    res.redirect(v + 'choose-a-provider/course-start')
   })
 
   router.get(v + 'send-teacher', (req, res) => {
     const data = req.session.data
-    data.choosette = 'SEND and inclusion for teachers'
+    data.choosette = 'Embedding inclusive practice'
     res.redirect(v + 'start-id')
-  })
-
-    router.get(v + 'send-teacher-table', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for teachers'
-    res.redirect(v + 'gov-uk-guidance/providers')
-  })
-
-  router.get(v + 'send-teacher-blurb', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for teachers'
-    res.redirect(v + 'gov-uk-guidance/providers-blurbs')
-  })
-
-  router.get(v + 'send-teacher-quiz', (req, res) => {
-    const data = req.session.data
-    data.choosette = 'SEND and inclusion for teachers'
-    res.redirect(v + 'choose-a-provider/course-start')
   })
 
   router.get(v + 'route-start-date', (req, res) => {
