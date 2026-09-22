@@ -28,11 +28,7 @@
     }) }}
 
   {% else %}
-    {% if (data['referrer'] == "reg") %}
-      <h1 class="govuk-heading-xl">Check your answers</h1>
-      {% else %}
-      <h1 class="govuk-heading-xl">Check your answers and eligibility outcome  </h1>
-    {% endif %}
+    <h1 class="govuk-heading-xl">Check your answers</h1>
     <!-- Opted to self-fund -->
     <!-- not funded -->
     {% if data['selffund'] == "self-fund" %}
@@ -68,26 +64,10 @@
           }) }}
 
         {% else %}
-          <h2>How to register</h2>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>check your answers</li>
-            <li>when you are ready, continue to register</li>
-            <li>you’ll be prompted to sign in or create a GOV One Login account </li>
-            <li>you need to verify your ID through GOV One Login. In most cases you'll need a passport or driving license and a mobile phone. In some cases you will need to verify your ID in person.</li>
-          </ul>
-
           {{ govukButton({
-            text: "Continue to register",
-            href: "one-login/one-login-start",
-            isStartButton: true
+            text: "Continue",
+            href: "start-register"
           }) }}
-
-          {% if data['selffund'] != "self-fund" %}
-            {{ govukWarningText({
-              text: "If you do not complete your registration in this session, you will need to complete the eligibility check again.",
-              iconFallbackText: "Warning"
-            }) }}
-          {% endif %}
         {% endif %}
       </div>
     </div>

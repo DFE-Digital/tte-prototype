@@ -1,7 +1,7 @@
 {% extends "layout-govuk.html" %}
 
 {% block pageTitle %}
-  SEND and inclusion for teachers - Find training for experienced teachers and education leaders
+  {{ data['send-course-name'] }} - Find training for experienced teachers and education leaders
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
         },
         {
           html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Find training</p>',
-          href: "find-professional-development"
+          href: "list-of-courses"
         }
       ]
     }) }}
@@ -159,7 +159,7 @@
 
       {{ govukButton({
           text: "Check funding eligibility and register",
-          href: "../start-id",
+          href: "../send-teacher",
           isStartButton: true
         }) }}
     </div>
@@ -172,13 +172,13 @@
         <nav role="navigation" aria-labelledby="subsection-title">
           <ul class="govuk-list govuk-!-font-size-16">
             <li>
-              <a href="find-professional-development.html">
+              <a href="list-of-courses.html">
                 Find training for experienced teachers and education leaders 
               </a>
             </li>
             <li>
               <a href="SEND-leaders.html">
-                SEND and inclusion for leaders NPQA
+                {{ data['send-leader-course-name'] }} NPQA
               </a>
             </li>
             <li>
