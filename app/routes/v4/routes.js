@@ -165,6 +165,12 @@ module.exports = router => {
     res.redirect(v + 'start-id')
   })
 
+  router.get(v + 'reception', (req, res) => {
+    const data = req.session.data
+    data.choosette = 'Excellence in reception teaching'
+    res.redirect(v + 'start-id')
+  })
+
   router.get(v + 'route-start-date', (req, res) => {
     var startdatet = req.session.data['startdate']
 
@@ -277,6 +283,33 @@ module.exports = router => {
     else {
       res.redirect(v + 'new-provider')
     }
+  })
+
+  /* Skip One Login routes */
+
+  router.get(v + 'route-skip-onelogin-start-id', (req, res) => {
+    const data = req.session.data
+    res.redirect(v + 'one-login/verify-id/typeof-id')
+  })
+
+  router.get(v + 'route-skip-onelogin-end-id', (req, res) => {
+    const data = req.session.data
+    res.redirect(v + 'one-login/continue-to-service')
+  })
+
+  router.get(v + 'route-skip-onelogin-teacherauth', (req, res) => {
+    const data = req.session.data
+    res.redirect(v + 'teacher-auth/start')
+  })
+
+  router.get(v + 'route-skip-onelogin-return', (req, res) => {
+    const data = req.session.data
+    res.redirect(v + 'returning-to-service')
+  })
+
+  router.get(v + 'route-skip-onelogin-start', (req, res) => {
+    const data = req.session.data
+    res.redirect(v + 'one-login/one-login-start')
   })
 
 }

@@ -44,10 +44,10 @@
         {{ data['send-leader-course-name'] }}
       </h1>
       <h1 class="govuk-heading-l" style="padding-top: 1px">
-        National professional qualification advanced (NPQA) course 
+        National professional qualification Advanced (NPQA) course 
       </h1>
 
-      <p class="govuk-body-l">A course to help leaders develop their effective leadership and practice relating to inclusive school and college environments. </p>
+      <p class="govuk-body-l">Guidance on the NPQA course for leaders, covering inclusive leadership, creating inclusive school and college environments, and supporting learners with special educational needs and disabilities (SEND).  </p>
       
       <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
         <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
@@ -91,11 +91,9 @@
 
       <p>This course is for:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>head teachers </li>
-        <li>further education principals </li>
-        <li>SENCos in strategic roles</li>
-        <li>deputy-head teachers </li>
-        <li>senior leaders in education settings </li>
+        <li>school leaders </li>
+        <li>senior leaders in further education </li>
+        <li>leaders in education trusts </li>
       </ul>
 
       <h2 class="govuk-heading-m" id="overview">About the course</h2>
@@ -104,18 +102,16 @@
 
       <p>This course will help you to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>develop your understanding of how inclusive practice drives improved outcomes at a whole-setting level, including attainment, engagement, and wellbeing </li>
-        <li>lead and sustain a culture of belonging and inclusion </li>
-        <li>strengthen your ability to design and implement systems that support pupils with SEND </li>
-        <li>ensure high-quality teaching and learning meets the needs of all pupils through a strategic, evidence-informed approach </li>
+        <li>develop your understanding of the benefits of inclusive practice on children and young people's outcomes and how to foster a culture of belonging and engagement in your setting </li>
+        <li>understand strategies and approaches to support learning outcomes for children and young people who may have SEND across your setting </li>
       </ul>
 
       <p>This course will:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>take approximately 3 school terms to complete (minimum 20 hours)</li>
         <li>involve up to 1 hour of study each week </li>
-        <li>include a blend of self-study, facilitated training and optional in-person sessions  </li>
-        <li>start in October 2027 and early 2028 (January or February), depending on the provider </li>
+        <li>be a mix of self-study and live training </li>
+        <li>start in October or January, depending on the training provider </li>
       </ul>
 
       <h2 class="govuk-heading-m" id="content">What you will learn</h2>
@@ -146,7 +142,7 @@
       </ul>
 
       <h2 class="govuk-heading-m" id="providers">Providers</h2>
-      <p>You can train for this NPQ advanced course with one of the following providers:</p>
+      <p>You can train for this NPQ advanced course with one of the following providers. Providers may offer different start dates so you should check with them first:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="">Acorn training</a></li>
         <li><a href="#">Cedar trust</a></li>
@@ -161,16 +157,25 @@
       <p>If you can, you should do this during work hours in career development time.</p>
 
       <h2 class="govuk-heading-m" id="funding">Funding</h2>
-      <p>Funded places are available for most state-funded settings, including academy trusts.</p>
-      <p>Examples of places that are not eligible for funding include private schools and schools outside of England.</p>
-      <p>If you are self-funding, you still need to register with the DfE.</p>
-      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
+      <p>Funded places are available for most state-funded settings, including academy trusts. </p>
+      <p>Examples of places that are not eligible for funding include schools outside of England, <strong>excluding</strong> Ministry of Defence overseas schools. </p>
+      <p><strong>We will check your eligibility for funding before you register for the course. </strong></p>
       
       {{ govukButton({
-          text: "Check funding eligibility and register",
-          href: "../send-leader",
-          isStartButton: true
+        text: "Continue to check funding eligibility",
+        href: "../send-leader",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">I am self-funding </h2>
+      <p>If you are self-funding, you must still register with the DfE. </p>
+      <form class="form" action="choose-course" method="post">
+        <input type="hidden" name="selffund" value="self-fund">
+        {{ govukButton({
+          text: "Register as self-funded",
+          classes: "button-as-link govuk-link govuk-!-margin-top-2"
         }) }}
+      </form>
     </div>
 
 

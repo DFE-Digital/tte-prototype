@@ -3,7 +3,7 @@
 {% set signedIn = 'false' %}
 
 {% block pageTitle %}
-  Check your answers
+  Continue to register 
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,7 +27,7 @@
       <p>You must complete the registration before starting an application with a provider. </p>
 
       {{ govukWarningText({
-        text: "Please note: if you leave this page and come back later, you will need to complete the eligibility check again",
+        text: "Please note: if you close this page and come back later, you will need to complete the eligibility check again",
         iconFallbackText: "Warning"
       }) }}
 
@@ -53,6 +53,7 @@
         <li>a passport or driving licence </li>
         <li>a mobile phone to receive a verification code </li>
       </ul>
+      <p>You will only need to verify your identity once for all services you use One Login for.</p>
 
       {{ govukButton({
         text: "Continue to register",

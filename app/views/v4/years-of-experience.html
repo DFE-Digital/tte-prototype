@@ -15,15 +15,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="sharing-data" method="post">
+      <form class="form" action="check-answers?referrer=reg" method="post">
         {{ govukInput({
             label: {
-              text: "How many years have you been working in the education profession?",
+              text: "How many years have you worked in the education profession?",
               classes: "govuk-label--xl",
               isPageHeading: true
             },
             hint: {
-              text: "Include your Newly Qualified Teacher (NQT) or Early Career Teacher (ECT) years, if applicable. If you have taken a career break, please exclude this."
+              html: "<p>Include any years as a Newly Qualified Teacher (NQT) or Early Career Teacher (ECT). Do not include time spent on a career break. </p><p>Enter a whole number, for example, if you have worked in education for 6 years and 3 months, enter 6.</p>"
             },
             id: "yearsexperience",
             name: "yearsexperience",
