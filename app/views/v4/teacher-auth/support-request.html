@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DfE TeacherAuth
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <img src="/public/images/teacher-auth/support-request.png" alt="">
+        <div>
+          <p>You can return to the <a href="../returning-to-service">Register for a professional development course</a> service </p>
+        </div>
+      </div>
+    </div>
+
+    {% include '../includes/skip-onelogin.html' %}
+    
+{% endblock %}

@@ -2,7 +2,7 @@
 {% set signedIn = 'false' %}
 
 {% block pageTitle %}
-  DfE scholarship funding is not available
+  Your funding eligibility result
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,13 +15,13 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Funding eligibility result</h1>
+      <h1 class="govuk-heading-xl">Your funding eligibility result</h1>
 
       {% include '../includes/funding-messages/message2-funding-not-available-england.html' %}
       <form class="form" action="../check-answers" method="post"> 
         <input type="hidden" name="eligibilityoutcome" value="notfunded">
         {{ govukButton({
-          text: "Continue",
+          text: "Continue to register as self-funded",
           classes: "govuk-!-margin-top-2"
         }) }}
       </form>

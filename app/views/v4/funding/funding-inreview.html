@@ -3,7 +3,7 @@
 {% set signedIn = 'false' %}
 
 {% block pageTitle %}
-  We need to review your registration to see if you are eligible for funding
+  Your funding eligibility result
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Funding eligibility result</h1>
+      <h1 class="govuk-heading-xl">Your funding eligibility result</h1>
 
       {% include '../includes/funding-messages/message5-funding-inreview.html' %}    
       <form class="form" action="../check-answers" method="post">

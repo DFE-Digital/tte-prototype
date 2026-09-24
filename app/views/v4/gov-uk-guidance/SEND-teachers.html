@@ -41,13 +41,13 @@
       <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
-        {{ data['send-course-name'] }}
+        {{ data['send-course-name'] }} (for teachers)
       </h1>
       <h1 class="govuk-heading-l" style="padding-top: 1px">
         {{ data['tte-programme-name-with-acronym'] }} course
       </h1>
 
-      <p class="govuk-body-l">A course to help experienced teachers deepen their understanding of effective practice related to inclusive learning. Using the latest research and enhanced strategies to support learners with special educational needs and disabilities (SEND) relevant to the current classroom.</p>
+      <p class="govuk-body-l">A course for experienced teachers who want to deepen their understanding of inclusive practice. You'll learn evidence-based approaches and practical strategies to support children and young people, including those with special educational needs and disabilities (SEND). </p>
       
       <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
         <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
@@ -91,7 +91,7 @@
 
       <p>This course is for:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>teachers who want to improve their knowledge and skills in supporting and meeting needs in their setting </li>
+        <li>teachers who want to develop their knowledge and skills in inclusive practice, including supporting children and young people with SEND </li>
       </ul>
 
       <h2 class="govuk-heading-m" id="overview">About the course</h2>
@@ -101,7 +101,7 @@
       <p>This course will help you to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>develop your understanding of high-quality teaching practices and inclusive approaches to supporting learning</li>
-        <li>understand strategies and approaches to support learning outcomes for children and young people who may have SEND </li>
+        <li>understand evidence-based approaches to support children and young people with SEND </li>
       </ul>
       
       <h2 class="govuk-heading-m" id="content">What you will learn</h2>
@@ -110,12 +110,12 @@
       <p>You'll learn how high-quality education can have a positive impact on outcomes through:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>understanding how a culture of inclusion and belonging enables good outcomes </li>
-        <li>strengthened awareness of high-quality effective teaching</li>
-        <li>inclusive routines and environments</li>
+        <li>understanding the features of high-quality teaching </li>
+        <li>creating inclusive routines and environments </li>
       </ul>
 
       <h3 class="govuk-heading-s">Understanding and supporting children and young people with SEND</h3>
-      <p>You'll learn how to understand and support differences in learning, including through: </p>
+      <p>You'll learn how to develop an adaptive teaching approach by: </p>
       <ul class="govuk-list govuk-list--bullet">
         <li>identifying needs and barriers to learning</li>
         <li>understanding differences in learning </li>
@@ -125,13 +125,13 @@
       <h3 class="govuk-heading-s">Additional support </h3>
       <p>You'll learn how to utilise different approaches to supporting learning barriers, including through: </p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>effective targeted interventions</li>
+        <li>using effective targeted interventions</li>
         <li>working with teaching assistants and support staff</li>
         <li>enabling positive transitions for pupils and learners </li>
       </ul>
       
       <h2 class="govuk-heading-m" id="providers">Providers</h2>
-      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers:</p>
+      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers. Providers may offer different start dates so you should check with them first: </p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="">Acorn training</a></li>
         <li><a href="">Cedar trust</a></li>
@@ -143,25 +143,34 @@
 
       <h2 class="govuk-heading-m" id="structure">How the course is delivered</h2>
       <p>The course includes 9 topics, outlined in the <a href="">course framework</a>. Providers use this framework to design their course.</p>
-      <p>If you can, you should do this during work hours in career development time.</p>
+      <p>Where possible, you should complete the course during your allocated professional development time. </p>
       <p>This course will:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>take approximately 2 school terms to complete (minimum 20 hours)</li>
-        <li>be a mix of self-study and live online training  </li>
-        <li>start in October 2027 or early 2028 (January or February), depending on the training provider</li>
+        <li>take approximately two school terms to complete (minimum 20 hours)</li>
+        <li>include a mix of self-study and live online training </li>
+        <li>start in October 2027 or January 2028, depending on the training provider</li>
       </ul>
 
       <h2 class="govuk-heading-m" id="funding">Funding</h2>
       <p>Funded places are available for most state-funded settings, including academy trusts.</p>
-      <p>Examples of places that are not eligible for funding include private schools and schools outside of England.</p>
-      <p>If you are self-funding, you still need to register with the DfE.</p>
-      <p><strong>When you register with the DfE, we will tell you if you are eligible for funding. </strong></p>
+      <p>Examples of places that are not eligible for funding include schools outside of England, <strong>excluding</strong> Ministry of Defence overseas schools. </p>
+      <p><strong>We will check your eligibility for funding before you register for the course.</strong></p>
 
       {{ govukButton({
-          text: "Check funding eligibility and register",
-          href: "../send-teacher",
-          isStartButton: true
+        text: "Continue to check funding eligibility",
+        href: "../send-teacher",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">I am self-funding </h2>
+      <p>If you are self-funding, you must still register with the DfE. </p>
+      <form class="form" action="choose-course" method="post">
+        <input type="hidden" name="selffund" value="self-fund">
+        {{ govukButton({
+          text: "Register as self-funded",
+          classes: "button-as-link govuk-link govuk-!-margin-top-2"
         }) }}
+      </form>
     </div>
 
     <div class="govuk-grid-column-one-third">
