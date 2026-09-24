@@ -194,9 +194,15 @@ module.exports = router => {
 
   router.post(v + 'route-wherework', function(req, res){
     var wheredoyouwork = req.session.data['wheredoyouwork']
-
+    var choosette = req.session.data['choosette']
+    
     if (wheredoyouwork == 'No') {
-      res.redirect(v + 'overseas')
+      if (choosette == 'Excellence in reception teaching') {
+        res.redirect(v + 'funding/funding-not-available-england')
+      }
+      else {
+        res.redirect(v + 'overseas')
+      }
     } else {
       res.redirect(v + 'what-setting')
     }
@@ -224,28 +230,27 @@ module.exports = router => {
     else if (settingt == 'Independent learning provider') {
       res.redirect(v + 'which-fe')
     }
-    else if (settingt == 'Other') {
-      res.redirect(v + 'rtta')
-    } 
+    else if (settingt == 'Independent hospital education organisation') {
+      res.redirect(v + 'employer')
+    }
+    else if (settingt == 'Young offender institution') {
+      res.redirect(v + 'employer')
+    }
+    else if (settingt == 'Local authority') {
+      res.redirect(v + 'employer')
+    }
+    else if (settingt == 'RTTA') {
+      res.redirect(v + 'funding/funding-inreview')
+    }
     else {
       res.redirect(v + 'funding/funding-not-available-setting')
     } 
   })
 
-  router.post(v + 'route-rtta', function(req, res){
-    var rtta = req.session.data['rtta']
-
-    if (rtta == 'Yes') {
-      res.redirect(v + 'funding/funding-inreview')
-    } else {
-      res.redirect(v + 'other-setting')
-    }
-  })
-
   router.post(v + 'route-other-funding-outcome', function(req, res){
-    var othersetting = req.session.data['othersetting']
+    var settingt = req.session.data['whichsetting']
 
-    if (othersetting == 'As a teacher employed by a local authority to teach in more than one school') {
+    if (settingt == 'Local authority') {
       res.redirect(v + 'funding/funding-eligible')
     } 
     else {

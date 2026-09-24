@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
       {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
-        <h1>Register for the {{ data['choosette'] }} NPQ advanced course</h1>
+        <h1>Register for the {{ data['choosette'] }} NPQ Advanced course</h1>
       {% else %}
         <h1>Register for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course</h1>
       {% endif %}
@@ -41,7 +41,6 @@
 
       <h2>How to sign in </h2>
       <p>To sign in, you'll need a <strong>GOV.UK One Login</strong> account. You'll be asked to create one if you don't already have one. </p>
-      <p>GOV.UK One Login is a secure way to access some government services. In the future, you’ll be able to access all services on GOV.UK.</p>
       <p>You'll need:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>an email address - we recommend you use <strong>your personal email</strong> so that you don’t lose access to your account  </li>
@@ -56,7 +55,7 @@
       <p>You will only need to verify your identity once for all services you use One Login for.</p>
 
       {{ govukButton({
-        text: "Continue to register",
+        text: "Continue",
         href: "one-login/one-login-start",
         isStartButton: true
       }) }}

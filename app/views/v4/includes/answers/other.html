@@ -37,10 +37,10 @@
               Work setting
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['whichsetting'] or "Other" }} – {{ data['othersetting'] or "Other" }}
+              {{ data['whichsetting'] or "Young offender institution" }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="other-setting">
+              <a class="govuk-link" href="what-setting">
                 Change<span class="govuk-visually-hidden"> work setting</span>
               </a>
             </dd>
@@ -60,7 +60,7 @@
             </dd>
           </div>
 
-          {% if data['othersetting'] == "As a teacher employed by a local authority to teach in more than one school" %}
+          {% if data['whichsetting'] == "Local authority" %}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Funding eligibility outcome
@@ -111,6 +111,20 @@
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="choose-provider">
                   Change<span class="govuk-visually-hidden"> provider</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Preferred email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['alt-email'] or "name@example.com" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="alternative-email">
+                  Change<span class="govuk-visually-hidden"> email</span>
                 </a>
               </dd>
             </div>
