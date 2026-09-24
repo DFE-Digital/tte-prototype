@@ -40,11 +40,8 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
-          <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
-            {{ data['reception-course-name'] }} 
-          </h1>
-          <h1 class="govuk-heading-l" style="padding-top: 1px">
-            {{ data['tte-programme-name-with-acronym'] }} course 
+          <h1 class="govuk-heading-xl" style="padding-top: 1px">
+            {{ data['reception-course-name'] }}: {{ data['tte-programme-name-with-acronym'] }} course 
           </h1>  
           <p class="govuk-body-l">A course for experienced reception teachers who want to develop their practice and deepen their understanding of child development, using the latest evidence from early years education. </p>
 
@@ -123,7 +120,7 @@
           <p>Read the full <a href="">content framework</a>. Providers use this framework to design their course.</p>
 
           <h2 class="govuk-heading-m" id="providers">Providers</h2>
-          <p>You can choose from one of the following DfE-approved providers. Providers may offer different start dates so you should check with them first: </p>
+          <p>You can choose from one of the following DfE-approved providers:  </p>
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="">Acorn training</a></li>
             <li><a href="">Cedar trust</a></li>
@@ -156,8 +153,9 @@
 
           <h2 class="govuk-heading-m">I am self-funding </h2>
           <p>If you are self-funding, you must still register with the DfE. </p>
-          <form class="form" action="choose-course" method="post">
+          <form class="form" action="../route-course" method="post">
             <input type="hidden" name="selffund" value="self-fund">
+            <input type="hidden" name="choosette" value="Excellence in reception teaching">
             {{ govukButton({
               text: "Register as self-funded",
               classes: "button-as-link govuk-link govuk-!-margin-top-2"

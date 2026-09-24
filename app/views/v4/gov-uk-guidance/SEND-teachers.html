@@ -40,11 +40,8 @@
  <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
       <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-0" style="padding-top: 1px">
-        {{ data['send-course-name'] }} (for teachers)
-      </h1>
-      <h1 class="govuk-heading-l" style="padding-top: 1px">
-        {{ data['tte-programme-name-with-acronym'] }} course
+      <h1 class="govuk-heading-xl style="padding-top: 1px">
+        {{ data['send-course-name'] }} (for teachers): {{ data['tte-programme-name-with-acronym'] }} course
       </h1>
 
       <p class="govuk-body-l">A course for experienced teachers who want to deepen their understanding of inclusive practice. You'll learn evidence-based approaches and practical strategies to support children and young people, including those with special educational needs and disabilities (SEND). </p>
@@ -131,7 +128,8 @@
       </ul>
       
       <h2 class="govuk-heading-m" id="providers">Providers</h2>
-      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers. Providers may offer different start dates so you should check with them first: </p>
+      <p>Courses usually start in either October or January, but some providers may not offer all dates. </p>
+      <p>You can train for this {{ data['tte-programme-name-acronym'] }} course with one of the following providers. </p>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="">Acorn training</a></li>
         <li><a href="">Cedar trust</a></li>
@@ -148,7 +146,7 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>take approximately two school terms to complete (minimum 20 hours)</li>
         <li>include a mix of self-study and live online training </li>
-        <li>start in October 2027 or January 2028, depending on the training provider</li>
+        <li>start in October or January, depending on the training provider</li>
       </ul>
 
       <h2 class="govuk-heading-m" id="funding">Funding</h2>
@@ -164,8 +162,9 @@
 
       <h2 class="govuk-heading-m">I am self-funding </h2>
       <p>If you are self-funding, you must still register with the DfE. </p>
-      <form class="form" action="choose-course" method="post">
+      <form class="form" action="../route-course" method="post">
         <input type="hidden" name="selffund" value="self-fund">
+        <input type="hidden" name="choosette" value="Embedding inclusive practice">
         {{ govukButton({
           text: "Register as self-funded",
           classes: "button-as-link govuk-link govuk-!-margin-top-2"
