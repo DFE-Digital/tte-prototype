@@ -40,11 +40,15 @@
       {% include './includes/answers/not-eng.html' %}
 
     <!-- RTTA -->
-    {% elseif (data['rtta'] == "Yes") %}
+    {% elseif (data['whichsetting'] == "RTTA") %}
       {% include './includes/answers/rtta.html' %}
 
     <!-- Private or Other -->
-    {% elseif (data['whichsetting'] == "Other") %}
+    {% elseif (data['whichsetting'] == "Independent hospital education organisation") %}
+      {% include './includes/answers/other.html' %}
+    {% elseif (data['whichsetting'] == "Young offender institution") %}
+      {% include './includes/answers/other.html' %}
+    {% elseif (data['whichsetting'] == "Local authority") %}
       {% include './includes/answers/other.html' %}
 
     {% elseif (data['whichsetting'] == "Privately run setting") %}
@@ -65,7 +69,7 @@
 
         {% else %}
           {{ govukButton({
-            text: "Continue",
+            text: "Continue to register",
             href: "start-register"
           }) }}
         {% endif %}

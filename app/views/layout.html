@@ -24,10 +24,6 @@
     {{ data['tte-combined-name'] }}
   {% endset%}
 
-  {% set registerlinkhtml %}
-    Register for a course
-  {% endset %}
-
   {% set accountlinkhtml %}
     Account
   {% endset %}
@@ -40,14 +36,11 @@
         serviceNavigationParams: { 
           navigation: [
           {
-            href: "start-page", 
-            html: registerlinkhtml
-          },
-          {
             href: "route-account", 
             text: accountlinkhtml
-          }], 
-          serviceName: serviceName 
+          }
+          ], 
+          serviceName: serviceName
         }
       }) }}
     {% else %}

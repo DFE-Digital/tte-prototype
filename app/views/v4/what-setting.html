@@ -27,7 +27,7 @@
             }
           },
           hint: {
-            html: "Make sure the information you provide is correct, as your provider will check your details. <br>Register using your current workplace details, even if they will change soon.",
+            html: "Register using your current workplace details, even if they will change soon.",
             classes: "govuk-!-margin-bottom-6"
           },
           items: [
@@ -50,23 +50,26 @@
               html: "<strong>Independent learning provider</strong>"
             },
             {
+              value: "Independent hospital education organisation",
+              html: "<strong>Independent hospital education organisation</strong>"
+            },
+            {
+              value: "Young offender institution",
+              html: "<strong>Young offender institution</strong>"
+            },
+            {
+              value: "Local authority",
+              html: "<strong>Local authority</strong>",
+              hint: {
+                text: "For staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles"
+              }
+            },
+            {
               divider: "or"
             },
             {
-              value: "Other",
-              html: "<strong>Other</strong>",
-              hint: {
-                html: "<p>For example you:</p>
-                <ul>
-                  <li>were referred by the Return to Teaching Advisory (RTTA) service</li>
-                  <li>work for the local authority (for staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles)</li>
-                  <li>work in a independent hospital education organisation</li>
-                  <li>work in a young offender institution</li>
-                  <li>are self-employed</li>
-                  <li>are an agency supply teacher</li>
-                  <li>are not working in an educational setting</li>
-                </ul>"
-              }
+              value: "RTTA",
+              html: "<strong>I was referred by the Return to Teaching Advisory (RTTA) service</strong>"
             }
           ]
         }) }}
