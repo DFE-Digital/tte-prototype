@@ -16,63 +16,104 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <form class="form" action="route-which-school" method="post">
-        {{ govukRadios({
-          name: "whichsetting",
-          id: "whichsetting",
-          fieldset: {
-            legend: {
-              text: "Tell us where you work",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--xl"
-            }
-          },
-          hint: {
-            html: "Register using your current workplace details, even if they will change soon.",
-            classes: "govuk-!-margin-bottom-6"
-          },
-          items: [
-            {
-              value: "State-funded setting",
-              html: "<strong>State-funded setting</strong>",
-              hint: {
-                text: "For example, a nursery, pre-school, school, academy trust, sixth form or college"
+        {% if (data['choosette'] == "Excellence in reception teaching") %}
+          {{ govukRadios({
+            name: "whichsetting",
+            id: "whichsetting",
+            fieldset: {
+              legend: {
+                text: "Tell us where you work",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
               }
             },
-            {
-              value: "Privately run setting",
-              html: "<strong>Privately run setting</strong>",
-              hint: {
-                text: "For example, a nursery, pre-school, school, sixth form or higher education institution"
+            hint: {
+              html: "Register using your current workplace details, even if they will change soon.",
+              classes: "govuk-!-margin-bottom-6"
+            },
+            items: [
+              {
+                value: "State-funded setting",
+                html: "<strong>State-funded setting</strong>",
+                hint: {
+                  text: "For example, a nursery, pre-school, school, academy trust, sixth form or college"
+                }
+              },
+              {
+                value: "Privately run setting",
+                html: "<strong>Privately run setting</strong>",
+                hint: {
+                  text: "For example, a nursery, pre-school, school, sixth form or higher education institution"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "Other",
+                html: "<strong>Other</strong>"
+              }
+            ]
+          }) }}
+        {% else %}
+          {{ govukRadios({
+            name: "whichsetting",
+            id: "whichsetting",
+            fieldset: {
+              legend: {
+                text: "Tell us where you work",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--xl"
               }
             },
-            {
-              value: "Independent learning provider",
-              html: "<strong>Independent learning provider</strong>"
+            hint: {
+              html: "Register using your current workplace details, even if they will change soon.",
+              classes: "govuk-!-margin-bottom-6"
             },
-            {
-              value: "Independent hospital education organisation",
-              html: "<strong>Independent hospital education organisation</strong>"
-            },
-            {
-              value: "Young offender institution",
-              html: "<strong>Young offender institution</strong>"
-            },
-            {
-              value: "Local authority",
-              html: "<strong>Local authority</strong>",
-              hint: {
-                text: "For staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles"
+            items: [
+              {
+                value: "State-funded setting",
+                html: "<strong>State-funded setting</strong>",
+                hint: {
+                  text: "For example, a nursery, pre-school, school, academy trust, sixth form or college"
+                }
+              },
+              {
+                value: "Privately run setting",
+                html: "<strong>Privately run setting</strong>",
+                hint: {
+                  text: "For example, a nursery, pre-school, school, sixth form or higher education institution"
+                }
+              },
+              {
+                value: "Independent learning provider",
+                html: "<strong>Independent learning provider</strong>"
+              },
+              {
+                value: "Independent hospital education organisation",
+                html: "<strong>Independent hospital education organisation</strong>"
+              },
+              {
+                value: "Young offender institution",
+                html: "<strong>Young offender institution</strong>"
+              },
+              {
+                value: "Local authority",
+                html: "<strong>Local authority</strong>",
+                hint: {
+                  text: "For staff in a direct teaching role, virtual school headteachers and staff in defined deputy headteacher roles"
+                }
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "RTTA",
+                html: "<strong>I was referred by the Return to Teaching Advisory (RTTA) service</strong>"
               }
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "RTTA",
-              html: "<strong>I was referred by the Return to Teaching Advisory (RTTA) service</strong>"
-            }
-          ]
-        }) }}
+            ]
+          }) }}
+        {% endif %}
 
         {{ govukButton({
           text: "Continue"
