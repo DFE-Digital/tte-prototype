@@ -11,7 +11,7 @@
     "@govuk-prototype-kit/step-by-step": "2.2.4",
     "@govuk-prototype-kit/task-list": "2.0.0",
     "@ministryofjustice/frontend": "5.1.5",
-    "@x-govuk/govuk-prototype-filters": "2.1.0",
+    "@x-govuk/govuk-prototype-filters": "2.2.0",
     "accessible-autocomplete": "^3.0.1",
     "dfe-frontend": "^2.0.1",
     "govuk-frontend": "5.11.1",
