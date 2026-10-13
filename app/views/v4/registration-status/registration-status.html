@@ -3,7 +3,7 @@
 
 {% set signedIn = 'true' %}
 
-{% block beforeContent %}
+{% block containerStart %}
   {% if (data['numberOfRegistrations'] == "3") %}
     {{ govukBackLink({
       text: "Back to your registrations",

@@ -6,7 +6,7 @@
   Change your provider
 {% endblock %}
 
-{% block beforeContent %}
+{% block containerStart %}
   {%- if not data['signedIn'] -%}
     {{ govukBackLink({
       text: "Back",
