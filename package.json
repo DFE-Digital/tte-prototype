@@ -19,6 +19,6 @@
     "hmrc-frontend": "6.103.0",
     "jquery": "^3.7.1",
     "lodash": "^4.18.1",
-    "notifications-node-client": "8.2.1"
+    "notifications-node-client": "8.5.0"
   }
 }
