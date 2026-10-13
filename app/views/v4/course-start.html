@@ -6,7 +6,7 @@
   Choose your course start date
 {% endblock %}
 
-{% block beforeContent %}
+{% block containerStart %}
   {%- if not data['signedIn'] -%}
     {{ govukBackLink({
       text: "Back",
