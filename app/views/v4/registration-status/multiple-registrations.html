@@ -23,15 +23,15 @@
     <strong class="govuk-tag govuk-tag--grey">
       Expired
     </strong>
-    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="../course-start">Submit a new registration</a> if you still want to take this course.</p>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0"><a href="../start-id">Submit a new registration</a> if you still want to take this course.</p>
   {% endif %}
 {% endset %}
 
 {% block content %}
-  <h1 class="govuk-heading-xl">Your NPQ registrations</h1>
+  <h1 class="govuk-heading-xl">Your registrations</h1>
 
   {{ govukInsetText({
-    html: '<a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.'
+    html: '<a href="#">Visit your GOV.UK One Login account</a> to check or change your personal details.'
   }) }}
 
   <div class="govuk-rows" style="margin-top: 40px"></div>
@@ -45,7 +45,7 @@
       actions: {
         items: [
           {
-            href: "registration-status--scholarship-review",
+            href: "registration-status--inreview",
             text: "View details",
             classes: "govuk-!-font-weight-regular"
           }
@@ -157,45 +157,6 @@
   {{ govukSummaryList({
     card: {
       title: {
-        html: 'Leading teacher development NPQ
-        <p class="govuk-!-margin-bottom-0">Teacher Development Trust</p>'
-      },
-      actions: {
-        items: [
-          {
-            href: "registration-status--targeted-support",
-            text: "View details",
-            classes: "govuk-!-font-weight-regular"
-          }
-        ]
-      }
-    },
-    rows: [
-      {
-        key: {
-          text: "Registration submitted"
-        },
-        value: {
-          html: "4 March 2024"
-        }
-      },
-      {
-        key: {
-          text: "Provider application"
-        },
-        value: {
-          html:
-            '<strong class="govuk-tag govuk-tag--green">
-              Successful
-            </strong>'
-        }
-      }
-    ]
-  }) }}
-
-  {{ govukSummaryList({
-    card: {
-      title: {
         html: 'Senior leadership NPQ
         <p class="govuk-!-margin-bottom-0">Teach First</p>'
       },
@@ -249,7 +210,7 @@
       actions: {
         items: [
           {
-            href: "registration-status--not-funded-ofsted",
+            href: "registration-status--not-passed",
             text: "View details",
             classes: "govuk-!-font-weight-regular"
           }

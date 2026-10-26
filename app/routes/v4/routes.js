@@ -276,6 +276,17 @@ module.exports = router => {
     }
   });
 
+  router.post(v + 'route-check-funded', function (req, res){
+    var eligibilityoutcome = req.session.data['eligibilityoutcome']
+
+    if(eligibilityoutcome == 'notfunded'){
+      res.redirect(v + 'funding/how-pay')
+    }
+    else {
+      res.redirect(v + 'course-start')
+    }
+  })
+
   router.post(v + 'route-change-provider', function (req, res){
     var changet = req.session.data['changeprovider']
 

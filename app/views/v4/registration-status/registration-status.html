@@ -25,7 +25,11 @@
 {% endset %}
 
 {% set courseHTML %}
-  {{ data['choosette'] or "Excellence in reception teaching" }}
+  {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
+    {{ data['choosette'] or "	Embedding inclusive practice for leaders" }} NPQ Advanced
+  {% else %}
+    {{ data['choosette'] or "Excellence in reception teaching" }} {{ data['tte-programme-name-acronym'] }} 
+  {% endif %}
 {% endset %}
 
 {% set providerHTML %}
@@ -59,8 +63,13 @@
 {% endset %}
 
 {% set scholarshipFundingHTML %}
+  <!-- Self-funding route -->
+  {% if data['selffund'] == "self-fund" %}
+    <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you chose to self-fund.</p>
+    <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course.</p>
   <!-- Not in England -->
-  {% if data['wheredoyouwork'] == "No" %}
+  {% elseif data['wheredoyouwork'] == "No" %}
     {% if data['overseasschool'] == "Yes" %}
       {% include '../includes/registration-status/funding-message--eligible.html' %}
     {% else %}
@@ -89,6 +98,11 @@
           {% else %}
             {% include '../includes/registration-status/funding-message--eligible.html' %}
           {% endif %}
+      <!-- -----------------------
+        FE - ILP
+      -------------------------- -->
+      {% elseif data['whichsetting'] == "Independent learning provider" %}
+        {% include '../includes/registration-status/funding-message--eligible.html' %}
       <!-- -----------------------
         Private
       -------------------------- -->
@@ -156,7 +170,11 @@
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
   <h1 class="govuk-heading-xl">
-    Your {{ data['choosette'] or "Excellence in reception teaching" }} course registration
+    {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
+      Your {{ data['choosette'] }} NPQ Advanced course registration
+    {% else %}
+      Your {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course registration
+    {% endif %}
   </h1>
 
   <p><strong>Application ID</strong>: bbd71aaa-b3d3-47f8-9712-4e3e183252e4</p>
@@ -245,8 +263,10 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details.html' %}
-
+  {% if data['selffund'] != "self-fund" %}
+    {% include '../includes/registration-status/work-details.html' %}
+  {% endif %}
+  
   {{ govukSummaryList({
     card: {
       title: {

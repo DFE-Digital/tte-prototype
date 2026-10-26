@@ -9,11 +9,7 @@
 {% endblock %}
 
 {% set scholarshipfundingHtml %}
-  <strong class="govuk-tag govuk-tag--red">
-    Not eligible
-  </strong>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England.</p>
-  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+  {% include '../includes/registration-status/funding-message--eligible.html' %}
 {% endset %}
 
 {% set providerapplicationHtml %}
@@ -24,19 +20,30 @@
   <p>As you have previously started the course, you will not be eligible for scholarship funding.  </p>
 {% endset %}
 
-{% set courseFundingHtml %}
-  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
-  <p>You may want to check the cost of the course with your provider.</p>
+{% set roleHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['whatrole'] or "Maths teacher" }}</p>
 {% endset %}
 
-{% set personaldetailsHTML %}
-  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% set experienceHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['yearsexperience'] or "6" }} years</p>
+{% endset %}
+
+{% set preferredemailHtml %}
+  {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+    <p class="govuk-!-margin-bottom-0">GOV.UK One Login email address: ben.smith@gmail.com </p>
+  {% else %}         
+    <p class="govuk-!-margin-bottom-0">{{ data['contactByEmail'] or "ben@school.com" }} </p>   
+  {% endif %}
+{% endset %}
+
+{% set updateOneLoginHtml %}
+  <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
 {% endset %}
 
 {% block content %}
   <span class="govuk-caption-m">Submitted	10 October 2026</span>
   <h1 class="govuk-heading-xl">
-    Your excellence in reception teaching registration
+    Your excellence in reception teaching NPD registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -53,7 +60,7 @@
           text: "Course"
         },
         value: {
-          html: "Excellence in reception teaching"
+          html: "Excellence in reception teaching NPD"
         }
       },
       {
@@ -89,19 +96,92 @@
         value: {
           html: scholarshipfundingHtml
         }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        text: "State-funded setting"
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        text: "West Hampstead Primary School, NW6 1QL – 100009"
+      }
+    }
+  ]
+}) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Experience details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          html: roleHtml
+        }
       },
       {
         key: {
-          text: "Course funding"
+          text: "Years of experience"
         },
         value: {
-          html: courseFundingHtml
+          html: experienceHtml
         }
       }
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/not-eng.html' %}<br>
+    {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Preferred email address"
+        },
+        value: {
+          html: preferredemailHtml
+        }
+      },
+      {
+        key: {
+          html: updateOneLoginHtml
+        }
+      }
+    ]
+  }) }}
 
   {% include '../includes/prototype-links.html' %}
 
