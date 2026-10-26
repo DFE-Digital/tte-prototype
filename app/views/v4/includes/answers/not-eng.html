@@ -94,6 +94,22 @@
           {% endif %}
 
           {% if (data['referrer'] == "reg") %}
+            {% if data['overseasschool'] == "No" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Course funding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['payment'] or "I am paying" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="funding/how-pay">
+                    Change<span class="govuk-visually-hidden"> how the course is paid for</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Course start 
@@ -143,7 +159,7 @@
                   Preferred email address
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['alt-email'] or "Use a different email address" }}: {{ data['contactByEmail'] or "name@example.com" }}
+                  {{ data['alt-email'] or "Use a different email address" }}: {{ data['contactByEmail'] or "ben@school.com" }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="alternative-email">
@@ -172,7 +188,7 @@
                 Years of experience
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['yearsexperience'] or "2" }}
+                {{ data['yearsexperience'] or "2" }} years
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="years-of-experience">

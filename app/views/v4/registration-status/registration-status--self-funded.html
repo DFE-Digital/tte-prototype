@@ -1,0 +1,195 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% set scholarshipfundingHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Not eligible
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding as you chose to self-fund.</p>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course.</p>
+{% endset %}
+
+{% set courseFundingHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['payment'] or "I'm paying" }}.</p>
+  <p>You may want to check the cost of the course with your provider.</p>
+{% endset %}
+
+{% set personaldetailsHTML %}
+  <p><a href="https://get-an-identity-prototype.herokuapp.com/user-research/npq/account">Visit your DfE Identity account</a> to check or change your personal details.</p>
+{% endset %}
+
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Accepted
+  </strong>
+{% endset %}
+
+{% set startdateHtml %}
+  {{ data['startdate'] or "October 2026" }}
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.
+{% endset %}
+
+{% set roleHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['whatrole'] or "Maths teacher" }}</p>
+{% endset %}
+
+{% set experienceHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['yearsexperience'] or "6" }} years</p>
+{% endset %}
+
+{% set preferredemailHtml %}
+  {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+    <p class="govuk-!-margin-bottom-0">GOV.UK One Login email address: ben.smith@gmail.com </p>
+  {% else %}         
+    <p class="govuk-!-margin-bottom-0">{{ data['contactByEmail'] or "ben@school.com" }} </p>   
+  {% endif %}
+{% endset %}
+
+{% set updateOneLoginHtml %}
+  <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
+{% endset %}
+
+{% block content %}
+  <span class="govuk-caption-m">Submitted	2 July 2026</span>
+  <h1 class="govuk-heading-xl">
+    Your excellence in reception teaching NPD registration
+  </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+        value: {
+          html: 
+            'Excellence in reception teaching NPD'        
+          }
+      },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html: 
+            'Cedar trust'
+        },
+        actions: {
+          items: [
+            {
+              href: "../change-details?referrer=rejected",
+              html: 'Register with a different provider'
+            }
+          ]
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: providerapplicationHtml
+        }
+      },
+      {
+        key: {
+          text: "Course start"
+        },
+        value: {
+          html: startdateHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: scholarshipfundingHtml
+        }
+      },
+      {
+        key: {
+          text: "Course funding"
+        },
+        value: {
+          html: courseFundingHtml
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Experience details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          html: roleHtml
+        }
+      },
+      {
+        key: {
+          text: "Years of experience"
+        },
+        value: {
+          html: experienceHtml
+        }
+      }
+    ]
+  }) }}
+
+    {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Preferred email address"
+        },
+        value: {
+          html: preferredemailHtml
+        }
+      },
+      {
+        key: {
+          html: updateOneLoginHtml
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

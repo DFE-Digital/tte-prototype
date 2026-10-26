@@ -29,10 +29,30 @@
   <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">If your provider does not confirm you’ve started the course by Spring 2027, your registration will expire. You can register again for a future start date.
 {% endset %}
 
+{% set roleHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['whatrole'] or "Maths teacher" }}</p>
+{% endset %}
+
+{% set experienceHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['yearsexperience'] or "6" }} years</p>
+{% endset %}
+
+{% set preferredemailHtml %}
+  {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+    <p class="govuk-!-margin-bottom-0">GOV.UK One Login email address: ben.smith@gmail.com </p>
+  {% else %}         
+    <p class="govuk-!-margin-bottom-0">{{ data['contactByEmail'] or "ben@school.com" }} </p>   
+  {% endif %}
+{% endset %}
+
+{% set updateOneLoginHtml %}
+  <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
+{% endset %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted 11 July 2026</span>
   <h1 class="govuk-heading-xl">
-    Your excellence in reception teaching registration
+    Your excellence in reception teaching NPD registration
   </h1>
   <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
 
@@ -49,7 +69,7 @@
         },
       value: {
         html:
-          'Excellence in reception teaching' }
+          'Excellence in reception teaching NPD' }
         },
       {
         key: {
@@ -105,7 +125,88 @@
     ]
   }) }}
 
-  {% include '../includes/registration-status/work-details/school-funded.html' %}<br>
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        text: "State-funded setting"
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        text: "West Hampstead Primary School, NW6 1QL – 100009"
+      }
+    }
+  ]
+}) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Experience details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          html: roleHtml
+        }
+      },
+      {
+        key: {
+          text: "Years of experience"
+        },
+        value: {
+          html: experienceHtml
+        }
+      }
+    ]
+  }) }}
+
+    {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Preferred email address"
+        },
+        value: {
+          html: preferredemailHtml
+        }
+      },
+      {
+        key: {
+          html: updateOneLoginHtml
+        }
+      }
+    ]
+  }) }}
 
   {% include '../includes/prototype-links.html' %}
 
