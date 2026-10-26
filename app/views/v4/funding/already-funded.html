@@ -16,12 +16,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your funding eligibility result</h1>
+      <h1 class="govuk-heading-xl">Your funding eligibility result has changed</h1>
+
       {% include '../includes/funding-messages/message3-previously-funded.html' %}
       
-      <form class="form" action="../check-answers" method="post">
+      <form class="form" action="how-pay" method="post">
       
         <input type="hidden" name="eligibilityoutcome" value="notfunded">
+        <input type="hidden" name="fundingstatus" value="previousfunding">
         
         {{ govukButton({
           text: "Continue to register as self-funded",

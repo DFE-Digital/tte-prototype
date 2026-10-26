@@ -7,6 +7,15 @@
   {% elseif data['whichsetting'] == "Privately run setting" %}
     {% include './work-details/other.html' %}
   
+  {% elseif data['whichsetting'] == "Independent hospital education organisation" %}
+    {% include './work-details/in-review.html' %}
+
+  {% elseif data['whichsetting'] == "Young offender institution" %}
+    {% include './work-details/in-review.html' %}
+
+  {% elseif data['whichsetting'] == "Local authority" %}
+    {% include './work-details/in-review.html' %}
+
   {% elseif data['whichsetting'] == "Other" %}
     {% include './work-details/other.html' %}
 

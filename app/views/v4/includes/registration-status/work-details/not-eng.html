@@ -2,10 +2,6 @@
   {{ data['wheredoyouwork'] or 'No' }}
 {% endset %}
 
-{% set workSettingHtml %}
-  {{ data['whichsetting'] or 'Privately run setting' }}
-{% endset %}
-
 {% set serviceschoolHtml %}
   {{ data['overseasschool'] or 'No' }}
 {% endset %}
@@ -16,7 +12,6 @@
 
 {{ govukSummaryList({
   card: {
-    classes: "govuk-!-margin-bottom-0",
     title: {
       text: "Work details"
     }
@@ -37,14 +32,6 @@
       value: {
         html: serviceschoolHtml
       }
-    },
-    {
-      key: {
-        text: "Work setting"
-      },
-      value: {
-        html: workSettingHtml
-      } 
     },
     {
       key: {

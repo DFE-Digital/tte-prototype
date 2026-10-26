@@ -120,19 +120,36 @@
               </dd>
             </div>
 
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Preferred email address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['alt-email'] or "name@example.com" }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="alternative-email">
-                  Change<span class="govuk-visually-hidden"> email</span>
-                </a>
-              </dd>
-            </div>
+            {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  GOV.UK One Login email address: ben.smith@gmail.com
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="alternative-email">
+                    Change<span class="govuk-visually-hidden"> email</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% else %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['alt-email'] or "Use a different email address" }}: {{ data['contactByEmail'] or "name@example.com" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="alternative-email">
+                    Change<span class="govuk-visually-hidden"> email</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">

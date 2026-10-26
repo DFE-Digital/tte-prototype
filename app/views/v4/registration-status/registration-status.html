@@ -68,6 +68,13 @@
       <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You're not eligible for scholarship funding because you do not work in England. </p>
       <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
     {% endif %}
+  <!-- in review -->
+  {% elseif ((data['whichsetting'] == "Independent hospital education organisation")) or ((data['whichsetting'] == "Young offender institution")) %}
+    <strong class="govuk-tag govuk-tag--yellow">In review </strong>
+    <p class="govuk-!-margin-top-2">Your registration will be reviewed by the Department for Education (DfE) to check if you're eligible for funding.</p>
+    <p>We may contact you to request more information about your registration.</p>
+    <p>If you are eligible, and the provider confirms that you have a funded place, you will not have to pay for the course fees. </p>
+
   <!-- Works in England -->
   {% else %}
       <!-- --------------------------------
@@ -92,21 +99,15 @@
       <!-- -----------------------
         Other
       -------------------------- -->
-      {% elseif data['whichsetting'] == "Other" %}
-        <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
-        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
-        <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
+      {% elseif data['whichsetting'] == "Local authority" %}
+        {% include '../includes/registration-status/funding-message--eligible.html' %}
       <!-- -----------------------
-        Early years or childcare
+        Other
       -------------------------- -->
       {% else %}
-        {% if ((data['nurserysetting'] == "Private nursery") or (data['nurserysetting'] == "As a childminder") or (data['nurserysetting'] == "Another early years setting")) %}
         <strong class="govuk-tag govuk-tag--red">Not eligible </strong>
         <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">You’re not eligible for scholarship funding as you do not work in one of the eligible settings, such as state-funded schools. </p>
         <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">This means that you would need to pay for the course another way.</p>
-         {% else %}
-            {% include '../includes/registration-status/funding-message--eligible.html' %}
-          {% endif %}
       {% endif %}
     {% endif %}
 {% endset %}
@@ -116,6 +117,26 @@
     To complete the application process you need to
     <a class="govuk-notification-banner__link" href="../linking-to-provider">complete your providers application form</a>.
   </p>
+{% endset %}
+
+{% set roleHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['whatrole'] or "Maths teacher" }}</p>
+{% endset %}
+
+{% set experienceHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['yearsexperience'] or "6" }} years</p>
+{% endset %}
+
+{% set preferredemailHtml %}
+  {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+    <p class="govuk-!-margin-bottom-0">GOV.UK One Login email address: ben.smith@gmail.com </p>
+  {% else %}         
+    <p class="govuk-!-margin-bottom-0">{{ data['contactByEmail'] or "ben@school.com" }} </p>   
+  {% endif %}
+{% endset %}
+
+{% set updateOneLoginHtml %}
+  <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
 {% endset %}
 
 {% block content %}
@@ -132,8 +153,6 @@
     }) }}
   {% endif %}
 
-  
-
   <span class="govuk-caption-m">Submitted	{{ "today" | govukDate }}</span>
 
   <h1 class="govuk-heading-xl">
@@ -141,8 +160,6 @@
   </h1>
 
   <p><strong>Application ID</strong>: bbd71aaa-b3d3-47f8-9712-4e3e183252e4</p>
-
-
 
   {{ govukSummaryList({
     card: {
@@ -173,14 +190,6 @@
               text: "Register with a different provider"
             }
           ]
-        }
-      },
-      {
-        key: {
-          text: "Second provider"
-        },
-        value: {
-          html: providerbackupHTML
         }
       },
       {
@@ -237,6 +246,55 @@
   }) }}
 
   {% include '../includes/registration-status/work-details.html' %}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Experience details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          html: roleHtml
+        }
+      },
+      {
+        key: {
+          text: "Years of experience"
+        },
+        value: {
+          html: experienceHtml
+        }
+      }
+    ]
+  }) }}
+
+    {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Preferred email address"
+        },
+        value: {
+          html: preferredemailHtml
+        }
+      },
+      {
+        key: {
+          html: updateOneLoginHtml
+        }
+      }
+    ]
+  }) }}
 
   {% include '../includes/prototype-links.html' %}
 
