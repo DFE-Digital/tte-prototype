@@ -33,15 +33,14 @@
     <!-- not funded -->
     {% if data['selffund'] == "self-fund" %}
       {% include './includes/answers/self-fund.html' %}
+
+    {% elseif data['fundingstatus'] == "previousfunding" %}
+      {% include './includes/answers/self-fund.html' %}
     
     <!-- NOT England -->
     <!-- not funded for any -->
     {% elseif data['wheredoyouwork'] == "No" %}
       {% include './includes/answers/not-eng.html' %}
-
-    <!-- RTTA -->
-    {% elseif (data['whichsetting'] == "RTTA") %}
-      {% include './includes/answers/rtta.html' %}
 
     <!-- Private or Other -->
     {% elseif (data['whichsetting'] == "Independent hospital education organisation") %}
@@ -52,6 +51,9 @@
       {% include './includes/answers/other.html' %}
 
     {% elseif (data['whichsetting'] == "Privately run setting") %}
+      {% include './includes/answers/private.html' %}
+    
+    {% elseif data['whichsetting'] == "Other" %}
       {% include './includes/answers/private.html' %}
 
     {% else %}

@@ -239,9 +239,6 @@ module.exports = router => {
     else if (settingt == 'Local authority') {
       res.redirect(v + 'employer')
     }
-    else if (settingt == 'RTTA') {
-      res.redirect(v + 'funding/funding-inreview')
-    }
     else {
       res.redirect(v + 'funding/funding-not-available-setting')
     } 

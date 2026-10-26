@@ -31,23 +31,31 @@
   {% block header %}
     {% if signedIn == 'true' %}
       {{ govukOneLoginServiceHeader({
-        signOutLink: "#",
-        oneLoginLink: "#",
-        serviceNavigationParams: { 
-          navigation: [
+        signOutLink: "#"}) }}
+
+      {{ govukServiceNavigation({
+        serviceName: serviceName,
+        serviceUrl: "header-link",
+        navigation: [
           {
             href: "route-account", 
             text: accountlinkhtml
           }
-          ], 
-          serviceName: serviceName
-        }
-      }) }}
+        ] }) 
+      }} 
     {% else %}
       {{ govukHeader({
         homepageUrl: "start-page"
       }) }}
+      
+      {{ govukServiceNavigation({
+          serviceName: serviceName,
+          serviceUrl: "start-id"
+        })
+      }}
+      
     {% endif %}
+    
 
     <div class="govuk-width-container">
       {{ govukPhaseBanner({

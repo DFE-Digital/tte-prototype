@@ -11,7 +11,11 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel background-blue">
         <h1 class="govuk-panel__title govuk-!-text-align-left govuk-colour-white">
-          You are returning to register for the {{ data['choosette'] }} course
+          {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
+            You are returning to register for the {{ data['choosette'] }} NPQ Advanced course
+          {% else %}
+            You are returning to register for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course
+          {% endif %}
         </h1>
         <div class="govuk-panel__actions">
           <div class="govuk-button-group">
