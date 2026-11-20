@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Returning to register
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-panel background-blue">
+        <h1 class="govuk-panel__title govuk-!-text-align-left govuk-colour-white">
+          {% if data['choosette'] == "Embedding inclusive practice for leaders" %}
+            You are returning to register for the {{ data['choosette'] }} NPQ Advanced course
+          {% else %}
+            You are returning to register for the {{ data['choosette'] }} {{ data['tte-programme-name-acronym'] }} course
+          {% endif %}
+        </h1>
+        <div class="govuk-panel__actions">
+          <div class="govuk-button-group">
+            <a href="route-returning-to-service" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+              Continue to register
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout-email.html" %}
+
+{% block subject %}
+  <div class="govuk-!-padding-top-6 govuk-!-margin-bottom-2 govuk-!-padding-left-6">
+    <p>Notification of registration cancellation</p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "Department for Education"
+      }) }}
+
+      <p>Application ID: 000001</p>
+
+      <h2>Participant is no longer registered with you</h2>
+
+      <p>Dear ((provider name))</p>
+
+      <p>A participant has changed their registration to a different provider and is no longer registered with you:</p>
+
+      <div class="govuk-inset-text">
+        <h3><strong>Participant details</strong></h3>
+        <ul class="govuk-list">
+          <li><strong>Course name:</strong> ((course_name))</li>
+          <li><strong>TRN:</strong> ((trn_id))</li>
+          <li><strong>Participant name:</strong> ((particpant_name))</li>
+          <li><strong>Date registration changed:</strong> ((changed_date))</li>
+        </ul>
+      </div>
+      
+      <h3>What happens next</h3>
+      
+      <p>You need to stop processing their original registration. We have updated the participant's details.</p>
+
+      <p>Regards,</p>
+
+      <p>The Teacher Continuing Professional Development team</p>
+          
+    </div>
+  </div>
+{% endblock %}

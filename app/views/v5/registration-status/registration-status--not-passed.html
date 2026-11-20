@@ -1,0 +1,201 @@
+{% extends "layout.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = 'true' %}
+{% set courseOutcome = "Started" %}
+
+{% block pageTitle %}
+  Registration status
+{% endblock %}
+
+{% set providerapplicationHtml %}
+  <strong class="govuk-tag govuk-tag--green">
+    Successful
+  </strong>
+{% endset %}
+
+{% set passedHtml %}
+  <strong class="govuk-tag govuk-tag--red">
+    Not passed
+  </strong>
+  <p class="govuk-!-margin-top-2 govuk-!-margin-bottom-0">Contact your training provider if you need to discuss this outcome.</a></p>
+{% endset %}
+
+{% set fundingHTML %}
+  {% include '../includes/registration-status/funding-message--eligible.html' %}
+{% endset %}
+
+{% set roleHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['whatrole'] or "Maths teacher" }}</p>
+{% endset %}
+
+{% set experienceHtml %}
+  <p class="govuk-!-margin-bottom-0">{{ data['yearsexperience'] or "6" }} years</p>
+{% endset %}
+
+{% set preferredemailHtml %}
+  {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+    <p class="govuk-!-margin-bottom-0">GOV.UK One Login email address: ben.smith@gmail.com </p>
+  {% else %}         
+    <p class="govuk-!-margin-bottom-0">{{ data['contactByEmail'] or "ben@school.com" }} </p>   
+  {% endif %}
+{% endset %}
+
+{% set updateOneLoginHtml %}
+  <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
+{% endset %}
+
+{% block content %}
+  <span class="govuk-caption-m">Submitted 11 July 2026</span>
+  <h1 class="govuk-heading-xl">
+    Your excellence in reception teaching NPD registration
+  </h1>
+  <p class="govuk-body"><strong>Application ID:</strong> b38f20b6-cb83-410c-90ed-1edc3fdfd04e</p>
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Course details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Course"
+        },
+      value: {
+        html:
+          'Excellence in reception teaching NPD' }
+        },
+      {
+        key: {
+          text: "Provider"
+        },
+        value: {
+          html:
+            'Cedar trust' 
+        }
+      },
+      {
+        key: {
+          text: "Provider application"
+        },
+        value: {
+          html: providerapplicationHtml
+        }
+      },
+      {
+        key: {
+          text: "Course outcome"
+        },
+        value: {
+          html: passedHtml
+        }
+      } 
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Funding details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Scholarship funding"
+        },
+        value: {
+          html: fundingHTML
+        }
+      }
+    ]
+  }) }}
+
+  {{ govukSummaryList({
+  card: {
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        text: "Yes"
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        text: "State-funded setting"
+      } 
+    },
+    {
+      key: {
+        text: "Workplace"
+      },
+      value: {
+        text: "West Hampstead Primary School, NW6 1QL – 100009"
+      }
+    }
+  ]
+}) }}
+
+  {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Experience details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Role"
+        },
+        value: {
+          html: roleHtml
+        }
+      },
+      {
+        key: {
+          text: "Years of experience"
+        },
+        value: {
+          html: experienceHtml
+        }
+      }
+    ]
+  }) }}
+
+    {{ govukSummaryList({
+    card: {
+      title: {
+        text: "Personal details"
+      }
+    },
+    rows: [
+      {
+        key: {
+          text: "Preferred email address"
+        },
+        value: {
+          html: preferredemailHtml
+        }
+      },
+      {
+        key: {
+          html: updateOneLoginHtml
+        }
+      }
+    ]
+  }) }}
+
+  {% include '../includes/prototype-links.html' %}
+
+{% endblock %}

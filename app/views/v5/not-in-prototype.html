@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Not in prototype
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">This part of the journey is not in the prototype.</h1>  
+      <form class="form" action="index" method="post">
+        {{ govukButton({
+          text: "Back to start"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

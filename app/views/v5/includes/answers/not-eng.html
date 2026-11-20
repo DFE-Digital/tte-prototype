@@ -1,0 +1,207 @@
+
+
+
+{% block page %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <form class='form' action="" method="post">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['choosette'] or "Excellence in reception teaching" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="choose-course">
+                Change<span class="govuk-visually-hidden"> course</span>
+              </a>
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Workplace in England 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['wheredoyouwork'] or "No" }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="where-do-you-work">
+                Change<span class="govuk-visually-hidden"> do you work in England</span>
+              </a>
+            </dd>
+          </div>
+          
+          {% if data['choosette'] != "Excellence in reception teaching" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                British service school
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['overseasschool'] or "No" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="overseas">
+                  Change<span class="govuk-visually-hidden"> British service school</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if data['overseasschool'] == "Yes" %}
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Workplace
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['workplacename'] }} – {{ data['workplace'] }} 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="which-school">
+                Change<span class="govuk-visually-hidden"> workplace</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding eligibility outcome
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ govukTag({
+                text: "Eligible",
+                classes: "govuk-tag--green"
+              }) }}
+            </dd>
+          </div>
+          {% endif %}
+
+          {% if data['overseasschool'] == "No" %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Funding eligibility outcome
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ govukTag({
+                  text: "Not eligible",
+                  classes: "govuk-tag--red"
+                }) }}
+              </dd>
+            </div>
+          {% endif %}
+
+          {% if (data['referrer'] == "reg") %}
+            {% if data['overseasschool'] == "No" %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Course funding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['payment'] or "I am paying" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="funding/how-pay">
+                    Change<span class="govuk-visually-hidden"> how the course is paid for</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Course start 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['startdate'] or "October 2027" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="course-start">
+                  Change<span class="govuk-visually-hidden"> course start date</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Provider
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['provider'] or "Cedar trust" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="choose-provider">
+                  Change<span class="govuk-visually-hidden"> provider</span>
+                </a>
+              </dd>
+            </div>
+
+            {% if (data['alt-email'] == "Use the email address as GOV.UK One Login account") %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  GOV.UK One Login email address: ben.smith@gmail.com
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="alternative-email">
+                    Change<span class="govuk-visually-hidden"> email</span>
+                  </a>
+                </dd>
+              </div>
+
+              {% else %}
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Preferred email address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['alt-email'] or "Use a different email address" }}: {{ data['contactByEmail'] or "ben@school.com" }}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="alternative-email">
+                    Change<span class="govuk-visually-hidden"> email</span>
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['whatrole'] or "Maths lead" }}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="what-role">
+                  Change<span class="govuk-visually-hidden"> role</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Years of experience
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{ data['yearsexperience'] or "2" }} years
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="years-of-experience">
+                  Change<span class="govuk-visually-hidden"> years of experience</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+
+        </dl>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

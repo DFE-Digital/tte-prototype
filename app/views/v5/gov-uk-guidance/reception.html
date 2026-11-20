@@ -1,0 +1,201 @@
+{% extends "layout-govuk.html" %}
+
+{% block pageTitle %}
+  Excellence in reception teaching NPD - Find training for experienced teachers and education leaders
+{% endblock %}
+
+{% block containerStart %}
+  <div class="govuk-width-container max-960 ">
+    {{ govukBreadcrumbs({
+      classes: "max-960",
+      items: [
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Home</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Education, training and skills</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teaching and leadership</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Teacher training and professional development</p>',
+          href: "#"
+        },
+        {
+          html: '<p class="govuk-!-font-size-16 govuk-!-margin-top-4">Find training</p>',
+          href: "list-of-courses"
+        }
+      ]
+    }) }}
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container max-960">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <p class="govuk-!-font-size-24 govuk-!-margin-bottom-0" style="color:#505a5f; padding-bottom: 1px">Guidance</p>
+          <h1 class="govuk-heading-xl" style="padding-top: 1px">
+            {{ data['reception-course-name'] }}: {{ data['tte-programme-name-with-acronym'] }} course 
+          </h1>  
+          <p class="govuk-body-l">A course for experienced reception teachers who want to develop their practice and deepen their understanding of child development, using the latest evidence from early years education. </p>
+
+          <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+            <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+              <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+                Contents
+              </h2>
+              <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+                  <a href="#who">
+                    Who this course is for
+                  </a>
+                </li>
+                <li aria-current="true" class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  About the course
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#content">
+                    What you will learn
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#providers">
+                    Providers
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#structure">
+                    How the course is delivered
+                  </a>
+                </li>
+                <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+                  <a href="#funding">
+                    Funding
+                  </a>
+                </li>
+              </ol>
+            </nav>
+          </aside>
+
+          <p class="govuk-!-padding-top-8">Excellence in reception teaching uses the latest evidence from early years education to help teachers strengthen their practice and deepen their understanding of child development. </p>
+          <p>NPD courses are endorsed by the <a href="../not-in-prototype.html">Education Endowment Foundation</a>.</p>
+          <p>On successful completion of the course, participants will be awarded a Department for Education (DfE) accredited NPD certificate.</p>
+
+          <h2 class="govuk-heading-m" id="who">Who this course is for</h2>
+          <p>This course is suitable for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>teachers who have completed their induction</li>
+            <li>experienced reception teachers </li>
+            <li>teachers moving into a reception role</li>
+          </ul>
+          <p>This course is not designed for teaching assistants.</p>
+
+          <h2 class="govuk-heading-m" id="overview">About the course</h2>
+          <p>This course is part of the National Professional Development (NPD) suite of courses. It was developed to support reception teachers in delivering high-quality teaching and learning in the reception year. </p>
+          <p>The course helps teachers build the knowledge, skills and professional behaviours needed to support all children to achieve and thrive. </p>
+          <p>You'll develop practical approaches that you can apply in your classroom immediately. </p>
+
+          <h3 class="govuk-heading-s">Why do teachers need this course </h3>
+          <p>Reception teachers play a vital role in shaping children’s early educational journeys. </p>
+          <p>In the <a href="../not-in-prototype.html">Every child achieving and thriving</a> white paper, we committed to new training courses for teachers. </p>
+          <p>In the <a href="../not-in-prototype.html">Giving every child the best start in life</a> strategy, we committed to developing a new training course for reception class teachers. </p>
+          <p>This course will help teachers deliver high-quality reception teaching by providing the knowledge, tools and confidence to apply new learning approaches. </p>
+          
+          <h2 class="govuk-heading-m" id="content">What you will learn</h2>
+          <p>You will learn practical strategies to improve children’s outcomes, including how to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>apply evidence-based approaches in the classroom</li>
+            <li>establish effective communication and language skills to support children’s learning</li>
+            <li>build expertise in identifying and adapting to barriers to learning, including special educational needs and disabilities (SEND)</li>
+            <li>use physical activity to support children’s well-being and motor-skills </li>
+            <li>plan an effective appropriate curriculum and assessments</li>
+            <li>support smooth transitions for children into and out of reception</li>
+          </ul>
+          <p>Read the full <a href="../not-in-prototype.html">content framework</a>. Providers use this framework to design their course.</p>
+
+          <h2 class="govuk-heading-m" id="providers">Providers</h2>
+          <p>You can choose from one of the following DfE-approved providers:  </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="../not-in-prototype.html">Acorn training</a></li>
+            <li><a href="../not-in-prototype.html">Cedar trust</a></li>
+            <li><a href="../not-in-prototype.html">Evergreen learning</a></li>
+            <li><a href="../not-in-prototype.html">Maple education</a></li>
+            <li><a href="../not-in-prototype.html">Redwood training</a></li>
+            <li><a href="../not-in-prototype.html">Willow network</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m" id="structure">How the course is delivered</h2>
+          <p>The course is designed to fit around your teaching commitments. Where possible, you should complete the course during your professional development time.</p>
+          <p>This course will:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>take approximately two school terms to complete (minimum 20 hours) </li>
+            <li>include a mix of self-study and live online training </li>
+            <li>start in October and January, depending on the training provider </li>
+          </ul>
+
+          <h2 class="govuk-heading-m" id="eligibility">Funding</h2>
+          <p>Funded places are available for most state-funded settings, including academy trusts. </p>
+          <p>Examples of places that are not eligible for funding include private schools and schools outside of England. </p>
+          
+          <p><strong>We will check your eligibility for funding before you register for the course.</strong></p>
+          
+          {{ govukButton({
+              text: "Continue to check funding eligibility",
+              href: "../reception",
+              isStartButton: true
+          }) }}
+
+          <h2 class="govuk-heading-m">I am self-funding </h2>
+          <p>If you are self-funding, you must still register with the DfE. </p>
+          <form class="form" action="../route-course" method="post">
+            <input type="hidden" name="selffund" value="self-fund">
+            <input type="hidden" name="choosette" value="Excellence in reception teaching">
+            {{ govukButton({
+              text: "Register as self-funded",
+              classes: "button-as-link govuk-link govuk-!-margin-top-2"
+            }) }}
+          </form>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <aside class="govuk-prototype-kit-common-templates-related-items govuk-!-margin-top-2" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Related courses
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list govuk-!-font-size-16">
+                <li>
+                  <a href="list-of-courses.html">
+                    Find training for experienced teachers and education leaders 
+                  </a>
+                </li>
+                <li>
+                  <a href="SEND-teachers.html">
+                    {{ data['send-course-name'] }} NPD
+                  </a>
+                </li>
+                <li>
+                  <a href="#">Leading behaviour and culture NPQ</a>
+                </li>
+                <li>
+                  <a href="#">Leading primary mathematics NPQA</a>
+                </li>
+                <li>
+                  <a href="#">Leading teaching NPQ</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </div> 
+    </div>
+  </main>
+</div>
+
+{% endblock %}

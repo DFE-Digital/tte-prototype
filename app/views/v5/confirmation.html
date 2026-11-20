@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% set signedIn = 'true' %}
+
+{% block pageTitle %}
+  Registration successfully submitted
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukPanel({
+        titleText: "Registration submitted"
+      }) }}
+
+      <h2 class="govuk-heading-m">Thank you for registering </h2>
+      <p class="govuk-body">We have sent you a confirmation email. </p>
+      <p class="govuk-body">We have sent your details to your training provider. </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Your chosen provider will email you within the next 5 days to complete your application. After your application is complete, they will confirm if they can offer you a place on the course. </p>
+      <p class="govuk-body govuk-!-margin-bottom-7">
+        <a href="registration-status/registration-status.html" class="govuk-link">View your registration details</a>
+      </p>
+      <hr>
+      <p class="govuk-body govuk-!-margin-top-6">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}

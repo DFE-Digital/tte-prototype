@@ -1,0 +1,45 @@
+{% set englandHtml %}
+  {{ data['wheredoyouwork'] or 'Yes' }}
+{% endset %}
+
+{% set workSettingHtml %}
+  {{ data['whichsetting'] or 'Independent hospital education organisation' }}
+{% endset %}
+
+{% set employerHtml%}
+  {{ data['employer'] or 'Essex County Council' }}
+{% endset %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Work details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Workplace in England"
+      },
+      value: {
+        html: englandHtml
+      }
+    },
+    {
+      key: {
+        text: "Work setting"
+      },
+      value: {
+        html: workSettingHtml
+      } 
+    },
+    {
+      key: {
+        text: "Employer name"
+      },
+      value: {
+        html: employerHtml
+      }
+    }
+  ]
+}) }}
