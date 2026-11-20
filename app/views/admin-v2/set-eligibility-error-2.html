@@ -1,0 +1,60 @@
+{% extends "layout-admin.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            Select an option to continue
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Select ‘Yes’ to confirm that they are eligible for funding</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" method="post">
+        {{ govukRadios({
+          name: "registration1--funding-status",
+          fieldset: {
+            legend: {
+              html: "Is Lorelai Gilmore eligible for funding?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <a href="app-details-eligibility-change.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Submit
+          </a>
+          <a class="govuk-link" href="app-details">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

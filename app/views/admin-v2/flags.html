@@ -1,0 +1,151 @@
+ {% extends "layout-admin.html" %}
+
+{% block content %}
+
+ 
+
+      <br>
+      <h1 class="govuk-heading-l">
+  Feature flags
+</h1>
+<br>
+
+      <p>  Feature flags allow you to control what features are switched on or off in the staging environment.
+                
+        <br>
+        <div class="govuk-inset-text">
+        Ticked box: Feature is on.<br>
+        Unticked box: Features is off.
+        </div>
+       <br>
+
+       <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                <p><strong>Registration service</strong>
+                  <br> 
+                  Turns the NPQ registration service on or off.</p>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                <p><strong>Late registrations</strong>
+                  <br> 
+                  Enables authorised users to register for an NPQ even when the registration service is closed.</p>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                <p><strong>DfE analytics</strong>
+                  <br>  Allows data to be sent to the DfE analytics BigQuery service, which helps track and analyse how the NPQ service is used.
+                   </p>
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                <p><strong>Get an Identity integration </strong>
+                  <br> Prompts users to set up or sign into a DfE Identity account.
+                   </p>
+              </label>
+            </div>
+
+                    
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                      <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                        <p><strong>SENCO NPQ course </strong>
+                          <br> Enables users to register for the special educational needs coordinator NPQ course.
+                           </p>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      <p><strong>Maths NPQ course </strong>
+                        <br> Enables users to register for the maths NPQ course.
+                         </p>
+                    </label>
+                  </div>
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      <p><strong>Maths NPQ course </strong>
+                        <br> Enables users to register for the maths NPQ course.
+                         </p>
+                      
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                      <p><strong>Maintenance banner </strong>
+                        <br> Displays a banner to notify users that the registration service will experience some downtime to receive maintenance work.
+                         </p>
+                    </label>
+                  </div>
+              
+          </div>
+        
+            
+        
+
+        
+        
+
+
+
+        </fieldset>
+      </div>
+
+
+
+
+
+          
+        
+      
+      
+
+
+
+      
+
+      
+
+        
+
+
+           
+         
+
+          
+
+
+
+          
+     
+
+    </div>
+  </div>
+
+  {% endblock %}
+ 
+
+
+
+
+
+ 

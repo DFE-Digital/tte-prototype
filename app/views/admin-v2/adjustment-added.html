@@ -1,0 +1,66 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+      
+
+        <div class="govuk-grid-column-three-quarters">
+
+          {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Adjustment type</th>
+                <th scope="col" class="govuk-table__header">Amount</th>
+                <th scope="col" class="govuk-table__header">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Fully trained mentor (n=902) access fees</td>
+                <td class="govuk-table__cell">£19,844.00</td>
+                <td class="govuk-table__cell">
+                  <a href="add-adjustment.html">Edit</a> <br>
+                  <a href="remove-adjustment.html">Remove</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          <form method="POST" action="/admin-v3/adjustment-added">
+            {{ govukRadios({
+              name: "doYouNeedToAddAnotherAdjustment",
+              fieldset: {
+                legend: {
+                  text: "Do you need to make another adjustment?",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                { value: "Yes", text: "Yes" },
+                { value: "No", text: "No" }
+              ]
+            }) }}
+
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+          </form>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

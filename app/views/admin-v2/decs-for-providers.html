@@ -1,0 +1,146 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+  
+      <h1 class="govuk-heading-l">
+      Submit declarations for providers
+      </h1>
+      <p>You can submit multiple declarations for a provider by uploading a CSV file. </p>
+      <p>You can do this when:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a provider has no access to the API</li>
+        <li>there are outstanding declarations that need to be submitted</li>
+      </ul>
+
+      <h1 class="govuk-heading-m">
+      Create your CSV file
+      </h1>
+      <p>Your file must include the following column headers:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>participant_id</li>
+        <li>declaration_type</li>
+        <li>declaration_date </li>
+        <li>course_identifier</li>
+        <li>delivery_partner_id</li>
+      </ul>
+
+     <p>For example:</p>
+
+      <pre>
+             "participant_id": "db3a7848-7308-4879-942a-c4a70ced400a",
+             "declaration_type": "started",
+              "declaration_date": "2021-05-31T02:21:32Z",
+              "course_identifier": "npq-senior-leadership",
+              "delivery_partner_id": "524df095-f9bf-4f9d-ba4c-772545a99e60"
+      </pre>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <br>
+    
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <div
+                class="govuk-drop-zone"
+                data-module="govuk-file-upload">
+                <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+              </div>
+            </div>
+
+
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Upload file
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">Uploaded files</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">File name</th>
+            <th scope="col" class="govuk-table__header">Number of rows</th>
+            <th scope="col" class="govuk-table__header">Date created</th>
+            <th scope="col" class="govuk-table__header">Date started</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="amend-trn-details-page.html">Declaration a</a></td>
+            <td class="govuk-table__cell">25</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Declaration b</a></td>
+            <td class="govuk-table__cell">6</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Declaration c</a></td>
+            <td class="govuk-table__cell">57</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

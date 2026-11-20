@@ -1,0 +1,339 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% if (data['registration1--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+ 
+ 
+  {% endif %}
+  {% endset %}
+
+ 
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+
+          <ul class="moj-side-navigation__list">
+            <li class="moj-side-navigation__item">
+              <a href="/admin-v3/applications" class="govuk-!-font-size-16">All applications</a>
+            </li>
+            <li class="moj-side-navigation__item">
+              <a href="/admin-v3/registrations-review" class="govuk-!-font-size-16">In review</a>
+            </li>
+
+
+
+
+
+
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="/admin-v3/overview" class="govuk-!-font-size-16">Overview</a>
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+          <li class="moj-side-navigation__item">
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+
+  
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            The TRN has been updated
+          </h3>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1><br>
+
+     
+      
+
+     
+      
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Leading teacher development NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "app-details",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "17 October 2024"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'No'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+               
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Leading literacy NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "23 November 2024"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'No'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Headship NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "3 January 2025"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'Yes'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}

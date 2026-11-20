@@ -1,0 +1,113 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+ 
+      <h1 class="govuk-heading-l">
+      Reject applications
+      </h1>
+            <br>
+            <p>Reject multiple applications by providing their application IDs.</p>
+            <p>Create a file with a list of application IDs, one per row, and no header.</p>
+            <p>For example:</p>
+      <pre>
+              2f581c80-b5bb-4404-bcaf-4044d9c0c674
+              21fe9549-28f0-492c-ae3a-d52969b40536
+              e7e8a629-f75f-4d98-b157-269136110099
+      </pre>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <br>
+  
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <div
+                class="govuk-drop-zone"
+                data-module="govuk-file-upload">
+                <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+              </div>
+            </div>
+
+            <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+              Upload file
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">Uploaded files</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">File name</th>
+            <th scope="col" class="govuk-table__header">Number of rows</th>
+            <th scope="col" class="govuk-table__header">Date created</th>
+            <th scope="col" class="govuk-table__header">Date started</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="https://register-national-professional-qualifications.education.gov.uk/npq-separation/admin/bulk-operations/reject_applications/4">Reject Pending</a></td>
+            <td class="govuk-table__cell">2164</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
+            <td class="govuk-table__cell">6</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">TDT applications</a></td>
+            <td class="govuk-table__cell">57</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell"><div class="govuk-button-group"></div></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

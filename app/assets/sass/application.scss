@@ -113,3 +113,11 @@
 .table-hover:hover dl {
   color:white;
 }
+
+.moj-side-navigation__item--inactive {
+  background-color: white !important;
+  border: white !important;
+  border-color: none !important;
+  font-weight: normal !important;
+  padding: 5px 0 5px 0 !important;
+}

@@ -1,0 +1,124 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+
+       {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+  
+      <h1 class="govuk-heading-l">
+        Update and verify teacher reference numbers (TRNs)
+      </h1>
+      <br>
+      <p>If the service shows multiple incorrect teacher reference numbers (TRNs), you can fix this by uploading a CSV file with the correct TRNs. The service will then verify the TRNs you provide.</p>
+      <p>Create a CSV file with the headings:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>'User ID' in column A, followed by the relevant user IDs</li>
+        <li>'Updated TRN' in column B, followed by the replacement TRNs</li>
+      </ul>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <br>
+    
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <div
+                class="govuk-drop-zone"
+                data-module="govuk-file-upload">
+                <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file">
+              </div>
+            </div>
+
+
+
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Upload file
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">Uploaded files</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">File name</th>
+            <th scope="col" class="govuk-table__header">Number of rows</th>
+            <th scope="col" class="govuk-table__header">Date created</th>
+            <th scope="col" class="govuk-table__header">Date started</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="amend-trn-details-page.html">Ambition 2024 pending applications test</a></td>
+            <td class="govuk-table__cell">25</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell">6</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#">Teacher reference number</a></td>
+            <td class="govuk-table__cell">57</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">20 Sept 2024</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-button-group">
+
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">Next<span class="govuk-visually-hidden"> page</span></span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

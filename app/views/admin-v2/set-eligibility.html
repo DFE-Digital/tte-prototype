@@ -1,0 +1,49 @@
+{% extends "layout-admin.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <form class="form" method="post">
+        {{ govukRadios({
+          name: "registration1--funding-status",
+          fieldset: {
+            legend: {
+              html: "Is Lorelai Gilmore eligible for funding?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          <a href="app-details-eligibility-change.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Submit
+          </a>
+          <a class="govuk-link" href="app-details">Cancel</a>
+        </div>
+
+        <br>
+        <br>
+
+        <p><a href="set-eligibility-error.html"><strong>Change from yes to no, but declaration has been submitted already</strong></a></p>
+      </form>
+    </div>
+  </div>
+{% endblock %}

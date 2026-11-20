@@ -1,0 +1,326 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active govuk-!-padding-left-3">
+            <a href="declarations/ambition" aria-current="location" class="govuk-!-font-size-16">Ambition institute </a>
+          </li>
+          <ul class="moj-side-navigation__list govuk-!-padding-left-4">
+            <li class="moj-side-navigation__item moj-side-navigation__item--active govuk-!-padding-left-3"><a href="#" class="govuk-!-font-size-16">2026b</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2026</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2025b</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2025</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2024</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2023</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2022</a></li>
+            <li class="moj-side-navigation__item"><a href="#" class="govuk-!-font-size-16">2021</a></li>
+          </ul>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">Best Practice Network</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">Church of England</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">LLSE</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">National institute of Teaching</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">Teach first</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="#" class="govuk-!-font-size-16">UCL</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-l">Declarations</h1>
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <h1 class="govuk-heading-m">Find an declaration</h1>
+        <form action="" accept-charset="UTF-8" method="get">
+
+          <div id="account-number-hint" class="govuk-hint">
+            Search by name, application ID or declaration ID
+                    </div>
+          <div class="govuk-form-group"><label for="query-field" class="govuk-label govuk-label--s"></label><input id="query-field" class="govuk-input" type="text" name="query"></div>
+
+            <div style="display: flex; margin-left: -14px">
+
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Application status</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">All</option>
+                  <option value="Status">Active</option>
+                  <option value="Status">Deferred</option>
+                  <option value="Status">Withdrawn</option>
+                </select>
+              </div>
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Provider approval status</label>
+                <select id="employment-type-field" class="govuk-select" name="Employment type"><option value=""></option>
+                  <option value="Status">All</option>
+                  <option value="Status">Pending</option>
+                  <option value="Status">Accepted</option>
+                  <option value="Status">Rejected</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Year of application</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                <option value="hospital_school">2025 to 2026</option>
+                <option value="other">2024 to 2025</option>
+                <option value="local_authority_virtual_school">2023 to 2024</option>
+                <option value="young_offender_institution">2022 to 2023</option>
+                <option value="young_offender_institution">2021 to 2022</option>
+                </select>
+              </div>
+
+            </div>
+
+            
+
+
+
+
+
+            <div style="display: flex; margin-left: -14px">
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="funding-eligiblity" class="govuk-label govuk-label--s">Employment type</label>
+                <select id="funding-eligiblity" class="govuk-select" name="Funding eligiblity status code"><option value=""></option>
+                  <option value="Early years or childcare">Early years or childcare </option>
+                  <option value="Schools">Schools</option>
+                  <option value="Academy trusts">Academy trusts</option>
+                  <option value="16 to 19 settings ">16 to 19 settings </option>
+                  <option value=" Local authority virtual schools"> Local authority virtual schools</option>
+                  <option value=" Local authority virtual schools"> Local authority supply teacher</option>
+                  <option value="Initial teacher training (ITT) provider">Initial teacher training (ITT) provider</option>
+                  <option value="Hospital education providers">Hospital education providers</option>
+                  <option value="Young offender institutions">Young offender institutions</option>
+                  <option value="Self-employed">Self-employed</option>
+                  <option value="Non educational settings">Non educational settings</option>
+                  <option value="Referred by the Return to Teaching Adviser service">Referred by the Return to Teaching Adviser service</option>
+                  <option value="Agency supply teacher">Agency supply teacher</option>
+                  <option value="Independent setting">Independent setting</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div style="display: flex; margin-left: -14px">
+
+              
+
+              
+              
+              
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+      <table class="govuk-table govuk-!-font-size-16" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">
+              Submitted
+            </th>
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Workplace</th>
+              <th scope="col" class="govuk-table__header">Application details</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              9 Jul 2025 <br> 15:45pm
+            </td>
+            
+            <td class="govuk-table__cell">
+
+              Lorelai Gilmore
+             
+            </td>
+            <td class="govuk-table__cell">Abacus Belsize Primary School</td>
+
+            <td class="govuk-table__cell">
+              <a href="/admin-v3/app-details.html" class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              4 Jul 2025 <br> 17:45pm
+            </td>
+           
+            <td class="govuk-table__cell">
+             Jake Pegg
+            </td>
+            <td class="govuk-table__cell">Abbey CofE Infant School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+               2 Jul 2025 <br> 1:45am
+            </td>
+          
+            <td class="govuk-table__cell">
+             John Mackey 
+            </td>
+            <td class="govuk-table__cell">Abbey College Cambridge</td>
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+               1 Jul 2025 <br> 18:05pm
+            </td>
+          
+            <td class="govuk-table__cell">
+             David Dimbleby
+            </td>
+            <td class="govuk-table__cell">Abbots Farm Junior School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              30 Jun 2025 <br> 7:05am
+            </td>
+            
+            <td class="govuk-table__cell">
+              Carlton Shanahan JD
+               
+            </td>
+            
+            <td class="govuk-table__cell">Abbey Court Foundation Special School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              27 Jun 2025 <br> 17:05pm
+            </td>
+            
+            <td class="govuk-table__cell">
+            Fareed Eilert
+            </td>
+            <td class="govuk-table__cell">Abbeyfield School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+             27 Jun 2025 <br> 7:05am
+            </td>
+            
+            <td class="govuk-table__cell">
+              Aiga Villum 
+            </td>
+            
+            <td class="govuk-table__cell">Ystrad Mynach Primary</td>
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              27 Jun 2025 <br> 13:05pm
+            </td>
+            
+            <td class="govuk-table__cell">
+              Colin Winter
+            </td>
+            
+            <td class="govuk-table__cell">Abbots Green Community Primary School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">
+              27 Jun 2025 <br> 11:00am
+            </td>
+           
+            <td class="govuk-table__cell">
+              Bobby Small 
+              
+            </td>
+            
+            <td class="govuk-table__cell">Abbots Farm Junior School</td>
+
+            <td class="govuk-table__cell">
+              <a href=" " class="govuk-link">View</a> </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <nav class="govuk-pagination" aria-label="Pagination">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">
+              Previous<span class="govuk-visually-hidden"> page</span>
+            </span>
+          </a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+            <span class="govuk-pagination__link-title">
+              Next<span class="govuk-visually-hidden"> page</span>
+            </span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+
+
+    </div>
+  </div>
+{% endblock %}

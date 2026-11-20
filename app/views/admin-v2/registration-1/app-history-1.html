@@ -1,0 +1,198 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% if (data['registration1--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+
+
+  {% endif %}
+  {% endset %}
+
+ 
+  
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="ltd-130824" aria-current="location" class="govuk-!-font-size-16">Application details</a>
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="/admin-v3/registration-1/app-history-1.html" class="govuk-!-font-size-16">Application history</a>
+          </li>
+
+      </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+      {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+
+        <span class="govuk-caption-l">Jorge Hund, NPQ Leading teacher development (NPQLTD), 10 Sept 2025</span>
+        <h1 class="govuk-heading-l">Registration history</h1>
+
+        <br>
+    
+          <div class="moj-timeline">
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Registered for Leading Teacher Development NPQ</h2>
+          
+                <p class="moj-timeline__byline">by Jorge Hund</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-14T14:01:00.000Z">17 October 2024 at 2:01pm</time>
+              </p>
+              <div class="govuk-inset-text">
+                Eligible for funding: Requires manual review from policy<br>
+                Provider: Ambition 
+              </div>
+              <div class="moj-timeline__description">
+              
+              </div>
+            </div>
+          
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Registration in manual review </h2>
+          
+                <p class="moj-timeline__byline"> by Nathalie G (policy)</p>
+              
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">18 October 2024 at 12:32pm</time>
+              </p>
+              <div class="govuk-inset-text">
+                Reason for manual review: Referred by a Return To Teaching Adviser (RTTA).
+              </div>
+    
+              <br> 
+
+                    </div>
+          
+            <div class="moj-timeline__item">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Manual review decision made: Not eligible for funding</h2>
+          
+                <p class="moj-timeline__byline">by Nathalie G</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-06T09:12:00.000Z">20 October 2024 at 9:12am</time>
+              </p>
+              <div class="govuk-inset-text">
+                Reason for being ineligible: Do not work in one of the eligible settings, such as a state-funded school or 16-19 educational organisation.
+              </div>
+
+              <div class="moj-timeline__description">
+                
+              </div>
+          
+            </div>
+          
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Registered for Leading Literacy NPQ</h2>
+          
+                <p class="moj-timeline__byline">by Jorge Hund</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">22 October 2024 at 10:45am</time>
+              </p>
+              <div class="govuk-inset-text">
+                Eligible for funding: Yes<br>
+                Provider: Ambition 
+              </div>
+
+              <div class="moj-timeline__description">
+              
+              </div>
+          
+            </div>
+    
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Transferred providers</h2>
+          
+                <p class="moj-timeline__byline">by Caseworker 1</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-06T09:12:00.000Z">25 October 2024 at 9:12am</time>
+              </p>
+              <div class="govuk-inset-text">
+                Transferred from Ambition to National Society for Education for the Leading Literacy NPQ.
+              </div>
+              <div class="moj-timeline__description">
+                
+              </div>
+          
+          
+            </div>
+    
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Registered for Leading Literacy NPQ</h2>
+          
+                <p class="moj-timeline__byline">by Jorge Hund</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">27 October 2024 at 10:45am</time>
+              </p>
+              <div class="govuk-inset-text">
+                Eligible for funding: Yes<br>
+                Provider: National Society for Education
+              </div>
+              <div class="moj-timeline__description">
+                
+              </div>
+            </div>
+          
+            <div class="moj-timeline__item">
+          
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Completed Leading Literacy NPQ: Passed</h2>
+          
+                <p class="moj-timeline__byline">Automated</p>
+          
+              </div>
+          
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:45:00.000Z">27 October 2025 at 10:45am</time>
+              </p>
+          
+            
+          
+            
+      
+    
+    
+    
+           
+         
+
+      
+   
+{% endblock %}

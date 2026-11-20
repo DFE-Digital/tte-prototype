@@ -1,0 +1,78 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-grid-row">
+       
+
+        
+
+
+        <div class="govuk-grid-column-three-quarters">
+
+          {{ govukBackLink({
+          text: "Back",
+          href: "javascript:window.history.back()"
+        }) }}
+        
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Are you sure you want to remove this <br>adjustment?</h1>
+        
+
+         
+        <div class="govuk-grid-column-three-quarters">
+
+      
+
+        </div>
+
+        <br> <br>
+
+      
+
+        <div class="govuk-grid-column-three-quarters"> 
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Adjustment type</th>
+                <th scope="col" class="govuk-table__header">Payment amount</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Fully trained mentor (n=902) access fees</td>
+                <td class="govuk-table__cell">£19,844.00</td>
+              </tr>
+             
+            </tbody>
+          </table>
+
+          <br>
+
+      
+
+        
+     
+
+
+        <div class="govuk-button-group">
+          <a href="finance-statement.html" class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Remove
+          </a>
+          <a class="govuk-link" href="adjustment-added.html">Cancel</a>
+        </div>
+
+        <br>
+        <br>
+        
+
+      </div> 
+      </div>
+      </div>
+
+    </div>
+    </div>
+  </div> 
+{% endblock %}

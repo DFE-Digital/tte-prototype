@@ -1,0 +1,188 @@
+// ...existing code...
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item">
+            <a href="app-details.html" aria-current="location" class="govuk-!-font-size-16">Application details</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="declarations.html" class="govuk-!-font-size-16">Declaration details</a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="course-outcomes.html" aria-current="location" class="govuk-!-font-size-16">Course outcome</a>
+          </li>
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="app-history-1.html" class="govuk-!-font-size-16">Application history</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <span class="govuk-caption-l">Lorelai Gilmore, Leading teacher development NPQ, 17 October 2024</span>
+      <h1 class="govuk-heading-l">Application history</h1>
+
+      <div class="moj-timeline">
+
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Registered for Leading Teacher Development NPQ </h2>
+            <p class="moj-timeline__byline">by Lorelai Gilmore, 17 October 2024 at 2.01pm</p>
+          </div>
+          <p class="moj-timeline__date">
+          </p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Provider: Ambition Institute</li>
+            </ul>
+          </div>
+        </div>
+                <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Review status changed to [‘Needs review’]</h2>
+            <p class="moj-timeline__byline">by Lorelai Gilmore, 17 October 2024 at 2.02pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description"></div>
+        </div>
+
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Teacher reference number changed to [0000000]</h2>
+            <p class="moj-timeline__byline">by Jamie Brown (policy), 18 October 2024 at 12:30pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Notes updated</h2>
+            <p class="moj-timeline__byline">by Jamie Brown (policy), 18 October 2024 at 12:32pm</p>
+          </div>
+          <p class="moj-timeline__date">
+          </p>
+          <div class="moj-timeline__description">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Review note</span>
+              </summary>
+              <div class="govuk-details__text">
+                 User is eligible for funding as the school details they have applied with appear on the schools eligibility list. Applicant also provided their TRN.
+              </div>
+            </details>
+          </div>
+        </div>
+
+                <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Funding eligibility changed to [‘Yes’] </h2>
+            <p class="moj-timeline__byline">Jamie Brown (policy), 17 October 2024 at 3.20pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description"></div>
+          <ul class="govuk-list govuk-list--bullet">
+              <li>Status code changed to [0000]</li>
+            </ul>
+        </div>
+
+                        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Provider approval status changed to ['Accepted']</h2>
+            <p class="moj-timeline__byline">by Jamie Brown (policy), 19 October 2024 at 12:30pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+            </ul>
+          </div>
+        </div>
+
+                                <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Training status changed to [‘Active’]</h2>
+            <p class="moj-timeline__byline">by Susan Boyle (policy), 25 November 2024 at 12:30pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+            </ul>
+          </div>
+        </div>
+
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Notes updated</h2>
+            <p class="moj-timeline__byline">by Jane Smith (policy), 18 October 2024 at 12:32pm</p>
+          </div>
+          <p class="moj-timeline__date">
+          </p>
+          <div class="moj-timeline__description">
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">Review note</span>
+              </summary>
+              <div class="govuk-details__text">
+                Applicant contacted us to tell us that she cannot continue the NPQ with Ambition Institute and would like to change providers.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        
+         <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Transferred provider to [Best Practice Network] </h2>
+            <p class="moj-timeline__byline">by Jane Smith (policy), 30 November 2024 at 12:30pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+            </ul>
+          </div>
+        </div>
+
+         <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Training status changed to [‘Active’]</h2>
+            <p class="moj-timeline__byline">by Jane Smith (policy), 1 December 2024 at 12:30pm</p>
+          </div>
+          <p class="moj-timeline__date"></p>
+          <div class="moj-timeline__description">
+            <ul class="govuk-list govuk-list--bullet">
+            </ul>
+          </div>
+        </div>
+
+        
+
+        
+
+        <div class="moj-timeline__item">
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Completed Leading Literacy NPQ: Passed</h2>
+            <p class="moj-timeline__byline">by Best Practice Network (via API)</p>
+          </div>
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:45:00.000Z">3 December 2024 at 10:45am</time>
+          </p>
+          <div class="moj-timeline__description"></div>
+        </div>
+
+      </div> <!-- /.moj-timeline -->
+
+    </div> <!-- /.govuk-grid-column-three-quarters -->
+  </div> <!-- /.govuk-grid-row -->
+{% endblock %}
+// ...existing code...

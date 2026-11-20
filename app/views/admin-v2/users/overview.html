@@ -1,0 +1,344 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  {% set reviewStatusHTML %}
+  {% if (data['registration1--review-status'] == "Decision made") %}
+    {{govukTag({
+      text: data['registration1--review-status'],
+      classes: "govuk-tag--grey"
+    })}}
+ 
+ 
+  {% endif %}
+  {% endset %}
+
+ 
+
+  <div class="govuk-grid-row">
+   
+    <div class="govuk-grid-column-three-quarters">
+
+   
+
+      <br>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Lorelai Gilmore</h1><br>
+      
+      
+      
+ {{ govukSummaryList({
+  card: {
+    title: {
+      text: 'Personal information',
+      classes: 'govuk-!-font-size-20'
+    },
+    actions: {
+      items: [
+        {
+          href: "app-details",
+          visuallyHiddenText: "of the Leading teaching development registration"
+        }
+      ]
+    }
+  },
+  rows: [
+    {
+      key: { text: "User ID" },
+      value: { text: "	11ab2c36-77ss-00r3-776f-56781jj887848r" }
+    },
+    {
+      key: { text: "Email" },
+      value: { text: "gilmore.girls@google.com" }
+    },
+    {
+      key: { text: "Date of birth" },
+      value: { text: "30 October 2020" }
+    },
+    {
+      key: { text: "National Insurance" },
+      value: { text: "JH576827D" }
+    },
+    {
+  key: { text: "TRN" },
+  value: {
+    html: '1234567&nbsp;' + govukTag({ text: "Verified", classes: "govuk-tag--green" })
+  },
+  actions: {
+    items: [
+      {
+        href: "changetrn",
+        text: "Change",
+        visuallyHiddenText: "TRN"
+      }
+    ]
+  }
+},
+    {
+      key: { text: "Get an Identity ID" },
+      value: { text: '11ab2c36-55f8-00r3-776f-56781jj03214o' }
+    }
+  ]
+}) }}
+
+ <h1 class="govuk-heading-m">Applications</h1>
+
+            {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Leading teacher development NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "app-details",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "17 October 2024"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'No'
+            }
+          },
+          {
+            key: {
+              text: "Training milestone reached"
+            },
+            value: {
+              text: 'Retained-2 (paid)'
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+               
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Leading literacy NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "23 November 2024"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'No'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: 'Headship NPQ',
+            classes: 'govuk-!-font-size-20'
+          },
+          actions: {
+            items: [
+              {
+                href: "reg-app",
+                text: "View full application",
+                visuallyHiddenText: "of the Leading teaching development registration"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Created"
+            },
+            value: {
+              text: "3 January 2025"
+            }
+          },
+          {
+            key: {
+              text: "Provider"
+            },
+            value: {
+              text: "UCL"
+            }
+          },
+          
+          {
+            key: {
+              text: "Eligible for funding"
+            },
+            value: {
+              text: "Yes"
+              
+            }
+          },
+          {
+            key: {
+              text: "Provider approval status"
+            },
+            value: {
+              text: "Yes"
+            }
+          },
+          {
+            key: {
+              text: "Funded place"
+            },
+            value: {
+              text: 'Yes'
+            }
+          },
+          {
+            key: {
+              text: "Declaration"
+            },
+            value: {
+              html: providerStatusHTML
+            }
+          },
+          {
+            key: {
+              text: "Course outcome"
+            },
+            value: {
+              text: "testttt"
+            },
+            actions: {
+              items: [
+                {
+                
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}

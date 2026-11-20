@@ -1,0 +1,104 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      
+      <nav class="moj-side-navigation" aria-label="Side navigation">
+        <ul class="moj-side-navigation__list">
+          <li class="moj-side-navigation__item moj-side-navigation__item--active">
+            <a href="" aria-current="location" class="govuk-!-font-size-16">Courses </a>
+          </li>
+          <li class="moj-side-navigation__item">
+            <a href="dashboard-cp.html" class="govuk-!-font-size-16">Providers</a>
+          </li>
+          
+        </ul>
+      </nav> 
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+
+      
+
+    <h1 class="govuk-heading-l">Courses dashboard</h1> 
+
+      <p class="govuk-body">Review the number of applications received for each course. Select a cohort to view.</p>
+      <p class="govuk-body">Visit the <a href="https://educationgovuk.sharepoint.com.mcas.ms/sites/TeacherServices/SitePages/Find-a-Teacher-CPD-dashboard.aspx"> cross-programme dashboards (opens in a new tab)</a> and explore our NPQ data dashboards for more insights.</p>
+
+
+      <div style="background-color: #f3f2f1; padding: 20px 15px; margin-bottom: 30px;">
+        <form action="" accept-charset="UTF-8" method="get">
+            <div style="display: flex; margin-left: -14px">
+              
+              <div class="govuk-form-group govuk-grid-column-two-thirds">
+                <label for="employment-type-field" class="govuk-label govuk-label--s">Cohort:</label>
+                <select id="employment-type-field" class="govuk-select" name="Academic year"><option value=""></option>
+
+                  <option value="2021 to 2022">All</option>
+                  <option value="2022 to 2023">2021</option>
+                  <option value="2023 to 2024"selected>2022</option>
+                  <option value="2024 to 2025">2023</option>
+                  <option value="2025 to 2026">2024</option>
+                  <option value="2025 to 2026">2025</option>
+
+                </select>
+              </div>
+            </div>
+            <div style="display: flex; margin-left: -14px">
+            </div>
+          <button type="submit" formnovalidate="formnovalidate" class="govuk-button search-box__button" data-module="govuk-button" data-prevent-double-click="true" style="margin-left: 0px; margin-bottom: 10px;" data-test="search-button">Search</button>
+        </form>
+      </div>
+
+      <h1 class="govuk-heading-m">Applications received for 2024 </h1> 
+
+      <a href="/admin-v3/dashboard.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Display data in a chart
+      </a>
+
+      <br>
+
+
+      <p class="govuk-body"><a href="">
+      </a></p>
+
+
+
+      <img src="/public/images/new-dash-tables.png" alt="."> 
+
+
+
+
+
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

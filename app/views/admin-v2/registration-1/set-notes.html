@@ -1,0 +1,36 @@
+{% extends "layout-admin.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">{{ data['registration1--name'] }}</h1>
+      <form class="form" action="registration" method="post">
+        {{ govukCharacterCount({
+          name: "registration1--notes",
+          id: "registration1--notes",
+          maxlength: 1000,
+          value: data['registration1--notes'],
+          label: {
+            text: "Add a note about the changes to this registration",
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Begin your note with the date and your initials. (Notes are for internal use only.) "
+          }
+        }) }}
+    <div class="govuk-button-group">
+  <a class="govuk-button" href="ltd-130824">Add note</a>
+  <a class="govuk-link" href="ltd-130824">Cancel</a>
+</div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

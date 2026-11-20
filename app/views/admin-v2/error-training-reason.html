@@ -1,0 +1,107 @@
+{% extends "layout-admin.html" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+ 
+
+    
+
+    <div class="govuk-grid-column-three-quarters">
+
+      <a href="change-training-status.html" class="govuk-back-link">Back</a>
+
+      <br>
+      <br>
+
+       <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Select a reason for changing training status</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l">What's the reason for change?</h1>
+
+      <div class="govuk-inset-text">
+     
+
+      <p class="govuk-body"> <strong> User ID <br></strong>0594fe7b-fcd2-4f3f-9e8d-17ab5538a2b9</p>
+  
+      <p class="govuk-body"> <strong> Chosen training status <br></strong>Deferred</p>
+
+
+      </div>
+
+      <div class="govuk-form-group govuk-form-group--error">
+  <fieldset class="govuk-fieldset" aria-describedby="whereDoYouLive-error">
+  
+    <p id="whereDoYouLive-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select a reason for changing training status
+    </p>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-2" name="chooseAdifferentTrainingStatus" type="radio" value="breavement">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-2">
+            Breavement
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-3" name="chooseAdifferentTrainingStatus" type="radio" value="long term sickness">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-3">
+            Long term sickness
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-4" name="chooseAdifferentTrainingStatus" type="radio" value="parental leave">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-4">
+            Parental leave
+          </label>
+        </div>
+         <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-5" name="chooseAdifferentTrainingStatus" type="radio" value="career break">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-5">
+            Career break
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="chooseAdifferentTrainingStatus-6" name="chooseAdifferentTrainingStatus" type="radio" value="other">
+          <label class="govuk-label govuk-radios__label" for="chooseAdifferentTrainingStatus-6">
+            Other
+          </label>
+        </div>
+    </div>
+  </fieldset>
+</div>
+
+     
+
+
+  
+
+    <!-- Submit and Cancel Links -->
+      <div class="govuk-button-group">
+        <a href="app-details-training.html" class="govuk-button search-box__button" data-module="govuk-button">
+          Change training status
+        </a>
+        <a class="govuk-link" href="app-details.html">Cancel</a>
+      </div>
+
+
+
+    </div>
+    
+  </div>
+  </div>
+  </div>
+   
+  </div>
+{% endblock %}
