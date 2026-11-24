@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% if (data['referrer'] == "reg") %}
+  {% set signedIn = 'true' %}
+{% else %}
+  {% set signedIn = 'false' %}
+{% endif %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  {% if (data['referrer'] == "newprovider") %}
+    {% include './includes/answers/change-provider.html' %}
+  
+    {{ govukButton({
+      text: "Submit change",
+      href: "submit"
+    }) }}
+
+  {% else %}
+    <h1 class="govuk-heading-xl">Check your answers</h1>
+    <!-- Opted to self-fund -->
+    <!-- not funded -->
+    {% if data['selffund'] == "self-fund" %}
+      {% include './includes/answers/self-fund.html' %}
+
+    {% elseif data['fundingstatus'] == "previousfunding" %}
+      {% include './includes/answers/self-fund.html' %}
+    
+    <!-- NOT England -->
+    <!-- not funded for any -->
+    {% elseif data['wheredoyouwork'] == "No" %}
+      {% include './includes/answers/not-eng.html' %}
+
+    <!-- Private or Other -->
+    {% elseif (data['whichsetting'] == "Independent hospital education organisation") %}
+      {% include './includes/answers/other.html' %}
+    {% elseif (data['whichsetting'] == "Young offender institution") %}
+      {% include './includes/answers/other.html' %}
+    {% elseif (data['whichsetting'] == "Local authority") %}
+      {% include './includes/answers/other.html' %}
+
+    {% elseif (data['whichsetting'] == "Privately run setting") %}
+      {% include './includes/answers/private.html' %}
+    
+    {% elseif data['whichsetting'] == "Other" %}
+      {% include './includes/answers/private.html' %}
+
+    {% else %}
+      {% include './includes/answers/school-funded.html' %}
+    {% endif %}
+
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        {% if (data['referrer'] == "reg") %}
+          {{ govukButton({
+            text: "Submit registration",
+            href: "confirmation?referrer=Submitted"
+          }) }}
+
+        {% else %}
+          {{ govukButton({
+            text: "Continue to register",
+            href: "start-register"
+          }) }}
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+{% endblock %}

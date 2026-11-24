@@ -31,7 +31,7 @@
   {% block header %}
     {% if signedIn == 'true' %}
       {{ govukOneLoginServiceHeader({
-        signOutLink: "#"}) }}
+        signOutLink: "sign-out"}) }}
 
       {{ govukServiceNavigation({
         serviceName: serviceName,

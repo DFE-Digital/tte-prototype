@@ -154,3 +154,11 @@ code {
   .background-blue {
     background-color: #1d70b8;
   }
+
+  .choose-course .govuk-radios__divider {
+    width: auto;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }

@@ -1,0 +1,9 @@
+{% block page %}
+  <div class="govuk-!-margin-bottom-6">
+    {{ govukTag({
+      text: "Eligible",
+      classes: "govuk-tag--green"
+    }) }}
+  </div>
+  <p>You’re eligible for funding for the {{ data['choosette']}} course.</p>
+{% endblock %}

@@ -1,0 +1,97 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Professional development for teachers and education leaders
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Check funding eligibility and register for a professional development course
+        </h1>
+
+        <p>	Use this service to check if you’re eligible for funding and register for one of the following qualifications: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>National Professional Development (NPD) </li>
+          <li>National Professional Qualification Advanced (NPQA) </li>
+          <li>National Professional Qualification (NPQ)</li>
+        </ul>
+        <p><a href="gov-uk-guidance/list-of-courses.html">See all courses</a></p>
+
+        <h2 class="govuk-heading-l">Check if you're eligible for funding</h2>
+        <p>You can check if you’re eligible for funding before you register. You do not need to sign in to do this.</p>
+        <p>If you’re not eligible for funding, you can choose to 
+        <a href="#">pay for the course another way</a>. This is also known as self-funding.</p>
+        {{ govukButton({
+          text: "Check eligibility for funding",
+          href: "route-course",
+          isStartButton: true
+        }) }}
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-4">Register for a professional development course </h2>
+        <p>If you have already checked your eligibility and have come back to register you'll need to re-answer the eligibility questions.</p>
+        <p>To register, you need to sign in with GOV.UK One Login – you can create an account if you do not already have one.</p>
+        <p>You'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a mobile phone to receive a security code </li>
+        </ul>
+        <p>You may also need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your <strong>physical passport</strong> to prove your identity </li>
+          <li>your <strong>National Insurance number</strong> or teacher reference number (TRN)</li>
+        </ul>
+
+        <p>By continuing, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers">privacy notice</a>.</p>
+
+        {{ govukButton({
+          text: "Check eligibility and continue to register",
+          href: "route-course",
+          isStartButton: true
+        }) }}
+
+        <form class="form" action="choose-course" method="post">
+          <input type="hidden" name="selffund" value="self-fund">
+          <input type="hidden" name="eligibilityoutcome" value="notfunded">
+          {{ govukButton({
+            text: "I am paying for the course another way",
+            classes: "button-as-link govuk-link govuk-!-margin-top-2"
+          }) }}
+        </form>
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-3">Already registered?</h2>
+        <p>Sign in to:</p>   
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check the status of your registration </li>
+          <li>change your training provider (only available for some courses) </li>
+        </ul>     
+
+        {{ govukButton({
+          text: "Sign in",
+          href: "one-login/one-login-start?referrer=successful",
+          classes: "govuk-button--secondary"
+        }) }}
+
+        <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+          <summary class="govuk-details__summary govuk-!-margin-top-8">
+            <span class="govuk-details__summary-text">
+              Log back in journeys
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-7">
+              <li><a href="one-login/one-login-start?referrer=change-provider">Change provider </a></li>
+              <li><a href="one-login/one-login-start?referrer=successful">Successful application</a></li>
+              <li><a href="one-login/one-login-start?referrer=unsuccessful">Unsuccessful application</a></li>
+              <li><a href="one-login/one-login-start?referrer=deferred">Deferred </a></li>
+              <li><a href="one-login/one-login-start?referrer=withdrawn">Withdrawn</a></li>
+              <li><a href="one-login/one-login-start?referrer=certificate">Certificate </a></li>
+            </ul>
+          </div>
+        </details>
+        
+      </div>
+    </div>
+    
+{% endblock %}

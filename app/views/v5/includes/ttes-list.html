@@ -1,0 +1,97 @@
+{{ govukRadios({
+  name: "choosette",
+  classes: "choose-course",
+  items: [
+    {
+      divider: "SEND and inclusion"
+    },
+    {
+      value: "Embedding inclusive practice",
+      text: "Embedding inclusive practice NPD",
+      checked: true if (data['choosette'] == "Embedding inclusive practice")
+    },
+    {
+      value: "Embedding inclusive practice for leaders",
+      text: "Embedding inclusive practice for leaders NPQA",
+      checked: true if (data['choosette'] == "Embedding inclusive practice for leaders")
+    },
+    {
+      value: "SENCO NPQ",
+      text: "Special educational needs co-ordinator's (SENCO) NPQ",
+      checked: true if (data['choosette'] == "SENCO NPQ")
+    },
+    {
+      divider: "Early years (up to age 5)"
+    },
+    {
+      value: "Excellence in reception teaching",
+      text: "Excellence in reception teaching NPD",
+      checked: true if (data['choosette'] == "Excellence in reception teaching")
+    },
+    {
+      value: "Early years leadership",
+      text: "Early years leadership NPQ",
+      checked: true if (data['choosette'] == "Early years leadership")
+    },
+    {
+      divider: "Leading a subject or specialist area"
+    },
+    {
+      value: "Leading literacy",
+      text: "Leading literacy NPQ",
+      checked: true if (data['choosette'] == "Leading literacy")
+    },
+    {
+      value: "Leading primary mathematics",
+      text: "Leading primary mathematics NPQ",
+      checked: true if (data['choosette'] == "Leading primary mathematics")
+    },
+    {
+      value: "Leading behaviour and culture",
+      text: "Leading behaviour and culture NPQ",
+      checked: true if (data['choosette'] == "Leading behaviour and culture")
+    },
+    {
+      value: "Leading teacher development",
+      text: "Leading teacher development NPQ",
+      checked: true if (data['choosette'] == "Leading teacher development"),
+      hint: {
+        text: "Develop other teachers and support their professional growth"
+      }
+    },
+    {
+      value: "Leading teaching",
+      text: "Leading teaching NPQ",
+      checked: true if (data['choosette'] == "Leading teaching"),
+      hint: {
+        text: "Lead teaching and learning for a subject, year group or phase"
+      }
+    },
+    {
+      divider: "Leading a setting"
+    },
+    {
+      value: "Senior leadership",
+      text: "Senior leadership NPQ",
+      checked: true if (data['choosette'] == "Senior leadership")
+    },
+    {
+      value: "Headship",
+      text: "Headship NPQ",
+      checked: true if (data['choosette'] == "Headship")
+    },
+    {
+      value: "Early headship coaching offer",
+      text: "Early headship coaching offer",
+      checked: true if (data['choosette'] == "Early headship coaching offer"),
+      hint: {
+        text: "Networking and support if you're in your first 5 years of headship"
+      }
+    },
+    {
+      value: "Executive leadership",
+      text: "Executive leadership NPQ",
+      checked: true if (data['choosette'] == "Executive leadership")
+    }
+  ]
+}) }}
