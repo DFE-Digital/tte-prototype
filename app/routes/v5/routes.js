@@ -46,7 +46,7 @@ module.exports = router => {
       } else if (closedState === 'partial'){
         res.redirect(v + 'registrations-closed')
       } else {
-      res.redirect(v + 'course-start')
+      res.redirect(v + 'start-id')
     }
   })
 
@@ -60,8 +60,17 @@ module.exports = router => {
         } else if (closedState === 'partial'){
           res.redirect(v + 'registrations-closed')
         } else {
-        res.redirect(v + 'course-start')
+        res.redirect(v + 'start-id')
       }
+    })
+
+    // Sign out link
+    router.get(v + 'sign-out', function (req, res) {
+      res.redirect(v + 'start-id')
+    })
+
+    router.get(v + 'registration-status/sign-out', function (req, res) {
+      res.redirect(v + 'start-id')
     })
 
 
@@ -82,22 +91,13 @@ module.exports = router => {
   // header links 
   router.get(v + 'route-account', function(req, res){
     var referrer = req.session.data['referrer']
-
-    if (referrer == 'Submitted') {
-      res.redirect(v + 'registration-status/registration-status')
-    } else {
-      res.redirect(v + 'registration-status/no-registrations')
-    }
+    res.redirect(v + 'registration-status/multiple-registrations')
   })
 
   router.get(v + 'registration-status/route-account', function(req, res){
     var referrer = req.session.data['referrer']
 
-    if (referrer == 'Submitted') {
-      res.redirect(v + 'registration-status/registration-status')
-    } else {
-      res.redirect(v + 'registration-status/no-registrations')
-    }
+    res.redirect(v + 'registration-status/multiple-registrations')
   })
 
 // ------------

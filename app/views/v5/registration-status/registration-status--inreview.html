@@ -56,6 +56,13 @@
   <p class="govuk-!-margin-bottom-0"><a href="#">Update your GOV.UK One Login details</a></p>
 {% endset %}
 
+{% block containerStart %}
+    {{ govukBackLink({
+      text: "Back to account home",
+      href: "./multiple-registrations"
+    }) }}
+{% endblock %}
+
 {% block content %}
   <span class="govuk-caption-m">Submitted 11 July 2026</span>
   <h1 class="govuk-heading-xl">

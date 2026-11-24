@@ -2,42 +2,51 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Register for a {{ data['tte-combined-name'] }} course
+  Professional development for teachers and education leaders
 {% endblock %}
 
 {% block content %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
-          <span class="govuk-heading-l">{{ data['tte-combined-name'] }}</span>
-          Check funding eligibility to register for a course 
+          Check funding eligibility and register for a professional development course
         </h1>
 
-        <h2 class="govuk-heading-m">To register for a course, you first need to: </h2>
+        <p>	Use this service to check if you’re eligible for funding and register for one of the following qualifications: </p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>check your eligibility for funding or tell us you will self-fund </li>
+          <li>National Professional Development (NPD) </li>
+          <li>National Professional Qualification Advanced (NPQA) </li>
+          <li>National Professional Qualification (NPQ)</li>
         </ul>
-        <p>After we have checked your eligibility, you can continue to register. We will use your eligibility result as part of your registration. </p>
+        <p><a href="gov-uk-guidance/list-of-courses.html">See all courses</a></p>
 
-        <h2 class="govuk-heading-m">To complete your registration, you will need to: </h2>
-        <ol class="govuk-list govuk-list--number">
-          <li>log in using GOV.UK One Login – you can create an account if you do not already have one. </li>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>you may need your passport to prove your identity </li>
-            <li>you’ll need a mobile to receive a verification code </li>
-          </ul>
-          <li>answer some questions to complete your registration </li>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>choose your course start date – courses usually start in either October or January but not all providers will offer all dates </li>
-            <li>choose a training provider </li>
-          </ul>
-          <li>submit your registration </li>
-        </ol>
+        <h2 class="govuk-heading-l">Check if you're eligible for funding</h2>
+        <p>You can check if you’re eligible for funding before you register. You do not need to sign in to do this.</p>
+        <p>If you’re not eligible for funding, you can choose to 
+        <a href="#">pay for the course another way</a>. This is also known as self-funding.</p>
+        {{ govukButton({
+          text: "Check eligibility for funding",
+          href: "route-course",
+          isStartButton: true
+        }) }}
+
+        <h2 class="govuk-heading-l govuk-!-margin-top-4">Register for a professional development course </h2>
+        <p>If you have already checked your eligibility and have come back to register you'll need to re-answer the eligibility questions.</p>
+        <p>To register, you need to sign in with GOV.UK One Login – you can create an account if you do not already have one.</p>
+        <p>You'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a mobile phone to receive a security code </li>
+        </ul>
+        <p>You may also need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your <strong>physical passport</strong> to prove your identity </li>
+          <li>your <strong>National Insurance number</strong> or teacher reference number (TRN)</li>
+        </ul>
 
         <p>By continuing, you agree to our <a href="https://www.gov.uk/government/publications/privacy-information-education-providers-workforce-including-teachers/privacy-information-education-providers-workforce-including-teachers">privacy notice</a>.</p>
 
         {{ govukButton({
-          text: "Check eligibility",
+          text: "Check eligibility and continue to register",
           href: "route-course",
           isStartButton: true
         }) }}
@@ -46,21 +55,20 @@
           <input type="hidden" name="selffund" value="self-fund">
           <input type="hidden" name="eligibilityoutcome" value="notfunded">
           {{ govukButton({
-            text: "I want to register as self-funded",
+            text: "I am paying for the course another way",
             classes: "button-as-link govuk-link govuk-!-margin-top-2"
           }) }}
         </form>
 
-        <h2 class="govuk-heading-l">Already registered?</h2>
-        <p>Log in to:</p>   
+        <h2 class="govuk-heading-l govuk-!-margin-top-3">Already registered?</h2>
+        <p>Sign in to:</p>   
         <ul class="govuk-list govuk-list--bullet">
-          <li>see the status of your registration</li>
-          <li>change your training provider</li>
-          <li>get your certificate when you have completed the course</li>
+          <li>check the status of your registration </li>
+          <li>change your training provider (only available for some courses) </li>
         </ul>     
 
         {{ govukButton({
-          text: "Log in",
+          text: "Sign in",
           href: "one-login/one-login-start?referrer=successful",
           classes: "govuk-button--secondary"
         }) }}

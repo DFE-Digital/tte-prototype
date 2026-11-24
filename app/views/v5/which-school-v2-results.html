@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set signedIn = 'false' %}
+
+{% block pageTitle %}
+  Select your workplace
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form method="post" action="route-funding-outcome">
+          <label for="workplace" class="govuk-label--xl">Select your workplace</label>
+          <p class="govuk-body govuk-!-padding-top-5 govuk-!-padding-bottom-4">You searched for: <strong>{{ data['workplacename'] or 'St Mary' }}, {{ data['workplacelocation'] or 'London' }}</strong> <a href="which-school-v2.html">Edit search</a></p>
+
+        {{ govukRadios({
+          id: "workplace",
+          name: "workplace",
+          fieldset: {
+
+          },
+          items: [
+            {
+              value: "St Mary Abbots CofE Primary School",
+              html: "<strong>St Mary Abbots CofE Primary School</strong>",
+              hint: {
+                html: "2 Kensington Church Court, Kensington, London, W8 4SP<br>Voluntary aided school"
+              }
+            },
+            {
+              value: "St Mary and St Pancras Church of England Primary School",
+              html: "<strong>St Mary and St Pancras Church of England Primary School</strong>",
+              hint: {
+                html: "81 Werrington Street, London, NW1 1QP<br>Academy converter"
+              }
+            },
+            {
+              value: "St Mary's Bryanston Square CofE School",
+              html: "<strong>St Mary's Bryanston Square CofE School</strong>",
+              hint: {
+                html: "Enford Street, London, W1H 1DL<br>Community school"
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+      <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">If you cannot find your workplace</span>
+            </summary>
+            <div class="govuk-details__text">
+              <p class="govuk-body">You could:</p>
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>try using the first part or full postcode, this gives the most accurate results </li>
+                <li>
+                  <a href="https://get-information-schools.service.gov.uk/Search?SelectedTab=Establishments" class="govuk-link">
+                    check your workplace details (opens in a new tab)
+                  </a> – including spelling
+                </li>
+              </ul>
+            </div>
+          </details>
+  </div>
+</div>
+
+{% endblock %}

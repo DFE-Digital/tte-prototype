@@ -4,12 +4,10 @@
 {% set signedIn = 'true' %}
 
 {% block containerStart %}
-  {% if (data['numberOfRegistrations'] == "3") %}
     {{ govukBackLink({
-      text: "Back to your registrations",
+      text: "Back to account home",
       href: "./multiple-registrations"
     }) }}
-  {% endif %}
 {% endblock %}
 
 {% block pageTitle %}
